@@ -17,6 +17,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import MarkdownIt from 'markdown-it';
 
@@ -50,6 +51,14 @@ function renderBody(body) {
     `</figure>`
   );
 }
+
+/* CSS 與 JS 的網址帶上內容雜湊。檔案一改網址就變，
+   瀏覽器與 CDN 的舊快取自動失效，不必再手動清快取或按 Ctrl+F5。 */
+function assetVersion(relPath) {
+  return createHash('sha1').update(fs.readFileSync(path.join(ROOT, relPath))).digest('hex').slice(0, 8);
+}
+const V_CSS = assetVersion('assets/css/style.css');
+const V_JS = assetVersion('assets/js/counter.js');
 
 const BANNER = CONFIG.hero.banner;
 const ORDER = Array.isArray(CONFIG.articleOrder) ? CONFIG.articleOrder : [];
@@ -203,7 +212,7 @@ function head({ title, description, canonical, depth, ogImage }) {
 <meta property="og:url" content="${esc(canonical)}">
 <meta property="og:image" content="${esc(CONFIG.siteUrl + '/' + (ogImage || DEFAULT_OG))}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="${base}assets/css/style.css">
+<link rel="stylesheet" href="${base}assets/css/style.css?v=${V_CSS}">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎗️</text></svg>">`;
 }
 
@@ -259,7 +268,7 @@ ${creditsBlock()}
   </div>
 </footer>
 <script>window.__COUNTER__=${JSON.stringify(CONFIG.counter)};</script>
-<script src="${base}assets/js/counter.js" defer></script>`;
+<script src="${base}assets/js/counter.js?v=${V_JS}" defer></script>`;
 }
 
 /* 卡片：直接產生 HTML 字串寫進 index.html，不經過 JSON */

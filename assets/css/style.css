@@ -513,10 +513,11 @@ ul, ol { padding-left: 1.25em; }
 .il-icon-dot   { fill: var(--accent); stroke: none; }
 
 /* 療程日曆 */
-.il-day rect        { stroke-width: 1.5; }
-.il-day--on rect    { fill: var(--accent); stroke: var(--accent); }
-.il-day--off rect   { fill: var(--bg-tint); stroke: var(--line); }
-.il-day--ghost rect { fill: none; stroke: var(--line); stroke-dasharray: 5 5; }
+/* 同時涵蓋兩種寫法：class 掛在群組上（日曆格），或直接掛在 rect 上（圖例色塊） */
+.il-day rect,        rect.il-day        { stroke-width: 1.5; }
+.il-day--on rect,    rect.il-day--on    { fill: var(--accent); stroke: var(--accent); }
+.il-day--off rect,   rect.il-day--off   { fill: var(--bg-tint); stroke: var(--line); }
+.il-day--ghost rect, rect.il-day--ghost { fill: none; stroke: var(--line); stroke-dasharray: 5 5; }
 .il-check           { fill: none; stroke: var(--bg); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
 
 /* 窄螢幕：插圖等比縮到約四成，字級要放大才讀得到 */
