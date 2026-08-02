@@ -184,20 +184,26 @@ ul, ol { padding-left: 1.25em; }
 
 .hero__title {
   margin: 0 0 1.4rem;
-  font-size: clamp(1.55rem, 1.1rem + 2.4vw, 2.5rem);
+  font-size: clamp(1.5rem, 1.05rem + 2.3vw, 2.4rem);
   letter-spacing: .01em;
 }
 
-/* 大頭照 + 姓名單位 */
+/* 讓標題只在「｜」處換行，姓名不會被拆開 */
+.hero__title-main,
+.hero__title-name { display: inline-block; }
+.hero__title-name { white-space: nowrap; }
+.hero__title-sep  { color: var(--ink-faint); font-weight: 400; margin-inline: .1em; }
+
+/* 大頭照 + 單位 + 專長定位 */
 .hero__byline {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin: 0 0 1.4rem;
-  padding: .85rem 1.1rem .85rem .85rem;
+  padding: .9rem 1.25rem .9rem .9rem;
   background: var(--bg);
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 1.6rem;
   box-shadow: var(--shadow);
   width: fit-content;
   max-width: 100%;
@@ -215,18 +221,21 @@ ul, ol { padding-left: 1.25em; }
 
 .hero__byline-text { min-width: 0; }
 
-.hero__name {
+.hero__org {
   margin: 0;
-  font-weight: 700;
-  font-size: clamp(1rem, .95rem + .3vw, 1.1rem);
-  letter-spacing: .02em;
+  font-size: clamp(.78rem, .75rem + .2vw, .88rem);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  font-weight: 600;
 }
 
-.hero__org {
-  margin: .15rem 0 0;
-  font-size: clamp(.76rem, .73rem + .2vw, .85rem);
+.hero__credential {
+  margin: .25rem 0 0;
+  font-size: clamp(.78rem, .74rem + .25vw, .9rem);
   line-height: 1.6;
-  color: var(--ink-faint);
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: .01em;
 }
 
 .hero__lead {

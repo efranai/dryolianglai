@@ -253,13 +253,13 @@ ${siteHeader(0)}
 
       <div class="hero__text">
         <p class="hero__eyebrow">台中・質子治療與放射治療</p>
-        <h1 class="hero__title">${esc(CONFIG.title.split('｜')[0])}</h1>
+        <h1 class="hero__title"><span class="hero__title-main">${esc(CONFIG.title.split('｜')[0])}</span><span class="hero__title-sep">｜</span><span class="hero__title-name">${esc(CONFIG.title.split('｜')[1])}</span></h1>
 
         <div class="hero__byline">
 ${HAS_PORTRAIT ? `          <img class="hero__portrait" src="${esc(PORTRAIT.src)}" alt="${esc(PORTRAIT.alt)}"
                width="112" height="112" fetchpriority="high" decoding="async">\n` : ''}          <div class="hero__byline-text">
-            <p class="hero__name">${esc(CONFIG.author)}</p>
             <p class="hero__org">${esc(CONFIG.affiliation)}</p>
+            <p class="hero__credential">${esc(CONFIG.credential)}</p>
           </div>
         </div>
 
