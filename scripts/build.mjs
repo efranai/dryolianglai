@@ -241,11 +241,11 @@ ${creditsBlock()}
     <div class="site-footer__meta">
       <p class="site-footer__org">${esc(CONFIG.affiliation)}</p>
       <p class="site-footer__copy">© ${new Date().getFullYear()} ${esc(CONFIG.author)}．本站文字內容版權所有</p>
-      <p class="site-footer__views">全站瀏覽次數 <span class="views" data-slug="__site__" hidden><span class="views__n">–</span></span></p>
+      <p class="site-footer__views">首頁瀏覽次數 <span class="views" data-slug="__site__" hidden><span class="views__n">–</span></span></p>
     </div>
   </div>
 </footer>
-<script>window.__COUNTER__=${JSON.stringify(CONFIG.supabase)};</script>
+<script>window.__COUNTER__=${JSON.stringify(CONFIG.counter)};</script>
 <script src="${base}assets/js/counter.js" defer></script>`;
 }
 
@@ -523,4 +523,6 @@ articles.forEach((a, i) => {
   console.log(`  ${String(i + 1).padStart(2)}. ${pinned} ${isoDate(a.updated)}  /${a.url}${a.wasUpdated ? '  (已更新)' : ''}`);
 });
 console.log(`\n輸出 ${written.length} 個檔案。`);
-if (!CONFIG.supabase.url) console.log('提醒：site.config.json 的 supabase 尚未設定，計數器目前為隱藏狀態。');
+console.log(CONFIG.counter.enabled
+  ? `瀏覽計數：已啟用（${CONFIG.counter.endpoint}）`
+  : '瀏覽計數：已停用，計數器為隱藏狀態。');

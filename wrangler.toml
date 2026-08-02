@@ -1,0 +1,11 @@
+# Cloudflare Pages 設定。
+# functions/ 底下的檔案會被編譯成 Pages Functions，與靜態檔案同網域提供服務。
+
+name = "dryolianglai"
+compatibility_date = "2024-11-06"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "dryolianglai-views"
+database_id = "e409e7bf-4475-45f4-aea4-910da28de6d7"

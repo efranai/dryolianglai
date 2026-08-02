@@ -98,77 +98,57 @@ npm run build
 npm run serve
 ```
 
-## 瀏覽計數器（Supabase）
+## 瀏覽計數器
 
-程式碼已完成，只要填入設定就會啟用；**未設定時計數器自動隱藏**，不會出現壞掉的畫面。
+跑在自己的 Cloudflare 帳號上，沒有第三方服務、沒有金鑰要保管。
 
-### 1. 在 Supabase SQL Editor 執行
-
-整段可重複執行，改壞了再貼一次即可。
-
-```sql
-create table if not exists public.page_views (
-  slug  text primary key,
-  views bigint not null default 0
-);
-
-alter table public.page_views enable row level security;
-
--- 讀取權限：RLS 政策與資料表授權兩者都要有，缺一會回 permission denied
-drop policy if exists "page_views read" on public.page_views;
-create policy "page_views read" on public.page_views
-  for select using (true);
-
-grant select on public.page_views to anon, authenticated;
-
--- 沒有 insert/update 政策，因此前端無法直接改數字，
--- 只能透過下面這個 security definer 函式累加。
-create or replace function public.increment_view(p_slug text)
-returns bigint
-language plpgsql
-security definer
-set search_path = public
-as $$
-declare n bigint;
-begin
-  insert into public.page_views (slug, views)
-  values (p_slug, 1)
-  on conflict (slug) do update set views = page_views.views + 1
-  returning views into n;
-  return n;
-end;
-$$;
-
-grant execute on function public.increment_view(text) to anon, authenticated;
+```
+functions/api/views.js   計數 API（Cloudflare Pages Function）
+wrangler.toml            D1 資料庫綁定
+assets/js/counter.js     前端：先 +1、再取回所有數字填進畫面
 ```
 
-### 2. 填入 `site.config.json`
+| 端點 | 行為 |
+|---|---|
+| `GET /api/views` | 取回所有頁面次數 → `{"slug": 123, ...}` |
+| `POST /api/views` | body `{"slug":"..."}`，該頁 +1 並回傳新次數 |
 
-```json
-"supabase": {
-  "url": "https://xxxxxxxx.supabase.co",
-  "anonKey": "eyJhbGci...",
-  "table": "page_views",
-  "rpc": "increment_view"
-}
-```
+計數器出現在三個位置：首頁每張卡片、文章頁的作者列、頁尾的首頁計數。
+還沒有人看過的文章顯示 0（而不是整個隱藏，否則會像壞掉）。
+同一個瀏覽階段內重整不會重複計數（`sessionStorage`）。
 
-`anon` key 本來就是設計成公開嵌在前端的，不是密鑰。真正的保護來自上面的 RLS 政策。
+API 與網站同網域，所以沒有 CORS 問題。`slug` 只接受 `[A-Za-z0-9_-]{1,80}`，
+其餘一律回 400，且 SQL 全部使用參數繫結。
 
-### 3. 重新建置並推送
+### 常用指令
 
 ```bash
-npm run build
+wrangler d1 execute dryolianglai-views --remote --command "SELECT * FROM page_views ORDER BY views DESC;"
 ```
 
-首頁卡片、文章頁、以及頁尾的全站計數會同時生效。
-同一個瀏覽階段內重整不會重複計數。
+歸零：
+
+```bash
+wrangler d1 execute dryolianglai-views --remote --command "DELETE FROM page_views;"
+```
+
+要整組關掉，把 `site.config.json` 的 `counter.enabled` 設成 `false` 再重新建置即可，
+計數器會全部隱藏，不會留下壞掉的畫面。
+
+**注意**：這是前端計數，任何人都能反覆呼叫 API 灌數字。對衛教網站足夠，
+但不要當成正式的流量統計 —— 那該用 Cloudflare 後台的 Web Analytics。
 
 ## 部署
 
+```bash
+npm run deploy
+```
+
+會依序執行建置 → 組 dist → 上傳 Cloudflare Pages（含 Functions）。
+
+- **Cloudflare Pages**：主要網址 <https://dryolianglai.pages.dev>，直接上傳模式。
 - **GitHub Pages**：由 repo 根目錄直接提供服務（`.nojekyll` 已加入，避免 Jekyll 處理）。
-- **Cloudflare Pages**：以 Git 整合連接本 repo，建置指令留空、輸出目錄設為 `/`。
-  每次 push 兩邊都會自動更新。
+  純靜態鏡像，**沒有 `/api/views`，因此計數器在 GitHub Pages 上不會顯示**。
 
 ## 圖片授權
 

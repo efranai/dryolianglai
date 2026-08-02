@@ -51,11 +51,10 @@
     { "zh": "大腸直腸癌放射治療", "en": "Colorectal Cancer", "icon": "i-colorectal" }
   ],
 
-  "supabase": {
-    "url": "",
-    "anonKey": "",
-    "table": "page_views",
-    "rpc": "increment_view"
+  "_counter": "瀏覽計數。由 functions/api/views.js（Pages Function + D1）提供，同網域、無第三方服務。enabled 設 false 即可整組隱藏。",
+  "counter": {
+    "enabled": true,
+    "endpoint": "/api/views"
   },
 
   "credits": [

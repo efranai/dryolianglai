@@ -1,35 +1,26 @@
 /**
- * 文章瀏覽計數器（Supabase）
+ * 瀏覽計數（前端）
  *
- * 設定來源：build 時由 site.config.json 注入到 window.__COUNTER__。
- * 只要 url 或 anonKey 是空的，就完全不動作，計數器維持隱藏，
+ * 呼叫本站的 /api/views（Cloudflare Pages Function + D1）：
+ *   1. 先為目前這一頁 +1
+ *   2. 再取回所有頁面的次數，填進首頁卡片、文章頁與頁尾
+ *
+ * 設定在 build 時由 site.config.json 注入到 window.__COUNTER__。
+ * enabled 為 false 或抓不到資料時，計數器維持隱藏，
  * 頁面不會出現壞掉的「–」或錯誤訊息。
- *
- * 需要的資料庫結構請見 README.md。
  */
 
 (function () {
   'use strict';
 
   var cfg = window.__COUNTER__ || {};
-  if (!cfg.url || !cfg.anonKey) return;   // 尚未設定 → 靜默略過
-
-  var BASE = String(cfg.url).replace(/\/+$/, '');
-  var TABLE = cfg.table || 'page_views';
-  var RPC = cfg.rpc || 'increment_view';
-
-  var HEADERS = {
-    'apikey': cfg.anonKey,
-    'Authorization': 'Bearer ' + cfg.anonKey,
-    'Content-Type': 'application/json'
-  };
+  if (!cfg.enabled || !cfg.endpoint) return;
 
   var nodes = Array.prototype.slice.call(document.querySelectorAll('.views[data-slug]'));
   if (!nodes.length) return;
 
   var pageSlug = document.body.getAttribute('data-page-slug');
 
-  /* PostgREST 的 bigint 可能序列化成字串，統一轉成數字再判斷 */
   function show(slug, value) {
     var n = Number(value);
     if (!isFinite(n)) return;
@@ -53,35 +44,31 @@
     }
   }
 
-  /* 1. 為目前這一頁 +1 */
   function increment() {
-    if (!pageSlug) return Promise.resolve();
-    if (alreadyCounted(pageSlug)) return Promise.resolve();
+    if (!pageSlug || alreadyCounted(pageSlug)) return Promise.resolve();
 
-    return fetch(BASE + '/rest/v1/rpc/' + RPC, {
+    return fetch(cfg.endpoint, {
       method: 'POST',
-      headers: HEADERS,
-      body: JSON.stringify({ p_slug: pageSlug })
-    }).then(function (r) {
-      return r.ok ? r.json() : null;
-    }).then(function (n) {
-      if (n !== null && n !== undefined) show(pageSlug, n);
-    }).catch(function () { /* 計數失敗不影響閱讀 */ });
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug: pageSlug })
+    })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { if (d && d.views != null) show(d.slug, d.views); })
+      .catch(function () { /* 計數失敗不影響閱讀 */ });
   }
 
-  /* 2. 讀回頁面上所有需要顯示的數字（首頁卡片、全站計數） */
   function refresh() {
-    var slugs = nodes.map(function (el) { return el.getAttribute('data-slug'); })
-                     .filter(function (v, i, a) { return v && a.indexOf(v) === i; });
-    if (!slugs.length) return;
-
-    var list = slugs.map(function (s) { return '"' + s.replace(/"/g, '') + '"'; }).join(',');
-    var url = BASE + '/rest/v1/' + TABLE + '?select=slug,views&slug=in.(' + encodeURIComponent(list) + ')';
-
-    fetch(url, { headers: HEADERS })
-      .then(function (r) { return r.ok ? r.json() : []; })
-      .then(function (rows) {
-        (rows || []).forEach(function (row) { show(row.slug, row.views); });
+    return fetch(cfg.endpoint, { headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (counts) {
+        if (!counts) return;
+        /* 逐一走訪頁面上的計數器而非 API 回傳的鍵值：
+           還沒有人看過的文章在資料庫裡沒有那一筆，要顯示 0 而不是整個藏起來，
+           否則會變成有些卡片有數字、有些沒有，看起來像壞掉。 */
+        nodes.forEach(function (el) {
+          var slug = el.getAttribute('data-slug');
+          show(slug, counts[slug] != null ? counts[slug] : 0);
+        });
       })
       .catch(function () { /* 讀取失敗就維持隱藏 */ });
   }
