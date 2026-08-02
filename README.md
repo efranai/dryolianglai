@@ -8,14 +8,25 @@
 ## 目錄結構
 
 ```
-content/            文章原始檔（Markdown，你只需要動這裡）
+content/*.md        文章原始檔（Markdown，你只需要動這裡）
+content/_about.md   首頁「關於賴宥良醫師」的內文（底線開頭＝不是文章，不會產生卡片）
 scripts/build.mjs   產生器
-site.config.json    站台設定、圖片授權標示、Supabase 設定
+site.config.json    站台設定、專業領域、掛號連結、圖片授權標示、Supabase 設定
 assets/             CSS / JS / 圖片
 index.html          ← 產生
 p/<slug>/index.html ← 產生（每篇文章的獨立網址）
 404.html sitemap.xml robots.txt  ← 產生
 ```
+
+## 常見的修改位置
+
+| 想改什麼 | 改哪裡 |
+|---|---|
+| 首頁五行主標文字 | `site.config.json` 的 `title` / `affiliation` / `credential` / `tagline` / `subTagline` |
+| 「關於賴宥良醫師」內文 | `content/_about.md` |
+| 專業領域標籤 | `site.config.json` 的 `specialties` 陣列 |
+| 掛號連結 | `site.config.json` 的 `appointmentUrl`（頁首按鈕與關於區塊共用同一個值） |
+| 首頁主視覺 | `assets/img/hero-doctor.jpg`，尺寸設定在 `site.config.json` 的 `hero.banner` |
 
 ## 新增一篇文章
 

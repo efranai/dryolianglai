@@ -40,6 +40,9 @@ function inlineSvg(relPath) {
 
 const BANNER = CONFIG.hero.banner;
 
+/* 「關於」區塊的內文獨立成 content/_about.md，改文字不必動程式碼 */
+const ABOUT_HTML = md.render(fs.readFileSync(path.join(ROOT, 'content', '_about.md'), 'utf8'));
+
 /* 大頭照若尚未放入 assets/，byline 只顯示單位與定位，不會出現破圖 */
 const PORTRAIT = CONFIG.hero.portrait;
 const HAS_PORTRAIT = fs.existsSync(path.join(ROOT, PORTRAIT.src));
@@ -111,7 +114,8 @@ function loadArticles() {
   if (!fs.existsSync(CONTENT_DIR)) return [];
 
   return fs.readdirSync(CONTENT_DIR)
-    .filter((f) => f.endsWith('.md'))
+    // 底線開頭的檔案是頁面區塊（例如 _about.md），不是文章
+    .filter((f) => f.endsWith('.md') && !f.startsWith('_'))
     .map((file) => {
       const abs = path.join(CONTENT_DIR, file);
       const { data, body } = parseFrontMatter(fs.readFileSync(abs, 'utf8'));
@@ -173,7 +177,11 @@ function siteHeader(depth) {
       <span class="brand__name">賴宥良醫師</span>
       <span class="brand__desc">質子治療・放射治療</span>
     </a>
-    <nav class="site-nav"><a href="${base}#articles">文章</a><a href="${base}#about">關於</a></nav>
+    <nav class="site-nav">
+      <a href="${base}#articles">文章</a>
+      <a href="${base}#about">關於</a>
+      <a class="site-nav__cta" href="${esc(CONFIG.appointmentUrl)}" target="_blank" rel="noopener noreferrer">線上掛號</a>
+    </nav>
   </div>
 </header>`;
 }
@@ -295,13 +303,25 @@ ${cards}
   </section>
 
   <section class="wrap section" id="about" aria-labelledby="about-heading">
-    <h2 class="section__heading" id="about-heading">關於這個網站</h2>
-    <div class="prose">
-      <p>我是<strong>賴宥良</strong>，服務於${esc(CONFIG.affiliation)}。</p>
-      <p>門診中我發現，病人與家屬在面對放射治療時，最大的困難往往不是資訊太少，而是資訊太多、太雜、也太難判斷可信度。這個網站是我整理臨床上最常被問到的問題所做的紀錄。</p>
-      <p>我希望它能做到三件事：把原理說清楚、把選項攤開來、把代價講明白。因為<strong>知情之後做出的選擇，才是真正屬於自己的選擇</strong>。</p>
-      <p class="prose__note">網站內容為一般性衛教資訊，無法取代面對面的診療。若您有具體的病情問題，請於門診與您的主治醫師討論。</p>
+    <h2 class="section__heading" id="about-heading">關於賴宥良醫師</h2>
+
+    <div class="prose about__prose">
+${ABOUT_HTML.trim().split('\n').map((l) => '      ' + l).join('\n')}
     </div>
+
+    <h3 class="about__subheading">專業領域</h3>
+    <ul class="chips">
+${CONFIG.specialties.map((s) => `      <li>${esc(s)}</li>`).join('\n')}
+    </ul>
+
+    <div class="cta">
+      <a class="cta__btn" href="${esc(CONFIG.appointmentUrl)}" target="_blank" rel="noopener noreferrer">
+        線上掛號<span class="cta__arrow" aria-hidden="true">→</span>
+      </a>
+      <p class="cta__note">將前往中國醫藥大學附設醫院官方掛號系統（另開新視窗）</p>
+    </div>
+
+    <p class="prose__note about__note">網站內容為一般性衛教資訊，無法取代面對面的診療。若您有具體的病情問題，請於門診與您的主治醫師討論。</p>
   </section>
 
 </main>

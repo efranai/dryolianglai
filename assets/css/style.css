@@ -144,9 +144,28 @@ ul, ol { padding-left: 1.25em; }
 .brand__name { font-weight: 700; letter-spacing: .02em; }
 .brand__desc { font-size: .78rem; color: var(--ink-faint); }
 
-.site-nav { display: flex; gap: 1.1rem; font-size: .9rem; }
+.site-nav { display: flex; align-items: center; gap: 1rem; font-size: .9rem; flex-wrap: wrap; }
 .site-nav a { color: var(--ink-soft); text-decoration: none; }
 .site-nav a:hover { color: var(--accent); }
+
+.site-nav__cta {
+  padding: .3em .95em;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent) !important;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color .18s ease, color .18s ease;
+}
+
+.site-nav__cta:hover { background: var(--accent); color: var(--bg) !important; }
+
+/* 窄螢幕：收起品牌副標並縮小間距，讓 sticky 頁首維持單行高度 */
+@media (max-width: 30rem) {
+  .brand__desc { display: none; }
+  .site-nav { gap: .75rem; font-size: .84rem; }
+  .site-nav__cta { padding: .3em .8em; }
+}
 
 /* ---------- 首頁 HERO ----------
    橫幅圖在上、文字在下，任何寬度都不疊字，
@@ -548,6 +567,82 @@ ul, ol { padding-left: 1.25em; }
   background: var(--bg-tint);
   border-radius: var(--radius);
 }
+
+/* ---------- 關於區塊 ---------- */
+
+.about__prose > p:first-child {
+  font-size: clamp(1rem, .95rem + .4vw, 1.15rem);
+  color: var(--ink);
+}
+
+.about__subheading {
+  margin: 2.75rem 0 1rem;
+  font-size: .8rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 700;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 52rem;
+}
+
+.chips li {
+  font-size: .82rem;
+  line-height: 1.5;
+  padding: .45em 1em;
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--accent-dk);
+  border: 1px solid transparent;
+}
+
+/* ---------- 掛號 CTA ---------- */
+
+.cta {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem 1.1rem;
+}
+
+.cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  padding: .8em 1.6em;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: clamp(.95rem, .9rem + .3vw, 1.05rem);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: background-color .18s ease, transform .18s ease;
+  white-space: nowrap;
+}
+
+.cta__btn:hover { background: var(--accent-dk); color: var(--bg); transform: translateY(-1px); }
+.cta__arrow { transition: transform .18s ease; }
+.cta__btn:hover .cta__arrow { transform: translateX(3px); }
+
+.cta__note {
+  margin: 0;
+  font-size: .78rem;
+  line-height: 1.6;
+  color: var(--ink-faint);
+  max-width: 22em;
+}
+
+.about__note { margin-top: 2.5rem; max-width: 52rem; }
 
 /* ---------- 上下篇 ---------- */
 
