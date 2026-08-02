@@ -13,15 +13,14 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
 
-const INCLUDE = [
-  'index.html',
-  '404.html',
-  'robots.txt',
-  'sitemap.xml',
-  '.nojekyll',
-  'p',
-  'assets',
-];
+/* 用排除清單而非白名單：以後 build 產生新的輸出目錄（例如 series/）
+   就會自動被帶上，不必記得回來改這裡。 */
+const EXCLUDE = new Set([
+  'node_modules', 'dist', '.git', '.wrangler', '.claude',
+  'content', 'scripts', 'functions',          // 原始檔與 Pages Function，不對外提供
+  'package.json', 'package-lock.json',
+  'site.config.json', 'wrangler.toml', 'README.md', '.gitignore',
+]);
 
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });
@@ -39,13 +38,9 @@ function copy(src, dest) {
   }
 }
 
-for (const item of INCLUDE) {
-  const src = path.join(ROOT, item);
-  if (!fs.existsSync(src)) {
-    console.warn(`略過（不存在）：${item}`);
-    continue;
-  }
-  copy(src, path.join(DIST, item));
+for (const item of fs.readdirSync(ROOT)) {
+  if (EXCLUDE.has(item)) continue;
+  copy(path.join(ROOT, item), path.join(DIST, item));
 }
 
 console.log(`dist/ 組裝完成，共 ${files} 個檔案。`);
