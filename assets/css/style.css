@@ -577,55 +577,191 @@ ul, ol { padding-left: 1.25em; }
 
 /* ---------- 關於區塊 ---------- */
 
-.about__prose > p:first-child {
-  font-size: clamp(1rem, .95rem + .4vw, 1.15rem);
-  color: var(--ink);
+.icon-sprite { display: none; }
+
+.icon, .acard__icon, .tile__icon, .info-item__icon, .cta__icon {
+  flex: none;
+  width: 1.5em;
+  height: 1.5em;
+  stroke: currentColor;
+  fill: none;
 }
 
-.about__subheading {
-  margin: 2.75rem 0 1rem;
+.about {
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-tint) 100%);
+  border-top: 1px solid var(--line-soft);
+}
+
+.about__eyebrow {
+  margin: 0 0 .35rem;
   font-size: .8rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
+  letter-spacing: .16em;
   color: var(--ink-faint);
-  font-weight: 700;
+  font-weight: 600;
 }
 
-.chips {
+.about__tagline {
+  margin: 1.1rem 0 1.25rem;
+  font-size: clamp(1.05rem, .95rem + .7vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--accent);
+  letter-spacing: .01em;
+}
+
+/* 導言橫跨整行，但仍保留可讀行長 */
+.about__lead { max-width: 60rem; }
+.about__lead p {
+  margin: 0;
+  font-size: clamp(.98rem, .94rem + .3vw, 1.08rem);
+  line-height: 1.95;
+  color: var(--ink-soft);
+}
+
+/* 三張卡片 */
+.about__cards {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+}
+
+.acard {
+  min-width: 0;
+  padding: 1.5rem 1.4rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.acard__title {
   display: flex;
-  flex-wrap: wrap;
-  gap: .55rem;
+  align-items: center;
+  gap: .7rem;
+  margin: 0 0 1rem;
+  font-size: 1.02rem;
+  letter-spacing: .02em;
+}
+
+.acard__icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: .55rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  box-sizing: border-box;
+}
+
+.acard__body > * + * { margin-top: .85rem; }
+.acard__body p {
+  margin: 0;
+  font-size: .9rem;
+  line-height: 1.9;
+  color: var(--ink-soft);
+}
+
+.acard__body ul {
+  margin: 0;
+  padding-left: 1.15em;
+  font-size: .88rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+.acard__body li + li { margin-top: .3em; }
+.acard__body li::marker { color: var(--accent); }
+
+/* 「專長領域」置中標題，兩側延伸細線 */
+.about__rule {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: clamp(2.5rem, 5vw, 3.5rem) 0 1.5rem;
+}
+
+.about__rule::before,
+.about__rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.about__rule-title {
+  margin: 0;
+  font-size: clamp(.95rem, .9rem + .3vw, 1.1rem);
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: .3em;
+  text-indent: .3em;   /* 補回 letter-spacing 造成的右側空隙，維持視覺置中 */
+  white-space: nowrap;
+}
+
+/* 專長領域磚 */
+.tiles {
+  display: grid;
+  gap: .7rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 7.5rem), 1fr));
   list-style: none;
   margin: 0;
   padding: 0;
-  max-width: 52rem;
 }
 
-.chips li {
-  font-size: .82rem;
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .45rem;
+  min-width: 0;
+  padding: 1.1rem .6rem 1rem;
+  text-align: center;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color .18s ease, transform .18s ease;
+}
+
+.tile:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.tile__icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--accent);
+  margin-bottom: .15rem;
+}
+
+.tile__zh {
+  font-size: .84rem;
+  font-weight: 600;
   line-height: 1.5;
-  padding: .45em 1em;
-  border-radius: 999px;
-  background: var(--accent-bg);
-  color: var(--accent-dk);
-  border: 1px solid transparent;
+  color: var(--ink);
 }
 
-/* ---------- 掛號 CTA ---------- */
+.tile__en {
+  font-size: .7rem;
+  line-height: 1.4;
+  color: var(--ink-faint);
+  letter-spacing: .01em;
+}
 
-.cta {
-  margin-top: 2.5rem;
+/* 底部：掛號按鈕 + 資訊列 */
+.about__foot {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: .75rem 1.1rem;
+  gap: 1.25rem 1.75rem;
+  margin-top: clamp(2.25rem, 4vw, 3rem);
+  padding-top: clamp(1.75rem, 3vw, 2.25rem);
+  border-top: 1px solid var(--line);
 }
 
 .cta__btn {
   display: inline-flex;
   align-items: center;
-  gap: .5em;
-  padding: .8em 1.6em;
+  gap: .55em;
+  padding: .8em 1.5em;
   background: var(--accent);
   color: var(--bg);
   border-radius: 999px;
@@ -638,18 +774,41 @@ ul, ol { padding-left: 1.25em; }
 }
 
 .cta__btn:hover { background: var(--accent-dk); color: var(--bg); transform: translateY(-1px); }
+.cta__icon { width: 1.25em; height: 1.25em; }
 .cta__arrow { transition: transform .18s ease; }
 .cta__btn:hover .cta__arrow { transform: translateX(3px); }
 
-.cta__note {
+.info-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.75rem;
+  list-style: none;
   margin: 0;
-  font-size: .78rem;
-  line-height: 1.6;
-  color: var(--ink-faint);
-  max-width: 22em;
+  padding: 0;
+  flex: 1;
+  min-width: 0;
 }
 
-.about__note { margin-top: 2.5rem; max-width: 52rem; }
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  min-width: 0;
+  font-size: .84rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.info-item__icon { width: 1.6rem; height: 1.6rem; color: var(--accent); }
+.info-item__text { min-width: 0; }
+
+@media (min-width: 48rem) {
+  .info-item + .info-item { padding-left: 1.75rem; border-left: 1px solid var(--line); }
+  .info-items { gap: 1rem 0; }
+}
+
+.about__note { margin-top: 2.5rem; max-width: 60rem; }
 
 /* ---------- 上下篇 ---------- */
 

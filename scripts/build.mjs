@@ -40,8 +40,27 @@ function inlineSvg(relPath) {
 
 const BANNER = CONFIG.hero.banner;
 
-/* 「關於」區塊的內文獨立成 content/_about.md，改文字不必動程式碼 */
-const ABOUT_HTML = md.render(fs.readFileSync(path.join(ROOT, 'content', '_about.md'), 'utf8'));
+/* 圖示以 <symbol> 集中維護，內嵌後用 <use> 引用，避免每個圖示各發一次請求 */
+const ICON_SPRITE = inlineSvg('assets/img/icons.svg');
+const icon = (id, cls = 'icon') =>
+  `<svg class="${cls}" aria-hidden="true" focusable="false"><use href="#${esc(id)}"/></svg>`;
+
+/* 「關於」區塊的內文獨立成 content/_about.md，改文字不必動程式碼。
+   第一個 ## 之前的內容當導言，之後每個 ## 各自成為一張卡片。 */
+function loadAbout() {
+  const raw = fs.readFileSync(path.join(ROOT, 'content', '_about.md'), 'utf8');
+  const chunks = raw.split(/^## +/m);
+  const lead = md.render(chunks.shift().trim());
+  const cards = chunks.map((chunk, i) => {
+    const nl = chunk.indexOf('\n');
+    return {
+      title: chunk.slice(0, nl).trim(),
+      html: md.render(chunk.slice(nl).trim()),
+      icon: CONFIG.about.cardIcons[i] || CONFIG.about.cardIcons[0],
+    };
+  });
+  return { lead, cards };
+}
 
 /* 社群分享縮圖：用首頁橫幅 */
 const DEFAULT_OG = BANNER.src;
@@ -251,6 +270,8 @@ ${tags}        <p class="card__foot">
 function renderIndex(articles) {
   const cards = articles.map(articleCard).join('\n');
   const desc = `${CONFIG.tagline}${CONFIG.subTagline}`;
+  const A = CONFIG.about;
+  const about = loadAbout();
 
   return `<!doctype html>
 <html lang="${CONFIG.lang}">
@@ -258,6 +279,7 @@ function renderIndex(articles) {
 ${head({ title: CONFIG.title, description: desc, canonical: CONFIG.siteUrl + '/', depth: 0 })}
 </head>
 <body data-page-slug="__site__">
+${ICON_SPRITE}
 ${siteHeader(0)}
 <main id="main">
 
@@ -290,26 +312,48 @@ ${cards}
     </div>
   </section>
 
-  <section class="wrap section" id="about" aria-labelledby="about-heading">
-    <h2 class="section__heading" id="about-heading">關於賴宥良醫師</h2>
+  <section class="section about" id="about" aria-labelledby="about-heading">
+    <div class="wrap">
 
-    <div class="prose about__prose">
-${ABOUT_HTML.trim().split('\n').map((l) => '      ' + l).join('\n')}
+      <p class="about__eyebrow">${esc(A.eyebrow)}</p>
+      <h2 class="section__heading" id="about-heading">${esc(A.heading)}</h2>
+      <p class="about__tagline">${esc(A.tagline)}</p>
+      <div class="about__lead">${about.lead.trim()}</div>
+
+      <div class="about__cards">
+${about.cards.map((c) => `        <article class="acard">
+          <h3 class="acard__title">${icon(c.icon, 'acard__icon')}<span>${esc(c.title)}</span></h3>
+          <div class="acard__body">${c.html.trim()}</div>
+        </article>`).join('\n')}
+      </div>
+
+      <div class="about__rule">
+        <h3 class="about__rule-title">${esc(A.specialtiesHeading)}</h3>
+      </div>
+
+      <ul class="tiles">
+${CONFIG.specialties.map((s) => `        <li class="tile">
+          ${icon(s.icon, 'tile__icon')}
+          <span class="tile__zh">${esc(s.zh)}</span>
+          <span class="tile__en">${esc(s.en)}</span>
+        </li>`).join('\n')}
+      </ul>
+
+      <div class="about__foot">
+        <a class="cta__btn" href="${esc(CONFIG.appointmentUrl)}" target="_blank" rel="noopener noreferrer">
+          ${icon('i-calendar', 'cta__icon')}<span>${esc(A.appointmentLabel)}</span><span class="cta__arrow" aria-hidden="true">→</span>
+        </a>
+        <ul class="info-items">
+${A.infoItems.map((it) => `          <li class="info-item">
+            ${it.icon ? icon(it.icon, 'info-item__icon') : ''}
+            <span class="info-item__text">${it.lines.map(esc).join('<br>')}</span>
+          </li>`).join('\n')}
+        </ul>
+      </div>
+
+      <p class="prose__note about__note">網站內容為一般性衛教資訊，無法取代面對面的診療。若您有具體的病情問題，請於門診與您的主治醫師討論。掛號連結將另開新視窗前往中國醫藥大學附設醫院官方系統。</p>
+
     </div>
-
-    <h3 class="about__subheading">專業領域</h3>
-    <ul class="chips">
-${CONFIG.specialties.map((s) => `      <li>${esc(s)}</li>`).join('\n')}
-    </ul>
-
-    <div class="cta">
-      <a class="cta__btn" href="${esc(CONFIG.appointmentUrl)}" target="_blank" rel="noopener noreferrer">
-        線上掛號<span class="cta__arrow" aria-hidden="true">→</span>
-      </a>
-      <p class="cta__note">將前往中國醫藥大學附設醫院官方掛號系統（另開新視窗）</p>
-    </div>
-
-    <p class="prose__note about__note">網站內容為一般性衛教資訊，無法取代面對面的診療。若您有具體的病情問題，請於門診與您的主治醫師討論。</p>
   </section>
 
 </main>
