@@ -29,8 +29,10 @@
 
   var pageSlug = document.body.getAttribute('data-page-slug');
 
-  function show(slug, n) {
-    if (typeof n !== 'number' || !isFinite(n)) return;
+  /* PostgREST 的 bigint 可能序列化成字串，統一轉成數字再判斷 */
+  function show(slug, value) {
+    var n = Number(value);
+    if (!isFinite(n)) return;
     nodes.forEach(function (el) {
       if (el.getAttribute('data-slug') !== slug) return;
       var out = el.querySelector('.views__n');
@@ -63,7 +65,7 @@
     }).then(function (r) {
       return r.ok ? r.json() : null;
     }).then(function (n) {
-      if (typeof n === 'number') show(pageSlug, n);
+      if (n !== null && n !== undefined) show(pageSlug, n);
     }).catch(function () { /* 計數失敗不影響閱讀 */ });
   }
 

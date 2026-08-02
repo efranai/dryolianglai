@@ -104,6 +104,8 @@ npm run serve
 
 ### 1. 在 Supabase SQL Editor 執行
 
+整段可重複執行，改壞了再貼一次即可。
+
 ```sql
 create table if not exists public.page_views (
   slug  text primary key,
@@ -112,11 +114,15 @@ create table if not exists public.page_views (
 
 alter table public.page_views enable row level security;
 
--- 任何人都可以讀取次數
+-- 讀取權限：RLS 政策與資料表授權兩者都要有，缺一會回 permission denied
+drop policy if exists "page_views read" on public.page_views;
 create policy "page_views read" on public.page_views
   for select using (true);
 
--- 只能透過下面這個函式累加，不能直接寫入任意數字
+grant select on public.page_views to anon, authenticated;
+
+-- 沒有 insert/update 政策，因此前端無法直接改數字，
+-- 只能透過下面這個 security definer 函式累加。
 create or replace function public.increment_view(p_slug text)
 returns bigint
 language plpgsql
@@ -133,7 +139,7 @@ begin
 end;
 $$;
 
-grant execute on function public.increment_view(text) to anon;
+grant execute on function public.increment_view(text) to anon, authenticated;
 ```
 
 ### 2. 填入 `site.config.json`
