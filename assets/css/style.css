@@ -168,51 +168,81 @@ ul, ol { padding-left: 1.25em; }
 }
 
 /* ---------- 首頁 HERO ----------
-   橫幅圖在上、文字在下，任何寬度都不疊字，
-   因此不存在文字壓在圖上被裁切或破框的可能。                */
+   橫幅左右滿版、上下壓扁；文字在圖片下方，不疊字。
+   圖檔本身已裁成 8:3，寬螢幕再用 object-fit 做輕度垂直裁切，
+   object-position 偏上以確保人像的頭部永遠在框內。          */
 
 .hero {
   background:
     radial-gradient(80rem 40rem at 85% -10%, var(--accent-bg) 0%, transparent 60%),
     var(--bg-tint);
   border-bottom: 1px solid var(--line);
-  padding-block: clamp(1.75rem, 5vw, 3rem) clamp(2rem, 6vw, 4rem);
+  padding-block: 0 clamp(1.75rem, 5vw, 3rem);
 }
 
 .hero__banner {
-  width: min(100% - 2rem, var(--wrap));
-  margin: 0 auto clamp(1.75rem, 4vw, 2.75rem);
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  width: 100%;
+  margin: 0 0 clamp(1.5rem, 4vw, 2.25rem);
+  border-bottom: 1px solid var(--line);
   background: var(--accent-bg);
 }
 
-@media (max-width: 24rem) {
-  .hero__banner { width: min(100% - 1.5rem, var(--wrap)); }
+.hero__banner img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 8 / 3;          /* 與圖檔一致，窄螢幕完全不裁切 */
+  height: auto;
+  object-fit: cover;
+  object-position: 50% 38%;
 }
 
-.hero__banner img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;   /* 與圖檔一致，載入前就先佔好位，避免版面跳動 */
-  object-fit: cover;
+/* 寬螢幕：左文字、右圖片並排，整體高度取兩者較大值而非相加，
+   Hero 因此只佔約四成視窗高度。圖片改為橫向輕度裁切，
+   object-position 偏左以保留人像，被裁掉的是右側牆面。      */
+@media (min-width: 60rem) {
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
+    align-items: stretch;
+    padding-block: 0;
+    /* 用 % 而非 100vw：100vw 含捲軸寬度，會讓左緣比內容區多 8px 對不齊 */
+    padding-inline: max(1rem, calc((100% - var(--wrap)) / 2)) 0;
+    min-height: clamp(300px, 42vh, 440px);
+  }
+
+  .hero__banner {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    border-bottom: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .hero__banner img {
+    height: 100%;
+    min-height: clamp(300px, 42vh, 440px);
+    aspect-ratio: auto;
+    object-position: 10% 42%;   /* 偏左：人像在圖片左側，優先保全 */
+  }
+
+  .hero__inner {
+    grid-column: 1;
+    grid-row: 1;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    /* 左邊距由 .hero 的 padding 負責（已對齊 .wrap），這裡只留與圖片的間距 */
+    padding-inline: 0 clamp(1.5rem, 3vw, 2.75rem);
+    padding-block: clamp(1.75rem, 4vw, 2.75rem);
+  }
 }
 
 .hero__text { min-width: 0; }
 
-.hero__eyebrow {
-  margin: 0 0 .7rem;
-  font-size: .8rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 600;
-}
-
 .hero__title {
-  margin: 0 0 1.4rem;
+  margin: 0 0 .85rem;
   font-size: clamp(1.5rem, 1.05rem + 2.3vw, 2.4rem);
   letter-spacing: .01em;
 }
@@ -223,54 +253,31 @@ ul, ol { padding-left: 1.25em; }
 .hero__title-name { white-space: nowrap; }
 .hero__title-sep  { color: var(--ink-faint); font-weight: 400; margin-inline: .1em; }
 
-/* 大頭照 + 單位 + 專長定位 */
-.hero__byline {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 0 0 1.4rem;
-  padding: .9rem 1.25rem .9rem .9rem;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 1.6rem;
-  box-shadow: var(--shadow);
-  width: fit-content;
-  max-width: 100%;
-}
-
-.hero__portrait {
-  flex: none;
-  width: clamp(3.25rem, 3rem + 2vw, 4.25rem);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center 18%;   /* 讓臉部落在圓框中央 */
-  background: var(--accent-bg);
-}
-
-.hero__byline-text { min-width: 0; }
-
 .hero__org {
-  margin: 0;
-  font-size: clamp(.78rem, .75rem + .2vw, .88rem);
-  line-height: 1.6;
+  margin: 0 0 .2rem;
+  font-size: clamp(.82rem, .78rem + .25vw, .95rem);
+  line-height: 1.7;
   color: var(--ink-soft);
   font-weight: 600;
+  padding-left: .75rem;
+  border-left: 3px solid var(--accent);
 }
 
 .hero__credential {
-  margin: .25rem 0 0;
-  font-size: clamp(.78rem, .74rem + .25vw, .9rem);
-  line-height: 1.6;
+  margin: 0 0 1.1rem;
+  font-size: clamp(.82rem, .78rem + .25vw, .95rem);
+  line-height: 1.7;
   color: var(--accent);
   font-weight: 600;
   letter-spacing: .01em;
+  padding-left: .75rem;
+  border-left: 3px solid transparent;
 }
 
 .hero__lead {
-  margin: 0 0 .5rem;
-  max-width: 32em;
-  font-size: clamp(.98rem, .93rem + .4vw, 1.15rem);
+  margin: 0 0 .4rem;
+  max-width: 34em;
+  font-size: clamp(.98rem, .93rem + .4vw, 1.12rem);
   line-height: 1.85;
 }
 

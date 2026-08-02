@@ -43,11 +43,7 @@ const BANNER = CONFIG.hero.banner;
 /* 「關於」區塊的內文獨立成 content/_about.md，改文字不必動程式碼 */
 const ABOUT_HTML = md.render(fs.readFileSync(path.join(ROOT, 'content', '_about.md'), 'utf8'));
 
-/* 大頭照若尚未放入 assets/，byline 只顯示單位與定位，不會出現破圖 */
-const PORTRAIT = CONFIG.hero.portrait;
-const HAS_PORTRAIT = fs.existsSync(path.join(ROOT, PORTRAIT.src));
-
-/* 社群分享縮圖：用首頁橫幅，16:9 剛好符合 og:image 的建議比例 */
+/* 社群分享縮圖：用首頁橫幅 */
 const DEFAULT_OG = BANNER.src;
 
 /* ---------- 工具 ---------- */
@@ -276,17 +272,9 @@ ${siteHeader(0)}
     <div class="wrap hero__inner">
 
       <div class="hero__text">
-        <p class="hero__eyebrow">台中・質子治療與放射治療</p>
         <h1 class="hero__title"><span class="hero__title-main">${esc(CONFIG.title.split('｜')[0])}</span><span class="hero__title-sep">｜</span><span class="hero__title-name">${esc(CONFIG.title.split('｜')[1])}</span></h1>
-
-        <div class="hero__byline">
-${HAS_PORTRAIT ? `          <img class="hero__portrait" src="${esc(PORTRAIT.src)}" alt="${esc(PORTRAIT.alt)}"
-               width="112" height="112" fetchpriority="high" decoding="async">\n` : ''}          <div class="hero__byline-text">
-            <p class="hero__org">${esc(CONFIG.affiliation)}</p>
-            <p class="hero__credential">${esc(CONFIG.credential)}</p>
-          </div>
-        </div>
-
+        <p class="hero__org">${esc(CONFIG.affiliation)}</p>
+        <p class="hero__credential">${esc(CONFIG.credential)}</p>
         <p class="hero__lead">${esc(CONFIG.tagline)}</p>
         <p class="hero__lead hero__lead--muted">${esc(CONFIG.subTagline)}</p>
       </div>
@@ -479,4 +467,3 @@ for (const a of articles) {
 }
 console.log(`\n輸出 ${written.length} 個檔案。`);
 if (!CONFIG.supabase.url) console.log('提醒：site.config.json 的 supabase 尚未設定，計數器目前為隱藏狀態。');
-if (!HAS_PORTRAIT) console.log(`提醒：找不到 ${PORTRAIT.src}，首頁 byline 目前只顯示姓名與單位。放入照片後重新建置即可。`);

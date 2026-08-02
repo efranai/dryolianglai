@@ -23,11 +23,7 @@
       "src": "assets/img/hero-doctor.jpg",
       "alt": "賴宥良醫師身著白袍站在質子治療室前，背景為旋轉機架、治療噴嘴與機器人治療床",
       "width": 1600,
-      "height": 900
-    },
-    "portrait": {
-      "src": "assets/img/portrait.jpg",
-      "alt": "賴宥良醫師"
+      "height": 600
     }
   },
   "supabase": {
