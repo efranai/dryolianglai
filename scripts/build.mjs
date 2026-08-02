@@ -38,6 +38,19 @@ function inlineSvg(relPath) {
   return svgCache.get(relPath);
 }
 
+/* 在文章內文中插入自繪插圖的寫法：
+     <!--svg:assets/img/xxx.svg|圖說文字-->
+   （用 HTML 註解當標記，Markdown 會原樣輸出，再於這裡換成內嵌的 <figure>）*/
+const SVG_TOKEN = /<!--\s*svg:\s*([^|\s]+?)\s*(?:\|\s*([\s\S]*?))?\s*-->/g;
+
+function renderBody(body) {
+  return md.render(body).replace(SVG_TOKEN, (_, src, caption) =>
+    `<figure class="prose-figure prose-figure--illus">${inlineSvg(src)}` +
+    (caption ? `<figcaption>${esc(caption.trim())}</figcaption>` : '') +
+    `</figure>`
+  );
+}
+
 const BANNER = CONFIG.hero.banner;
 const ORDER = Array.isArray(CONFIG.articleOrder) ? CONFIG.articleOrder : [];
 
@@ -155,7 +168,7 @@ function loadArticles() {
         published,
         updated,
         wasUpdated: isoDate(updated) !== isoDate(data.date),
-        html: md.render(body),
+        html: renderBody(body),
         url: `p/${slug}/`,
       };
     })

@@ -475,8 +475,78 @@ ul, ol { padding-left: 1.25em; }
 
 .article-hero svg { padding: .75rem .5rem; }
 
+/* ---------- 文章內自繪插圖 ---------- */
+
+.illus { display: block; width: 100%; height: auto; }
+.illus text { font-family: var(--font); }
+
+.il-t     { fill: var(--ink);      font-size: 16px;   font-weight: 600; }
+.il-t-sub { fill: var(--ink-faint); font-size: 13.5px; }
+.il-t-num { fill: var(--bg);       font-size: 14px;   font-weight: 700; text-anchor: middle; }
+.il-t-rest { fill: var(--ink-faint); opacity: .65; }
+
+.il-anchor-mid { text-anchor: middle; }
+.il-anchor-end { text-anchor: end; }
+
+.il-machine     { fill: var(--ink-soft); opacity: .75; }
+.il-accent-fill { fill: var(--accent); }
+.il-beam        { fill: var(--accent); opacity: .14; }
+.il-lead        { fill: none; stroke: var(--ink-faint); stroke-width: 1.4; stroke-dasharray: 4 4; opacity: .7; }
+
+.il-cell           { stroke-width: 2; }
+.il-cell--warm     { fill: color-mix(in srgb, var(--warm) 12%, transparent); stroke: var(--warm); stroke-opacity: .5; }
+.il-cell--accent   { fill: var(--accent-bg); stroke: var(--accent); stroke-opacity: .5; }
+
+.il-dna         { fill: none; stroke: var(--accent); stroke-width: 2.4; stroke-linecap: round; }
+.il-dna--broken { stroke: var(--warm); }
+.il-break       { fill: none; stroke: var(--warm); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+.il-badge circle       { stroke: var(--bg); stroke-width: 3; }
+.il-badge--warm circle   { fill: var(--warm); }
+.il-badge--accent circle { fill: var(--accent); }
+.il-mark { fill: none; stroke: var(--bg); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+/* 流程圖 */
+.il-flow-arrow { fill: none; stroke: var(--line); stroke-width: 2; stroke-dasharray: 6 6; }
+.il-step       { fill: var(--accent-bg); stroke: var(--accent); stroke-width: 2; stroke-opacity: .45; }
+.il-icon       { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.il-icon-dot   { fill: var(--accent); stroke: none; }
+
+/* 療程日曆 */
+.il-day rect        { stroke-width: 1.5; }
+.il-day--on rect    { fill: var(--accent); stroke: var(--accent); }
+.il-day--off rect   { fill: var(--bg-tint); stroke: var(--line); }
+.il-day--ghost rect { fill: none; stroke: var(--line); stroke-dasharray: 5 5; }
+.il-check           { fill: none; stroke: var(--bg); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* 窄螢幕：插圖等比縮到約四成，字級要放大才讀得到 */
+@media (max-width: 46rem) {
+  .il-t      { font-size: 27px; }
+  .il-t-sub  { font-size: 23px; }
+  .il-t-num  { font-size: 22px; }
+  .il-dna, .il-break { stroke-width: 3.4; }
+  .il-icon, .il-flow-arrow { stroke-width: 3; }
+  .il-check  { stroke-width: 3.6; }
+  /* 次要說明放大後會超出畫布，窄螢幕收起——圖說已完整交代同樣的內容 */
+  .il-detail { display: none; }
+}
+
 /* 內文中的圖說區塊 */
 .prose-figure { margin: 2rem 0; }
+
+.prose-figure--illus img,
+.prose-figure--illus svg {
+  padding: 1rem .75rem;
+  background: var(--bg);
+}
+
+.prose-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
 
 .prose-figure img {
   width: 100%;

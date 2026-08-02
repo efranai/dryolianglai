@@ -1,0 +1,74 @@
+<svg class="illus" viewBox="0 0 720 268" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="sched-title sched-desc">
+  <title id="sched-title">放射治療的每週療程安排示意圖</title>
+  <desc id="sched-desc">以日曆呈現：週一至週五為治療日，週六與週日休息。療程通常持續一至八週，實際次數依癌症種類與治療目的而不同。</desc>
+
+  <!-- 星期標頭 -->
+  <g class="il-t-sub il-anchor-mid">
+    <text x="124" y="34">一</text>
+    <text x="205" y="34">二</text>
+    <text x="286" y="34">三</text>
+    <text x="367" y="34">四</text>
+    <text x="448" y="34">五</text>
+    <text x="529" y="34" class="il-t-rest">六</text>
+    <text x="610" y="34" class="il-t-rest">日</text>
+  </g>
+
+  <!-- 第 1 週 -->
+  <text class="il-t-sub il-anchor-end" x="76" y="75">第 1 週</text>
+  <g class="il-day il-day--on">
+    <rect x="88"  y="48" width="72" height="44" rx="7" />
+    <rect x="169" y="48" width="72" height="44" rx="7" />
+    <rect x="250" y="48" width="72" height="44" rx="7" />
+    <rect x="331" y="48" width="72" height="44" rx="7" />
+    <rect x="412" y="48" width="72" height="44" rx="7" />
+  </g>
+  <g class="il-day il-day--off">
+    <rect x="493" y="48" width="72" height="44" rx="7" />
+    <rect x="574" y="48" width="72" height="44" rx="7" />
+  </g>
+  <g class="il-check">
+    <path d="M118 70 l5 6 l10 -12" /><path d="M199 70 l5 6 l10 -12" /><path d="M280 70 l5 6 l10 -12" />
+    <path d="M361 70 l5 6 l10 -12" /><path d="M442 70 l5 6 l10 -12" />
+  </g>
+
+  <!-- 第 2 週 -->
+  <text class="il-t-sub il-anchor-end" x="76" y="129">第 2 週</text>
+  <g class="il-day il-day--on">
+    <rect x="88"  y="102" width="72" height="44" rx="7" />
+    <rect x="169" y="102" width="72" height="44" rx="7" />
+    <rect x="250" y="102" width="72" height="44" rx="7" />
+    <rect x="331" y="102" width="72" height="44" rx="7" />
+    <rect x="412" y="102" width="72" height="44" rx="7" />
+  </g>
+  <g class="il-day il-day--off">
+    <rect x="493" y="102" width="72" height="44" rx="7" />
+    <rect x="574" y="102" width="72" height="44" rx="7" />
+  </g>
+  <g class="il-check">
+    <path d="M118 124 l5 6 l10 -12" /><path d="M199 124 l5 6 l10 -12" /><path d="M280 124 l5 6 l10 -12" />
+    <path d="M361 124 l5 6 l10 -12" /><path d="M442 124 l5 6 l10 -12" />
+  </g>
+
+  <!-- 後續週次 -->
+  <text class="il-t-sub il-anchor-end" x="76" y="183">⋯</text>
+  <g class="il-day il-day--ghost">
+    <rect x="88"  y="156" width="72" height="44" rx="7" />
+    <rect x="169" y="156" width="72" height="44" rx="7" />
+    <rect x="250" y="156" width="72" height="44" rx="7" />
+    <rect x="331" y="156" width="72" height="44" rx="7" />
+    <rect x="412" y="156" width="72" height="44" rx="7" />
+    <rect x="493" y="156" width="72" height="44" rx="7" />
+    <rect x="574" y="156" width="72" height="44" rx="7" />
+  </g>
+
+  <!-- 圖例 -->
+  <g class="il-legend">
+    <rect class="il-day il-day--on" x="196" y="222" width="20" height="15" rx="4" />
+    <text class="il-t-sub" x="224" y="234">治療日</text>
+    <rect class="il-day il-day--off" x="308" y="222" width="20" height="15" rx="4" />
+    <text class="il-t-sub" x="336" y="234">休息</text>
+  </g>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="262">療程約 1 至 8 週，實際次數依癌症種類與治療目的而不同</text>
+</svg>

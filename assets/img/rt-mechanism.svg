@@ -1,0 +1,67 @@
+<svg class="illus" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="mech-title mech-desc">
+  <title id="mech-title">放射線破壞癌細胞 DNA 的示意圖</title>
+  <desc id="mech-desc">治療機射出的放射線同時通過癌細胞與正常細胞。癌細胞的 DNA 斷裂後修復能力較差，逐漸失去分裂能力而死亡；正常細胞的修復能力較好，多數能夠修復損傷並存活。</desc>
+
+  <!-- 治療機頭與射束 -->
+  <rect class="il-machine" x="24" y="176" width="54" height="42" rx="9" />
+  <path class="il-machine" d="M78 184 L78 210 L102 202 L102 192 Z" />
+  <rect class="il-accent-fill" x="99" y="190" width="6" height="14" rx="3" />
+
+  <path class="il-beam" d="M105 190 L105 204 L352 336 L352 62 Z" />
+
+  <text class="il-t-sub il-anchor-mid" x="150" y="42">放射線</text>
+  <path class="il-lead" d="M150 52 L150 84" />
+
+  <!-- ===== 癌細胞 ===== -->
+  <g>
+    <circle class="il-cell il-cell--warm" cx="428" cy="122" r="70" />
+
+    <!-- 斷裂的 DNA -->
+    <g class="il-dna il-dna--broken">
+      <path d="M412 78 q24 16 0 32" />
+      <path d="M444 78 q-24 16 0 32" />
+      <path d="M414 76 h28" />
+      <path d="M424 106 h8" />
+      <path d="M412 138 q24 16 0 32" />
+      <path d="M444 138 q-24 16 0 32" />
+      <path d="M424 140 h8" />
+      <path d="M414 170 h28" />
+    </g>
+    <path class="il-break" d="M400 116 l14 8 l-10 8 l16 6" />
+    <path class="il-break" d="M456 116 l-14 8 l10 8 l-16 6" />
+
+    <g class="il-badge il-badge--warm">
+      <circle cx="484" cy="70" r="17" />
+      <path class="il-mark" d="M478 64 l12 12 M490 64 l-12 12" />
+    </g>
+  </g>
+
+  <text class="il-t" x="524" y="108">癌細胞</text>
+  <text class="il-t-sub il-detail" x="524" y="132">DNA 斷裂後修復能力差，</text>
+  <text class="il-t-sub il-detail" x="524" y="152">逐漸失去分裂能力而死亡</text>
+
+  <!-- ===== 正常細胞 ===== -->
+  <g>
+    <circle class="il-cell il-cell--accent" cx="428" cy="288" r="70" />
+
+    <!-- 完整的 DNA -->
+    <g class="il-dna">
+      <path d="M412 244 q24 16 0 32 q-24 16 0 32 q24 16 0 32" />
+      <path d="M444 244 q-24 16 0 32 q24 16 0 32 q-24 16 0 32" />
+      <path d="M414 242 h28" />
+      <path d="M424 272 h8" />
+      <path d="M414 304 h28" />
+      <path d="M424 336 h8" />
+    </g>
+
+    <g class="il-badge il-badge--accent">
+      <circle cx="484" cy="236" r="17" />
+      <path class="il-mark" d="M477 236 l5 6 l10 -12" />
+    </g>
+  </g>
+
+  <text class="il-t" x="524" y="274">正常細胞</text>
+  <text class="il-t-sub il-detail" x="524" y="298">修復能力較好，</text>
+  <text class="il-t-sub il-detail" x="524" y="318">多數能修復損傷並存活</text>
+</svg>

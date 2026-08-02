@@ -1,0 +1,77 @@
+<svg class="illus" viewBox="0 0 720 210" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="flow-title flow-desc">
+  <title id="flow-title">放射治療的四個流程步驟</title>
+  <desc id="flow-desc">依序為：定位電腦斷層取得治療部位影像、製作固定裝置以維持每次相同姿勢、由醫師與醫學物理師共同設計治療計畫、開始每日治療並於每次治療前確認影像。</desc>
+
+  <!-- 步驟之間的連接線 -->
+  <path class="il-flow-arrow" d="M138 66 H222" />
+  <path class="il-flow-arrow" d="M314 66 H398" />
+  <path class="il-flow-arrow" d="M490 66 H574" />
+
+  <!-- ① 定位電腦斷層 -->
+  <g transform="translate(92 66)">
+    <circle class="il-step" r="38" />
+    <g class="il-icon">
+      <circle r="17" />
+      <circle r="7" />
+      <path d="M-22 12 H22" />
+    </g>
+  </g>
+  <g class="il-badge il-badge--accent">
+    <circle cx="120" cy="40" r="14" />
+    <text class="il-t-num" x="120" y="45">1</text>
+  </g>
+  <text class="il-t il-anchor-mid" x="92" y="136">定位電腦斷層</text>
+  <text class="il-t-sub il-anchor-mid" x="92" y="158">取得治療部位影像</text>
+
+  <!-- ② 製作固定裝置 -->
+  <g transform="translate(268 66)">
+    <circle class="il-step" r="38" />
+    <g class="il-icon">
+      <path d="M-13 -17 q13 -7 26 0 v18 q0 15 -13 20 q-13 -5 -13 -20 z" />
+      <path d="M-13 -8 H-21 M13 -8 H21" />
+      <path d="M-5 -6 h4 M1 -6 h4" />
+    </g>
+  </g>
+  <g class="il-badge il-badge--accent">
+    <circle cx="296" cy="40" r="14" />
+    <text class="il-t-num" x="296" y="45">2</text>
+  </g>
+  <text class="il-t il-anchor-mid" x="268" y="136">製作固定裝置</text>
+  <text class="il-t-sub il-anchor-mid" x="268" y="158">每次維持相同姿勢</text>
+
+  <!-- ③ 設計治療計畫 -->
+  <g transform="translate(444 66)">
+    <circle class="il-step" r="38" />
+    <g class="il-icon">
+      <rect x="-15" y="-19" width="30" height="38" rx="4" />
+      <path d="M-8 -11 H8 M-8 -4 H8 M-8 3 H2" />
+      <circle cx="7" cy="10" r="6" />
+      <circle cx="7" cy="10" r="1.6" class="il-icon-dot" />
+    </g>
+  </g>
+  <g class="il-badge il-badge--accent">
+    <circle cx="472" cy="40" r="14" />
+    <text class="il-t-num" x="472" y="45">3</text>
+  </g>
+  <text class="il-t il-anchor-mid" x="444" y="136">設計治療計畫</text>
+  <text class="il-t-sub il-anchor-mid" x="444" y="158">醫師與物理師共同規劃</text>
+
+  <!-- ④ 開始每日治療 -->
+  <g transform="translate(620 66)">
+    <circle class="il-step" r="38" />
+    <g class="il-icon">
+      <path d="M-19 -2 a19 19 0 0 1 38 0" />
+      <rect x="-6" y="-16" width="12" height="9" rx="2" />
+      <path d="M0 -7 V4" />
+      <rect x="-21" y="9" width="42" height="6" rx="3" />
+      <path d="M-9 9 a9 5 0 0 1 18 0" />
+    </g>
+  </g>
+  <g class="il-badge il-badge--accent">
+    <circle cx="648" cy="40" r="14" />
+    <text class="il-t-num" x="648" y="45">4</text>
+  </g>
+  <text class="il-t il-anchor-mid" x="620" y="136">開始每日治療</text>
+  <text class="il-t-sub il-anchor-mid" x="620" y="158">每次治療前影像確認</text>
+</svg>

@@ -13,7 +13,7 @@
 <meta property="og:title" content="什麼是放射治療？帶您認識癌症治療的重要支柱｜賴宥良醫師">
 <meta property="og:description" content="全球約有一半以上的癌症病人會接受放射治療。從原理、治療目的、會不會痛、有沒有輻射殘留，到療程怎麼安排，一次說清楚。">
 <meta property="og:url" content="https://med.dryolianglai.net/p/what-is-radiation-therapy/">
-<meta property="og:image" content="https://med.dryolianglai.net/assets/img/hero-doctor.jpg">
+<meta property="og:image" content="https://med.dryolianglai.net/assets/img/rt-mechanism.svg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../../assets/css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎗️</text></svg>">
@@ -66,7 +66,76 @@
       </p>
     </header>
 
+    <figure class="article-hero">
+      <svg class="illus" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="mech-title mech-desc">
+  <title id="mech-title">放射線破壞癌細胞 DNA 的示意圖</title>
+  <desc id="mech-desc">治療機射出的放射線同時通過癌細胞與正常細胞。癌細胞的 DNA 斷裂後修復能力較差，逐漸失去分裂能力而死亡；正常細胞的修復能力較好，多數能夠修復損傷並存活。</desc>
 
+  <!-- 治療機頭與射束 -->
+  <rect class="il-machine" x="24" y="176" width="54" height="42" rx="9" />
+  <path class="il-machine" d="M78 184 L78 210 L102 202 L102 192 Z" />
+  <rect class="il-accent-fill" x="99" y="190" width="6" height="14" rx="3" />
+
+  <path class="il-beam" d="M105 190 L105 204 L352 336 L352 62 Z" />
+
+  <text class="il-t-sub il-anchor-mid" x="150" y="42">放射線</text>
+  <path class="il-lead" d="M150 52 L150 84" />
+
+  <!-- ===== 癌細胞 ===== -->
+  <g>
+    <circle class="il-cell il-cell--warm" cx="428" cy="122" r="70" />
+
+    <!-- 斷裂的 DNA -->
+    <g class="il-dna il-dna--broken">
+      <path d="M412 78 q24 16 0 32" />
+      <path d="M444 78 q-24 16 0 32" />
+      <path d="M414 76 h28" />
+      <path d="M424 106 h8" />
+      <path d="M412 138 q24 16 0 32" />
+      <path d="M444 138 q-24 16 0 32" />
+      <path d="M424 140 h8" />
+      <path d="M414 170 h28" />
+    </g>
+    <path class="il-break" d="M400 116 l14 8 l-10 8 l16 6" />
+    <path class="il-break" d="M456 116 l-14 8 l10 8 l-16 6" />
+
+    <g class="il-badge il-badge--warm">
+      <circle cx="484" cy="70" r="17" />
+      <path class="il-mark" d="M478 64 l12 12 M490 64 l-12 12" />
+    </g>
+  </g>
+
+  <text class="il-t" x="524" y="108">癌細胞</text>
+  <text class="il-t-sub il-detail" x="524" y="132">DNA 斷裂後修復能力差，</text>
+  <text class="il-t-sub il-detail" x="524" y="152">逐漸失去分裂能力而死亡</text>
+
+  <!-- ===== 正常細胞 ===== -->
+  <g>
+    <circle class="il-cell il-cell--accent" cx="428" cy="288" r="70" />
+
+    <!-- 完整的 DNA -->
+    <g class="il-dna">
+      <path d="M412 244 q24 16 0 32 q-24 16 0 32 q24 16 0 32" />
+      <path d="M444 244 q-24 16 0 32 q24 16 0 32 q-24 16 0 32" />
+      <path d="M414 242 h28" />
+      <path d="M424 272 h8" />
+      <path d="M414 304 h28" />
+      <path d="M424 336 h8" />
+    </g>
+
+    <g class="il-badge il-badge--accent">
+      <circle cx="484" cy="236" r="17" />
+      <path class="il-mark" d="M477 236 l5 6 l10 -12" />
+    </g>
+  </g>
+
+  <text class="il-t" x="524" y="274">正常細胞</text>
+  <text class="il-t-sub il-detail" x="524" y="298">修復能力較好，</text>
+  <text class="il-t-sub il-detail" x="524" y="318">多數能修復損傷並存活</text>
+</svg>
+      <figcaption>放射線會同時通過癌細胞與正常細胞，關鍵差別在於修復能力——癌細胞的 DNA 斷裂後難以修復，正常細胞則多數能修復損傷並存活。</figcaption>
+    </figure>
 
     <div class="prose">
 <p>當醫師告訴您需要接受放射治療時，心中可能會浮現許多疑問：</p>
@@ -114,9 +183,160 @@
 <p>在正式開始治療之前，通常需要先安排<strong>定位電腦斷層（Simulation）</strong>。</p>
 <p>醫療團隊會依照治療部位製作固定裝置，協助您在每次治療時維持相同姿勢，再利用定位影像勾畫腫瘤與正常器官，由放射腫瘤科醫師、醫學物理師及放射師共同設計個人化治療計畫。</p>
 <p>完成所有規劃後，才會開始正式治療，以確保每一次照射都能精準且安全。</p>
+<figure class="prose-figure prose-figure--illus"><svg class="illus" viewBox="0 0 720 210" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="flow-title flow-desc">
+  <title id="flow-title">放射治療的四個流程步驟</title>
+  <desc id="flow-desc">依序為：定位電腦斷層取得治療部位影像、製作固定裝置以維持每次相同姿勢、由醫師與醫學物理師共同設計治療計畫、開始每日治療並於每次治療前確認影像。</desc>
+
+  <!-- 步驟之間的連接線 -->
+  <path class="il-flow-arrow" d="M138 66 H222" />
+  <path class="il-flow-arrow" d="M314 66 H398" />
+  <path class="il-flow-arrow" d="M490 66 H574" />
+
+  <!-- ① 定位電腦斷層 -->
+  <g transform="translate(92 66)">
+    <circle class="il-step" r="38" />
+    <g class="il-icon">
+      <circle r="17" />
+      <circle r="7" />
+      <path d="M-22 12 H22" />
+    </g>
+  </g>
+  <g class="il-badge il-badge--accent">
+    <circle cx="120" cy="40" r="14" />
+    <text class="il-t-num" x="120" y="45">1</text>
+  </g>
+  <text class="il-t il-anchor-mid" x="92" y="136">定位電腦斷層</text>
+  <text class="il-t-sub il-anchor-mid" x="92" y="158">取得治療部位影像</text>
+
+  <!-- ② 製作固定裝置 -->
+  <g transform="translate(268 66)">
+    <circle class="il-step" r="38" />
+    <g class="il-icon">
+      <path d="M-13 -17 q13 -7 26 0 v18 q0 15 -13 20 q-13 -5 -13 -20 z" />
+      <path d="M-13 -8 H-21 M13 -8 H21" />
+      <path d="M-5 -6 h4 M1 -6 h4" />
+    </g>
+  </g>
+  <g class="il-badge il-badge--accent">
+    <circle cx="296" cy="40" r="14" />
+    <text class="il-t-num" x="296" y="45">2</text>
+  </g>
+  <text class="il-t il-anchor-mid" x="268" y="136">製作固定裝置</text>
+  <text class="il-t-sub il-anchor-mid" x="268" y="158">每次維持相同姿勢</text>
+
+  <!-- ③ 設計治療計畫 -->
+  <g transform="translate(444 66)">
+    <circle class="il-step" r="38" />
+    <g class="il-icon">
+      <rect x="-15" y="-19" width="30" height="38" rx="4" />
+      <path d="M-8 -11 H8 M-8 -4 H8 M-8 3 H2" />
+      <circle cx="7" cy="10" r="6" />
+      <circle cx="7" cy="10" r="1.6" class="il-icon-dot" />
+    </g>
+  </g>
+  <g class="il-badge il-badge--accent">
+    <circle cx="472" cy="40" r="14" />
+    <text class="il-t-num" x="472" y="45">3</text>
+  </g>
+  <text class="il-t il-anchor-mid" x="444" y="136">設計治療計畫</text>
+  <text class="il-t-sub il-anchor-mid" x="444" y="158">醫師與物理師共同規劃</text>
+
+  <!-- ④ 開始每日治療 -->
+  <g transform="translate(620 66)">
+    <circle class="il-step" r="38" />
+    <g class="il-icon">
+      <path d="M-19 -2 a19 19 0 0 1 38 0" />
+      <rect x="-6" y="-16" width="12" height="9" rx="2" />
+      <path d="M0 -7 V4" />
+      <rect x="-21" y="9" width="42" height="6" rx="3" />
+      <path d="M-9 9 a9 5 0 0 1 18 0" />
+    </g>
+  </g>
+  <g class="il-badge il-badge--accent">
+    <circle cx="648" cy="40" r="14" />
+    <text class="il-t-num" x="648" y="45">4</text>
+  </g>
+  <text class="il-t il-anchor-mid" x="620" y="136">開始每日治療</text>
+  <text class="il-t-sub il-anchor-mid" x="620" y="158">每次治療前影像確認</text>
+</svg><figcaption>從定位到開始治療的完整流程。前三個步驟通常在同一次或相鄰幾天內完成，計畫設計則需要數個工作天。</figcaption></figure>
 <h2>放射治療需要每天做嗎？</h2>
 <p>多數放射治療採分次進行，通常是每週治療五天（週一至週五），週末休息。</p>
 <p>療程可能持續一至八週，實際次數則依癌症種類、治療目的及治療方式而有所不同。</p>
+<figure class="prose-figure prose-figure--illus"><svg class="illus" viewBox="0 0 720 268" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="sched-title sched-desc">
+  <title id="sched-title">放射治療的每週療程安排示意圖</title>
+  <desc id="sched-desc">以日曆呈現：週一至週五為治療日，週六與週日休息。療程通常持續一至八週，實際次數依癌症種類與治療目的而不同。</desc>
+
+  <!-- 星期標頭 -->
+  <g class="il-t-sub il-anchor-mid">
+    <text x="124" y="34">一</text>
+    <text x="205" y="34">二</text>
+    <text x="286" y="34">三</text>
+    <text x="367" y="34">四</text>
+    <text x="448" y="34">五</text>
+    <text x="529" y="34" class="il-t-rest">六</text>
+    <text x="610" y="34" class="il-t-rest">日</text>
+  </g>
+
+  <!-- 第 1 週 -->
+  <text class="il-t-sub il-anchor-end" x="76" y="75">第 1 週</text>
+  <g class="il-day il-day--on">
+    <rect x="88"  y="48" width="72" height="44" rx="7" />
+    <rect x="169" y="48" width="72" height="44" rx="7" />
+    <rect x="250" y="48" width="72" height="44" rx="7" />
+    <rect x="331" y="48" width="72" height="44" rx="7" />
+    <rect x="412" y="48" width="72" height="44" rx="7" />
+  </g>
+  <g class="il-day il-day--off">
+    <rect x="493" y="48" width="72" height="44" rx="7" />
+    <rect x="574" y="48" width="72" height="44" rx="7" />
+  </g>
+  <g class="il-check">
+    <path d="M118 70 l5 6 l10 -12" /><path d="M199 70 l5 6 l10 -12" /><path d="M280 70 l5 6 l10 -12" />
+    <path d="M361 70 l5 6 l10 -12" /><path d="M442 70 l5 6 l10 -12" />
+  </g>
+
+  <!-- 第 2 週 -->
+  <text class="il-t-sub il-anchor-end" x="76" y="129">第 2 週</text>
+  <g class="il-day il-day--on">
+    <rect x="88"  y="102" width="72" height="44" rx="7" />
+    <rect x="169" y="102" width="72" height="44" rx="7" />
+    <rect x="250" y="102" width="72" height="44" rx="7" />
+    <rect x="331" y="102" width="72" height="44" rx="7" />
+    <rect x="412" y="102" width="72" height="44" rx="7" />
+  </g>
+  <g class="il-day il-day--off">
+    <rect x="493" y="102" width="72" height="44" rx="7" />
+    <rect x="574" y="102" width="72" height="44" rx="7" />
+  </g>
+  <g class="il-check">
+    <path d="M118 124 l5 6 l10 -12" /><path d="M199 124 l5 6 l10 -12" /><path d="M280 124 l5 6 l10 -12" />
+    <path d="M361 124 l5 6 l10 -12" /><path d="M442 124 l5 6 l10 -12" />
+  </g>
+
+  <!-- 後續週次 -->
+  <text class="il-t-sub il-anchor-end" x="76" y="183">⋯</text>
+  <g class="il-day il-day--ghost">
+    <rect x="88"  y="156" width="72" height="44" rx="7" />
+    <rect x="169" y="156" width="72" height="44" rx="7" />
+    <rect x="250" y="156" width="72" height="44" rx="7" />
+    <rect x="331" y="156" width="72" height="44" rx="7" />
+    <rect x="412" y="156" width="72" height="44" rx="7" />
+    <rect x="493" y="156" width="72" height="44" rx="7" />
+    <rect x="574" y="156" width="72" height="44" rx="7" />
+  </g>
+
+  <!-- 圖例 -->
+  <g class="il-legend">
+    <rect class="il-day il-day--on" x="196" y="222" width="20" height="15" rx="4" />
+    <text class="il-t-sub" x="224" y="234">治療日</text>
+    <rect class="il-day il-day--off" x="308" y="222" width="20" height="15" rx="4" />
+    <text class="il-t-sub" x="336" y="234">休息</text>
+  </g>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="262">療程約 1 至 8 週，實際次數依癌症種類與治療目的而不同</text>
+</svg><figcaption>典型的療程安排：週一至週五治療，週末休息，讓正常組織有時間修復。</figcaption></figure>
 <p>近年隨著治療技術進步，部分癌症也可以採用較少次數的療程，在適當病人身上達到良好的治療效果。</p>
 <h2>放射治療不只是治療腫瘤，更希望守護生活品質</h2>
 <p>現代放射治療追求的不只是提高治療成功率，更希望在治療過程中減少副作用、保留器官功能，讓病人在治療後仍能維持良好的生活品質。</p>
