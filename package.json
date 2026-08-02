@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "serve": "node scripts/serve.mjs"
+    "serve": "node scripts/serve.mjs",
+    "dist": "node scripts/dist.mjs",
+    "deploy": "npm run build && npm run dist && wrangler pages deploy dist --project-name dryolianglai --branch main"
   },
   "dependencies": {
     "markdown-it": "^14.1.0"
