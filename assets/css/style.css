@@ -426,9 +426,22 @@ ul, ol { padding-left: 1.25em; }
 
 /* ---------- 文章 ---------- */
 
-.article { padding-block: clamp(2rem, 5vw, 3.5rem); }
+/* 文章頁用自己的欄寬並置中：比一般 .wrap 窄（維持可讀行長），
+   但比舊版的 38rem 寬得多，左右留白對稱，不會右邊空一大塊。 */
+.article {
+  width: min(100% - 2rem, 56rem);
+  padding-block: clamp(2rem, 5vw, 3.5rem);
+}
 
-.article-head { max-width: var(--prose); }
+@media (max-width: 24rem) {
+  .article { width: min(100% - 1.5rem, 56rem); }
+}
+
+/* 欄寬已由 .article 決定，內部元素一律填滿 */
+.article-head,
+.article-hero,
+.article .prose,
+.pager { max-width: none; }
 
 .article-title {
   margin: .6rem 0 .5rem;
@@ -457,11 +470,8 @@ ul, ol { padding-left: 1.25em; }
 .article-meta__author { font-weight: 700; color: var(--ink); }
 .article-meta__sep { opacity: .45; }
 
-/* 文章 HERO 圖：等比例縮放，寬度不超過內文可讀寬度 */
-.article-hero {
-  margin: 0 0 2rem;
-  max-width: var(--prose);
-}
+/* 文章 HERO 圖：等比例縮放，寬度與內文欄位相同（由 .article 決定） */
+.article-hero { margin: 0 0 2rem; }
 
 .article-hero img,
 .article-hero svg {
@@ -889,7 +899,6 @@ ul, ol { padding-left: 1.25em; }
   margin-top: 3rem;
   padding-top: 1.75rem;
   border-top: 1px solid var(--line);
-  max-width: var(--prose);
 }
 
 @media (min-width: 40rem) { .pager { grid-template-columns: 1fr 1fr; } }
