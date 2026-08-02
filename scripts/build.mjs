@@ -26,17 +26,26 @@ const CONFIG = JSON.parse(fs.readFileSync(path.join(ROOT, 'site.config.json'), '
 
 const md = new MarkdownIt({ html: true, linkify: true, typographer: false });
 
-/* 首頁主視覺：自繪的 SVG 插圖直接內嵌，才能跟著深色模式換色。
-   大頭照若尚未放入 assets/，則整個 byline 只顯示姓名與單位，不會出現破圖。 */
-const HERO_SCENE = fs.readFileSync(path.join(ROOT, CONFIG.hero.scene), 'utf8')
-  .replace(/<\?xml[^>]*\?>\s*/, '')
-  .trim();
+/* 自繪的 SVG 插圖一律直接內嵌，而非用 <img> 外部引用，
+   否則 SVG 讀不到頁面的 CSS 變數，深色模式與配色都會失效。 */
+const svgCache = new Map();
+function inlineSvg(relPath) {
+  if (!svgCache.has(relPath)) {
+    svgCache.set(relPath, fs.readFileSync(path.join(ROOT, relPath), 'utf8')
+      .replace(/<\?xml[^>]*\?>\s*/, '')
+      .trim());
+  }
+  return svgCache.get(relPath);
+}
 
+const BANNER = CONFIG.hero.banner;
+
+/* 大頭照若尚未放入 assets/，byline 只顯示單位與定位，不會出現破圖 */
 const PORTRAIT = CONFIG.hero.portrait;
 const HAS_PORTRAIT = fs.existsSync(path.join(ROOT, PORTRAIT.src));
 
-/* 社群分享縮圖：有大頭照就用大頭照，否則退回文章配圖 */
-const DEFAULT_OG = HAS_PORTRAIT ? PORTRAIT.src : 'assets/img/impt-vs-imrt.jpg';
+/* 社群分享縮圖：用首頁橫幅，16:9 剛好符合 og:image 的建議比例 */
+const DEFAULT_OG = BANNER.src;
 
 /* ---------- 工具 ---------- */
 
@@ -151,7 +160,7 @@ function head({ title, description, canonical, depth, ogImage }) {
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${esc(canonical)}">
 <meta property="og:image" content="${esc(CONFIG.siteUrl + '/' + (ogImage || DEFAULT_OG))}">
-<meta name="twitter:card" content="${ogImage || !HAS_PORTRAIT ? 'summary_large_image' : 'summary'}">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="${base}assets/css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎗️</text></svg>">`;
 }
@@ -249,6 +258,13 @@ ${siteHeader(0)}
 <main id="main">
 
   <section class="hero">
+
+    <div class="hero__banner">
+      <img src="${esc(BANNER.src)}" alt="${esc(BANNER.alt)}"
+           width="${BANNER.width}" height="${BANNER.height}"
+           fetchpriority="high" decoding="async">
+    </div>
+
     <div class="wrap hero__inner">
 
       <div class="hero__text">
@@ -266,11 +282,6 @@ ${HAS_PORTRAIT ? `          <img class="hero__portrait" src="${esc(PORTRAIT.src)
         <p class="hero__lead">${esc(CONFIG.tagline)}</p>
         <p class="hero__lead hero__lead--muted">${esc(CONFIG.subTagline)}</p>
       </div>
-
-      <figure class="hero__figure">
-        ${HERO_SCENE}
-        <figcaption class="hero__figcaption">${esc(CONFIG.hero.caption)}</figcaption>
-      </figure>
 
     </div>
   </section>
@@ -305,9 +316,16 @@ function renderArticle(a, all) {
   const prev = all[idx + 1];
   const next = all[idx - 1];
 
+  /* .svg 走內嵌（吃得到 CSS 變數，能跟著深色模式換色）；點陣圖走一般 <img> */
+  const heroMedia = a.hero
+    ? (a.hero.toLowerCase().endsWith('.svg')
+        ? inlineSvg(a.hero)
+        : `<img src="../../${esc(a.hero)}" alt="${esc(a.heroAlt)}" decoding="async">`)
+    : '';
+
   const heroBlock = a.hero
     ? `    <figure class="article-hero">
-      <img src="../../${esc(a.hero)}" alt="${esc(a.heroAlt)}" decoding="async">
+      ${heroMedia}
 ${a.heroCaption ? `      <figcaption>${esc(a.heroCaption)}</figcaption>\n` : ''}    </figure>`
     : '';
 

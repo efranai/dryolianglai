@@ -149,26 +149,36 @@ ul, ol { padding-left: 1.25em; }
 .site-nav a:hover { color: var(--accent); }
 
 /* ---------- 首頁 HERO ----------
-   手機：文字在上、插圖在下（單欄）
-   桌機：左文字、右插圖（兩欄）
-   兩種情況都不疊字，因此不存在文字壓在圖上破框的可能。      */
+   橫幅圖在上、文字在下，任何寬度都不疊字，
+   因此不存在文字壓在圖上被裁切或破框的可能。                */
 
 .hero {
   background:
     radial-gradient(80rem 40rem at 85% -10%, var(--accent-bg) 0%, transparent 60%),
     var(--bg-tint);
   border-bottom: 1px solid var(--line);
-  padding-block: clamp(2rem, 6vw, 4rem);
+  padding-block: clamp(1.75rem, 5vw, 3rem) clamp(2rem, 6vw, 4rem);
 }
 
-.hero__inner {
-  display: grid;
-  gap: clamp(2rem, 5vw, 3.25rem);
-  align-items: center;
+.hero__banner {
+  width: min(100% - 2rem, var(--wrap));
+  margin: 0 auto clamp(1.75rem, 4vw, 2.75rem);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: var(--accent-bg);
 }
 
-@media (min-width: 60rem) {
-  .hero__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); }
+@media (max-width: 24rem) {
+  .hero__banner { width: min(100% - 1.5rem, var(--wrap)); }
+}
+
+.hero__banner img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;   /* 與圖檔一致，載入前就先佔好位，避免版面跳動 */
+  object-fit: cover;
 }
 
 .hero__text { min-width: 0; }
@@ -249,20 +259,6 @@ ul, ol { padding-left: 1.25em; }
   color: var(--ink-soft);
   font-size: clamp(.88rem, .85rem + .3vw, 1rem);
   margin-bottom: 0;
-}
-
-/* 插圖 */
-.hero__figure { margin: 0; min-width: 0; }
-
-.hero__figure svg { width: 100%; height: auto; display: block; }
-
-.hero__figcaption {
-  margin-top: .9rem;
-  font-size: .78rem;
-  line-height: 1.75;
-  color: var(--ink-faint);
-  padding-left: .7rem;
-  border-left: 2px solid var(--line);
 }
 
 /* ---------- 插圖內部樣式（SVG 內嵌，因此可跟著深色模式換色） ---------- */
@@ -441,12 +437,36 @@ ul, ol { padding-left: 1.25em; }
   max-width: var(--prose);
 }
 
-.article-hero img {
+.article-hero img,
+.article-hero svg {
+  display: block;
   width: 100%;
   height: auto;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   background: var(--bg-tint);
+}
+
+.article-hero svg { padding: .75rem .5rem; }
+
+/* 內文中的圖說區塊 */
+.prose-figure { margin: 2rem 0; }
+
+.prose-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--bg-tint);
+}
+
+.prose-figure figcaption {
+  margin-top: .7rem;
+  font-size: .8rem;
+  line-height: 1.75;
+  color: var(--ink-faint);
+  padding-left: .7rem;
+  border-left: 2px solid var(--line);
 }
 
 .article-hero figcaption {

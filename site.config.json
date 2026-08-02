@@ -8,8 +8,12 @@
   "author": "賴宥良醫師",
   "lang": "zh-Hant-TW",
   "hero": {
-    "scene": "assets/img/hero-scene.svg",
-    "caption": "質子治療原理示意：質子束的能量集中釋放在腫瘤深度，通過後劑量迅速歸零；光子則會一路穿透。",
+    "banner": {
+      "src": "assets/img/hero-doctor.jpg",
+      "alt": "賴宥良醫師身著白袍站在質子治療室前，背景為旋轉機架、治療噴嘴與機器人治療床",
+      "width": 1600,
+      "height": 900
+    },
     "portrait": {
       "src": "assets/img/portrait.jpg",
       "alt": "賴宥良醫師"
