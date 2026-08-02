@@ -377,7 +377,7 @@ ${siteHeader(0)}
   <section class="wrap section notfound">
     <h1 class="section__heading">找不到這個頁面</h1>
     <p class="prose">您要找的內容可能已經移動或不存在。</p>
-    <p class="article-back"><a href="/">← 回到首頁</a></p>
+    <p class="article-back"><a href="./">← 回到首頁</a></p>
   </section>
 </main>
 ${siteFooter(0)}
