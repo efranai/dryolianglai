@@ -12,6 +12,7 @@
   "_articleOrder": "手動指定首頁卡片順序（填 slug）。列在這裡的照此排列，沒列到的接在後面、依最後更新時間新到舊。整個清單留空 [] 就全部回到依更新時間排序。",
   "articleOrder": [
     "what-is-radiation-therapy",
+    "does-radiation-harm-normal-cells",
     "what-is-proton-therapy"
   ],
 

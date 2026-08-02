@@ -522,6 +522,27 @@ ul, ol { padding-left: 1.25em; }
 .il-icon       { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .il-icon-dot   { fill: var(--accent); stroke: none; }
 
+/* 對照圖的箭頭 */
+.il-arrow      { fill: none; stroke: var(--line); stroke-width: 2.5; }
+.il-arrow-head { fill: var(--line); stroke: none; }
+
+/* 折線圖 */
+.il-axis       { fill: none; stroke: var(--ink-faint); stroke-width: 1.6; opacity: .6; stroke-linecap: round; }
+.il-axis-head  { fill: var(--ink-faint); stroke: none; opacity: .6; }
+.il-tick       { fill: none; stroke: var(--ink-faint); stroke-width: 1.6; opacity: .5; }
+
+.il-curve          { fill: none; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+.il-curve--normal  { stroke: var(--accent); }
+.il-curve--cancer  { stroke: var(--warm); }
+
+.il-t-line         { font-size: 14px; font-weight: 700; }
+.il-t-line--normal { fill: var(--accent); }
+.il-t-line--cancer { fill: var(--warm); }
+
+/* 人體部位圖 */
+.il-body { fill: var(--bg-tint); stroke: var(--line); stroke-width: 2; }
+.il-zone { fill: color-mix(in srgb, var(--accent) 20%, transparent); stroke: var(--accent); stroke-width: 2; stroke-opacity: .55; }
+
 /* 療程日曆 */
 /* 同時涵蓋兩種寫法：class 掛在群組上（日曆格），或直接掛在 rect 上（圖例色塊） */
 .il-day rect,        rect.il-day        { stroke-width: 1.5; }
@@ -538,6 +559,10 @@ ul, ol { padding-left: 1.25em; }
   .il-dna, .il-break { stroke-width: 3.4; }
   .il-icon, .il-flow-arrow { stroke-width: 3; }
   .il-check  { stroke-width: 3.6; }
+  .il-t-line { font-size: 24px; }
+  .il-curve  { stroke-width: 5; }
+  .il-axis, .il-tick { stroke-width: 2.6; }
+  .il-arrow  { stroke-width: 4; }
   /* 次要說明放大後會超出畫布，窄螢幕收起——圖說已完整交代同樣的內容 */
   .il-detail { display: none; }
 }

@@ -1,0 +1,78 @@
+<svg class="illus" viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="rep-title rep-desc">
+  <title id="rep-title">正常細胞與癌細胞修復能力的比較</title>
+  <desc id="rep-desc">放射線照射後，兩種細胞的 DNA 都會受損。一段時間後，正常細胞多數能完成修復並恢復功能；癌細胞的修復效率較差，傷害殘留並逐漸累積，最後失去生長能力。</desc>
+
+  <!-- 欄標題 -->
+  <text class="il-t-sub il-anchor-mid" x="250" y="40">照射後：DNA 受損</text>
+  <text class="il-t-sub il-anchor-mid" x="560" y="40">一段時間後</text>
+
+  <!-- 列標題 -->
+  <text class="il-t il-anchor-end" x="140" y="126">正常細胞</text>
+  <text class="il-t il-anchor-end" x="140" y="256">癌細胞</text>
+
+  <!-- 箭頭 -->
+  <path class="il-arrow" d="M310 120 H494" />
+  <path class="il-arrow-head" d="M494 113 l12 7 l-12 7 z" />
+  <path class="il-arrow" d="M310 250 H494" />
+  <path class="il-arrow-head" d="M494 243 l12 7 l-12 7 z" />
+
+  <!-- ===== 正常細胞：受損 → 修復完成 ===== -->
+  <circle class="il-cell il-cell--accent" cx="250" cy="120" r="52" />
+  <g class="il-dna il-dna--broken">
+    <path d="M235 92 q20 11 0 22" />
+    <path d="M265 92 q-20 11 0 22" />
+    <path d="M237 92 h26" />
+    <path d="M235 126 q20 11 0 22" />
+    <path d="M265 126 q-20 11 0 22" />
+    <path d="M237 148 h26" />
+  </g>
+  <path class="il-break" d="M228 116 l10 5 l-7 6" />
+  <path class="il-break" d="M272 116 l-10 5 l7 6" />
+
+  <circle class="il-cell il-cell--accent" cx="560" cy="120" r="52" />
+  <g class="il-dna">
+    <path d="M545 92 q20 11 0 22 q-20 11 0 22 q20 11 0 22" />
+    <path d="M575 92 q-20 11 0 22 q20 11 0 22 q-20 11 0 22" />
+    <path d="M547 92 h26" />
+    <path d="M555 120 h10" />
+    <path d="M547 148 h26" />
+  </g>
+  <g class="il-badge il-badge--accent">
+    <circle cx="600" cy="84" r="17" />
+    <path class="il-mark" d="M593 84 l5 6 l10 -12" />
+  </g>
+  <text class="il-t-sub il-detail" x="628" y="126">修復完成</text>
+
+  <!-- ===== 癌細胞：受損 → 仍未修復 ===== -->
+  <circle class="il-cell il-cell--warm" cx="250" cy="250" r="52" />
+  <g class="il-dna il-dna--broken">
+    <path d="M235 222 q20 11 0 22" />
+    <path d="M265 222 q-20 11 0 22" />
+    <path d="M237 222 h26" />
+    <path d="M235 256 q20 11 0 22" />
+    <path d="M265 256 q-20 11 0 22" />
+    <path d="M237 278 h26" />
+  </g>
+  <path class="il-break" d="M228 246 l10 5 l-7 6" />
+  <path class="il-break" d="M272 246 l-10 5 l7 6" />
+
+  <circle class="il-cell il-cell--warm" cx="560" cy="250" r="52" />
+  <g class="il-dna il-dna--broken">
+    <path d="M545 222 q20 11 0 18" />
+    <path d="M575 222 q-20 11 0 18" />
+    <path d="M547 222 h26" />
+    <path d="M545 262 q20 11 0 18" />
+    <path d="M575 262 q-20 11 0 18" />
+    <path d="M547 280 h26" />
+  </g>
+  <path class="il-break" d="M534 244 l12 6 l-9 7 l14 5" />
+  <path class="il-break" d="M586 244 l-12 6 l9 7 l-14 5" />
+  <g class="il-badge il-badge--warm">
+    <circle cx="600" cy="214" r="17" />
+    <path class="il-mark" d="M594 208 l12 12 M606 208 l-12 12" />
+  </g>
+  <text class="il-t-sub il-detail" x="628" y="256">傷害殘留</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="326">兩者都會受傷，差別在於誰修得回來</text>
+</svg>

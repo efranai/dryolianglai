@@ -1,0 +1,38 @@
+<svg class="illus" viewBox="0 0 720 364" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="frac-title frac-desc">
+  <title id="frac-title">分次治療下兩種細胞累積損傷的比較</title>
+  <desc id="frac-desc">每次治療都會造成損傷。正常細胞在治療的間隔期間幾乎能修復回原本狀態，因此損傷不會累積；癌細胞的修復效率較差，每次只能恢復一部分，損傷隨治療次數逐漸累積。</desc>
+
+  <!-- 座標軸 -->
+  <text class="il-t-sub il-anchor-mid" x="72" y="36">累積損傷</text>
+  <path class="il-axis" d="M72 44 V268 H650" />
+  <path class="il-axis-head" d="M72 40 l-6 10 h12 z" />
+  <path class="il-axis-head" d="M654 268 l-10 -6 v12 z" />
+
+  <!-- 治療次數刻度 -->
+  <g class="il-tick">
+    <path d="M120 268 v9" /><path d="M226 268 v9" /><path d="M332 268 v9" />
+    <path d="M438 268 v9" /><path d="M544 268 v9" />
+  </g>
+  <g class="il-t-sub il-anchor-mid">
+    <text x="120" y="294">第 1 次</text>
+    <text x="226" y="294">第 2 次</text>
+    <text x="332" y="294">第 3 次</text>
+    <text x="438" y="294">第 4 次</text>
+    <text x="544" y="294">第 5 次</text>
+  </g>
+
+  <!-- 癌細胞：每次只修復一部分，傷害逐漸累積 -->
+  <path class="il-curve il-curve--cancer"
+        d="M80 264 L120 192 L180 232 L226 164 L286 204 L332 136 L392 176 L438 108 L498 148 L544 80 L604 120" />
+
+  <!-- 正常細胞：每次都修復回接近原點 -->
+  <path class="il-curve il-curve--normal"
+        d="M80 264 L120 200 L180 258 L226 198 L286 260 L332 199 L392 259 L438 198 L498 260 L544 199 L604 258" />
+
+  <text class="il-t-line il-t-line--cancer" x="616" y="118">癌細胞</text>
+  <text class="il-t-line il-t-line--normal" x="616" y="262">正常細胞</text>
+
+  <!-- 說明 -->
+  <text class="il-t-sub il-anchor-mid" x="360" y="344">每次治療之間正常細胞有時間修復，癌細胞則傷害逐漸累積</text>
+</svg>

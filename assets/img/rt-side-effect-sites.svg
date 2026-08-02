@@ -1,0 +1,44 @@
+<svg class="illus" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="site-title site-desc">
+  <title id="site-title">副作用依照射部位而不同的示意圖</title>
+  <desc id="site-desc">副作用主要取決於照射的位置：腦部照射可能局部掉髮；頭頸部照射可能口乾、口腔潰瘍或吞嚥疼痛；乳房照射可能皮膚泛紅或色素沉著；骨盆照射可能有排尿或排便刺激感。照射範圍以外的部位通常不受影響。</desc>
+
+  <!-- 人形 -->
+  <g class="il-body">
+    <circle cx="360" cy="74" r="36" />
+    <rect x="347" y="106" width="26" height="18" rx="7" />
+    <rect x="300" y="120" width="120" height="132" rx="26" />
+    <rect x="270" y="132" width="24" height="112" rx="12" />
+    <rect x="426" y="132" width="24" height="112" rx="12" />
+    <rect x="311" y="246" width="98" height="56" rx="20" />
+    <rect x="322" y="298" width="30" height="76" rx="14" />
+    <rect x="368" y="298" width="30" height="76" rx="14" />
+  </g>
+
+  <!-- 照射區域標示 -->
+  <circle class="il-zone" cx="360" cy="64" r="24" />
+  <ellipse class="il-zone" cx="360" cy="110" rx="28" ry="19" />
+  <ellipse class="il-zone" cx="360" cy="162" rx="50" ry="28" />
+  <ellipse class="il-zone" cx="360" cy="266" rx="46" ry="25" />
+
+  <!-- 左側標註 -->
+  <path class="il-lead" d="M334 64 H262" />
+  <text class="il-t il-anchor-end" x="252" y="56">腦部</text>
+  <text class="il-t-sub il-detail il-anchor-end" x="252" y="86">可能局部掉髮</text>
+
+  <path class="il-lead" d="M330 110 H262" />
+  <text class="il-t il-anchor-end" x="252" y="148">頭頸部</text>
+  <text class="il-t-sub il-detail il-anchor-end" x="252" y="178">口乾、口腔潰瘍</text>
+  <text class="il-t-sub il-detail il-anchor-end" x="252" y="202">或吞嚥疼痛</text>
+
+  <!-- 右側標註 -->
+  <path class="il-lead" d="M412 162 H468" />
+  <text class="il-t" x="478" y="156">乳房</text>
+  <text class="il-t-sub il-detail" x="478" y="186">皮膚泛紅或色素沉著</text>
+
+  <path class="il-lead" d="M408 266 H468" />
+  <text class="il-t" x="478" y="260">骨盆</text>
+  <text class="il-t-sub il-detail" x="478" y="290">排尿或排便刺激感</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="394">副作用只出現在照射範圍內，範圍以外的部位通常不受影響</text>
+</svg>
