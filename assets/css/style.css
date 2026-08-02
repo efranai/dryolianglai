@@ -14,6 +14,7 @@
   --accent:     #0f6b7d;
   --accent-dk:  #0a4d5b;
   --accent-bg:  #e6f2f4;
+  --warm:       #c25733;   /* 插圖中標示腫瘤／重點的暖色 */
 
   --wrap:  68rem;   /* 一般區塊最大寬度 */
   --prose: 38rem;   /* 內文可讀寬度，文章 HERO 圖也以此為上限 */
@@ -36,6 +37,7 @@
     --accent:    #5fc2d4;
     --accent-dk: #8ad7e5;
     --accent-bg: #14323a;
+    --warm:      #f0865c;
     --shadow:    0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
   }
 }
@@ -147,28 +149,32 @@ ul, ol { padding-left: 1.25em; }
 .site-nav a:hover { color: var(--accent); }
 
 /* ---------- 首頁 HERO ----------
-   手機：圖在上、文字在下（避免任何疊字破框的可能）
-   桌機：文字疊在圖上                                        */
+   手機：文字在上、插圖在下（單欄）
+   桌機：左文字、右插圖（兩欄）
+   兩種情況都不疊字，因此不存在文字壓在圖上破框的可能。      */
 
-.hero { background: var(--bg-tint); }
-
-.hero__media {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  max-height: 62vh;
-  overflow: hidden;
+.hero {
+  background:
+    radial-gradient(80rem 40rem at 85% -10%, var(--accent-bg) 0%, transparent 60%),
+    var(--bg-tint);
+  border-bottom: 1px solid var(--line);
+  padding-block: clamp(2rem, 6vw, 4rem);
 }
 
-.hero__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.hero__inner {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.25rem);
+  align-items: center;
 }
 
-.hero__inner { padding-block: clamp(1.75rem, 5vw, 2.75rem); }
+@media (min-width: 60rem) {
+  .hero__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); }
+}
+
+.hero__text { min-width: 0; }
 
 .hero__eyebrow {
-  margin: 0 0 .6rem;
+  margin: 0 0 .7rem;
   font-size: .8rem;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -177,61 +183,135 @@ ul, ol { padding-left: 1.25em; }
 }
 
 .hero__title {
-  margin: 0 0 .5rem;
-  font-size: clamp(1.5rem, 1.1rem + 2.4vw, 2.6rem);
+  margin: 0 0 1.4rem;
+  font-size: clamp(1.55rem, 1.1rem + 2.4vw, 2.5rem);
   letter-spacing: .01em;
 }
 
-.hero__title-sub {
-  display: block;
-  margin-top: .3em;
-  font-size: .62em;
-  font-weight: 600;
-  color: var(--ink-soft);
-  letter-spacing: .06em;
+/* 大頭照 + 姓名單位 */
+.hero__byline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.4rem;
+  padding: .85rem 1.1rem .85rem .85rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.hero__portrait {
+  flex: none;
+  width: clamp(3.25rem, 3rem + 2vw, 4.25rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 18%;   /* 讓臉部落在圓框中央 */
+  background: var(--accent-bg);
+}
+
+.hero__byline-text { min-width: 0; }
+
+.hero__name {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(1rem, .95rem + .3vw, 1.1rem);
+  letter-spacing: .02em;
 }
 
 .hero__org {
-  margin: 0 0 1.1rem;
-  font-size: clamp(.85rem, .8rem + .3vw, .98rem);
-  color: var(--ink-soft);
-  padding-left: .75rem;
-  border-left: 3px solid var(--accent);
+  margin: .15rem 0 0;
+  font-size: clamp(.76rem, .73rem + .2vw, .85rem);
+  line-height: 1.6;
+  color: var(--ink-faint);
 }
 
 .hero__lead {
-  margin: 0 0 .4rem;
-  max-width: 34em;
-  font-size: clamp(.95rem, .9rem + .4vw, 1.15rem);
-  color: var(--ink);
+  margin: 0 0 .5rem;
+  max-width: 32em;
+  font-size: clamp(.98rem, .93rem + .4vw, 1.15rem);
+  line-height: 1.85;
 }
 
-.hero__lead--muted { color: var(--ink-soft); font-size: clamp(.88rem, .85rem + .3vw, 1rem); }
+.hero__lead--muted {
+  color: var(--ink-soft);
+  font-size: clamp(.88rem, .85rem + .3vw, 1rem);
+  margin-bottom: 0;
+}
 
-@media (min-width: 52rem) {
-  .hero { position: relative; }
-  .hero__media { max-height: 66vh; }
-  .hero__media::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(105deg, rgba(6, 26, 33, .93) 0%, rgba(6, 26, 33, .78) 42%, rgba(6, 26, 33, .18) 72%, rgba(6, 26, 33, .05) 100%);
-  }
-  .hero__panel {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    pointer-events: none;
-  }
-  .hero__inner { pointer-events: auto; padding-block: 0; }
-  .hero__inner > * { max-width: min(100%, 36rem); }
-  .hero__eyebrow { color: #7fd6e6; }
-  .hero__title   { color: #ffffff; }
-  .hero__title-sub { color: rgba(255, 255, 255, .82); }
-  .hero__org     { color: rgba(255, 255, 255, .8); border-left-color: #7fd6e6; }
-  .hero__lead    { color: rgba(255, 255, 255, .95); }
-  .hero__lead--muted { color: rgba(255, 255, 255, .75); }
+/* 插圖 */
+.hero__figure { margin: 0; min-width: 0; }
+
+.hero__figure svg { width: 100%; height: auto; display: block; }
+
+.hero__figcaption {
+  margin-top: .9rem;
+  font-size: .78rem;
+  line-height: 1.75;
+  color: var(--ink-faint);
+  padding-left: .7rem;
+  border-left: 2px solid var(--line);
+}
+
+/* ---------- 插圖內部樣式（SVG 內嵌，因此可跟著深色模式換色） ---------- */
+
+.hero-scene text { font-family: var(--font); }
+
+.hs-gantry        { fill: none; stroke: var(--accent); stroke-width: 11; opacity: .22; stroke-linecap: round; }
+.hs-gantry-dot    { fill: var(--accent); opacity: .3; }
+
+.hs-nozzle        { fill: var(--ink-soft); opacity: .8; }
+.hs-nozzle-slit   { fill: var(--accent); }
+
+.hs-beam          { fill: var(--accent); opacity: .16; }
+
+.hs-proton circle { fill: var(--accent); }
+.hs-plus          { fill: none; stroke: var(--bg); stroke-width: 1.9; stroke-linecap: round; }
+
+.hs-couch         { fill: var(--ink-soft); opacity: .45; }
+.hs-couch-leg,
+.hs-couch-base    { fill: var(--ink-soft); opacity: .3; }
+
+.hs-body          { fill: var(--accent-bg); stroke: var(--accent); stroke-width: 2; stroke-opacity: .45; }
+.hs-face          { fill: none; stroke: var(--ink-soft); stroke-width: 2.1; stroke-linecap: round; }
+
+.hs-tumor         { fill: var(--warm); }
+.hs-halo          { fill: none; stroke: var(--warm); stroke-width: 2; opacity: .32; }
+.hs-halo--outer   { opacity: .15; }
+
+.hs-lead          { stroke: var(--ink-faint); stroke-width: 1.4; stroke-dasharray: 4 4; opacity: .7; }
+.hs-callout text  { fill: var(--ink); font-size: 15px; font-weight: 600; }
+.hs-callout .hs-callout--sub { fill: var(--ink-faint); font-size: 12.5px; font-weight: 400; }
+
+.hs-axis          { fill: none; stroke: var(--ink-faint); stroke-width: 1.5; opacity: .55; stroke-linecap: round; }
+.hs-axis-label    { fill: var(--ink-faint); font-size: 12.5px; }
+
+.hs-depth-line    { stroke: var(--warm); stroke-width: 1.5; stroke-dasharray: 5 4; opacity: .55; }
+.hs-depth-text    { fill: var(--warm); font-size: 12px; font-weight: 600; }
+
+.hs-curve           { fill: none; stroke-width: 3.6; stroke-linecap: round; stroke-linejoin: round; }
+.hs-curve--proton   { stroke: var(--accent); }
+.hs-curve--photon   { stroke: var(--ink-faint); opacity: .7; stroke-dasharray: 7 5; }
+
+.hs-legend text     { fill: var(--ink-soft); font-size: 13px; }
+.hs-legend-swatch   { stroke-width: 3.6; }
+
+.hs-deco ellipse    { fill: none; stroke: var(--accent); stroke-width: 1.6; opacity: .15; }
+.hs-deco-core       { fill: var(--accent); opacity: .28; }
+
+/* 插圖在窄螢幕會等比縮到約四成，原本 15px 的標註只剩 6px。
+   這裡放大 SVG 內的字級（單位會跟著一起縮），並收起次要說明避免擁擠。 */
+@media (max-width: 46rem) {
+  .hs-callout text             { font-size: 27px; }
+  .hs-callout .hs-callout--sub { display: none; }
+  .hs-axis-label               { font-size: 22px; }
+  .hs-depth-text               { font-size: 21px; }
+  .hs-legend text              { font-size: 23px; }
+  .hs-curve                    { stroke-width: 5; }
+  .hs-lead                     { stroke-width: 2.2; stroke-dasharray: 6 5; }
 }
 
 /* ---------- 卡片 ---------- */

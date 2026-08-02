@@ -26,6 +26,18 @@ const CONFIG = JSON.parse(fs.readFileSync(path.join(ROOT, 'site.config.json'), '
 
 const md = new MarkdownIt({ html: true, linkify: true, typographer: false });
 
+/* 首頁主視覺：自繪的 SVG 插圖直接內嵌，才能跟著深色模式換色。
+   大頭照若尚未放入 assets/，則整個 byline 只顯示姓名與單位，不會出現破圖。 */
+const HERO_SCENE = fs.readFileSync(path.join(ROOT, CONFIG.hero.scene), 'utf8')
+  .replace(/<\?xml[^>]*\?>\s*/, '')
+  .trim();
+
+const PORTRAIT = CONFIG.hero.portrait;
+const HAS_PORTRAIT = fs.existsSync(path.join(ROOT, PORTRAIT.src));
+
+/* 社群分享縮圖：有大頭照就用大頭照，否則退回文章配圖 */
+const DEFAULT_OG = HAS_PORTRAIT ? PORTRAIT.src : 'assets/img/impt-vs-imrt.jpg';
+
 /* ---------- 工具 ---------- */
 
 const esc = (s = '') =>
@@ -138,8 +150,8 @@ function head({ title, description, canonical, depth, ogImage }) {
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${esc(canonical)}">
-<meta property="og:image" content="${esc(CONFIG.siteUrl + '/' + (ogImage || CONFIG.hero.src))}">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="${esc(CONFIG.siteUrl + '/' + (ogImage || DEFAULT_OG))}">
+<meta name="twitter:card" content="${ogImage || !HAS_PORTRAIT ? 'summary_large_image' : 'summary'}">
 <link rel="stylesheet" href="${base}assets/css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎗️</text></svg>">`;
 }
@@ -237,19 +249,29 @@ ${siteHeader(0)}
 <main id="main">
 
   <section class="hero">
-    <div class="hero__media">
-      <img src="${esc(CONFIG.hero.src)}" alt="${esc(CONFIG.hero.alt)}"
-           width="${CONFIG.hero.width}" height="${CONFIG.hero.height}"
-           fetchpriority="high" decoding="async">
-    </div>
-    <div class="hero__panel">
-      <div class="wrap hero__inner">
+    <div class="wrap hero__inner">
+
+      <div class="hero__text">
         <p class="hero__eyebrow">台中・質子治療與放射治療</p>
-        <h1 class="hero__title">${esc(CONFIG.title.split('｜')[0])}<span class="hero__title-sub">賴宥良醫師</span></h1>
-        <p class="hero__org">${esc(CONFIG.affiliation)}</p>
+        <h1 class="hero__title">${esc(CONFIG.title.split('｜')[0])}</h1>
+
+        <div class="hero__byline">
+${HAS_PORTRAIT ? `          <img class="hero__portrait" src="${esc(PORTRAIT.src)}" alt="${esc(PORTRAIT.alt)}"
+               width="112" height="112" fetchpriority="high" decoding="async">\n` : ''}          <div class="hero__byline-text">
+            <p class="hero__name">${esc(CONFIG.author)}</p>
+            <p class="hero__org">${esc(CONFIG.affiliation)}</p>
+          </div>
+        </div>
+
         <p class="hero__lead">${esc(CONFIG.tagline)}</p>
         <p class="hero__lead hero__lead--muted">${esc(CONFIG.subTagline)}</p>
       </div>
+
+      <figure class="hero__figure">
+        ${HERO_SCENE}
+        <figcaption class="hero__figcaption">${esc(CONFIG.hero.caption)}</figcaption>
+      </figure>
+
     </div>
   </section>
 
@@ -311,7 +333,7 @@ ${head({
     description: a.summary,
     canonical: `${CONFIG.siteUrl}/${a.url}`,
     depth: 2,
-    ogImage: a.hero || CONFIG.hero.src,
+    ogImage: a.hero || DEFAULT_OG,
   })}
 <script type="application/ld+json">
 ${JSON.stringify({
@@ -419,3 +441,4 @@ for (const a of articles) {
 }
 console.log(`\n輸出 ${written.length} 個檔案。`);
 if (!CONFIG.supabase.url) console.log('提醒：site.config.json 的 supabase 尚未設定，計數器目前為隱藏狀態。');
+if (!HAS_PORTRAIT) console.log(`提醒：找不到 ${PORTRAIT.src}，首頁 byline 目前只顯示姓名與單位。放入照片後重新建置即可。`);

@@ -13,7 +13,7 @@
 <meta property="og:title" content="台中質子治療・放射治療｜賴宥良醫師">
 <meta property="og:description" content="不只追求腫瘤控制，更重視降低副作用，守護治療後的生活品質。以科學證據為基礎，協助每位病人選擇適合的放射治療。">
 <meta property="og:url" content="https://dryolianglai.pages.dev/">
-<meta property="og:image" content="https://dryolianglai.pages.dev/assets/img/hero-proton-trento.jpg">
+<meta property="og:image" content="https://dryolianglai.pages.dev/assets/img/impt-vs-imrt.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎗️</text></svg>">
@@ -31,19 +31,126 @@
 <main id="main">
 
   <section class="hero">
-    <div class="hero__media">
-      <img src="assets/img/hero-proton-trento.jpg" alt="質子治療中心治療室內部，可見旋轉機架與治療床"
-           width="1600" height="900"
-           fetchpriority="high" decoding="async">
-    </div>
-    <div class="hero__panel">
-      <div class="wrap hero__inner">
+    <div class="wrap hero__inner">
+
+      <div class="hero__text">
         <p class="hero__eyebrow">台中・質子治療與放射治療</p>
-        <h1 class="hero__title">台中質子治療・放射治療<span class="hero__title-sub">賴宥良醫師</span></h1>
-        <p class="hero__org">中國醫藥大學附設醫院　放射腫瘤部・質子治療中心</p>
+        <h1 class="hero__title">台中質子治療・放射治療</h1>
+
+        <div class="hero__byline">
+          <div class="hero__byline-text">
+            <p class="hero__name">賴宥良醫師</p>
+            <p class="hero__org">中國醫藥大學附設醫院　放射腫瘤部・質子治療中心</p>
+          </div>
+        </div>
+
         <p class="hero__lead">不只追求腫瘤控制，更重視降低副作用，守護治療後的生活品質。</p>
         <p class="hero__lead hero__lead--muted">以科學證據為基礎，協助每位病人選擇適合的放射治療。</p>
       </div>
+
+      <figure class="hero__figure">
+        <svg class="hero-scene" viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="scene-title scene-desc">
+  <title id="scene-title">質子治療原理示意圖</title>
+  <desc id="scene-desc">上方為旋轉機架與噴嘴射出的質子束，精準停在體內腫瘤位置；下方曲線比較質子與光子的深度劑量分布，質子在腫瘤處形成布拉格峰後劑量迅速歸零，光子則會穿透全程。</desc>
+
+  <!-- ============ 上半部：治療場景 ============ -->
+
+  <!-- 旋轉機架 -->
+  <path class="hs-gantry" d="M274 136 A130 130 0 0 1 526 136" />
+  <circle class="hs-gantry-dot" cx="274" cy="136" r="7" />
+  <circle class="hs-gantry-dot" cx="526" cy="136" r="7" />
+
+  <!-- 噴嘴 -->
+  <rect class="hs-nozzle" x="376" y="26" width="48" height="30" rx="8" />
+  <path class="hs-nozzle" d="M386 56 L414 56 L408 74 L392 74 Z" />
+  <rect class="hs-nozzle-slit" x="393" y="70" width="14" height="5" rx="2.5" />
+
+  <!-- 質子束（漸縮） -->
+  <path class="hs-beam" d="M391 74 L409 74 L405 196 L395 196 Z" />
+
+  <!-- 質子粒子 -->
+  <g class="hs-proton">
+    <g transform="translate(400 98)"><circle r="8.5" /><path class="hs-plus" d="M-4 0h8M0 -4v8" /></g>
+    <g transform="translate(400 130)"><circle r="8" /><path class="hs-plus" d="M-3.5 0h7M0 -3.5v7" /></g>
+    <g transform="translate(400 162)"><circle r="7.5" /><path class="hs-plus" d="M-3.5 0h7M0 -3.5v7" /></g>
+  </g>
+
+  <!-- 病人與治療床 -->
+  <g class="hs-patient">
+    <rect class="hs-couch" x="222" y="224" width="382" height="16" rx="7" />
+    <rect class="hs-couch-leg" x="392" y="240" width="18" height="34" rx="4" />
+    <rect class="hs-couch-base" x="352" y="272" width="98" height="12" rx="6" />
+
+    <rect class="hs-body" x="252" y="186" width="58" height="32" rx="15" />
+    <rect class="hs-body" x="296" y="176" width="216" height="46" rx="22" />
+    <circle class="hs-body" cx="536" cy="199" r="27" />
+    <!-- 安定的表情 -->
+    <path class="hs-face" d="M544 194 q6 -4 12 0" />
+    <path class="hs-face" d="M545 209 q7 5 13 -1" />
+  </g>
+
+  <!-- 腫瘤與命中點 -->
+  <circle class="hs-halo hs-halo--outer" cx="400" cy="199" r="26" />
+  <circle class="hs-halo" cx="400" cy="199" r="17" />
+  <circle class="hs-tumor" cx="400" cy="199" r="9.5" />
+
+  <!-- 標註 -->
+  <g class="hs-callout">
+    <path class="hs-lead" d="M424 199 L482 199" />
+    <text x="490" y="194">腫瘤</text>
+    <text x="490" y="216" class="hs-callout--sub">能量集中於此</text>
+  </g>
+  <g class="hs-callout hs-callout--left">
+    <path class="hs-lead" d="M370 92 L318 92" />
+    <text x="310" y="87" text-anchor="end">質子束</text>
+    <text x="310" y="109" text-anchor="end" class="hs-callout--sub">可調整停止深度</text>
+  </g>
+
+  <!-- ============ 下半部：深度劑量曲線 ============ -->
+
+  <g transform="translate(70 306)">
+    <!-- 座標軸 -->
+    <path class="hs-axis" d="M0 8 L0 126 L580 126" />
+    <text class="hs-axis-label" x="-6" y="14" text-anchor="end">劑量</text>
+    <text class="hs-axis-label" x="580" y="144" text-anchor="end">體內深度 →</text>
+
+    <!-- 腫瘤深度標線 -->
+    <path class="hs-depth-line" d="M392 14 L392 126" />
+    <text class="hs-depth-text" x="392" y="8" text-anchor="middle">腫瘤位置</text>
+
+    <!-- 光子：入射即高、一路穿透 -->
+    <path class="hs-curve hs-curve--photon"
+          d="M0 122 C5 64 14 38 34 36 C66 34 100 52 160 66 C240 84 340 98 440 106 C492 110 534 114 566 117" />
+
+    <!-- 質子：平緩前進，於腫瘤處形成布拉格峰後迅速歸零 -->
+    <path class="hs-curve hs-curve--proton"
+          d="M0 108 C60 106 140 103 220 98 C280 94 322 88 346 76 C362 68 370 48 380 32 C384 26 390 24 394 30 C400 40 404 76 407 108 L409 126" />
+
+    <!-- 圖例 -->
+    <g class="hs-legend" transform="translate(24 -6)">
+      <path class="hs-curve hs-curve--proton hs-legend-swatch" d="M0 0 h26" />
+      <text x="34" y="4">質子</text>
+      <path class="hs-curve hs-curve--photon hs-legend-swatch" d="M96 0 h26" />
+      <text x="130" y="4">光子（X 光）</text>
+    </g>
+  </g>
+
+  <!-- 裝飾性原子 -->
+  <g class="hs-deco">
+    <g transform="translate(96 68)">
+      <ellipse rx="26" ry="10" /><ellipse rx="26" ry="10" transform="rotate(60)" /><ellipse rx="26" ry="10" transform="rotate(120)" />
+      <circle class="hs-deco-core" r="4.5" />
+    </g>
+    <g transform="translate(636 92) scale(.72)">
+      <ellipse rx="26" ry="10" /><ellipse rx="26" ry="10" transform="rotate(60)" /><ellipse rx="26" ry="10" transform="rotate(120)" />
+      <circle class="hs-deco-core" r="4.5" />
+    </g>
+  </g>
+</svg>
+        <figcaption class="hero__figcaption">質子治療原理示意：質子束的能量集中釋放在腫瘤深度，通過後劑量迅速歸零；光子則會一路穿透。</figcaption>
+      </figure>
+
     </div>
   </section>
 
@@ -115,13 +222,6 @@
   <section class="credits" aria-labelledby="credits-heading">
     <h2 id="credits-heading" class="credits__heading">圖片出處與授權</h2>
     <ul class="credits__list">
-      <li>
-        <span class="credit__use">首頁主視覺：</span>
-        <a href="https://commons.wikimedia.org/wiki/File:Protonterapia_Trento_1.jpg" rel="noopener noreferrer" target="_blank">Protonterapia Trento</a>
-        by <a href="https://commons.wikimedia.org/wiki/User:Llorenzi" rel="noopener noreferrer" target="_blank">Llorenzi</a>,
-        授權條款 <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener noreferrer" target="_blank">CC BY-SA 4.0</a>
-        <span class="credit__mod">（已等比例縮放至 1600×900 並重新壓縮）</span>
-      </li>
       <li>
         <span class="credit__use">〈什麼是質子治療〉文章配圖：</span>
         <a href="https://commons.wikimedia.org/wiki/File:Comparison_of_dose_distributions_between_IMPT_(right)_and_IMRT_(left).jpg" rel="noopener noreferrer" target="_blank">Comparison of dose distributions between IMPT (right) and IMRT (left)</a>

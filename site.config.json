@@ -7,10 +7,12 @@
   "author": "賴宥良醫師",
   "lang": "zh-Hant-TW",
   "hero": {
-    "src": "assets/img/hero-proton-trento.jpg",
-    "alt": "質子治療中心治療室內部，可見旋轉機架與治療床",
-    "width": 1600,
-    "height": 900
+    "scene": "assets/img/hero-scene.svg",
+    "caption": "質子治療原理示意：質子束的能量集中釋放在腫瘤深度，通過後劑量迅速歸零；光子則會一路穿透。",
+    "portrait": {
+      "src": "assets/img/portrait.jpg",
+      "alt": "賴宥良醫師"
+    }
   },
   "supabase": {
     "url": "",
@@ -19,16 +21,6 @@
     "rpc": "increment_view"
   },
   "credits": [
-    {
-      "usedFor": "首頁主視覺",
-      "title": "Protonterapia Trento",
-      "titleUrl": "https://commons.wikimedia.org/wiki/File:Protonterapia_Trento_1.jpg",
-      "author": "Llorenzi",
-      "authorUrl": "https://commons.wikimedia.org/wiki/User:Llorenzi",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "modified": "已等比例縮放至 1600×900 並重新壓縮"
-    },
     {
       "usedFor": "〈什麼是質子治療〉文章配圖",
       "title": "Comparison of dose distributions between IMPT (right) and IMRT (left)",
