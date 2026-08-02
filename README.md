@@ -67,9 +67,41 @@ npm run build
 改過的文章，卡片會多顯示「更新於 ⋯」。
 若不希望某次小修改改變顯示日期，在 front matter 手動寫 `updated: 原本的日期` 即可固定。
 
-## 文章排序
+## 癌別系列
 
-`site.config.json` 的 `articleOrder` 決定首頁卡片順序，填 slug：
+首頁分成「概論區」與各癌別系列。文章的 front matter 加一行就會歸入某個系列：
+
+```markdown
+series: breast-cancer
+```
+
+**沒寫 `series` 的文章＝概論區**（首頁最上面那一組）。
+
+系列定義在 `site.config.json`：
+
+```json
+"series": [
+  {
+    "id": "breast-cancer",
+    "name": "乳癌與放射治療",
+    "hook": "一句話說明，顯示在系列標題下方",
+    "order": []
+  }
+]
+```
+
+- 每個系列自動產生一個專屬頁面：`/series/<id>/`
+- 首頁每個系列最多顯示 `seriesCardLimit` 篇（預設 6），其餘顯示「還有 N 篇 →」
+- 系列內順序由該系列的 `order` 決定，留空則依最後更新時間新到舊
+- 文章頁上方會顯示所屬系列的標籤，點了回到系列頁
+- 文章底部的「上一篇／下一篇」在**同一個系列內**串接
+- 尚無文章的系列，首頁會顯示「整理中」，加入第一篇後自動變成卡片
+
+新增癌別就是在 `series` 陣列加一筆。若文章寫了不存在的 `series` id，**建置會直接失敗並列出是哪一篇**，避免文章靜悄悄地從網站上消失。
+
+## 概論區排序
+
+`site.config.json` 的 `articleOrder` 決定概論區的卡片順序，填 slug：
 
 ```json
 "articleOrder": [

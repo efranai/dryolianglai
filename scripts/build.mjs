@@ -179,19 +179,18 @@ function loadArticles() {
         wasUpdated: isoDate(updated) !== isoDate(data.date),
         html: renderBody(body),
         url: `p/${slug}/`,
+        series: (data.series || '').trim(),   // 空字串＝概論區
       };
-    })
-    /* 排序：
-       1. site.config.json 的 articleOrder 有列到的，照該清單的順序（建議閱讀動線）
-       2. 沒列到的接在後面，以「最後更新時間」新到舊排列
-       articleOrder 留空時，等於全部依更新時間排序。 */
-    .sort((a, b) => {
-      const rank = (x) => {
-        const i = ORDER.indexOf(x.slug);
-        return i === -1 ? Number.MAX_SAFE_INTEGER : i;
-      };
-      return rank(a) - rank(b) || b.updated - a.updated || b.published - a.published;
     });
+}
+
+/* 排序：order 清單有列到的照該順序排，沒列到的接在後面依最後更新時間新到舊 */
+function sortByOrder(list, order = []) {
+  const rank = (x) => {
+    const i = order.indexOf(x.slug);
+    return i === -1 ? Number.MAX_SAFE_INTEGER : i;
+  };
+  return [...list].sort((a, b) => rank(a) - rank(b) || b.updated - a.updated || b.published - a.published);
 }
 
 /* ---------- 版型片段 ---------- */
@@ -271,8 +270,9 @@ ${creditsBlock()}
 <script src="${base}assets/js/counter.js?v=${V_JS}" defer></script>`;
 }
 
-/* 卡片：直接產生 HTML 字串寫進 index.html，不經過 JSON */
-function articleCard(a) {
+/* 卡片：直接產生 HTML 字串寫進 index.html，不經過 JSON。
+   base 用於從系列頁（深兩層）連回文章。 */
+function articleCard(a, base = '') {
   const tags = a.tags.length
     ? `      <ul class="card__tags">${a.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>\n`
     : '';
@@ -282,7 +282,7 @@ function articleCard(a) {
     : '';
 
   return `      <article class="card">
-        <a class="card__link" href="${a.url}">
+        <a class="card__link" href="${base}${a.url}">
           <h3 class="card__title">${esc(a.title)}</h3>
         </a>
         <p class="card__meta">
@@ -297,10 +297,33 @@ ${tags}        <p class="card__foot">
       </article>`;
 }
 
+/* 首頁上的一個癌別系列區塊：標題 + 一句話 + 卡片格線 + 看全部連結 */
+function seriesSection(s) {
+  const limit = CONFIG.seriesCardLimit || 6;
+  const shown = s.articles.slice(0, limit);
+  const more = s.articles.length - shown.length;
+
+  const body = s.articles.length
+    ? `    <div class="cards">
+${shown.map((a) => articleCard(a)).join('\n')}
+    </div>${more > 0 ? `\n    <p class="group-more"><a href="series/${esc(s.id)}/">還有 ${more} 篇 →</a></p>` : ''}`
+    : `    <p class="group-empty">這個系列的文章正在整理中，敬請期待。</p>`;
+
+  return `  <section class="wrap section" id="series-${esc(s.id)}" aria-labelledby="series-${esc(s.id)}-heading">
+    <div class="group-head">
+      <div class="group-head__text">
+        <h2 class="section__heading" id="series-${esc(s.id)}-heading">${esc(s.name)}</h2>
+        <p class="group-head__hook">${esc(s.hook)}</p>
+      </div>
+${s.articles.length ? `      <a class="group-head__go" href="series/${esc(s.id)}/">看全部 <b>${s.articles.length}</b> 篇 →</a>\n` : ''}    </div>
+${body}
+  </section>`;
+}
+
 /* ---------- 頁面 ---------- */
 
 function renderIndex(articles) {
-  const cards = articles.map(articleCard).join('\n');
+  const cards = articles.map((a) => articleCard(a)).join('\n');
   const desc = `${CONFIG.tagline}${CONFIG.subTagline}`;
   const A = CONFIG.about;
   const about = loadAbout();
@@ -337,12 +360,18 @@ ${siteHeader(0)}
   </section>
 
   <section class="wrap section" id="articles" aria-labelledby="articles-heading">
-    <h2 class="section__heading" id="articles-heading">文章</h2>
-    <p class="section__note">共 ${articles.length} 篇．${ORDER.length ? '依建議閱讀順序排列' : '依最後更新時間排序'}</p>
+    <div class="group-head">
+      <div class="group-head__text">
+        <h2 class="section__heading" id="articles-heading">${esc(CONFIG.overview.heading)}</h2>
+        <p class="group-head__hook">${esc(CONFIG.overview.hook)}</p>
+      </div>
+    </div>
     <div class="cards">
 ${cards}
     </div>
   </section>
+
+${SERIES.map(seriesSection).join('\n\n')}
 
   <section class="section about" id="about" aria-labelledby="about-heading">
     <div class="wrap">
@@ -395,7 +424,7 @@ ${siteFooter(0)}
 `;
 }
 
-function renderArticle(a, all) {
+function renderArticle(a, all, seriesDef) {
   const idx = all.findIndex((x) => x.slug === a.slug);
   /* 依首頁清單的排列位置決定前後篇：上一篇＝清單中在它前面那張卡片。
      這樣不論是依閱讀順序還是依更新時間排序，動線都和讀者剛看到的一致。 */
@@ -459,7 +488,7 @@ ${siteHeader(2)}
   <article class="wrap article">
 
     <header class="article-head">
-${tags}      <h1 class="article-title">${esc(a.title)}</h1>
+${seriesDef ? `      <p class="article-series"><a href="../../series/${esc(seriesDef.id)}/">${esc(seriesDef.name)}</a></p>\n` : ''}${tags}      <h1 class="article-title">${esc(a.title)}</h1>
       <p class="article-lead">${esc(a.summary)}</p>
       <p class="article-meta">
         <span class="article-meta__author">${esc(a.author)}</span>
@@ -491,6 +520,42 @@ ${siteFooter(2)}
 `;
 }
 
+/* 系列專屬頁：/series/<id>/ */
+function renderSeries(s) {
+  const desc = `${s.hook}。共 ${s.articles.length} 篇。`;
+
+  return `<!doctype html>
+<html lang="${CONFIG.lang}">
+<head>
+${head({
+    title: `${s.name}｜${CONFIG.author}`,
+    description: desc,
+    canonical: `${CONFIG.siteUrl}/series/${s.id}/`,
+    depth: 2,
+  })}
+</head>
+<body data-page-slug="series-${esc(s.id)}">
+${siteHeader(2)}
+<main id="main">
+  <section class="wrap section">
+    <p class="about__eyebrow">癌別專題</p>
+    <h1 class="section__heading">${esc(s.name)}</h1>
+    <p class="group-head__hook">${esc(s.hook)}</p>
+    <p class="section__note">共 ${s.articles.length} 篇<span class="views" data-slug="series-${esc(s.id)}" hidden>．本頁閱讀 <span class="views__n">–</span></span></p>
+
+${s.articles.length
+    ? `    <div class="cards">\n${s.articles.map((a) => articleCard(a, '../../')).join('\n')}\n    </div>`
+    : `    <p class="group-empty">這個系列的文章正在整理中，敬請期待。</p>`}
+
+    <p class="article-back"><a href="../../">← 回到首頁</a></p>
+  </section>
+</main>
+${siteFooter(2)}
+</body>
+</html>
+`;
+}
+
 function render404() {
   return `<!doctype html>
 <html lang="${CONFIG.lang}">
@@ -513,8 +578,13 @@ ${siteFooter(0)}
 }
 
 function renderSitemap(articles) {
+  const newest = articles.reduce((m, a) => (a.updated > m ? a.updated : m), new Date(0));
   const urls = [
-    { loc: CONFIG.siteUrl + '/', lastmod: isoDate(articles[0]?.updated || new Date()) },
+    { loc: CONFIG.siteUrl + '/', lastmod: isoDate(articles.length ? newest : new Date()) },
+    ...SERIES.filter((s) => s.articles.length).map((s) => ({
+      loc: `${CONFIG.siteUrl}/series/${s.id}/`,
+      lastmod: isoDate(s.articles.reduce((m, a) => (a.updated > m ? a.updated : m), new Date(0))),
+    })),
     ...articles.map((a) => ({ loc: `${CONFIG.siteUrl}/${a.url}`, lastmod: isoDate(a.updated) })),
   ];
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -532,18 +602,52 @@ if (!articles.length) {
   process.exit(1);
 }
 
+/* 分組：沒有 series 的歸概論區，其餘依 series id 歸入各癌別 */
+const SERIES = (CONFIG.series || []).map((s) => ({
+  ...s,
+  articles: sortByOrder(articles.filter((a) => a.series === s.id), s.order || []),
+}));
+const OVERVIEW = sortByOrder(articles.filter((a) => !a.series), ORDER);
+
+/* series 打錯字時要立刻知道，否則文章會靜悄悄地從網站上消失 */
+const known = new Set(SERIES.map((s) => s.id));
+const orphans = articles.filter((a) => a.series && !known.has(a.series));
+if (orphans.length) {
+  console.error('以下文章的 series 在 site.config.json 中找不到：');
+  for (const a of orphans) console.error(`  ${a.slug}  series: ${a.series}`);
+  process.exit(1);
+}
+
 const written = [];
-written.push(writeFile('index.html', renderIndex(articles)));
-for (const a of articles) written.push(writeFile(path.join('p', a.slug, 'index.html'), renderArticle(a, articles)));
+written.push(writeFile('index.html', renderIndex(OVERVIEW)));
+
+for (const s of SERIES) {
+  written.push(writeFile(path.join('series', s.id, 'index.html'), renderSeries(s)));
+}
+
+for (const a of articles) {
+  const s = SERIES.find((x) => x.id === a.series);
+  written.push(writeFile(path.join('p', a.slug, 'index.html'),
+    renderArticle(a, s ? s.articles : OVERVIEW, s || null)));
+}
+
 written.push(writeFile('404.html', render404()));
 written.push(writeFile('sitemap.xml', renderSitemap(articles)));
 written.push(writeFile('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${CONFIG.siteUrl}/sitemap.xml\n`));
 
-console.log(`建置完成，共 ${articles.length} 篇文章（${ORDER.length ? '依 articleOrder 排列' : '依更新時間排序'}）：\n`);
-articles.forEach((a, i) => {
-  const pinned = ORDER.includes(a.slug) ? '📌' : '  ';
-  console.log(`  ${String(i + 1).padStart(2)}. ${pinned} ${isoDate(a.updated)}  /${a.url}${a.wasUpdated ? '  (已更新)' : ''}`);
+console.log(`建置完成，共 ${articles.length} 篇文章\n`);
+console.log(`概論（${OVERVIEW.length} 篇）`);
+OVERVIEW.forEach((a, i) => {
+  console.log(`  ${i + 1}. ${isoDate(a.updated)}  /${a.url}${a.wasUpdated ? '  (已更新)' : ''}`);
 });
+for (const s of SERIES) {
+  console.log(`\n${s.name}（${s.articles.length} 篇）  /series/${s.id}/`);
+  if (!s.articles.length) console.log('  （尚無文章，首頁顯示「整理中」）');
+  s.articles.forEach((a, i) => {
+    console.log(`  ${i + 1}. ${isoDate(a.updated)}  /${a.url}${a.wasUpdated ? '  (已更新)' : ''}`);
+  });
+}
+console.log('');
 console.log(`\n輸出 ${written.length} 個檔案。`);
 console.log(CONFIG.counter.enabled
   ? `瀏覽計數：已啟用（${CONFIG.counter.endpoint}）`

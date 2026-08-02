@@ -345,6 +345,73 @@ ul, ol { padding-left: 1.25em; }
   .hs-lead                     { stroke-width: 2.2; stroke-dasharray: 6 5; }
 }
 
+/* ---------- 系列／分組標頭 ---------- */
+
+.group-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: .75rem 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.group-head__text { min-width: 0; }
+
+.group-head__hook {
+  margin: .7rem 0 0;
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--ink-faint);
+  max-width: 44em;
+}
+
+.group-head__go {
+  flex: none;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+  padding-bottom: .15rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color .18s ease;
+}
+
+.group-head__go:hover { border-bottom-color: var(--accent); }
+.group-head__go b { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.group-more { margin: 1.25rem 0 0; font-size: .88rem; }
+.group-more a { text-decoration: none; font-weight: 600; }
+.group-more a:hover { text-decoration: underline; }
+
+.group-empty {
+  margin: 0;
+  padding: 1.5rem 1.25rem;
+  background: var(--bg-tint);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--ink-faint);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+/* 文章頁上方的所屬系列標示 */
+.article-series { margin: 0 0 .6rem; font-size: .82rem; }
+
+.article-series a {
+  display: inline-block;
+  padding: .28em .9em;
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--accent-dk);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color .18s ease, color .18s ease;
+}
+
+.article-series a:hover { background: var(--accent); color: var(--bg); }
+
 /* ---------- 卡片 ---------- */
 
 .cards {
