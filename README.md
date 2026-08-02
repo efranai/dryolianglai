@@ -64,8 +64,31 @@ npm run build
   3. git 最後一次提交該檔案的時間
   4. 檔案 mtime
 
-改過的文章，卡片會多顯示「更新於 ⋯」並自動排到最前面。
-若不希望某次小修改改變排序，在 front matter 手動寫 `updated: 原本的日期` 即可固定。
+改過的文章，卡片會多顯示「更新於 ⋯」。
+若不希望某次小修改改變顯示日期，在 front matter 手動寫 `updated: 原本的日期` 即可固定。
+
+## 文章排序
+
+`site.config.json` 的 `articleOrder` 決定首頁卡片順序，填 slug：
+
+```json
+"articleOrder": [
+  "what-is-radiation-therapy",
+  "what-is-proton-therapy",
+  "who-is-suitable-for-proton-therapy",
+  "side-effects-and-quality-of-life"
+]
+```
+
+- 列在裡面的，照這個順序排（建議的閱讀動線）
+- **沒列到的接在後面**，依最後更新時間新到舊
+- 整個清單留空 `[]`，就全部回到依更新時間排序
+
+排序寫在設定檔而不是 front matter，是為了避免調整順序時動到 `.md` 檔 ——
+一旦檔案被修改，git 會認定文章有更新，顯示的更新日期就會全部跳成當天。
+
+文章頁底部的「上一篇／下一篇」會跟著這個順序走，所以調整 `articleOrder`
+等於同時調整了讀者的閱讀動線。
 
 ## 本機預覽
 

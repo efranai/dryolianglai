@@ -39,6 +39,7 @@ function inlineSvg(relPath) {
 }
 
 const BANNER = CONFIG.hero.banner;
+const ORDER = Array.isArray(CONFIG.articleOrder) ? CONFIG.articleOrder : [];
 
 /* 圖示以 <symbol> 集中維護，內嵌後用 <use> 引用，避免每個圖示各發一次請求 */
 const ICON_SPRITE = inlineSvg('assets/img/icons.svg');
@@ -158,8 +159,17 @@ function loadArticles() {
         url: `p/${slug}/`,
       };
     })
-    // 最新的在前。以「最後更新時間」排序，改過舊文章也會回到最前面。
-    .sort((a, b) => b.updated - a.updated || b.published - a.published);
+    /* 排序：
+       1. site.config.json 的 articleOrder 有列到的，照該清單的順序（建議閱讀動線）
+       2. 沒列到的接在後面，以「最後更新時間」新到舊排列
+       articleOrder 留空時，等於全部依更新時間排序。 */
+    .sort((a, b) => {
+      const rank = (x) => {
+        const i = ORDER.indexOf(x.slug);
+        return i === -1 ? Number.MAX_SAFE_INTEGER : i;
+      };
+      return rank(a) - rank(b) || b.updated - a.updated || b.published - a.published;
+    });
 }
 
 /* ---------- 版型片段 ---------- */
@@ -306,7 +316,7 @@ ${siteHeader(0)}
 
   <section class="wrap section" id="articles" aria-labelledby="articles-heading">
     <h2 class="section__heading" id="articles-heading">文章</h2>
-    <p class="section__note">共 ${articles.length} 篇．依最後更新時間排序</p>
+    <p class="section__note">共 ${articles.length} 篇．${ORDER.length ? '依建議閱讀順序排列' : '依最後更新時間排序'}</p>
     <div class="cards">
 ${cards}
     </div>
@@ -365,8 +375,10 @@ ${siteFooter(0)}
 
 function renderArticle(a, all) {
   const idx = all.findIndex((x) => x.slug === a.slug);
-  const prev = all[idx + 1];
-  const next = all[idx - 1];
+  /* 依首頁清單的排列位置決定前後篇：上一篇＝清單中在它前面那張卡片。
+     這樣不論是依閱讀順序還是依更新時間排序，動線都和讀者剛看到的一致。 */
+  const prev = all[idx - 1];
+  const next = all[idx + 1];
 
   /* .svg 走內嵌（吃得到 CSS 變數，能跟著深色模式換色）；點陣圖走一般 <img> */
   const heroMedia = a.hero
@@ -505,9 +517,10 @@ written.push(writeFile('404.html', render404()));
 written.push(writeFile('sitemap.xml', renderSitemap(articles)));
 written.push(writeFile('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${CONFIG.siteUrl}/sitemap.xml\n`));
 
-console.log(`建置完成，共 ${articles.length} 篇文章：\n`);
-for (const a of articles) {
-  console.log(`  ${isoDate(a.updated)}  /${a.url}${a.wasUpdated ? '  (已更新)' : ''}`);
-}
+console.log(`建置完成，共 ${articles.length} 篇文章（${ORDER.length ? '依 articleOrder 排列' : '依更新時間排序'}）：\n`);
+articles.forEach((a, i) => {
+  const pinned = ORDER.includes(a.slug) ? '📌' : '  ';
+  console.log(`  ${String(i + 1).padStart(2)}. ${pinned} ${isoDate(a.updated)}  /${a.url}${a.wasUpdated ? '  (已更新)' : ''}`);
+});
 console.log(`\n輸出 ${written.length} 個檔案。`);
 if (!CONFIG.supabase.url) console.log('提醒：site.config.json 的 supabase 尚未設定，計數器目前為隱藏狀態。');

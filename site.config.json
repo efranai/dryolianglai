@@ -9,6 +9,14 @@
   "lang": "zh-Hant-TW",
   "appointmentUrl": "https://www.cmuh.cmu.edu.tw/OnlineAppointment/DoctorInfo?flag=first&DocNo=D22687&Docname=%E8%B3%B4%E5%AE%A5%E8%89%AF",
 
+  "_articleOrder": "手動指定首頁卡片順序（填 slug）。列在這裡的照此排列，沒列到的接在後面、依最後更新時間新到舊。整個清單留空 [] 就全部回到依更新時間排序。",
+  "articleOrder": [
+    "what-is-radiation-therapy",
+    "what-is-proton-therapy",
+    "who-is-suitable-for-proton-therapy",
+    "side-effects-and-quality-of-life"
+  ],
+
   "hero": {
     "banner": {
       "src": "assets/img/hero-doctor.jpg",
