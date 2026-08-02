@@ -1,0 +1,14 @@
+{
+  "name": "dryolianglai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "台中質子治療・放射治療｜賴宥良醫師",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0"
+  }
+}
