@@ -1,0 +1,24 @@
+<svg class="illus" viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="er-title er-desc">
+  <title id="er-title">放射治療在食道癌的三種角色</title>
+  <desc id="er-desc">術前放化療是最常見的角色，目的在提高完整切除的機會並降低復發；根治性放化療用於不適合手術的病人，以放化療作為主要治療；症狀緩解治療則著重改善吞嚥困難、提升生活品質。</desc>
+
+  <text class="il-t il-anchor-mid" x="360" y="42">放射治療在食道癌的三種角色</text>
+
+  <g class="il-node il-node--accent"><rect x="30" y="80" width="220" height="140" rx="12" /></g>
+  <text class="il-t il-anchor-mid il-node-text--on" x="140" y="128">術前放化療</text>
+  <text class="il-t-sub il-anchor-mid il-detail il-node-text--on" x="140" y="162">最常見的標準治療</text>
+  <text class="il-t-sub il-anchor-mid il-detail il-node-text--on" x="140" y="186">提高完整切除機會</text>
+
+  <g class="il-node il-node--soft"><rect x="250" y="80" width="220" height="140" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="360" y="128">根治性放化療</text>
+  <text class="il-t-sub il-anchor-mid il-detail" x="360" y="162">不適合手術時</text>
+  <text class="il-t-sub il-anchor-mid il-detail" x="360" y="186">以放化療為主要治療</text>
+
+  <g class="il-node il-node--soft"><rect x="470" y="80" width="220" height="140" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="580" y="128">症狀緩解治療</text>
+  <text class="il-t-sub il-anchor-mid il-detail" x="580" y="162">改善吞嚥困難</text>
+  <text class="il-t-sub il-anchor-mid il-detail" x="580" y="186">提升生活品質</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="262">放射治療不是手術的替代品，而是標準治療的一環</text>
+</svg>

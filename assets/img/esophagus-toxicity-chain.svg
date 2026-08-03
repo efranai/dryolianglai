@@ -1,0 +1,26 @@
+<svg class="illus" viewBox="0 0 720 376" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="tc-title tc-desc">
+  <title id="tc-title">降低劑量如何轉化成臨床獲益</title>
+  <desc id="tc-desc">降低心臟、肺臟與其他正常組織接受的劑量，一方面可減少肺炎與心臟併發症，另一方面可減少治療期間的淋巴球下降、保護免疫功能；兩者合計，讓病人更有機會順利完成整個療程。</desc>
+
+  <path class="il-flow-line" d="M360 92 V112 M180 112 H540 M180 112 V132 M540 112 V132" />
+  <path class="il-flow-line" d="M180 208 V228 M540 208 V228 M180 228 H540 M360 228 V248" />
+
+  <g class="il-node il-node--lead"><rect x="210" y="16" width="300" height="76" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="360" y="54">降低心肺劑量</text>
+  <text class="il-t-sub il-anchor-mid il-detail" x="360" y="78">及其他正常組織</text>
+
+  <g class="il-node il-node--soft"><rect x="30" y="132" width="300" height="76" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="180" y="170">減少心肺併發症</text>
+  <text class="il-t-sub il-anchor-mid il-detail" x="180" y="194">肺炎、心臟毒性</text>
+
+  <g class="il-node il-node--soft"><rect x="390" y="132" width="300" height="76" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="540" y="170">減少淋巴球下降</text>
+  <text class="il-t-sub il-anchor-mid il-detail" x="540" y="194">保護免疫功能</text>
+
+  <g class="il-node il-node--accent"><rect x="210" y="248" width="300" height="76" rx="12" /></g>
+  <text class="il-t il-anchor-mid il-node-text--on" x="360" y="286">更順利完成療程</text>
+  <text class="il-t-sub il-anchor-mid il-detail il-node-text--on" x="360" y="310">有機會改善長期結果</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="358">質子治療的價值，在於把劑量上的優勢轉化成實際的臨床獲益</text>
+</svg>

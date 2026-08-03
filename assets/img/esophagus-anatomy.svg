@@ -1,0 +1,24 @@
+<svg class="illus" viewBox="0 0 720 396" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="ea-title ea-desc">
+  <title id="ea-title">食道與心臟、肺臟的位置關係</title>
+  <desc id="ea-desc">食道位於胸腔中央，兩側緊鄰肺臟，前方則是心臟。因此照射食道腫瘤時，很難完全避開心臟與肺臟，如何降低這些器官接受的劑量，是食道癌放射治療的重要課題。</desc>
+
+  <text class="il-t il-anchor-mid" x="360" y="46">食道（腫瘤）</text>
+  <path class="il-lead" d="M360 58 V126" />
+
+  <ellipse class="il-organ" cx="360" cy="195" rx="280" ry="110" />
+
+  <ellipse class="il-organ" cx="200" cy="190" rx="95" ry="80" />
+  <ellipse class="il-organ" cx="520" cy="190" rx="95" ry="80" />
+  <text class="il-t-sub il-anchor-mid" x="200" y="196">肺</text>
+  <text class="il-t-sub il-anchor-mid" x="520" y="196">肺</text>
+
+  <rect class="il-field" x="345" y="126" width="30" height="94" rx="15" />
+  <rect class="il-tumor" x="348" y="152" width="24" height="42" rx="10" />
+
+  <path class="il-heart" d="M360 276 c-18 -14 -26 -26 -26 -36 a13 13 0 0 1 26 -8 a13 13 0 0 1 26 8 c0 10 -8 22 -26 36 z" />
+  <path class="il-lead" d="M360 282 V328" />
+  <text class="il-t il-anchor-mid" x="360" y="340">心臟</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="382">食道夾在心臟與肺臟之間，照射時很難完全避開這些器官</text>
+</svg>
