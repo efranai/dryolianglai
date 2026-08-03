@@ -92,6 +92,12 @@ function assetVersion(relPath) {
 const V_CSS = assetVersion('assets/css/style.css');
 const V_JS = assetVersion('assets/js/counter.js');
 
+/* Search Console / Bing 的所有權驗證標籤，沒填就完全不輸出 */
+const VERIFY_TAGS = [
+  CONFIG.verification?.google && `<meta name="google-site-verification" content="${esc(CONFIG.verification.google)}">`,
+  CONFIG.verification?.bing && `<meta name="msvalidate.01" content="${esc(CONFIG.verification.bing)}">`,
+].filter(Boolean).map((t) => t + '\n').join('');
+
 const BANNER = CONFIG.hero.banner;
 const ORDER = Array.isArray(CONFIG.articleOrder) ? CONFIG.articleOrder : [];
 
@@ -277,7 +283,7 @@ function head({ title, description, canonical, depth, ogImage }) {
 <meta property="og:url" content="${esc(canonical)}">
 <meta property="og:image" content="${esc(CONFIG.siteUrl + '/' + (ogImage || DEFAULT_OG))}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="${base}assets/css/style.css?v=${V_CSS}">
+${VERIFY_TAGS}<link rel="stylesheet" href="${base}assets/css/style.css?v=${V_CSS}">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎗️</text></svg>">`;
 }
 
