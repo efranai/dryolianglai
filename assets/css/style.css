@@ -552,6 +552,133 @@ ul, ol { padding-left: 1.25em; }
 
 .article-hero svg { padding: .75rem .5rem; }
 
+/* ---------- 重點提示框 ---------- */
+
+.keybox {
+  margin: 2rem 0;
+  padding: 1.4rem 1.5rem 1.5rem;
+  background: var(--accent-bg);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: var(--radius);
+}
+
+.keybox__title {
+  margin: 0 0 .9rem;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--accent-dk);
+}
+
+.keybox ul { margin: 0; padding-left: 1.2em; }
+.keybox li { font-size: .92rem; line-height: 1.85; color: var(--ink); }
+.keybox li + li { margin-top: .55em; }
+.keybox li::marker { color: var(--accent); }
+.keybox p:not(.keybox__title) { margin: 0; font-size: .92rem; line-height: 1.85; }
+
+/* ---------- 並排資訊卡 ---------- */
+
+.infocards {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  margin: 2rem 0;
+}
+
+.infocard {
+  min-width: 0;
+  padding: 1.35rem 1.35rem 1.5rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.infocard__head {
+  margin: 0 0 1rem;
+  padding-bottom: .85rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.infocard__title {
+  display: block;
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--ink);
+}
+
+.infocard__sub {
+  display: block;
+  margin-top: .3rem;
+  font-size: .8rem;
+  line-height: 1.6;
+  color: var(--ink-faint);
+  font-weight: 400;
+}
+
+/* 卡片內：粗體行當作小標，清單緊接在下 */
+.infocard p {
+  margin: 1.1rem 0 .4rem;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--accent-dk);
+}
+
+.infocard p:first-of-type { margin-top: 0; }
+.infocard p strong { font-weight: 700; }
+
+.infocard ul { margin: 0; padding-left: 1.15em; }
+.infocard li { font-size: .88rem; line-height: 1.8; color: var(--ink-soft); }
+.infocard li + li { margin-top: .35em; }
+.infocard li::marker { color: var(--accent); }
+
+/* ---------- 常見問題 ---------- */
+
+.faq { margin: 1.5rem 0 0; }
+
+.faq__item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  margin-bottom: .7rem;
+}
+
+.faq__q {
+  cursor: pointer;
+  list-style: none;
+  padding: 1rem 3rem 1rem 1.2rem;
+  font-size: .95rem;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--ink);
+  position: relative;
+  border-radius: var(--radius);
+}
+
+.faq__q::-webkit-details-marker { display: none; }
+
+.faq__q::after {
+  content: "";
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  width: .6rem;
+  height: .6rem;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform .2s ease;
+}
+
+.faq__item[open] .faq__q::after { transform: translateY(-30%) rotate(-135deg); }
+.faq__q:hover { color: var(--accent); }
+
+.faq__a { padding: 0 1.2rem 1.2rem; }
+.faq__a p { margin: 0; font-size: .9rem; line-height: 1.9; color: var(--ink-soft); }
+.faq__a > * + * { margin-top: .8em; }
+
 /* ---------- 文章內自繪插圖 ---------- */
 
 .illus { display: block; width: 100%; height: auto; }
@@ -618,6 +745,20 @@ ul, ol { padding-left: 1.25em; }
 .il-day--ghost rect, rect.il-day--ghost { fill: none; stroke: var(--line); stroke-dasharray: 5 5; }
 .il-check           { fill: none; stroke: var(--bg); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
 
+/* 流程節點圖 */
+.il-flow-line { fill: none; stroke: var(--line); stroke-width: 2; }
+.il-node rect { stroke-width: 2; }
+.il-node--lead rect   { fill: var(--accent-bg); stroke: var(--accent); stroke-opacity: .5; }
+.il-node--soft rect   { fill: var(--bg-tint);   stroke: var(--line); }
+.il-node--accent rect { fill: var(--accent);    stroke: var(--accent); }
+.il-node-text--on { fill: var(--bg); }
+
+/* 長條圖 */
+.il-bar { stroke: none; }
+.il-bar--surgery { fill: var(--ink-soft); opacity: .5; }
+.il-bar--rt      { fill: var(--accent); }
+.il-t-val { fill: var(--ink); font-size: 15px; font-weight: 700; }
+
 /* 窄螢幕：插圖等比縮到約四成，字級要放大才讀得到 */
 @media (max-width: 46rem) {
   .il-t      { font-size: 27px; }
@@ -627,7 +768,9 @@ ul, ol { padding-left: 1.25em; }
   .il-icon, .il-flow-arrow { stroke-width: 3; }
   .il-check  { stroke-width: 3.6; }
   .il-t-line { font-size: 24px; }
+  .il-t-val  { font-size: 25px; }
   .il-curve  { stroke-width: 5; }
+  .il-flow-line { stroke-width: 3; }
   .il-axis, .il-tick { stroke-width: 2.6; }
   .il-arrow  { stroke-width: 4; }
   /* 次要說明放大後會超出畫布，窄螢幕收起——圖說已完整交代同樣的內容 */

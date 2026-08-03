@@ -1,0 +1,32 @@
+<svg class="illus" viewBox="0 0 720 378" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="path-title path-desc">
+  <title id="path-title">攝護腺癌治療決策路徑示意圖</title>
+  <desc id="path-desc">確診後由醫師評估風險分級。低風險且符合條件者可選擇積極監測並規律追蹤；需要根治性治療者，手術與放射治療都是標準選擇。部分病人需合併荷爾蒙治療，術後若有高復發風險也可能追加放射治療。</desc>
+
+  <!-- 連接線 -->
+  <path class="il-flow-line" d="M360 96 V120 M180 120 H540 M180 120 V140 M540 120 V140" />
+  <path class="il-flow-line" d="M540 220 V244 M450 244 H630 M450 244 V264 M630 244 V264" />
+
+  <!-- 第一層 -->
+  <g class="il-node il-node--lead"><rect x="180" y="16" width="360" height="80" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="360" y="56">確診攝護腺癌</text>
+  <text class="il-t-sub il-anchor-mid il-detail" x="360" y="84">由醫師評估風險分級</text>
+
+  <!-- 第二層：兩條路 -->
+  <g class="il-node il-node--soft"><rect x="40" y="140" width="280" height="80" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="180" y="180">積極監測</text>
+  <text class="il-t-sub il-anchor-mid il-detail" x="180" y="208">低風險且符合條件</text>
+
+  <g class="il-node il-node--soft"><rect x="400" y="140" width="280" height="80" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="540" y="180">根治性治療</text>
+  <text class="il-t-sub il-anchor-mid il-detail" x="540" y="208">兩者都是標準治療</text>
+
+  <!-- 第三層：兩種根治性治療 -->
+  <g class="il-node il-node--accent"><rect x="380" y="264" width="140" height="56" rx="12" /></g>
+  <text class="il-t il-anchor-mid il-node-text--on" x="450" y="298">手術</text>
+
+  <g class="il-node il-node--accent"><rect x="560" y="264" width="140" height="56" rx="12" /></g>
+  <text class="il-t il-anchor-mid il-node-text--on" x="630" y="298">放射治療</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="358">部分病人需合併荷爾蒙治療，術後高風險也可能追加放療</text>
+</svg>

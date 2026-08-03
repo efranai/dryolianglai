@@ -1,0 +1,32 @@
+<svg class="illus" viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="out-title out-desc">
+  <title id="out-title">手術與放射治療副作用型態的比較</title>
+  <desc id="out-desc">CEASAR 研究中，治療三年後回報中度以上困擾的比例：尿漏困擾，手術約 14%、放射治療約 5%；排便急迫感，手術約 3%、放射治療約 7%。兩種治療的副作用型態不同，而非誰比較少。</desc>
+
+  <text class="il-t il-anchor-mid" x="360" y="36">兩種治療的副作用型態不同</text>
+
+  <!-- 圖例 -->
+  <rect class="il-bar il-bar--surgery" x="270" y="66" width="18" height="13" rx="3" />
+  <text class="il-t-sub" x="296" y="78">手術</text>
+  <rect class="il-bar il-bar--rt" x="360" y="66" width="18" height="13" rx="3" />
+  <text class="il-t-sub" x="386" y="78">放射治療</text>
+
+  <!-- 基準線 -->
+  <path class="il-axis" d="M100 268 H620" />
+
+  <!-- 尿漏困擾 -->
+  <rect class="il-bar il-bar--surgery" x="160" y="118" width="62" height="150" rx="5" />
+  <rect class="il-bar il-bar--rt"      x="238" y="214" width="62" height="54"  rx="5" />
+  <text class="il-t-val il-anchor-mid" x="191" y="110">14%</text>
+  <text class="il-t-val il-anchor-mid" x="269" y="206">5%</text>
+  <text class="il-t il-anchor-mid" x="230" y="298">尿漏困擾</text>
+
+  <!-- 排便急迫感 -->
+  <rect class="il-bar il-bar--surgery" x="420" y="236" width="62" height="32" rx="5" />
+  <rect class="il-bar il-bar--rt"      x="498" y="193" width="62" height="75" rx="5" />
+  <text class="il-t-val il-anchor-mid" x="451" y="228">3%</text>
+  <text class="il-t-val il-anchor-mid" x="529" y="185">7%</text>
+  <text class="il-t il-anchor-mid" x="490" y="298">排便急迫感</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="344">CEASAR Study：治療 3 年後回報中度以上困擾的比例</text>
+</svg>

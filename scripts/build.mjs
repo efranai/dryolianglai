@@ -44,12 +44,44 @@ function inlineSvg(relPath) {
    （用 HTML 註解當標記，Markdown 會原樣輸出，再於這裡換成內嵌的 <figure>）*/
 const SVG_TOKEN = /<!--\s*svg:\s*([^|\s]+?)\s*(?:\|\s*([\s\S]*?))?\s*-->/g;
 
+/* 版面元件巨集。在 Markdown 裡用成對的 HTML 註解標記，中間照常寫 Markdown：
+ *
+ *   <!--box:重點先看-->  …清單…  <!--/box-->        重點提示框
+ *   <!--cards-->                                     並排資訊卡容器
+ *     <!--card:手術|需要麻醉與住院-->  …  <!--/card-->
+ *   <!--/cards-->
+ *   <!--faq-->                                       常見問題（可摺疊）
+ *     <!--q:問題？-->  …答案…  <!--/q-->
+ *   <!--/faq-->
+ *
+ * 標記本身會被 Markdown 原樣輸出，這裡再換成對應的 HTML 標籤。
+ */
+const MACROS = [
+  [/<!--\s*box:\s*([^>]*?)\s*-->/g, (_, t) => `<aside class="keybox"><p class="keybox__title">${esc(t)}</p>`],
+  [/<!--\s*\/box\s*-->/g, () => '</aside>'],
+
+  [/<!--\s*cards\s*-->/g, () => '<div class="infocards">'],
+  [/<!--\s*\/cards\s*-->/g, () => '</div>'],
+  [/<!--\s*card:\s*([^|>]*?)\s*(?:\|\s*([^>]*?))?\s*-->/g, (_, t, s) =>
+    `<div class="infocard"><p class="infocard__head"><span class="infocard__title">${esc(t)}</span>` +
+    (s ? `<span class="infocard__sub">${esc(s)}</span>` : '') + '</p>'],
+  [/<!--\s*\/card\s*-->/g, () => '</div>'],
+
+  [/<!--\s*faq\s*-->/g, () => '<div class="faq">'],
+  [/<!--\s*\/faq\s*-->/g, () => '</div>'],
+  [/<!--\s*q:\s*([^>]*?)\s*-->/g, (_, q) =>
+    `<details class="faq__item"><summary class="faq__q">${esc(q)}</summary><div class="faq__a">`],
+  [/<!--\s*\/q\s*-->/g, () => '</div></details>'],
+];
+
 function renderBody(body) {
-  return md.render(body).replace(SVG_TOKEN, (_, src, caption) =>
+  let html = md.render(body).replace(SVG_TOKEN, (_, src, caption) =>
     `<figure class="prose-figure prose-figure--illus">${inlineSvg(src)}` +
     (caption ? `<figcaption>${esc(caption.trim())}</figcaption>` : '') +
     `</figure>`
   );
+  for (const [re, fn] of MACROS) html = html.replace(re, fn);
+  return html;
 }
 
 /* CSS 與 JS 的網址帶上內容雜湊。檔案一改網址就變，
