@@ -95,6 +95,40 @@ const V_JS = assetVersion('assets/js/counter.js');
 const BANNER = CONFIG.hero.banner;
 const ORDER = Array.isArray(CONFIG.articleOrder) ? CONFIG.articleOrder : [];
 
+/* 首頁的結構化資料：把「賴宥良」這個人、他的服務單位與這個網站綁在一起，
+   讓搜尋引擎在處理人名查詢時有明確的實體訊號可用。
+   文章頁的 author 會以 @id 指回同一個人。 */
+const PERSON_ID = `${CONFIG.siteUrl}/#person`;
+
+function homeJsonLd() {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Person',
+        '@id': PERSON_ID,
+        name: CONFIG.author.replace(/醫師$/, ''),
+        alternateName: CONFIG.author,
+        jobTitle: '放射腫瘤科醫師',
+        url: `${CONFIG.siteUrl}/`,
+        image: `${CONFIG.siteUrl}/${BANNER.src}`,
+        description: `${CONFIG.credential}。${CONFIG.tagline}`,
+        worksFor: { '@type': 'MedicalOrganization', name: CONFIG.affiliation },
+        knowsAbout: CONFIG.specialties.map((s) => s.zh),
+        sameAs: [CONFIG.appointmentUrl],
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${CONFIG.siteUrl}/#website`,
+        name: CONFIG.title,
+        url: `${CONFIG.siteUrl}/`,
+        inLanguage: CONFIG.lang,
+        publisher: { '@id': PERSON_ID },
+      },
+    ],
+  }, null, 2);
+}
+
 /* 圖示以 <symbol> 集中維護，內嵌後用 <use> 引用，避免每個圖示各發一次請求 */
 const ICON_SPRITE = inlineSvg('assets/img/icons.svg');
 const icon = (id, cls = 'icon') =>
@@ -363,6 +397,9 @@ function renderIndex(articles) {
 <html lang="${CONFIG.lang}">
 <head>
 ${head({ title: CONFIG.title, description: desc, canonical: CONFIG.siteUrl + '/', depth: 0 })}
+<script type="application/ld+json">
+${homeJsonLd()}
+</script>
 </head>
 <body data-page-slug="__site__">
 ${ICON_SPRITE}
@@ -507,7 +544,7 @@ ${JSON.stringify({
     description: a.summary,
     datePublished: isoDate(a.published),
     dateModified: isoDate(a.updated),
-    author: { '@type': 'Person', name: a.author, affiliation: CONFIG.affiliation },
+    author: { '@type': 'Person', '@id': PERSON_ID, name: a.author, affiliation: CONFIG.affiliation },
     inLanguage: 'zh-Hant-TW',
     mainEntityOfPage: `${CONFIG.siteUrl}/${a.url}`,
   }, null, 2)}
