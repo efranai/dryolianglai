@@ -19,14 +19,14 @@
   <rect class="il-bar il-bar--rt"      x="238" y="214" width="62" height="54"  rx="5" />
   <text class="il-t-val il-anchor-mid" x="191" y="110">14%</text>
   <text class="il-t-val il-anchor-mid" x="269" y="206">5%</text>
-  <text class="il-t il-anchor-mid" x="230" y="298">尿漏困擾</text>
+  <text class="il-t il-anchor-mid" x="230" y="306">尿漏困擾</text>
 
   <!-- 排便急迫感 -->
   <rect class="il-bar il-bar--surgery" x="420" y="236" width="62" height="32" rx="5" />
   <rect class="il-bar il-bar--rt"      x="498" y="193" width="62" height="75" rx="5" />
   <text class="il-t-val il-anchor-mid" x="451" y="228">3%</text>
   <text class="il-t-val il-anchor-mid" x="529" y="185">7%</text>
-  <text class="il-t il-anchor-mid" x="490" y="298">排便急迫感</text>
+  <text class="il-t il-anchor-mid" x="490" y="306">排便急迫感</text>
 
   <text class="il-t-sub il-anchor-mid" x="360" y="344">CEASAR Study：治療 3 年後回報中度以上困擾的比例</text>
 </svg>
