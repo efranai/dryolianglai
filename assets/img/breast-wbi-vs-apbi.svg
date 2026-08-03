@@ -1,0 +1,28 @@
+<svg class="illus" viewBox="0 0 720 350" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="apbi-title apbi-desc">
+  <title id="apbi-title">全乳照射與部分乳房照射的範圍比較</title>
+  <desc id="apbi-desc">全乳放射治療照射整個乳房；部分乳房照射只針對原本腫瘤周圍的組織。照射範圍較小，因此可以用較少的次數完成療程，但僅適用於符合條件的低風險病人。</desc>
+
+  <!-- ===== 左：全乳放射治療 ===== -->
+  <text class="il-t il-anchor-mid" x="190" y="52">全乳放射治療</text>
+  <g class="il-node il-node--soft"><rect x="40" y="70" width="300" height="190" rx="12" /></g>
+
+  <path class="il-field" d="M120 112 C220 112 255 140 255 175 C255 210 220 238 120 238 Z" />
+  <circle class="il-tumor" cx="205" cy="168" r="12" />
+  <text class="il-t-sub il-anchor-mid" x="290" y="172">腫瘤</text>
+
+  <text class="il-t-sub il-anchor-mid" x="190" y="290">照射整個乳房</text>
+
+  <!-- ===== 右：部分乳房照射 ===== -->
+  <text class="il-t il-anchor-mid" x="530" y="52">部分乳房照射（APBI）</text>
+  <g class="il-node il-node--soft"><rect x="380" y="70" width="300" height="190" rx="12" /></g>
+
+  <path class="il-organ" d="M460 112 C560 112 595 140 595 175 C595 210 560 238 460 238 Z" />
+  <circle class="il-field" cx="545" cy="168" r="44" />
+  <circle class="il-tumor" cx="545" cy="168" r="12" />
+  <text class="il-t-sub il-anchor-mid" x="630" y="172">腫瘤</text>
+
+  <text class="il-t-sub il-anchor-mid" x="530" y="290">只照射腫瘤周圍</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="330">照射範圍較小，因此可以用較少的次數完成療程</text>
+</svg>

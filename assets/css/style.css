@@ -769,6 +769,11 @@ ul, ol { padding-left: 1.25em; }
 .il-bar { stroke: none; }
 .il-bar--surgery { fill: var(--ink-soft); opacity: .5; }
 .il-bar--rt      { fill: var(--accent); }
+.il-bar--strong  { fill: var(--accent); }
+.il-bar--soft    { fill: var(--accent); opacity: .32; }
+
+/* 腫瘤標示 */
+.il-tumor { fill: var(--warm); }
 .il-t-val { fill: var(--ink); font-size: 15px; font-weight: 700; }
 
 /* 窄螢幕：插圖等比縮到約四成，字級要放大才讀得到 */
