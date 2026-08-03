@@ -906,6 +906,51 @@ ul, ol { padding-left: 1.25em; }
   color: var(--ink-soft);
 }
 
+/* 大頭照 + 抬頭。窄螢幕改為上下堆疊、照片置中 */
+.about__intro {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.1rem, 3vw, 2rem);
+  margin-bottom: 1.4rem;
+}
+
+.about__intro-text { min-width: 0; }
+.about__intro-text .about__tagline { margin-bottom: 0; }
+
+.about__portrait {
+  flex: 0 0 auto;
+  width: clamp(5.5rem, 12vw, 8.5rem);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--bg);
+  box-shadow: 0 6px 22px rgb(0 0 0 / .14);
+}
+
+@media (max-width: 30rem) {
+  .about__intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* 首頁的「認識更多」：把讀者帶到 /about/ */
+.about__more {
+  margin: 1.4rem 0 0;
+  font-size: .95rem;
+  font-weight: 600;
+}
+.about__more a { text-decoration: none; }
+.about__more a:hover { text-decoration: underline; }
+
+/* 獨立關於頁沒有上方的漸層接縫；保留淡底色，讓白色卡片仍浮得出來 */
+.about--page {
+  background: var(--bg-tint);
+  border-top: 0;
+}
+
 /* 三張卡片 */
 .about__cards {
   display: grid;
@@ -1032,6 +1077,109 @@ ul, ol { padding-left: 1.25em; }
   line-height: 1.4;
   color: var(--ink-faint);
   letter-spacing: .01em;
+}
+
+/* ---------- 學經歷（只在 /about/） ---------- */
+
+.cv {
+  display: grid;
+  gap: clamp(1.1rem, 2.5vw, 1.6rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.cv__block {
+  min-width: 0;
+  padding: 1.35rem 1.5rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.cv__title {
+  margin: 0 0 .85rem;
+  padding-bottom: .6rem;
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--accent);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.cv__body ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.cv__body li {
+  font-size: .92rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+.cv__body li + li { margin-top: .35em; }
+.cv__body li::marker { color: var(--accent); }
+
+/* ---------- 文章結尾的作者卡片 ---------- */
+
+.authorcard {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: 3rem;
+  padding: 1.35rem 1.5rem;
+  background: var(--bg-tint);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.authorcard__photo {
+  flex: 0 0 auto;
+  width: 4.5rem;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--bg);
+  box-shadow: 0 4px 14px rgb(0 0 0 / .12);
+}
+
+.authorcard__body { min-width: 0; }
+
+.authorcard__name {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.authorcard__role {
+  margin: .2rem 0 0;
+  font-size: .84rem;
+  line-height: 1.6;
+  color: var(--ink-faint);
+}
+
+.authorcard__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.25rem;
+  margin: .7rem 0 0;
+  font-size: .88rem;
+  font-weight: 600;
+}
+
+.authorcard__links a { text-decoration: none; }
+.authorcard__links a:hover { text-decoration: underline; }
+
+@media (max-width: 30rem) {
+  .authorcard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .9rem;
+  }
 }
 
 /* 底部：掛號按鈕 + 資訊列 */

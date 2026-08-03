@@ -5,6 +5,10 @@
   "credential": "中部質子治療先行者．值得信賴的放射治療專家",
   "tagline": "不只追求腫瘤控制，更重視降低副作用，守護治療後的生活品質。",
   "subTagline": "以最新科學證據為基礎，協助每位病人選擇最適合的放射治療。",
+
+  "_metaDescription": "首頁在搜尋結果中顯示的摘要。留空則自動用 tagline + subTagline。",
+  "metaDescription": "中國醫藥大學附設醫院放射腫瘤部・質子治療中心賴宥良醫師的癌症衛教網站。以最新科學證據說明乳癌、攝護腺癌、大腸直腸癌與食道癌的放射治療與質子治療，兼顧腫瘤控制與生活品質。",
+
   "author": "賴宥良醫師",
   "lang": "zh-Hant-TW",
   "appointmentUrl": "https://www.cmuh.cmu.edu.tw/OnlineAppointment/DoctorInfo?flag=first&DocNo=D22687&Docname=%E8%B3%B4%E5%AE%A5%E8%89%AF",
