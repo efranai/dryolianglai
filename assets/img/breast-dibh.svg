@@ -1,0 +1,33 @@
+<svg class="illus" viewBox="0 0 720 350" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="dibh-title dibh-desc">
+  <title id="dibh-title">深吸氣閉氣技術如何降低心臟劑量</title>
+  <desc id="dibh-desc">平靜呼吸時，心臟位置靠近乳房的照射範圍。深吸一口氣後肺部擴張，心臟自然向後下方移動，與照射範圍拉開距離，因此心臟接受的輻射劑量隨之下降。</desc>
+
+  <!-- ===== 左：平靜呼吸 ===== -->
+  <text class="il-t il-anchor-mid" x="190" y="52">平靜呼吸</text>
+  <g class="il-node il-node--soft"><rect x="40" y="70" width="300" height="190" rx="12" /></g>
+
+  <text class="il-t-sub il-anchor-mid" x="96" y="104">照射範圍</text>
+  <ellipse class="il-organ" cx="235" cy="172" rx="48" ry="48" />
+  <text class="il-t-sub il-anchor-mid" x="255" y="145">肺</text>
+  <rect class="il-field" x="64" y="116" width="64" height="128" rx="6" />
+  <path class="il-heart" d="M152 214 c-18 -14 -26 -26 -26 -36 a13 13 0 0 1 26 -8 a13 13 0 0 1 26 8 c0 10 -8 22 -26 36 z" />
+  <text class="il-t-sub il-anchor-mid" x="160" y="246">心臟</text>
+
+  <text class="il-t-sub il-anchor-mid" x="190" y="290">心臟靠近照射範圍</text>
+
+  <!-- ===== 右：深吸氣閉氣 ===== -->
+  <text class="il-t il-anchor-mid" x="530" y="52">深吸氣閉氣（DIBH）</text>
+  <g class="il-node il-node--soft"><rect x="380" y="70" width="300" height="190" rx="12" /></g>
+
+  <text class="il-t-sub il-anchor-mid" x="436" y="104">照射範圍</text>
+  <ellipse class="il-organ" cx="575" cy="172" rx="62" ry="62" />
+  <text class="il-t-sub il-anchor-mid" x="595" y="140">肺</text>
+  <rect class="il-field" x="404" y="116" width="64" height="128" rx="6" />
+  <path class="il-heart" d="M532 214 c-18 -14 -26 -26 -26 -36 a13 13 0 0 1 26 -8 a13 13 0 0 1 26 8 c0 10 -8 22 -26 36 z" />
+  <text class="il-t-sub il-anchor-mid" x="532" y="246">心臟</text>
+
+  <text class="il-t-sub il-anchor-mid" x="530" y="290">心臟明顯遠離照射範圍</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="330">深吸氣時肺部擴張，心臟自然向後下方移動，與照射範圍拉開距離</text>
+</svg>

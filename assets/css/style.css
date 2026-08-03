@@ -753,6 +753,15 @@ ul, ol { padding-left: 1.25em; }
 .il-node--accent rect { fill: var(--accent);    stroke: var(--accent); }
 .il-node-text--on { fill: var(--bg); }
 
+/* 解剖示意（照射範圍、器官、心臟） */
+.il-field { fill: color-mix(in srgb, var(--accent) 14%, transparent); stroke: var(--accent); stroke-width: 2; stroke-dasharray: 7 5; }
+.il-organ { fill: var(--bg-tint); stroke: var(--line); stroke-width: 2; }
+.il-heart { fill: color-mix(in srgb, var(--warm) 24%, transparent); stroke: var(--warm); stroke-width: 2; stroke-linejoin: round; }
+
+/* 區間標示與資料點 */
+.il-band  { fill: color-mix(in srgb, var(--accent) 9%, transparent); }
+.il-point { fill: var(--warm); stroke: var(--bg); stroke-width: 2; }
+
 /* 長條圖 */
 .il-bar { stroke: none; }
 .il-bar--surgery { fill: var(--ink-soft); opacity: .5; }
