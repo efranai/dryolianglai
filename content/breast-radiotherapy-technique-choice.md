@@ -80,6 +80,8 @@ IMRT 的目的，是讓放射線更符合乳房及淋巴區域的形狀，在維
 
 質子治療最大的特色，在於利用 **Bragg Peak（布拉格峰）** 的物理特性，讓大部分能量停留在治療目標，不再穿透到腫瘤後方。
 
+<!--svg:assets/img/breast-proton-vs-photon.svg|光子通過乳房後仍會繼續往後穿透，心臟與肺臟因此接受到劑量；質子則在到達目標深度後停止，後方組織幾乎不受影響。-->
+
 因此，相較於現代光子治療（包括 IMRT），多項劑量學研究一致顯示，質子治療可進一步降低心臟及肺部接受的輻射劑量。包括：
 
 - 平均心臟劑量（Mean Heart Dose）
@@ -171,10 +173,10 @@ Darby 等人發表於《New England Journal of Medicine》的研究指出：平�
 
 ## 參考文獻
 
-1. Darby SC, et al. Risk of ischemic heart disease in women after radiotherapy for breast cancer. *N Engl J Med*. 2013.
-2. Taylor CW, et al. Cardiac dose from modern radiotherapy techniques in breast cancer. *J Clin Oncol*. 2017.
-3. MacDonald SM, et al. Proton radiotherapy for breast cancer: dosimetric and early clinical outcomes. *Int J Radiat Oncol Biol Phys*.
-4. ASTRO Clinical Practice Guideline: Proton Beam Therapy for Breast Cancer.
+1. Darby SC, Ewertz M, et al. Risk of Ischemic Heart Disease in Women after Radiotherapy for Breast Cancer. *N Engl J Med*. 2013;368(11):987-998.
+2. Taylor C, Correa C, et al. Estimating the Risks of Breast Cancer Radiotherapy: Evidence From Modern Radiation Doses to the Lungs and Heart and From Previous Randomized Trials. *J Clin Oncol*. 2017;35(15):1641-1649.
+3. MacDonald SM, Patel SA, et al. Proton Therapy for Breast Cancer after Mastectomy: Early Outcomes of a Prospective Clinical Trial. *Int J Radiat Oncol Biol Phys*. 2013;86(3):484-490.
+4. Mutter RW, Choi JI, et al. Proton Therapy for Breast Cancer: A Consensus Statement From the Particle Therapy Cooperative Group Breast Cancer Subcommittee. *Int J Radiat Oncol Biol Phys*. 2021;111(2):337-359.
 5. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer 2026 V1.
 
 ---

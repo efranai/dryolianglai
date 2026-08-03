@@ -1,0 +1,35 @@
+<svg class="illus" viewBox="0 0 720 350" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="pvp-title pvp-desc">
+  <title id="pvp-title">光子治療與質子治療射線行為的比較</title>
+  <desc id="pvp-desc">光子治療的射線通過照射目標後會繼續穿透到後方，因此心臟與肺臟仍會接受到劑量。質子治療的能量在到達目標深度後停止，射線不再往後穿透，因此心臟與肺臟接受的劑量可進一步降低。</desc>
+
+  <!-- ===== 左：光子治療 ===== -->
+  <text class="il-t il-anchor-mid" x="190" y="52">光子治療（如 IMRT）</text>
+  <g class="il-node il-node--soft"><rect x="40" y="70" width="300" height="190" rx="12" /></g>
+
+  <text class="il-t-sub il-anchor-mid" x="96" y="104">照射目標</text>
+  <ellipse class="il-organ" cx="255" cy="172" rx="48" ry="48" />
+  <text class="il-t-sub il-anchor-mid" x="255" y="140">肺</text>
+  <path class="il-heart" d="M170 214 c-18 -14 -26 -26 -26 -36 a13 13 0 0 1 26 -8 a13 13 0 0 1 26 8 c0 10 -8 22 -26 36 z" />
+  <text class="il-t-sub il-anchor-mid" x="170" y="246">心臟</text>
+  <rect class="il-field" x="64" y="116" width="64" height="128" rx="6" />
+  <rect class="il-ray" x="46" y="160" width="284" height="34" rx="8" />
+
+  <text class="il-t-sub il-anchor-mid" x="190" y="290">射線會穿透到後方組織</text>
+
+  <!-- ===== 右：質子治療 ===== -->
+  <text class="il-t il-anchor-mid" x="530" y="52">質子治療</text>
+  <g class="il-node il-node--soft"><rect x="380" y="70" width="300" height="190" rx="12" /></g>
+
+  <text class="il-t-sub il-anchor-mid" x="436" y="104">照射目標</text>
+  <ellipse class="il-organ" cx="595" cy="172" rx="48" ry="48" />
+  <text class="il-t-sub il-anchor-mid" x="595" y="140">肺</text>
+  <path class="il-heart" d="M510 214 c-18 -14 -26 -26 -26 -36 a13 13 0 0 1 26 -8 a13 13 0 0 1 26 8 c0 10 -8 22 -26 36 z" />
+  <text class="il-t-sub il-anchor-mid" x="510" y="246">心臟</text>
+  <rect class="il-field" x="404" y="116" width="64" height="128" rx="6" />
+  <rect class="il-ray" x="386" y="160" width="90" height="34" rx="8" />
+
+  <text class="il-t-sub il-anchor-mid" x="530" y="290">能量停下，後方幾乎不受影響</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="330">質子在到達心臟與肺臟之前就停下，因此能同時降低兩者的劑量</text>
+</svg>

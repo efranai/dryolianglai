@@ -758,6 +758,9 @@ ul, ol { padding-left: 1.25em; }
 .il-organ { fill: var(--bg-tint); stroke: var(--line); stroke-width: 2; }
 .il-heart { fill: color-mix(in srgb, var(--warm) 24%, transparent); stroke: var(--warm); stroke-width: 2; stroke-linejoin: round; }
 
+/* 射束路徑（疊在器官之上，透明度讓下方組織透出來） */
+.il-ray { fill: var(--accent); opacity: .3; }
+
 /* 區間標示與資料點 */
 .il-band  { fill: color-mix(in srgb, var(--accent) 9%, transparent); }
 .il-point { fill: var(--warm); stroke: var(--bg); stroke-width: 2; }
