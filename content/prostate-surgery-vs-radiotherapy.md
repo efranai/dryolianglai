@@ -218,6 +218,7 @@ heroCaption: 攝護腺癌的治療決策路徑：先評估風險分級，再決�
 2. European Association of Urology (EAU) Guidelines on Prostate Cancer 2025.
 3. Barocas DA, et al. Association Between Treatment for Localized Prostate Cancer and Patient-Reported Outcomes Among Men in the CEASAR Study. *JAMA*.
 4. Hamdy FC, et al. Fifteen-Year Outcomes after Monitoring, Surgery, or Radiotherapy for Prostate Cancer. *N Engl J Med*. 2023.
+5. Donovan JL, et al. Patient-Reported Outcomes after Monitoring, Surgery, or Radiotherapy for Prostate Cancer. *N Engl J Med*. 2016;375(15):1425-1437.
 
 ---
 
