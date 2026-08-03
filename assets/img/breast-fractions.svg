@@ -1,22 +1,22 @@
 <svg class="illus" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-labelledby="frx-title frx-desc">
   <title id="frx-title">乳癌放射治療常見療程的次數比較</title>
-  <desc id="frx-desc">傳統分次約 25 至 30 次，短分次約 15 至 20 次（目前大部分病人的標準治療），全乳短療程與部分乳房照射均為 5 次，術中放射治療則在手術當天一次完成。</desc>
+  <desc id="frx-desc">傳統療程約 25 至 30 次，短療程約 15 至 20 次（目前大部分病人的標準治療），超短療程與部分乳房照射均為 5 次，術中放射治療則在手術當天一次完成。</desc>
 
   <text class="il-t il-anchor-mid" x="360" y="42">乳癌放射治療的常見療程</text>
 
-  <!-- 傳統分次 25–30 次 -->
-  <text class="il-t il-anchor-end" x="178" y="108">傳統分次</text>
+  <!-- 傳統療程 25–30 次 -->
+  <text class="il-t il-anchor-end" x="178" y="108">傳統療程</text>
   <rect class="il-bar il-bar--soft" x="190" y="83" width="380" height="34" rx="6" />
   <text class="il-t-val" x="584" y="108">25–30 次</text>
 
-  <!-- 短分次 15–20 次（目前標準） -->
-  <text class="il-t il-anchor-end" x="178" y="168">短分次</text>
+  <!-- 短療程 15–20 次（目前標準） -->
+  <text class="il-t il-anchor-end" x="178" y="168">短療程</text>
   <rect class="il-bar il-bar--strong" x="190" y="143" width="253" height="34" rx="6" />
   <text class="il-t-val" x="457" y="168">15–20 次</text>
 
-  <!-- 全乳短療程 5 次 -->
-  <text class="il-t il-anchor-end" x="178" y="228">全乳短療程</text>
+  <!-- 超短療程（全乳）5 次 -->
+  <text class="il-t il-anchor-end" x="178" y="228">超短療程</text>
   <rect class="il-bar il-bar--soft" x="190" y="203" width="63" height="34" rx="6" />
   <text class="il-t-val" x="267" y="228">5 次</text>
 
