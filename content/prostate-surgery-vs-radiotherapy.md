@@ -214,11 +214,11 @@ heroCaption: 攝護腺癌的治療決策路徑：先評估風險分級，再決�
 
 ## 參考文獻
 
-1. NCCN Clinical Practice Guidelines in Oncology: Prostate Cancer 2026 V1.
-2. European Association of Urology (EAU) Guidelines on Prostate Cancer 2025.
-3. Barocas DA, et al. Association Between Treatment for Localized Prostate Cancer and Patient-Reported Outcomes Among Men in the CEASAR Study. *JAMA*.
-4. Hamdy FC, et al. Fifteen-Year Outcomes after Monitoring, Surgery, or Radiotherapy for Prostate Cancer. *N Engl J Med*. 2023.
-5. Donovan JL, et al. Patient-Reported Outcomes after Monitoring, Surgery, or Radiotherapy for Prostate Cancer. *N Engl J Med*. 2016;375(15):1425-1437.
+1. NCCN Clinical Practice Guidelines in Oncology: Prostate Cancer, Version 1.2026.
+2. EAU-EANM-ESTRO-ESUR-ISUP-SIOG Guidelines on Prostate Cancer. European Association of Urology; 2025.
+3. Barocas DA, Alvarez J, Resnick MJ, et al. Association Between Radiation Therapy, Surgery, or Observation for Localized Prostate Cancer and Patient-Reported Outcomes After 3 Years. *JAMA*. 2017;317(11):1126-1140.
+4. Hamdy FC, Donovan JL, Lane JA, et al. Fifteen-Year Outcomes after Monitoring, Surgery, or Radiotherapy for Prostate Cancer. *N Engl J Med*. 2023;388(17):1547-1558.
+5. Donovan JL, Hamdy FC, Lane JA, et al. Patient-Reported Outcomes after Monitoring, Surgery, or Radiotherapy for Prostate Cancer. *N Engl J Med*. 2016;375(15):1425-1437.
 
 ---
 
