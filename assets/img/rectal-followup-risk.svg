@@ -1,0 +1,39 @@
+<svg class="illus" viewBox="0 0 720 334" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="fu-title fu-desc">
+  <title id="fu-title">Watch and Wait 的追蹤時程與局部再生風險</title>
+  <desc id="fu-desc">局部腫瘤再生大多發生在治療後的前兩年，因此這段期間通常需要每三到四個月密切追蹤；兩年之後風險下降，追蹤間隔可逐漸拉長。及早發現的局部再生，大多仍能接受救援手術。</desc>
+
+  <text class="il-t il-anchor-mid" x="360" y="42">追蹤時程與局部再生風險</text>
+
+  <rect class="il-band il-band--warm" x="100" y="120" width="216" height="80" rx="8" />
+  <text class="il-t-sub il-anchor-mid" x="208" y="108">約 20–30% 可能局部再生</text>
+
+  <path class="il-axis" d="M100 200 H648" />
+  <path class="il-axis-head" d="M652 200 l-10 -6 v12 z" />
+
+  <g class="il-tick">
+    <path d="M100 200 v8 M208 200 v8 M316 200 v8 M424 200 v8 M532 200 v8 M640 200 v8" />
+  </g>
+
+  <!-- 追蹤時點：前兩年密集，之後拉長 -->
+  <g class="il-visit">
+    <circle cx="136" cy="200" r="7" /><circle cx="172" cy="200" r="7" /><circle cx="208" cy="200" r="7" />
+    <circle cx="244" cy="200" r="7" /><circle cx="280" cy="200" r="7" /><circle cx="316" cy="200" r="7" />
+    <circle cx="370" cy="200" r="7" /><circle cx="424" cy="200" r="7" />
+    <circle cx="532" cy="200" r="7" /><circle cx="640" cy="200" r="7" />
+  </g>
+
+  <g class="il-t-sub il-anchor-mid">
+    <text x="100" y="234">0</text>
+    <text x="208" y="234">1</text>
+    <text x="316" y="234">2</text>
+    <text x="424" y="234">3</text>
+    <text x="532" y="234">4</text>
+    <text x="640" y="234">5 年</text>
+  </g>
+
+  <text class="il-t-sub il-anchor-mid" x="208" y="278">每 3～4 個月追蹤</text>
+  <text class="il-t-sub il-anchor-mid" x="490" y="278">間隔逐漸拉長</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="318">及早發現的局部再生，大多仍能接受救援手術</text>
+</svg>

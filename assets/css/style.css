@@ -714,7 +714,11 @@ ul, ol { padding-left: 1.25em; }
 
 /* 區間標示與資料點 */
 .il-band  { fill: color-mix(in srgb, var(--accent) 9%, transparent); }
+.il-band--warm { fill: color-mix(in srgb, var(--warm) 13%, transparent); }
 .il-point { fill: var(--warm); stroke: var(--bg); stroke-width: 2; }
+
+/* 追蹤時點 */
+.il-visit circle { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
 
 /* 長條圖 */
 .il-bar { stroke: none; }
