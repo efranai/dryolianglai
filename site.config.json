@@ -78,7 +78,6 @@
     { "zh": "癌症精準放射治療", "en": "Precision RT", "icon": "i-precision" },
     { "zh": "乳癌放射治療", "en": "Breast Cancer", "icon": "i-breast" },
     { "zh": "攝護腺癌放射治療", "en": "Prostate Cancer", "icon": "i-prostate" },
-    { "zh": "頭頸癌放射治療", "en": "Head & Neck Cancer", "icon": "i-headneck" },
     { "zh": "食道癌放射治療", "en": "Esophageal Cancer", "icon": "i-esophagus" },
     { "zh": "大腸直腸癌放射治療", "en": "Colorectal Cancer", "icon": "i-colorectal" }
   ],
