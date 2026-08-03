@@ -429,7 +429,7 @@ function seriesSection(s) {
   const more = s.articles.length - shown.length;
 
   const body = s.articles.length
-    ? `    <div class="cards">
+    ? `    <div class="cards cards--rail">
 ${shown.map((a) => articleCard(a)).join('\n')}
     </div>${more > 0 ? `\n    <p class="group-more"><a href="series/${esc(s.id)}/">還有 ${more} 篇 →</a></p>` : ''}`
     : `    <p class="group-empty">這個系列的文章正在整理中，敬請期待。</p>`;
@@ -494,7 +494,7 @@ ${siteHeader(0)}
         <p class="group-head__hook">${esc(CONFIG.overview.hook)}</p>
       </div>
     </div>
-    <div class="cards">
+    <div class="cards cards--rail">
 ${cards}
     </div>
   </section>

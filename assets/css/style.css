@@ -87,12 +87,16 @@ ul, ol { padding-left: 1.25em; }
 /* ---------- 容器 ---------- */
 
 .wrap {
+  --gutter: 1rem;                   /* 容器與螢幕邊緣的距離，橫向捲動的卡片要用它做滿版 */
   width: min(100% - 2rem, var(--wrap));
   margin-inline: auto;
 }
 
 @media (max-width: 24rem) {
-  .wrap { width: min(100% - 1.5rem, var(--wrap)); }
+  .wrap {
+    --gutter: .75rem;
+    width: min(100% - 1.5rem, var(--wrap));
+  }
 }
 
 .section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
@@ -377,6 +381,37 @@ ul, ol { padding-left: 1.25em; }
 }
 
 .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+
+/* 手機：首頁的卡片改成橫向滑動（.cards--rail）。
+   螢幕窄到只排得下一欄時，每個癌別堆疊成長條會讓首頁滑不完；
+   改成一列橫滑，右側固定露出下一張的邊緣當作「還有更多」的提示。
+   系列頁（/series/…）不套用──讀者點「看全部」就是想一次看完，維持直向清單。 */
+@media (max-width: 41rem) {
+  .cards--rail {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    /* 一般手機是一張卡加下一張的邊緣；螢幕再寬一點就自動變成一張半到兩張，
+       卡片不會被拉得過寬 */
+    grid-auto-columns: min(82%, 21rem);
+    gap: .85rem;
+    overflow-x: auto;
+    overflow-y: hidden;             /* 只橫向捲動，卡片高度一律對齊 */
+    overscroll-behavior-x: contain; /* 滑到底不會連帶把整頁往回帶 */
+    scroll-snap-type: x mandatory;
+    /* 左右各外推一個邊距、再用同樣的內距補回來：
+       卡片得以滑到螢幕邊緣，總寬度仍等於 100%，不會產生橫向捲軸 */
+    margin-inline: calc(-1 * var(--gutter));
+    padding-inline: var(--gutter);
+    scroll-padding-inline: var(--gutter);
+    padding-block: .5rem 1.5rem;    /* 留白給卡片陰影，不被 overflow 裁掉 */
+    scrollbar-width: none;
+  }
+
+  .cards--rail::-webkit-scrollbar { display: none; }
+
+  .cards--rail .card { scroll-snap-align: start; }
+  .cards--rail .card:hover { transform: none; }  /* 觸控時的位移會干擾滑動手勢 */
+}
 
 .card__link { text-decoration: none; color: inherit; }
 .card__title { margin: 0; font-size: 1.12rem; line-height: 1.55; }
