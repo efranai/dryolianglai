@@ -1,7 +1,7 @@
 <svg class="illus" viewBox="0 0 720 332" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-labelledby="mat-title mat-desc">
   <title id="mat-title">各種療程的證據成熟度</title>
-  <desc id="mat-desc">15 至 20 次短分次治療的證據最完整；5 次部分乳房照射對符合條件者已相當成熟；5 次全乳短療程已有大型研究支持但仍持續發展中；術中放射治療目前並不建議作為大部分病人的常規治療。</desc>
+  <desc id="mat-desc">15 至 20 次的短療程證據最完整；5 次部分乳房照射（APBI）對符合條件者已相當成熟；5 次全乳的超短療程已有大型研究支持但仍持續發展中；術中放射治療目前並不建議作為大部分病人的常規治療。</desc>
 
   <text class="il-t il-anchor-mid" x="360" y="40">不同療程的證據成熟度</text>
   <text class="il-t-sub il-anchor-mid" x="360" y="82">左：證據最完整　→　右：仍在發展中</text>
@@ -17,9 +17,9 @@
   <circle class="il-point" cx="450" cy="170" r="9" />
   <circle class="il-point" cx="580" cy="170" r="9" />
 
-  <text class="il-t il-anchor-mid" x="160" y="126">15–20 次短分次</text>
-  <text class="il-t il-anchor-mid" x="300" y="232">5 次 APBI</text>
-  <text class="il-t il-anchor-mid" x="450" y="126">5 次全乳</text>
+  <text class="il-t il-anchor-mid" x="160" y="126">短療程</text>
+  <text class="il-t il-anchor-mid" x="300" y="232">APBI</text>
+  <text class="il-t il-anchor-mid" x="450" y="126">超短療程</text>
   <text class="il-t il-anchor-mid" x="580" y="232">IORT</text>
 
   <text class="il-t-sub il-anchor-mid il-detail" x="580" y="268">不建議常規使用</text>

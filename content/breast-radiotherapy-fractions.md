@@ -124,7 +124,7 @@ heroCaption: 療程長度大約是：傳統分次 5–6 週、短分次 3–4 �
 
 真正需要思考的，不是「哪一種次數最新？」，而是「**哪一種療程最適合我的病情？**」
 
-<!--svg:assets/img/breast-evidence-maturity.svg|同樣是 5 次，APBI 與全乳短療程的證據成熟度並不相同；而次數最少的 IORT，反而是目前指引最保留的一種。-->
+<!--svg:assets/img/breast-evidence-maturity.svg|同樣是 5 次，部分乳房照射（APBI）與全乳的超短療程，證據成熟度並不相同；而次數最少的 IORT，反而是目前指引最保留的一種。-->
 
 放射腫瘤科醫師會綜合考量：
 
