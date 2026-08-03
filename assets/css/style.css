@@ -287,63 +287,6 @@ ul, ol { padding-left: 1.25em; }
   margin-bottom: 0;
 }
 
-/* ---------- 插圖內部樣式（SVG 內嵌，因此可跟著深色模式換色） ---------- */
-
-.hero-scene text { font-family: var(--font); }
-
-.hs-gantry        { fill: none; stroke: var(--accent); stroke-width: 11; opacity: .22; stroke-linecap: round; }
-.hs-gantry-dot    { fill: var(--accent); opacity: .3; }
-
-.hs-nozzle        { fill: var(--ink-soft); opacity: .8; }
-.hs-nozzle-slit   { fill: var(--accent); }
-
-.hs-beam          { fill: var(--accent); opacity: .16; }
-
-.hs-proton circle { fill: var(--accent); }
-.hs-plus          { fill: none; stroke: var(--bg); stroke-width: 1.9; stroke-linecap: round; }
-
-.hs-couch         { fill: var(--ink-soft); opacity: .45; }
-.hs-couch-leg,
-.hs-couch-base    { fill: var(--ink-soft); opacity: .3; }
-
-.hs-body          { fill: var(--accent-bg); stroke: var(--accent); stroke-width: 2; stroke-opacity: .45; }
-.hs-face          { fill: none; stroke: var(--ink-soft); stroke-width: 2.1; stroke-linecap: round; }
-
-.hs-tumor         { fill: var(--warm); }
-.hs-halo          { fill: none; stroke: var(--warm); stroke-width: 2; opacity: .32; }
-.hs-halo--outer   { opacity: .15; }
-
-.hs-lead          { stroke: var(--ink-faint); stroke-width: 1.4; stroke-dasharray: 4 4; opacity: .7; }
-.hs-callout text  { fill: var(--ink); font-size: 15px; font-weight: 600; }
-.hs-callout .hs-callout--sub { fill: var(--ink-faint); font-size: 12.5px; font-weight: 400; }
-
-.hs-axis          { fill: none; stroke: var(--ink-faint); stroke-width: 1.5; opacity: .55; stroke-linecap: round; }
-.hs-axis-label    { fill: var(--ink-faint); font-size: 12.5px; }
-
-.hs-depth-line    { stroke: var(--warm); stroke-width: 1.5; stroke-dasharray: 5 4; opacity: .55; }
-.hs-depth-text    { fill: var(--warm); font-size: 12px; font-weight: 600; }
-
-.hs-curve           { fill: none; stroke-width: 3.6; stroke-linecap: round; stroke-linejoin: round; }
-.hs-curve--proton   { stroke: var(--accent); }
-.hs-curve--photon   { stroke: var(--ink-faint); opacity: .7; stroke-dasharray: 7 5; }
-
-.hs-legend text     { fill: var(--ink-soft); font-size: 13px; }
-.hs-legend-swatch   { stroke-width: 3.6; }
-
-.hs-deco ellipse    { fill: none; stroke: var(--accent); stroke-width: 1.6; opacity: .15; }
-.hs-deco-core       { fill: var(--accent); opacity: .28; }
-
-/* 插圖在窄螢幕會等比縮到約四成，原本 15px 的標註只剩 6px。
-   這裡放大 SVG 內的字級（單位會跟著一起縮），並收起次要說明避免擁擠。 */
-@media (max-width: 46rem) {
-  .hs-callout text             { font-size: 27px; }
-  .hs-callout .hs-callout--sub { display: none; }
-  .hs-axis-label               { font-size: 22px; }
-  .hs-depth-text               { font-size: 21px; }
-  .hs-legend text              { font-size: 23px; }
-  .hs-curve                    { stroke-width: 5; }
-  .hs-lead                     { stroke-width: 2.2; stroke-dasharray: 6 5; }
-}
 
 /* ---------- 系列／分組標頭 ---------- */
 
@@ -760,6 +703,14 @@ ul, ol { padding-left: 1.25em; }
 
 /* 射束路徑（疊在器官之上，透明度讓下方組織透出來） */
 .il-ray { fill: var(--accent); opacity: .3; }
+
+/* 深度劑量示意：色塊深淺代表劑量高低，透明度寫在各個 rect 上 */
+.il-dose rect { fill: var(--accent); stroke: none; }
+.il-tissue    { fill: none; stroke: var(--line); stroke-width: 2; }
+.il-depth-band {
+  fill: color-mix(in srgb, var(--warm) 12%, transparent);
+  stroke: var(--warm); stroke-width: 2; stroke-dasharray: 6 5;
+}
 
 /* 區間標示與資料點 */
 .il-band  { fill: color-mix(in srgb, var(--accent) 9%, transparent); }
