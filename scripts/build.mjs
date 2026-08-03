@@ -91,6 +91,7 @@ function assetVersion(relPath) {
 }
 const V_CSS = assetVersion('assets/css/style.css');
 const V_JS = assetVersion('assets/js/counter.js');
+const V_SHARE = assetVersion('assets/js/share.js');
 
 /* Search Console / Bing 的所有權驗證標籤，沒填就完全不輸出 */
 const VERIFY_TAGS = [
@@ -406,6 +407,44 @@ ${A.infoItems.map((it) => `          <li class="info-item">
       </div>`;
 }
 
+/* 文章結尾的分享列。
+   全部走各平台的公開分享網址，不載入任何第三方 SDK——不追蹤讀者，也不會拖慢頁面。
+   Instagram 沒有提供網頁分享網址（官方就是沒有這個東西），
+   所以 IG 靠兩條路：手機上的「分享…」會叫出系統分享選單（裡面就有 IG），
+   桌機則用「複製連結」自己貼。 */
+function shareBlock(a) {
+  const url = `${CONFIG.siteUrl}/${a.url}`;
+  const u = encodeURIComponent(url);
+  const t = encodeURIComponent(`${a.title}｜${CONFIG.author}`);
+
+  /* [名稱, 分享網址, 修飾類別]。品牌色寫在 CSS 裡（深色模式要換一組），
+     沒給類別的（X、Threads）沿用內文顏色，黑色標誌在深色底才不會看不見 */
+  const targets = [
+    ['LINE', `https://social-plugins.line.me/lineit/share?url=${u}`, 'line'],
+    ['Facebook', `https://www.facebook.com/sharer/sharer.php?u=${u}`, 'fb'],
+    ['X', `https://twitter.com/intent/tweet?url=${u}&text=${t}`, ''],
+    ['Threads', `https://www.threads.net/intent/post?text=${t}%20${u}`, ''],
+  ];
+
+  const links = targets.map(([name, href, mod]) =>
+    `        <a class="share__btn${mod ? ` share__btn--${mod}` : ''}" href="${esc(href)}"
+           target="_blank" rel="noopener noreferrer">${esc(name)}</a>`).join('\n');
+
+  return `    <aside class="share" aria-labelledby="share-heading" data-share-url="${esc(url)}" data-share-title="${esc(a.title)}｜${esc(CONFIG.author)}">
+      <p class="share__heading" id="share-heading">覺得有幫助嗎？分享給需要的人</p>
+      <div class="share__row">
+        <button class="share__btn share__btn--native" type="button" hidden>
+          ${icon('i-share', 'share__icon')}<span>分享…</span>
+        </button>
+${links}
+        <button class="share__btn share__btn--copy" type="button">
+          ${icon('i-link', 'share__icon')}${icon('i-check', 'share__icon share__icon--done')}<span class="share__copy-text">複製連結</span>
+        </button>
+      </div>
+      <p class="share__status" role="status" aria-live="polite"></p>
+    </aside>`;
+}
+
 /* 文章結尾的作者卡片：讀完文章之後，讓讀者有路徑認識作者、以及掛號 */
 function authorCard(base) {
   return `    <aside class="authorcard">
@@ -603,6 +642,7 @@ ${JSON.stringify({
 </script>
 </head>
 <body data-page-slug="${esc(a.slug)}">
+${ICON_SPRITE}
 ${siteHeader(2)}
 <main id="main">
   <article class="wrap article">
@@ -626,6 +666,8 @@ ${heroBlock}
 ${a.html}
     </div>
 
+${shareBlock(a)}
+
 ${authorCard('../../')}
 
     <nav class="pager" aria-label="文章導覽">
@@ -637,6 +679,7 @@ ${nav}
   </article>
 </main>
 ${siteFooter(2)}
+<script src="../../assets/js/share.js?v=${V_SHARE}" defer></script>
 </body>
 </html>
 `;

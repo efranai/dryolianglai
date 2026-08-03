@@ -1157,13 +1157,105 @@ ul, ol { padding-left: 1.25em; }
 .cv__body li + li { margin-top: .35em; }
 .cv__body li::marker { color: var(--accent); }
 
+/* ---------- 文章結尾的分享列 ---------- */
+
+.share {
+  margin-top: 3rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.share__heading {
+  margin: 0 0 .9rem;
+  font-size: .92rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.share__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+/* --brand 是滑過／聚焦時的顏色。
+   沒指定的（X、Threads、複製連結）沿用內文色，黑色標誌在深色底才不會看不見 */
+.share__btn {
+  --brand: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: .4em;
+  padding: .5em 1em;
+  font: inherit;
+  font-size: .88rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color .16s ease, border-color .16s ease, background-color .16s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.share__btn:hover,
+.share__btn:focus-visible {
+  color: var(--brand);
+  border-color: var(--brand);
+  background: var(--bg-tint);
+}
+
+/* 品牌色只用在滑過／聚焦時的文字上。原廠的 LINE 綠與 FB 藍在白底上
+   對比度不足（2.1 與 4.0），這裡各壓深一階；深色底則反過來提亮。 */
+.share__btn--line { --brand: #05833b; }
+.share__btn--fb   { --brand: #0f57b8; }
+
+@media (prefers-color-scheme: dark) {
+  .share__btn--line { --brand: #2ad673; }
+  .share__btn--fb   { --brand: #5b9dff; }
+}
+
+.share__icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex: none;
+}
+
+/* 系統分享選單：手機才由 JS 取消 hidden，是這裡唯一能通往 IG 的路，所以給它主色 */
+.share__btn--native {
+  --brand: var(--accent);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* 複製按鈕：平常顯示鏈結圖示，複製成功後換成打勾 */
+.share__icon--done { display: none; }
+.share__btn--copy.is-done {
+  --brand: var(--accent);
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+.share__btn--copy.is-done .share__icon { display: none; }
+.share__btn--copy.is-done .share__icon--done { display: block; }
+
+.share__status {
+  margin: .6rem 0 0;
+  min-height: 1.2em;
+  font-size: .82rem;
+  color: var(--ink-faint);
+}
+
 /* ---------- 文章結尾的作者卡片 ---------- */
 
 .authorcard {
   display: flex;
   align-items: center;
   gap: 1.1rem;
-  margin-top: 3rem;
+  margin-top: 1.75rem;
   padding: 1.35rem 1.5rem;
   background: var(--bg-tint);
   border: 1px solid var(--line);
