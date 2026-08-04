@@ -827,6 +827,16 @@ ul, ol { padding-left: 1.25em; }
 .il-tumor { fill: var(--warm); }
 .il-t-val { fill: var(--ink); font-size: 15px; font-weight: 700; }
 
+/* 壓在插圖右下角的來源網址。圖被截圖轉貼時，出處會跟著一起走。
+   刻意低調，但必須維持在「截圖後看得清楚」的大小。 */
+.il-src {
+  fill: var(--ink-faint);
+  font-size: 11px;
+  opacity: .55;
+  text-anchor: end;
+  letter-spacing: .02em;
+}
+
 /* 窄螢幕：插圖等比縮到約四成，字級要放大才讀得到 */
 @media (max-width: 46rem) {
   .il-t      { font-size: 27px; }
@@ -841,6 +851,7 @@ ul, ol { padding-left: 1.25em; }
   .il-flow-line { stroke-width: 3; }
   .il-axis, .il-tick { stroke-width: 2.6; }
   .il-arrow  { stroke-width: 4; }
+  .il-src    { font-size: 18px; }   /* 圖縮到約四成，字級要跟著放大才看得清楚 */
   /* 次要說明放大後會超出畫布，窄螢幕收起——圖說已完整交代同樣的內容 */
   .il-detail { display: none; }
 }

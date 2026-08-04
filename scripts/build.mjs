@@ -28,16 +28,47 @@ const CONFIG = JSON.parse(fs.readFileSync(path.join(ROOT, 'site.config.json'), '
 
 const md = new MarkdownIt({ html: true, linkify: true, typographer: false });
 
+/* 給人看的網址：去掉 https:// 與結尾斜線，印在卡片或壓在圖上都比較乾淨 */
+const urlText = (u) => u.replace(/^https?:\/\//, '').replace(/\/$/, '');
+
 /* 自繪的 SVG 插圖一律直接內嵌，而非用 <img> 外部引用，
    否則 SVG 讀不到頁面的 CSS 變數，深色模式與配色都會失效。 */
 const svgCache = new Map();
 function inlineSvg(relPath) {
   if (!svgCache.has(relPath)) {
-    svgCache.set(relPath, fs.readFileSync(path.join(ROOT, relPath), 'utf8')
+    const raw = fs.readFileSync(path.join(ROOT, relPath), 'utf8')
       .replace(/<\?xml[^>]*\?>\s*/, '')
-      .trim());
+      .trim();
+    svgCache.set(relPath, stampSource(raw));
   }
   return svgCache.get(relPath);
+}
+
+/* 在插圖右下角壓上來源網址。
+   圖被截圖轉貼到 LINE 群組或社團時，出處會跟著一起走——這是導流與辨識，
+   不是版權主張，所以只寫網址、不寫 ©。
+
+   做法是把 viewBox 往下加高一條空白帶再放文字，而不是疊在原本的畫面上：
+   每張圖的底部構圖都不一樣，疊上去遲早會撞到圖說。加高就永遠不會撞，
+   以後新畫的圖也自動適用。圖示 sprite（沒有 .illus）不處理。 */
+/* 空白帶要夠高：窄螢幕時字級全部放大，有幾張圖的底部圖說本來就貼著畫布
+   下緣，加高不夠會被浮水印撞到（順帶一提，那幾張圖的文字descender 原本
+   就被畫布裁掉了一點，加高之後反而正常了）。 */
+const SRC_STRIP = 34;
+
+function stampSource(svg) {
+  if (!/class="illus"/.test(svg)) return svg;
+
+  const m = svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
+  if (!m) return svg;
+
+  const w = parseFloat(m[1]);
+  const h = parseFloat(m[2]);
+  const stamp = `  <text class="il-src" x="${w - 4}" y="${h + 26}">${esc(urlText(CONFIG.siteUrl))}</text>\n`;
+
+  return svg
+    .replace(m[0], `viewBox="0 0 ${w} ${h + SRC_STRIP}"`)
+    .replace(/\s*<\/svg>\s*$/, `\n${stamp}</svg>`);
 }
 
 /* 在文章內文中插入自繪插圖的寫法：
@@ -353,7 +384,7 @@ ${creditsBlock()}
       <p>本網站內容為一般性衛教資訊，目的在於協助民眾理解放射治療與質子治療的原則，<strong>無法取代專業醫療診斷與個別化的治療建議</strong>。任何治療決策，請與您的主治醫師充分討論後決定。</p>
     </section>
     <div class="site-footer__meta">
-      <p class="site-footer__copy">© ${new Date().getFullYear()} ${esc(CONFIG.author)}．本站文字內容版權所有</p>
+      <p class="site-footer__copy">© ${new Date().getFullYear()} ${esc(CONFIG.author)}．本站文字內容版權所有．<a href="${base}terms/">內容使用規範</a></p>
       <p class="site-footer__views">首頁瀏覽次數 <span class="views" data-slug="__site__" hidden><span class="views__n">–</span></span></p>
     </div>
   </div>
@@ -519,8 +550,6 @@ ${qrName ? `            <p class="qr__name">${esc(qrName)}</p>\n` : ''}         
     </aside>`;
 }
 
-/* 給人看的網址：去掉 https:// 與結尾斜線，印在卡片上比較乾淨 */
-const urlText = (u) => u.replace(/^https?:\/\//, '').replace(/\/$/, '');
 
 /* 文章結尾的作者卡片：讀完文章之後，讓讀者有路徑認識作者、以及掛號 */
 function authorCard(base) {
@@ -997,6 +1026,53 @@ ${siteFooter(1)}
    Cloudflare Pages 會在「使用者原本要求的網址」上直接送出這一頁，
    例如 /p/打錯的網址/ ——相對路徑在那個位置會全部解析錯，
    連樣式表都載不到。 */
+/* 內容使用規範：/terms/
+   文字的權屬乾淨（醫師自己寫的），所以明確主張；圖表則只陳述來源、
+   不主張著作權——說法要前後一致，才經得起檢驗。
+   這一頁要公開可索引：DMCA 申訴時，「網站已明示使用範圍」是有份量的。 */
+function renderTerms() {
+  const body = md.render(fs.readFileSync(path.join(CONTENT_DIR, '_terms.md'), 'utf8'));
+
+  return `<!doctype html>
+<html lang="${CONFIG.lang}">
+<head>
+${head({
+    title: `內容使用規範｜${CONFIG.title}`,
+    description: `${CONFIG.title}的著作權聲明與內容使用規範：文章文字、圖表插圖分別可以怎麼引用、分享與列印。`,
+    canonical: `${CONFIG.siteUrl}/terms/`,
+    depth: 1,
+  })}
+</head>
+<body data-page-slug="terms">
+${ICON_SPRITE}
+${siteHeader(1)}
+<main id="main">
+  <article class="wrap article">
+
+${breadcrumb([
+    { name: '首頁', href: '../', url: `${CONFIG.siteUrl}/` },
+    { name: '內容使用規範', url: `${CONFIG.siteUrl}/terms/` },
+  ])}
+
+    <header class="article-head">
+      <h1 class="article-title">內容使用規範</h1>
+      <p class="article-lead">在註明來源的前提下，歡迎引用與分享。</p>
+    </header>
+
+    <div class="prose">
+${body}
+    </div>
+
+${backHome('../', '回首頁')}
+
+  </article>
+</main>
+${siteFooter(1)}
+</body>
+</html>
+`;
+}
+
 /* QR 總覽頁：/qr/
    給醫師在門診用的工具頁——一頁看完所有 QR，可以直接開畫面給病人掃，
    或用瀏覽器列印成一張 A4。刻意不放進導覽列與 sitemap，並加上 noindex：
@@ -1085,6 +1161,7 @@ function renderSitemap(articles) {
   const urls = [
     { loc: CONFIG.siteUrl + '/', lastmod: isoDate(articles.length ? newest : new Date()) },
     { loc: CONFIG.siteUrl + '/about/', lastmod: isoDate(ABOUT_MTIME) },
+    { loc: CONFIG.siteUrl + '/terms/', lastmod: isoDate(fs.statSync(path.join(CONTENT_DIR, '_terms.md')).mtime) },
     ...SERIES.filter((s) => s.articles.length).map((s) => ({
       loc: `${CONFIG.siteUrl}/series/${s.id}/`,
       lastmod: isoDate(s.articles.reduce((m, a) => (a.updated > m ? a.updated : m), new Date(0))),
@@ -1133,6 +1210,7 @@ const written = [];
 written.push(writeFile('index.html', renderIndex(OVERVIEW)));
 written.push(writeFile(path.join('about', 'index.html'), renderAbout()));
 written.push(writeFile(path.join('qr', 'index.html'), renderQrPage()));
+written.push(writeFile(path.join('terms', 'index.html'), renderTerms()));
 
 for (const s of SERIES) {
   written.push(writeFile(path.join('series', s.id, 'index.html'), renderSeries(s)));
