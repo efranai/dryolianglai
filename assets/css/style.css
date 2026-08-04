@@ -343,21 +343,52 @@ ul, ol { padding-left: 1.25em; }
   line-height: 1.7;
 }
 
-/* 文章頁上方的所屬系列標示 */
-.article-series { margin: 0 0 .6rem; font-size: .82rem; }
+/* ---------- 麵包屑 ----------
+   同時是「你在網站的哪裡」和「怎麼回上一層」。第一項固定是首頁，
+   讓讀者不必去猜左上角的站名可以按。 */
 
-.article-series a {
-  display: inline-block;
-  padding: .28em .9em;
-  border-radius: 999px;
-  background: var(--accent-bg);
-  color: var(--accent-dk);
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color .18s ease, color .18s ease;
+.crumbs { margin: 0 0 1.25rem; }
+
+.crumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .2rem .1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: .82rem;
+  line-height: 1.6;
+  color: var(--ink-faint);
 }
 
-.article-series a:hover { background: var(--accent); color: var(--bg); }
+.crumbs__item { display: flex; align-items: center; min-width: 0; }
+
+.crumbs__item + .crumbs__item::before {
+  content: "›";
+  margin-inline: .5em;
+  color: var(--line);
+  font-weight: 700;
+}
+
+.crumbs__item a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: .15em .1em;              /* 手機上好按一點 */
+}
+
+.crumbs__item a:hover { color: var(--accent); text-decoration: underline; }
+
+/* 目前這一頁：文章標題可能很長，截成一行才不會把麵包屑撐成好幾行。
+   完整標題就在下面的 h1，這裡截掉不影響理解。 */
+.crumbs__item[aria-current] { min-width: 0; flex: 0 1 auto; }
+
+.crumbs__now {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 /* ---------- 卡片 ---------- */
 
@@ -1249,6 +1280,86 @@ ul, ol { padding-left: 1.25em; }
   color: var(--ink-faint);
 }
 
+/* ---------- 當面分享用的 QR Code ---------- */
+
+.qr { margin-top: .9rem; }
+
+.qr__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .4em;
+  width: fit-content;
+  padding: .5em 1em;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--bg);
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  list-style: none;                 /* 收掉瀏覽器預設的三角形 */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.qr__toggle::-webkit-details-marker { display: none; }
+.qr__toggle:hover { color: var(--accent); border-color: var(--accent); }
+.qr[open] .qr__toggle { color: var(--accent); border-color: var(--accent); border-style: solid; }
+
+.qr__panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.1rem 1.5rem;
+  margin-top: .9rem;
+  padding: 1.25rem;
+  background: var(--bg-tint);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+/* QR 一律白底黑點：反相的 QR 在不少掃描器上讀不到，
+   白色外框同時充當必要的靜空區 */
+.qr__frame {
+  flex: none;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.qr__code {
+  display: block;
+  width: 156px;
+  height: 156px;
+}
+
+.qr__text {
+  flex: 1 1 15rem;
+  min-width: 0;
+}
+
+.qr__hint {
+  margin: 0 0 .5rem;
+  font-size: .84rem;
+  line-height: 1.7;
+  color: var(--ink-faint);
+}
+
+.qr__url {
+  margin: 0;
+  font-size: .86rem;
+  line-height: 1.6;
+}
+
+.qr__url a {
+  overflow-wrap: anywhere;          /* 長網址換行，不撐破容器 */
+  font-weight: 600;
+}
+
+/* 首頁底部的分享區塊沒有文章的上邊界，自己補一條 */
+.section--share { padding-top: 0; }
+.section--share .share { margin-top: 0; }
+
 /* ---------- 文章結尾的作者卡片 ---------- */
 
 .authorcard {
@@ -1403,9 +1514,30 @@ ul, ol { padding-left: 1.25em; }
 .pager__dir { font-size: .74rem; color: var(--ink-faint); letter-spacing: .04em; }
 .pager__title { font-size: .92rem; font-weight: 600; line-height: 1.6; color: var(--accent); }
 
-.article-back { margin-top: 2rem; font-size: .9rem; }
-.article-back a { text-decoration: none; }
-.article-back a:hover { text-decoration: underline; }
+/* 回首頁：文章看完之後最明顯的出口。做成有邊框的按鈕而非一行小字，
+   因為左上角的站名雖然也能回首頁，但不是每位讀者都會發現。 */
+.article-back { margin-top: 2.5rem; }
+
+.backhome {
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  padding: .65em 1.35em;
+  font-size: .92rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color .18s ease, color .18s ease;
+}
+
+.backhome:hover,
+.backhome:focus-visible { background: var(--accent); color: var(--bg); }
+.backhome__icon { width: 1.15em; height: 1.15em; flex: none; }
+
+.notfound .article-back { display: flex; justify-content: center; }
 
 /* ---------- 頁尾 ---------- */
 
@@ -1464,4 +1596,49 @@ ul, ol { padding-left: 1.25em; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* ---------- 列印 ----------
+   主要情境：把某一頁的 QR Code 印出來給對方掃。
+   因此拿掉導覽、社群按鈕這類印出來沒有意義的東西，
+   並確保 QR 以純黑白輸出（瀏覽器預設會省略背景色）。
+   share.js 會在列印前把所有 <details> 展開，所以 QR 一定印得出來。 */
+@media print {
+  .site-header,
+  .site-footer,
+  .pager,
+  .article-back,
+  .share__row,
+  .share__status,
+  .qr__toggle,
+  .authorcard,
+  .cards--rail {
+    display: none !important;
+  }
+
+  html, body { background: #fff; color: #000; }
+
+  .hero { border: 0; }
+
+  .qr__panel {
+    margin-top: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+  }
+
+  .qr__frame {
+    padding: 0;
+    box-shadow: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;       /* 沒有這行，部分瀏覽器會把 QR 的黑色淡化 */
+  }
+
+  .qr__code { width: 46mm; height: 46mm; }
+
+  .share { border-top: 1px solid #ccc; break-inside: avoid; }
+  .qr__url a { color: #000; text-decoration: none; }
+
+  a { text-decoration: none; }
+  .article-hero, figure, .keybox, .infocards { break-inside: avoid; }
 }

@@ -20,6 +20,7 @@ import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import MarkdownIt from 'markdown-it';
+import QRCode from 'qrcode';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CONTENT_DIR = path.join(ROOT, 'content');
@@ -407,15 +408,60 @@ ${A.infoItems.map((it) => `          <li class="info-item">
       </div>`;
 }
 
-/* 文章結尾的分享列。
+/* 每個可分享的網址在建置時就先產生 QR Code，直接內嵌成 SVG：
+   純向量，放大或列印都不會糊，讀者端也不必載入任何函式庫。
+   版型函式是同步的，所以主流程會先把用得到的網址全部產好放進這個 Map。
+   顏色固定黑白：反相的 QR 在不少掃描器上讀不到，所以深色模式一樣是白底。 */
+const qrCache = new Map();
+
+async function warmQr(urls) {
+  for (const url of urls) {
+    if (qrCache.has(url)) continue;
+    const svg = await QRCode.toString(url, { type: 'svg', errorCorrectionLevel: 'M', margin: 1 });
+    qrCache.set(url, svg.replace('<svg ', '<svg class="qr__code" role="img" aria-label="這一頁網址的 QR Code" '));
+  }
+}
+
+/* 麵包屑。trail 的每一項是 { name, href, url }，最後一項是目前這頁，不給 href。
+   href 供畫面上的連結用，url 是絕對網址，給結構化資料用。 */
+function breadcrumb(trail) {
+  const items = trail.map((c) => c.href
+    ? `<li class="crumbs__item"><a href="${esc(c.href)}">${esc(c.name)}</a></li>`
+    : `<li class="crumbs__item" aria-current="page"><span class="crumbs__now">${esc(c.name)}</span></li>`).join('');
+
+  return `    <nav class="crumbs" aria-label="您在這裡">
+      <ol class="crumbs__list">${items}</ol>
+    </nav>`;
+}
+
+function breadcrumbJsonLd(trail) {
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: trail.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.name,
+      item: c.url,
+    })),
+  };
+}
+
+/* 回首頁的按鈕。文章看完之後最明顯的出口，
+   左上角的站名雖然也能回首頁，但不是每位讀者都會發現。 */
+function backHome(base, label = '回首頁看更多文章') {
+  return `    <p class="article-back">
+      <a class="backhome" href="${base}">${icon('i-home', 'backhome__icon')}<span>${esc(label)}</span></a>
+    </p>`;
+}
+
+/* 分享列。
    全部走各平台的公開分享網址，不載入任何第三方 SDK——不追蹤讀者，也不會拖慢頁面。
    Instagram 沒有提供網頁分享網址（官方就是沒有這個東西），
    所以 IG 靠兩條路：手機上的「分享…」會叫出系統分享選單（裡面就有 IG），
    桌機則用「複製連結」自己貼。 */
-function shareBlock(a) {
-  const url = `${CONFIG.siteUrl}/${a.url}`;
+function shareBlock({ url, title, heading = '覺得有幫助嗎？分享給需要的人', qrHint }) {
   const u = encodeURIComponent(url);
-  const t = encodeURIComponent(`${a.title}｜${CONFIG.author}`);
+  const t = encodeURIComponent(`${title}｜${CONFIG.author}`);
 
   /* [名稱, 分享網址, 修飾類別]。品牌色寫在 CSS 裡（深色模式要換一組），
      沒給類別的（X、Threads）沿用內文顏色，黑色標誌在深色底才不會看不見 */
@@ -430,8 +476,8 @@ function shareBlock(a) {
     `        <a class="share__btn${mod ? ` share__btn--${mod}` : ''}" href="${esc(href)}"
            target="_blank" rel="noopener noreferrer">${esc(name)}</a>`).join('\n');
 
-  return `    <aside class="share" aria-labelledby="share-heading" data-share-url="${esc(url)}" data-share-title="${esc(a.title)}｜${esc(CONFIG.author)}">
-      <p class="share__heading" id="share-heading">覺得有幫助嗎？分享給需要的人</p>
+  return `    <aside class="share" aria-labelledby="share-heading" data-share-url="${esc(url)}" data-share-title="${esc(title)}｜${esc(CONFIG.author)}">
+      <p class="share__heading" id="share-heading">${esc(heading)}</p>
       <div class="share__row">
         <button class="share__btn share__btn--native" type="button" hidden>
           ${icon('i-share', 'share__icon')}<span>分享…</span>
@@ -442,6 +488,17 @@ ${links}
         </button>
       </div>
       <p class="share__status" role="status" aria-live="polite"></p>
+
+      <details class="qr">
+        <summary class="qr__toggle">${icon('i-qr', 'share__icon')}<span>當面分享：QR Code 與網址</span></summary>
+        <div class="qr__panel">
+          <div class="qr__frame">${qrCache.get(url) || ''}</div>
+          <div class="qr__text">
+            <p class="qr__hint">${esc(qrHint || '請對方用手機相機掃描，或直接輸入下面的網址。')}</p>
+            <p class="qr__url"><a href="${esc(url)}">${esc(url)}</a></p>
+          </div>
+        </div>
+      </details>
     </aside>`;
 }
 
@@ -563,8 +620,18 @@ ${ABOUT_NOTE}
     </div>
   </section>
 
+  <section class="wrap section section--share">
+${shareBlock({
+    url: `${CONFIG.siteUrl}/`,
+    title: CONFIG.title,
+    heading: '把整個網站分享給需要的人',
+    qrHint: '掃描後會進入首頁，可以瀏覽所有癌別的衛教文章。',
+  })}
+  </section>
+
 </main>
 ${siteFooter(0)}
+<script src="assets/js/share.js?v=${V_SHARE}" defer></script>
 </body>
 </html>
 `;
@@ -605,6 +672,12 @@ ${a.heroCaption ? `      <figcaption>${esc(a.heroCaption)}</figcaption>\n` : ''}
     next ? `        <a class="pager__item pager__item--next" href="../${esc(next.slug)}/"><span class="pager__dir">下一篇 →</span><span class="pager__title">${esc(next.title)}</span></a>` : '',
   ].filter(Boolean).join('\n');
 
+  const trail = [
+    { name: '首頁', href: '../../', url: `${CONFIG.siteUrl}/` },
+    ...(seriesDef ? [{ name: seriesDef.name, href: `../../series/${seriesDef.id}/`, url: `${CONFIG.siteUrl}/series/${seriesDef.id}/` }] : []),
+    { name: a.title, url: `${CONFIG.siteUrl}/${a.url}` },
+  ];
+
   return `<!doctype html>
 <html lang="${CONFIG.lang}">
 <head>
@@ -637,6 +710,7 @@ ${JSON.stringify({
         inLanguage: 'zh-Hant-TW',
         mainEntity: faq,
       }] : []),
+      breadcrumbJsonLd(trail),
     ],
   }, null, 2)}
 </script>
@@ -647,8 +721,10 @@ ${siteHeader(2)}
 <main id="main">
   <article class="wrap article">
 
+${breadcrumb(trail)}
+
     <header class="article-head">
-${seriesDef ? `      <p class="article-series"><a href="../../series/${esc(seriesDef.id)}/">${esc(seriesDef.name)}</a></p>\n` : ''}${tags}      <h1 class="article-title">${esc(a.title)}</h1>
+${tags}      <h1 class="article-title">${esc(a.title)}</h1>
       <p class="article-lead">${esc(a.summary)}</p>
       <p class="article-meta">
         <span class="article-meta__author"><a href="../../about/">${esc(a.author)}</a></span>
@@ -666,7 +742,7 @@ ${heroBlock}
 ${a.html}
     </div>
 
-${shareBlock(a)}
+${shareBlock({ url: `${CONFIG.siteUrl}/${a.url}`, title: a.title })}
 
 ${authorCard('../../')}
 
@@ -674,7 +750,7 @@ ${authorCard('../../')}
 ${nav}
     </nav>
 
-    <p class="article-back"><a href="../../">← 回到文章列表</a></p>
+${backHome('../../')}
 
   </article>
 </main>
@@ -688,6 +764,12 @@ ${siteFooter(2)}
 /* 系列專屬頁：/series/<id>/ */
 function renderSeries(s) {
   const desc = `${s.name}衛教專區：${s.hook}。由${CONFIG.affiliation}${CONFIG.author}撰寫，以最新科學證據說明治療選擇與副作用照護，目前共 ${s.articles.length} 篇。`;
+  const url = `${CONFIG.siteUrl}/series/${s.id}/`;
+
+  const trail = [
+    { name: '首頁', href: '../../', url: `${CONFIG.siteUrl}/` },
+    { name: s.name, url },
+  ];
 
   return `<!doctype html>
 <html lang="${CONFIG.lang}">
@@ -695,14 +777,35 @@ function renderSeries(s) {
 ${head({
     title: `${s.name}｜${CONFIG.author}`,
     description: desc,
-    canonical: `${CONFIG.siteUrl}/series/${s.id}/`,
+    canonical: url,
     depth: 2,
   })}
+<script type="application/ld+json">
+${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        '@id': `${url}#page`,
+        url,
+        name: s.name,
+        description: desc,
+        inLanguage: 'zh-Hant-TW',
+        isPartOf: { '@id': `${CONFIG.siteUrl}/#website` },
+        about: { '@id': PERSON_ID },
+      },
+      breadcrumbJsonLd(trail),
+    ],
+  }, null, 2)}
+</script>
 </head>
 <body data-page-slug="series-${esc(s.id)}">
+${ICON_SPRITE}
 ${siteHeader(2)}
 <main id="main">
   <section class="wrap section">
+${breadcrumb(trail)}
+
     <p class="about__eyebrow">癌別專題</p>
     <h1 class="section__heading">${esc(s.name)}</h1>
     <p class="group-head__hook">${esc(s.hook)}</p>
@@ -712,10 +815,17 @@ ${s.articles.length
     ? `    <div class="cards">\n${s.articles.map((a) => articleCard(a, '../../')).join('\n')}\n    </div>`
     : `    <p class="group-empty">這個系列的文章正在整理中，敬請期待。</p>`}
 
-    <p class="article-back"><a href="../../">← 回到首頁</a></p>
+${s.articles.length ? shareBlock({
+    url,
+    title: s.name,
+    heading: `把整個「${s.name}」系列分享給需要的人`,
+    qrHint: `掃描後會直接進入這個系列，只看得到${s.name}的文章。`,
+  }) + '\n' : ''}
+${backHome('../../')}
   </section>
 </main>
 ${siteFooter(2)}
+<script src="../../assets/js/share.js?v=${V_SHARE}" defer></script>
 </body>
 </html>
 `;
@@ -751,6 +861,10 @@ function renderAbout() {
   const A = CONFIG.about;
   const about = loadAbout();
   const desc = `${A.tagline}。${CONFIG.affiliation}主治醫師賴宥良的治療理念、臨床專長、學經歷與門診掛號資訊。`;
+  const trail = [
+    { name: '首頁', href: '../', url: `${CONFIG.siteUrl}/` },
+    { name: A.heading, url: `${CONFIG.siteUrl}/about/` },
+  ];
 
   return `<!doctype html>
 <html lang="${CONFIG.lang}">
@@ -780,6 +894,7 @@ ${JSON.stringify({
         award: ['中國醫藥大學附設醫院傑出優良醫師（105 年度）', '中國醫藥大學附設醫院傑出優良醫師（111 年度）'],
         medicalSpecialty: 'Oncologic',
       },
+      breadcrumbJsonLd(trail),
     ],
   }, null, 2)}
 </script>
@@ -791,6 +906,8 @@ ${siteHeader(1)}
 
   <section class="section about about--page" id="about" aria-labelledby="about-heading">
     <div class="wrap">
+
+${breadcrumb(trail)}
 
       <div class="about__intro">
         <img class="about__portrait" src="../${esc(PORTRAIT.src)}" alt="${esc(CONFIG.author)}"
@@ -838,7 +955,7 @@ ${ABOUT_CV.map((sec) => `        <section class="cv__block">
 ${aboutFootHtml()}
 ${ABOUT_NOTE}
 
-      <p class="article-back"><a href="../">← 回到首頁</a></p>
+${backHome('../', '回首頁')}
 
     </div>
   </section>
@@ -857,12 +974,13 @@ function render404() {
 ${head({ title: `找不到頁面｜${CONFIG.title}`, description: '找不到這個頁面', canonical: CONFIG.siteUrl + '/404.html', depth: 0 })}
 </head>
 <body>
+${ICON_SPRITE}
 ${siteHeader(0)}
 <main id="main">
   <section class="wrap section notfound">
     <h1 class="section__heading">找不到這個頁面</h1>
     <p class="prose">您要找的內容可能已經移動或不存在。</p>
-    <p class="article-back"><a href="./">← 回到首頁</a></p>
+${backHome('./', '回首頁')}
   </section>
 </main>
 ${siteFooter(0)}
@@ -912,6 +1030,13 @@ if (orphans.length) {
   for (const a of orphans) console.error(`  ${a.slug}  series: ${a.series}`);
   process.exit(1);
 }
+
+/* 版型函式是同步的，所以在開始輸出之前先把所有 QR Code 產好 */
+await warmQr([
+  `${CONFIG.siteUrl}/`,
+  ...SERIES.filter((s) => s.articles.length).map((s) => `${CONFIG.siteUrl}/series/${s.id}/`),
+  ...articles.map((a) => `${CONFIG.siteUrl}/${a.url}`),
+]);
 
 const written = [];
 written.push(writeFile('index.html', renderIndex(OVERVIEW)));

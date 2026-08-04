@@ -114,4 +114,15 @@
   <symbol id="i-check" viewBox="0 0 24 24">
     <path d="m4.8 12.6 4.6 4.6L19.2 7.4"/>
   </symbol>
+
+  <symbol id="i-qr" viewBox="0 0 24 24">
+    <rect x="3.2" y="3.2" width="7" height="7" rx="1.2"/>
+    <rect x="13.8" y="3.2" width="7" height="7" rx="1.2"/>
+    <rect x="3.2" y="13.8" width="7" height="7" rx="1.2"/>
+    <path d="M13.8 13.8h3v3h-3zM17.8 17.8h3v3h-3zM13.8 20.8h.01M20.8 13.8h.01"/>
+  </symbol>
+
+  <symbol id="i-home" viewBox="0 0 24 24">
+    <path d="M3.6 10.4 12 3.4l8.4 7v9.2a1 1 0 0 1-1 1h-4.6v-6h-5.6v6H4.6a1 1 0 0 1-1-1z"/>
+  </symbol>
 </svg>

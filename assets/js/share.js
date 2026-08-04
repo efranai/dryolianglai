@@ -6,6 +6,23 @@
    2. 「複製連結」——桌機分享到 IG、或想貼到任何地方時用。
    其餘平台是純連結，沒有 JS 也能用。 */
 (() => {
+  /* 列印前把所有摺疊區塊展開。
+     主要是為了 QR Code——收合狀態下瀏覽器不會把內容印出來；
+     順帶讓「常見問題」的答案在列印時也一起出現。 */
+  addEventListener('beforeprint', () => {
+    document.querySelectorAll('details:not([open])').forEach((d) => {
+      d.open = true;
+      d.dataset.openedForPrint = '1';
+    });
+  });
+
+  addEventListener('afterprint', () => {
+    document.querySelectorAll('details[data-opened-for-print]').forEach((d) => {
+      d.open = false;
+      delete d.dataset.openedForPrint;
+    });
+  });
+
   const box = document.querySelector('.share');
   if (!box) return;
 

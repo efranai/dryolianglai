@@ -12,5 +12,8 @@
   },
   "dependencies": {
     "markdown-it": "^14.1.0"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.4"
   }
 }
