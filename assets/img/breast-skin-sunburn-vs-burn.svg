@@ -1,0 +1,48 @@
+<svg class="illus" viewBox="0 0 720 292" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="skinburn-title skinburn-desc">
+  <title id="skinburn-title">放射線皮膚炎與曬傷、燒燙傷的比較示意圖</title>
+  <desc id="skinburn-desc">紫外線會造成曬傷，醫療放射線會造成放射線皮膚炎，兩者都是皮膚受到高能量影響後的發炎反應，表現為泛紅、乾燥與色素沉著。高溫與火焰才會造成燒燙傷；放射線本身沒有溫度，不會把皮膚燒焦。</desc>
+
+  <!-- 左：紫外線 → 曬傷 -->
+  <g class="il-node il-node--lead">
+    <rect x="24" y="40" width="212" height="212" rx="16" />
+  </g>
+  <text class="il-t-sub il-anchor-mid" x="130" y="72">紫外線（曬太陽）</text>
+  <g class="il-icon" transform="translate(130 122)">
+    <circle cx="0" cy="0" r="13" />
+    <path d="M0-24V-31M0 24v7M-24 0h-7M24 0h7M-17-17l-5-5M17 17l5 5M17-17l5-5M-17 17l-5 5" />
+  </g>
+  <text class="il-t il-anchor-mid" x="130" y="186">曬傷</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="130" y="214">泛紅、乾燥</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="130" y="236">後續色素沉著</text>
+
+  <!-- 中：醫療放射線 → 放射線皮膚炎 -->
+  <g class="il-node il-node--lead">
+    <rect x="254" y="40" width="212" height="212" rx="16" />
+  </g>
+  <text class="il-t-sub il-anchor-mid" x="360" y="72">醫療放射線</text>
+  <g transform="translate(360 122)">
+    <rect class="il-machine" x="-22" y="-26" width="44" height="13" rx="4" />
+    <path class="il-beam" d="M-16-13 16-13 26 26-26 26Z" />
+    <path class="il-icon" d="M-26 26h52" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="186">放射線皮膚炎</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="214">泛紅、乾燥</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="236">後續色素沉著</text>
+
+  <!-- 右：高溫火焰 → 燒燙傷（放射治療不會造成） -->
+  <g class="il-node il-node--soft">
+    <rect x="484" y="40" width="212" height="212" rx="16" />
+  </g>
+  <text class="il-t-sub il-anchor-mid" x="590" y="72">高溫、火焰</text>
+  <g transform="translate(590 122)">
+    <path class="il-icon" d="M0-26c9 10 4 15 0 18-5-4-3-11 0-18ZM0-8c14 8 16 20 10 27-4 5-13 7-20 3-8-4-10-14-5-21 3-5 9-6 15-9Z" />
+    <path class="il-break" d="M-26-24 26 26M26-24-26 26" />
+  </g>
+  <text class="il-t il-anchor-mid" x="590" y="186">燒燙傷</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="590" y="214">放射線沒有溫度</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="590" y="236">不會造成這一類傷害</text>
+
+  <!-- 底部結論 -->
+  <text class="il-t-sub il-anchor-mid" x="360" y="278">放射線皮膚炎的表現接近曬傷，而不是大家想像中的「燒焦」</text>
+</svg>

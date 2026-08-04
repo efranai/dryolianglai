@@ -1,0 +1,44 @@
+<svg class="illus" viewBox="0 0 720 356" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="bsemap-title bsemap-desc">
+  <title id="bsemap-title">乳癌放射治療的副作用依照射範圍而不同的示意圖</title>
+  <desc id="bsemap-desc">照射乳房與胸壁時，最常見的是皮膚泛紅、乾燥與色素沉著。照射範圍若包含腋下淋巴結，少數人可能出現淋巴水腫，但主要與腋下手術有關。照射鎖骨上淋巴結時，少數人可能有喉嚨痛或日後甲狀腺功能低下。心臟與肺臟屬於長期影響，現代技術以降低其劑量為重點。照射範圍以外的部位不會受到影響。</desc>
+
+  <!-- 人形（上半身） -->
+  <g class="il-body">
+    <circle cx="360" cy="58" r="28" />
+    <rect x="349" y="82" width="22" height="15" rx="6" />
+    <rect x="292" y="95" width="136" height="190" rx="28" />
+    <rect x="258" y="110" width="24" height="136" rx="12" />
+    <rect x="438" y="110" width="24" height="136" rx="12" />
+  </g>
+
+  <!-- 胸腔內的器官 -->
+  <ellipse class="il-organ" cx="333" cy="198" rx="21" ry="33" />
+  <ellipse class="il-organ" cx="387" cy="198" rx="21" ry="33" />
+  <path class="il-heart" d="M360 232c-13-9-24-18-24-29 0-8 6-13 12-13 5 0 9 3 12 7 3-4 7-7 12-7 6 0 12 5 12 13 0 11-11 20-24 29Z" />
+
+  <!-- 照射範圍 -->
+  <ellipse class="il-field" cx="360" cy="112" rx="42" ry="14" />
+  <ellipse class="il-field" cx="302" cy="148" rx="20" ry="18" />
+  <ellipse class="il-field" cx="392" cy="178" rx="36" ry="28" />
+
+  <!-- 左側標註 -->
+  <path class="il-lead" d="M318 112 H258" />
+  <text class="il-t il-anchor-end" x="250" y="98">鎖骨上淋巴結</text>
+  <text class="il-t-sub il-detail il-anchor-end" x="250" y="122">少見：喉嚨痛、甲狀腺功能低下</text>
+
+  <path class="il-lead" d="M284 156 L 258 186" />
+  <text class="il-t il-anchor-end" x="250" y="196">腋下淋巴結</text>
+  <text class="il-t-sub il-detail il-anchor-end" x="250" y="220">少見：淋巴水腫，主要與手術有關</text>
+
+  <!-- 右側標註 -->
+  <path class="il-lead" d="M428 162 H468" />
+  <text class="il-t" x="476" y="122">乳房與胸壁皮膚</text>
+  <text class="il-t-sub il-detail" x="476" y="146">最常見：泛紅、乾燥、色素沉著</text>
+
+  <path class="il-lead" d="M404 212 L 468 240" />
+  <text class="il-t" x="476" y="238">心臟與肺臟</text>
+  <text class="il-t-sub il-detail" x="476" y="262">長期影響，以現代技術盡量降低劑量</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="332">副作用取決於照射到哪裡；照射範圍以外的部位不會受到影響</text>
+</svg>
