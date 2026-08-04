@@ -148,6 +148,24 @@ ul, ol { padding-left: 1.25em; }
 .brand__name { font-weight: 700; letter-spacing: .02em; }
 .brand__desc { font-size: .78rem; color: var(--ink-faint); }
 
+/* 頁首是 sticky，所以這顆房子等於「隨時可以回首頁」。
+   站名本來就是連結，但不是每位讀者會發現——這個圖示就是在說「這裡可以按」。 */
+.brand__home {
+  align-self: center;               /* 其餘文字對齊基線，圖示對齊行的中央 */
+  flex: none;
+  width: 1.95rem;
+  height: 1.95rem;
+  padding: .38rem;
+  margin-right: -.1rem;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border-radius: 9px;
+  transition: background-color .18s ease, color .18s ease;
+}
+
+.brand:hover .brand__home,
+.brand:focus-visible .brand__home { background: var(--accent); color: var(--bg); }
+
 .site-nav { display: flex; align-items: center; gap: 1rem; font-size: .9rem; flex-wrap: wrap; }
 .site-nav a { color: var(--ink-soft); text-decoration: none; }
 .site-nav a:hover { color: var(--accent); }
@@ -164,11 +182,15 @@ ul, ol { padding-left: 1.25em; }
 
 .site-nav__cta:hover { background: var(--accent); color: var(--bg) !important; }
 
-/* 窄螢幕：收起品牌副標並縮小間距，讓 sticky 頁首維持單行高度 */
+/* 窄螢幕：收起品牌副標並縮小間距，讓 sticky 頁首維持單行高度。
+   頁首一直黏在畫面上，換成兩行等於永久吃掉一成的可視高度。 */
 @media (max-width: 30rem) {
   .brand__desc { display: none; }
-  .site-nav { gap: .75rem; font-size: .84rem; }
-  .site-nav__cta { padding: .3em .8em; }
+  .brand { gap: .38rem; }
+  .brand__home { width: 1.7rem; height: 1.7rem; padding: .32rem; border-radius: 8px; }
+  .site-header__inner { gap: .6rem; }
+  .site-nav { gap: .7rem; font-size: .84rem; }
+  .site-nav__cta { padding: .3em .75em; }
 }
 
 /* ---------- 首頁 HERO ----------

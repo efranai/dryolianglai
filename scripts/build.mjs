@@ -287,8 +287,7 @@ function sortByOrder(list, order = []) {
 
 /* ---------- 版型片段 ---------- */
 
-function head({ title, description, canonical, depth, ogImage }) {
-  const base = '../'.repeat(depth);
+function head({ title, description, canonical, depth, ogImage, base = '../'.repeat(depth) }) {
   return `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${esc(title)}</title>
@@ -307,16 +306,18 @@ ${VERIFY_TAGS}<link rel="stylesheet" href="${base}assets/css/style.css?v=${V_CSS
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎗️</text></svg>">`;
 }
 
-function siteHeader(depth) {
-  const base = '../'.repeat(depth);
+function siteHeader(depth, base = '../'.repeat(depth)) {
+  /* 首頁的 base 是空字串，href="" 會指回「目前這一頁」而不是首頁，所以補上 ./ */
+  const home = base || './';
   return `<header class="site-header">
   <div class="wrap site-header__inner">
-    <a class="brand" href="${base}">
+    <a class="brand" href="${home}" aria-label="回首頁">
+      ${icon('i-home', 'brand__home')}
       <span class="brand__name">賴宥良醫師</span>
       <span class="brand__desc">質子治療・放射治療</span>
     </a>
     <nav class="site-nav">
-      <a href="${base}#articles">文章</a>
+      <a href="${home}#articles">文章</a>
       <a href="${base}about/">關於</a>
       <a class="site-nav__cta" href="${esc(CONFIG.appointmentUrl)}" target="_blank" rel="noopener noreferrer">線上掛號</a>
     </nav>
@@ -342,8 +343,7 @@ ${items}
   </section>`;
 }
 
-function siteFooter(depth) {
-  const base = '../'.repeat(depth);
+function siteFooter(depth, base = '../'.repeat(depth)) {
   return `<footer class="site-footer">
   <div class="wrap">
 ${creditsBlock()}
@@ -967,23 +967,28 @@ ${siteFooter(1)}
 `;
 }
 
+/* 404 頁的所有網址都用根目錄絕對路徑（/…），不用相對路徑。
+   Cloudflare Pages 會在「使用者原本要求的網址」上直接送出這一頁，
+   例如 /p/打錯的網址/ ——相對路徑在那個位置會全部解析錯，
+   連樣式表都載不到。 */
 function render404() {
+  const ABS = '/';
   return `<!doctype html>
 <html lang="${CONFIG.lang}">
 <head>
-${head({ title: `找不到頁面｜${CONFIG.title}`, description: '找不到這個頁面', canonical: CONFIG.siteUrl + '/404.html', depth: 0 })}
+${head({ title: `找不到頁面｜${CONFIG.title}`, description: '找不到這個頁面', canonical: CONFIG.siteUrl + '/404.html', depth: 0, base: ABS })}
 </head>
 <body>
 ${ICON_SPRITE}
-${siteHeader(0)}
+${siteHeader(0, ABS)}
 <main id="main">
   <section class="wrap section notfound">
     <h1 class="section__heading">找不到這個頁面</h1>
     <p class="prose">您要找的內容可能已經移動或不存在。</p>
-${backHome('./', '回首頁')}
+${backHome(ABS, '回首頁')}
   </section>
 </main>
-${siteFooter(0)}
+${siteFooter(0, ABS)}
 </body>
 </html>
 `;
