@@ -1368,6 +1368,15 @@ ul, ol { padding-left: 1.25em; }
   min-width: 0;
 }
 
+/* 印出來或拍照時，對方要看得出這是什麼 */
+.qr__name {
+  margin: 0 0 .35rem;
+  font-size: .98rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
 .qr__hint {
   margin: 0 0 .5rem;
   font-size: .84rem;
@@ -1389,6 +1398,87 @@ ul, ol { padding-left: 1.25em; }
 /* 首頁底部的分享區塊沒有文章的上邊界，自己補一條 */
 .section--share { padding-top: 0; }
 .section--share .share { margin-top: 0; }
+
+/* ---------- /qr/ 總覽頁 ----------
+   螢幕上是一般頁面；列印時整理成一張 A4，尺寸改用 mm 指定，
+   確保印出來的 QR 是好掃的實體大小。 */
+
+.qrsheet__head { margin-bottom: clamp(1.5rem, 4vw, 2.25rem); }
+
+.qrsheet__note {
+  margin: .8rem 0 0;
+  max-width: 46em;
+  font-size: .88rem;
+  line-height: 1.8;
+  color: var(--ink-faint);
+}
+
+.qrcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .85rem;
+  margin: 0;
+  padding: 1.35rem 1.1rem;
+  background: var(--bg-tint);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+  break-inside: avoid;
+}
+
+.qrcard figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  min-width: 0;
+}
+
+.qrcard__name {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.qrcard__url {
+  font-size: .88rem;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+
+/* 首頁那張放大，因為它是最常被掃的 */
+.qrcard--main .qr__code { width: 200px; height: 200px; }
+.qrcard--main .qrcard__name { font-size: clamp(1.02rem, .96rem + .3vw, 1.15rem); }
+
+.qrsheet__rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: clamp(2rem, 4vw, 2.75rem) 0 1.25rem;
+}
+
+.qrsheet__rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.qrsheet__rule-title {
+  margin: 0;
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+}
+
+.qrsheet__grid {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
 
 /* ---------- 文章結尾的作者卡片 ---------- */
 
@@ -1567,7 +1657,24 @@ ul, ol { padding-left: 1.25em; }
 .backhome:focus-visible { background: var(--accent); color: var(--bg); }
 .backhome__icon { width: 1.15em; height: 1.15em; flex: none; }
 
-.notfound .article-back { display: flex; justify-content: center; }
+/* 回癌別系列是文末最該被按的那個，做成實心；回首頁維持外框 */
+.backhome--primary {
+  color: var(--bg);
+  background: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.backhome--primary:hover,
+.backhome--primary:focus-visible { background: var(--accent-dk); color: var(--bg); }
+
+/* 兩顆按鈕在窄螢幕會各佔一行 */
+.article-back {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+}
+
+.notfound .article-back { justify-content: center; }
 
 /* ---------- 頁尾 ---------- */
 
@@ -1629,11 +1736,12 @@ ul, ol { padding-left: 1.25em; }
 }
 
 /* ---------- 列印 ----------
-   主要情境：把某一頁的 QR Code 印出來給對方掃。
-   因此拿掉導覽、社群按鈕這類印出來沒有意義的東西，
-   並確保 QR 以純黑白輸出（瀏覽器預設會省略背景色）。
+   兩個情境：印 /qr/ 那一張 QR 講義，或印一篇文章給病人帶回家。
+   兩者都拿掉導覽、社群按鈕這類印出來沒有意義的東西。
    share.js 會在列印前把所有 <details> 展開，所以 QR 一定印得出來。 */
 @media print {
+  @page { margin: 12mm; }
+
   .site-header,
   .site-footer,
   .pager,
@@ -1641,6 +1749,7 @@ ul, ol { padding-left: 1.25em; }
   .share__row,
   .share__status,
   .qr__toggle,
+  .qrsheet__note,
   .authorcard,
   .cards--rail {
     display: none !important;
@@ -1648,27 +1757,56 @@ ul, ol { padding-left: 1.25em; }
 
   html, body { background: #fff; color: #000; }
 
+  .wrap { width: 100%; }
+  .section { padding-block: 0; }
+
   .hero { border: 0; }
 
-  .qr__panel {
-    margin-top: 0;
+  a { text-decoration: none; }
+  .article-hero, figure, .keybox, .infocards { break-inside: avoid; }
+
+  /* QR 一律以實際黑白輸出——少了這兩行，部分瀏覽器會把黑色淡化成灰階 */
+  .qr__frame {
+    box-shadow: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 文章頁內嵌的分享 QR（目前只有首頁與系列頁有） */
+  .share { border-top: 1px solid #ccc; break-inside: avoid; }
+  .share__heading { font-size: 11pt; }
+  .qr__panel { margin-top: 0; padding: 0; background: none; border: 0; }
+  .qr__frame { padding: 3mm; }
+  .qr__code { width: 42mm; height: 42mm; }
+  .qr__url a { color: #000; }
+
+  /* /qr/ 總覽頁：一張 A4 直式排下首頁 ＋ 四個癌別 */
+  .qrsheet__head { margin-bottom: 6mm; }
+  .qrsheet .section__heading { font-size: 15pt; margin-bottom: 0; }
+  .qrsheet .section__heading::after { display: none; }
+
+  .qrcard {
     padding: 0;
+    gap: 2mm;
     background: none;
     border: 0;
   }
 
-  .qr__frame {
-    padding: 0;
-    box-shadow: none;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;       /* 沒有這行，部分瀏覽器會把 QR 的黑色淡化 */
+  .qrcard .qr__frame { padding: 2mm; }
+  .qrcard .qr__code { width: 34mm; height: 34mm; }
+  .qrcard__name { font-size: 10.5pt; }
+  .qrcard__url { font-size: 9.5pt; }
+
+  .qrcard--main { margin-bottom: 4mm; }
+  .qrcard--main .qr__code { width: 48mm; height: 48mm; }
+  .qrcard--main .qrcard__name { font-size: 13pt; }
+
+  .qrsheet__rule { margin: 4mm 0 4mm; }
+  .qrsheet__rule-title { font-size: 10pt; }
+  .qrsheet__rule::after { background: #ccc; }
+
+  .qrsheet__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6mm 4mm;
   }
-
-  .qr__code { width: 46mm; height: 46mm; }
-
-  .share { border-top: 1px solid #ccc; break-inside: avoid; }
-  .qr__url a { color: #000; text-decoration: none; }
-
-  a { text-decoration: none; }
-  .article-hero, figure, .keybox, .infocards { break-inside: avoid; }
 }

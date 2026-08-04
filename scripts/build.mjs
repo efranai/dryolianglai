@@ -287,12 +287,13 @@ function sortByOrder(list, order = []) {
 
 /* ---------- 版型片段 ---------- */
 
-function head({ title, description, canonical, depth, ogImage, base = '../'.repeat(depth) }) {
+function head({ title, description, canonical, depth, ogImage, noindex = false, base = '../'.repeat(depth) }) {
   return `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <meta name="author" content="${esc(CONFIG.author)}">
+${noindex ? '<meta name="robots" content="noindex, follow">\n' : ''}
 <link rel="canonical" href="${esc(canonical)}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_TW">
@@ -454,12 +455,25 @@ function backHome(base, label = '回首頁看更多文章') {
     </p>`;
 }
 
+/* 文章結尾的兩個出口。
+   病人多半只想先看自己的癌別，所以回系列頁排在前面、做成實心主按鈕；
+   上下篇一次只看得到兩篇，系列超過三篇之後就不夠用了。 */
+function articleFooterNav(base, seriesDef) {
+  const toSeries = seriesDef
+    ? `      <a class="backhome backhome--primary" href="${base}series/${esc(seriesDef.id)}/">${icon('i-list', 'backhome__icon')}<span>看更多${esc(seriesDef.name)}</span></a>\n`
+    : '';
+
+  return `    <p class="article-back">
+${toSeries}      <a class="backhome" href="${base}">${icon('i-home', 'backhome__icon')}<span>回首頁</span></a>
+    </p>`;
+}
+
 /* 分享列。
    全部走各平台的公開分享網址，不載入任何第三方 SDK——不追蹤讀者，也不會拖慢頁面。
    Instagram 沒有提供網頁分享網址（官方就是沒有這個東西），
    所以 IG 靠兩條路：手機上的「分享…」會叫出系統分享選單（裡面就有 IG），
    桌機則用「複製連結」自己貼。 */
-function shareBlock({ url, title, heading = '覺得有幫助嗎？分享給需要的人', qrHint }) {
+function shareBlock({ url, title, heading = '覺得有幫助嗎？分享給需要的人', qrHint, qr = true, qrOpen = false, qrName = '' }) {
   const u = encodeURIComponent(url);
   const t = encodeURIComponent(`${title}｜${CONFIG.author}`);
 
@@ -488,19 +502,22 @@ ${links}
         </button>
       </div>
       <p class="share__status" role="status" aria-live="polite"></p>
-
-      <details class="qr">
+${qr ? `
+      <details class="qr"${qrOpen ? ' open' : ''}>
         <summary class="qr__toggle">${icon('i-qr', 'share__icon')}<span>當面分享：QR Code 與網址</span></summary>
         <div class="qr__panel">
           <div class="qr__frame">${qrCache.get(url) || ''}</div>
           <div class="qr__text">
-            <p class="qr__hint">${esc(qrHint || '請對方用手機相機掃描，或直接輸入下面的網址。')}</p>
-            <p class="qr__url"><a href="${esc(url)}">${esc(url)}</a></p>
+${qrName ? `            <p class="qr__name">${esc(qrName)}</p>\n` : ''}            <p class="qr__hint">${esc(qrHint || '請對方用手機相機掃描，或直接輸入下面的網址。')}</p>
+            <p class="qr__url"><a href="${esc(url)}">${esc(urlText(url))}</a></p>
           </div>
         </div>
-      </details>
+      </details>` : ''}
     </aside>`;
 }
+
+/* 給人看的網址：去掉 https:// 與結尾斜線，印在卡片上比較乾淨 */
+const urlText = (u) => u.replace(/^https?:\/\//, '').replace(/\/$/, '');
 
 /* 文章結尾的作者卡片：讀完文章之後，讓讀者有路徑認識作者、以及掛號 */
 function authorCard(base) {
@@ -629,6 +646,8 @@ ${shareBlock({
     title: CONFIG.title,
     heading: '把整個網站分享給需要的人',
     qrHint: '掃描後會進入首頁，可以瀏覽所有癌別的衛教文章。',
+    qrOpen: true,                 /* 首頁的 QR 預設就攤開，不必先點一下 */
+    qrName: CONFIG.qr.cardName,
   })}
   </section>
 
@@ -745,7 +764,7 @@ ${heroBlock}
 ${a.html}
     </div>
 
-${shareBlock({ url: `${CONFIG.siteUrl}/${a.url}`, title: a.title })}
+${shareBlock({ url: `${CONFIG.siteUrl}/${a.url}`, title: a.title, qr: false })}
 
 ${authorCard('../../')}
 
@@ -753,7 +772,7 @@ ${authorCard('../../')}
 ${nav}
     </nav>
 
-${backHome('../../')}
+${articleFooterNav('../../', seriesDef)}
 
   </article>
 </main>
@@ -823,8 +842,9 @@ ${s.articles.length ? shareBlock({
     title: s.name,
     heading: `把整個「${s.name}」系列分享給需要的人`,
     qrHint: `掃描後會直接進入這個系列，只看得到${s.name}的文章。`,
+    qrName: s.name,
   }) + '\n' : ''}
-${backHome('../../')}
+${backHome('../../', '回首頁')}
   </section>
 </main>
 ${siteFooter(2)}
@@ -974,6 +994,66 @@ ${siteFooter(1)}
    Cloudflare Pages 會在「使用者原本要求的網址」上直接送出這一頁，
    例如 /p/打錯的網址/ ——相對路徑在那個位置會全部解析錯，
    連樣式表都載不到。 */
+/* QR 總覽頁：/qr/
+   給醫師在門診用的工具頁——一頁看完所有 QR，可以直接開畫面給病人掃，
+   或用瀏覽器列印成一張 A4。刻意不放進導覽列與 sitemap，並加上 noindex：
+   病人搜尋時看到一整頁 QR 只會困惑。新增癌別系列時這一頁會自動長出一張。 */
+function renderQrPage() {
+  const homeUrl = `${CONFIG.siteUrl}/`;
+  const live = SERIES.filter((s) => s.articles.length);
+
+  const cards = live.map((s) => `        <figure class="qrcard">
+          <div class="qr__frame">${qrCache.get(`${CONFIG.siteUrl}/series/${s.id}/`) || ''}</div>
+          <figcaption class="qrcard__name">${esc(s.name)}</figcaption>
+        </figure>`).join('\n');
+
+  return `<!doctype html>
+<html lang="${CONFIG.lang}">
+<head>
+${head({
+    title: `${CONFIG.qr.pageTitle}｜${CONFIG.author}`,
+    description: '門診當面分享用的 QR Code 總覽。',
+    canonical: `${CONFIG.siteUrl}/qr/`,
+    depth: 1,
+    noindex: true,
+  })}
+</head>
+<body data-page-slug="qr">
+${ICON_SPRITE}
+${siteHeader(1)}
+<main id="main">
+  <section class="wrap section qrsheet">
+
+    <header class="qrsheet__head">
+      <h1 class="section__heading">${esc(CONFIG.qr.pageTitle)}</h1>
+      <p class="qrsheet__note">可以直接把這一頁開給對方掃，或用瀏覽器列印成一張 A4。列印時會自動去掉頁首、頁尾與這行說明。</p>
+    </header>
+
+    <figure class="qrcard qrcard--main">
+      <div class="qr__frame">${qrCache.get(homeUrl) || ''}</div>
+      <figcaption>
+        <span class="qrcard__name">${esc(CONFIG.qr.cardName)}</span>
+        <span class="qrcard__url">${esc(urlText(homeUrl))}</span>
+      </figcaption>
+    </figure>
+
+    <div class="qrsheet__rule">
+      <h2 class="qrsheet__rule-title">各癌別專區</h2>
+    </div>
+
+    <div class="qrsheet__grid">
+${cards}
+    </div>
+
+${backHome('../', '回首頁')}
+  </section>
+</main>
+${siteFooter(1)}
+</body>
+</html>
+`;
+}
+
 function render404() {
   const ABS = '/';
   return `<!doctype html>
@@ -1039,16 +1119,17 @@ if (orphans.length) {
   process.exit(1);
 }
 
-/* 版型函式是同步的，所以在開始輸出之前先把所有 QR Code 產好 */
+/* 版型函式是同步的，所以在開始輸出之前先把所有 QR Code 產好。
+   文章頁不放 QR（要當面分享的是整個癌別系列，不是單篇），所以不必產。 */
 await warmQr([
   `${CONFIG.siteUrl}/`,
   ...SERIES.filter((s) => s.articles.length).map((s) => `${CONFIG.siteUrl}/series/${s.id}/`),
-  ...articles.map((a) => `${CONFIG.siteUrl}/${a.url}`),
 ]);
 
 const written = [];
 written.push(writeFile('index.html', renderIndex(OVERVIEW)));
 written.push(writeFile(path.join('about', 'index.html'), renderAbout()));
+written.push(writeFile(path.join('qr', 'index.html'), renderQrPage()));
 
 for (const s of SERIES) {
   written.push(writeFile(path.join('series', s.id, 'index.html'), renderSeries(s)));

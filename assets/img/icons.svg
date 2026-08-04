@@ -125,4 +125,10 @@
   <symbol id="i-home" viewBox="0 0 24 24">
     <path d="M3.6 10.4 12 3.4l8.4 7v9.2a1 1 0 0 1-1 1h-4.6v-6h-5.6v6H4.6a1 1 0 0 1-1-1z"/>
   </symbol>
+
+  <symbol id="i-list" viewBox="0 0 24 24">
+    <rect x="3.4" y="4.6" width="4.4" height="4.4" rx="1.2"/>
+    <rect x="3.4" y="14.4" width="4.4" height="4.4" rx="1.2"/>
+    <path d="M11.4 6.8h9.2M11.4 16.6h9.2"/>
+  </symbol>
 </svg>

@@ -86,6 +86,12 @@
     { "zh": "大腸直腸癌放射治療", "en": "Colorectal Cancer", "icon": "i-colorectal" }
   ],
 
+  "_qr": "門診當面分享用的 QR。cardName 是印在首頁 QR 下方的名稱，pageTitle 是 /qr/ 總覽頁的標題。該頁刻意不放進導覽列與 sitemap，並帶 noindex。",
+  "qr": {
+    "cardName": "賴宥良醫師｜台中質子治療・放射治療",
+    "pageTitle": "分享用 QR Code"
+  },
+
   "_verification": "搜尋引擎網站管理工具的驗證碼。填入後會在每頁 <head> 產生對應的 meta 標籤；留空則不輸出。",
   "verification": {
     "google": "",
