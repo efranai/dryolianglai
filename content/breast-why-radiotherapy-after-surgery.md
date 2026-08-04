@@ -31,7 +31,7 @@ heroCaption: 手術切除看得見的腫瘤；放射治療清除看不見的顯�
 - 手術切除乾淨，不代表乳房或胸壁周圍一定完全沒有殘留癌細胞。
 - 放射治療的目的，是清除可能殘留的**顯微癌細胞**，降低局部復發風險。
 - 接受乳房保留手術後加做放療，**10 年任何復發風險從 35.0% 降到 19.3%**，**15 年乳癌死亡從 25.2% 降到 21.4%**。
-- 接受**全乳切除且沒有淋巴結轉移**的病人，研究顯示加做胸壁放療**並未帶來益處**，多數不需要。
+- 接受**全乳切除**的病人，若為 **T1～T2 且無淋巴結轉移**，多數不需要胸壁放療；但 **T3、T4 或切緣陽性者，即使 N0 仍建議接受**。
 - 部分高齡、低風險病人在充分討論後，可以安全地省略放射治療。
 
 <!--/box-->
@@ -94,7 +94,7 @@ heroCaption: 手術切除看得見的腫瘤；放射治療清除看不見的顯�
 
 是否需要放射治療，需要依據手術方式、腫瘤大小、淋巴結是否轉移、癌細胞特性、年齡，以及整體復發風險綜合評估。
 
-<!--svg:assets/img/breast-rt-decision-map.svg|同樣是乳癌手術，保留手術和全乳切除的術後建議方向其實相反。這也是為什麼不能拿別人的治療方式來套用在自己身上。-->
+<!--svg:assets/img/breast-rt-decision-map.svg|同樣是乳癌手術，保留手術和全乳切除的術後建議方向其實相反。全乳切除這一側要特別注意：判斷不只看淋巴結，腫瘤大小與切緣同樣關鍵。-->
 
 ### 如果接受乳房保留手術（Breast-Conserving Surgery）
 
@@ -109,15 +109,29 @@ heroCaption: 手術切除看得見的腫瘤；放射治療清除看不見的顯�
 
 ### 如果接受全乳切除（Mastectomy）
 
-很多人以為，全乳切除後一定還要放射治療，其實**正好相反**。
+很多人以為，全乳切除後一定還要放射治療，其實**不一定**——這裡的判斷主要看**淋巴結**與**腫瘤大小**兩件事。
 
-EBCTCG 另一份統合了 **22 項試驗、8,135 位**女性的分析顯示：
+先看淋巴結。EBCTCG 另一份統合了 **22 項試驗、8,135 位**女性的分析顯示：
 
 - **完成腋下淋巴結廓清且沒有淋巴結轉移**的病人，加做放射治療對局部復發、整體復發、乳癌死亡**都沒有顯著幫助**。
 - **1～3 顆淋巴結轉移**：放療使整體復發風險降低約 32%、乳癌死亡風險降低約 20%（即使已接受全身性治療，效果依然存在）。
 - **4 顆以上淋巴結轉移**：整體復發風險降低約 21%、乳癌死亡風險降低約 13%。
 
-所以若屬於早期、沒有淋巴結轉移的病人，大多數情況下並不需要胸壁放射治療；但若腫瘤較大、淋巴結轉移，或具有較高復發風險，則仍建議接受。
+所以，**若屬於 T1～T2（腫瘤 5 公分以下）、沒有淋巴結轉移（N0）的病人，大多數情況下並不需要胸壁放射治療。**
+
+### 但「沒有淋巴結轉移」不等於「不用放療」
+
+這一點必須說清楚，因為很容易被誤解。
+
+上面那份 EBCTCG 分析是**依淋巴結分組**的，納入的病人以腫瘤較小者為主，**並不足以推論到腫瘤本來就很大的情況**。實務上，即使淋巴結完全沒有轉移，以下情形仍屬於術後放射治療的適應症：
+
+- **T3（腫瘤大於 5 公分）**
+- **T4（腫瘤侵犯胸壁或皮膚，包含發炎性乳癌）**
+- **切除邊緣陽性或過於接近**
+
+換句話說，**T3N0、T4N0 的病人通常仍建議接受胸壁放射治療**，這是國際治療指引一致的建議。「N0」本身不是可以省略放療的理由，**腫瘤大小與切緣狀況同樣要看**。
+
+至於腫瘤較大、淋巴結轉移，或其他高復發風險因子的病人，則仍建議接受術後放射治療，以降低局部復發並改善預後。
 
 ### DCIS（原位乳管癌）與 LCIS（小葉原位癌）
 
@@ -202,7 +216,9 @@ EBCTCG 另一份統合了 **22 項試驗、8,135 位**女性的分析顯示：
 
 <!--q:全乳切除後，就一定不需要放射治療嗎？-->
 
-不一定，要看淋巴結。統合 22 項試驗、8,135 位女性的資料顯示：完成腋下淋巴結廓清且**沒有**淋巴結轉移的病人，加做放療並未帶來益處；但**有**淋巴結轉移的病人，不論是 1～3 顆或 4 顆以上，放療都能降低復發率與乳癌死亡率。
+不一定，要同時看**淋巴結**和**腫瘤大小**。統合 22 項試驗、8,135 位女性的資料顯示：完成腋下淋巴結廓清且沒有淋巴結轉移的病人，加做放療並未帶來益處；有淋巴結轉移者，不論 1～3 顆或 4 顆以上，放療都能降低復發率與乳癌死亡率。
+
+但要特別提醒：**「沒有淋巴結轉移」不等於「不用放療」**。若腫瘤大於 5 公分（T3）、侵犯胸壁或皮膚（T4），或切除邊緣陽性，即使 N0 通常仍建議接受胸壁放射治療。
 
 <!--/q-->
 
@@ -220,9 +236,10 @@ EBCTCG 另一份統合了 **22 項試驗、8,135 位**女性的分析顯示：
 2. Early Breast Cancer Trialists' Collaborative Group (EBCTCG); McGale P, Taylor C, Correa C, et al. Effect of Radiotherapy after Mastectomy and Axillary Surgery on 10-Year Recurrence and 20-Year Breast Cancer Mortality: Meta-Analysis of Individual Patient Data for 8135 Women in 22 Randomised Trials. *Lancet*. 2014;383(9935):2127-2135.
 3. Kunkler IH, Williams LJ, Jack WJL, Cameron DA, Dixon JM. Breast-Conserving Surgery with or without Irradiation in Early Breast Cancer（PRIME II）. *N Engl J Med*. 2023;388(7):585-594.
 4. Hughes KS, Schnaper LA, Bellon JR, et al. Lumpectomy plus Tamoxifen with or without Irradiation in Women Age 70 Years or Older with Early Breast Cancer: Long-Term Follow-Up of CALGB 9343. *J Clin Oncol*. 2013;31(19):2382-2387.
-5. Smith BD, Bellon JR, Blitzblau R, et al. Radiation Therapy for the Whole Breast: Executive Summary of an American Society for Radiation Oncology (ASTRO) Evidence-Based Guideline. *Pract Radiat Oncol*. 2018;8(3):145-152.
-6. Shaitelman SF, Anderson BM, Arthur DW, et al. Partial Breast Irradiation for Patients with Early-Stage Invasive Breast Cancer or Ductal Carcinoma In Situ: An ASTRO Clinical Practice Guideline. *Pract Radiat Oncol*. 2024;14(2):112-132.
-7. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.
+5. Recht A, Comen EA, Fine RE, et al. Postmastectomy Radiotherapy: An American Society of Clinical Oncology, American Society for Radiation Oncology, and Society of Surgical Oncology Focused Guideline Update. *J Clin Oncol*. 2016;34(36):4431-4442.
+6. Smith BD, Bellon JR, Blitzblau R, et al. Radiation Therapy for the Whole Breast: Executive Summary of an American Society for Radiation Oncology (ASTRO) Evidence-Based Guideline. *Pract Radiat Oncol*. 2018;8(3):145-152.
+7. Shaitelman SF, Anderson BM, Arthur DW, et al. Partial Breast Irradiation for Patients with Early-Stage Invasive Breast Cancer or Ductal Carcinoma In Situ: An ASTRO Clinical Practice Guideline. *Pract Radiat Oncol*. 2024;14(2):112-132.
+8. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.
 
 ---
 

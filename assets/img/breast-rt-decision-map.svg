@@ -1,7 +1,7 @@
 <svg class="illus" viewBox="0 0 720 384" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-labelledby="bdec-title bdec-desc">
   <title id="bdec-title">乳癌術後是否需要放射治療的判斷示意圖</title>
-  <desc id="bdec-desc">接受乳房保留手術的病人，大多仍建議術後放射治療；但高齡、荷爾蒙受體陽性、腫瘤小、無淋巴結轉移且願意接受荷爾蒙治療的低風險病人，可與醫師討論省略。接受全乳切除的病人，若沒有淋巴結轉移，多數並不需要胸壁放射治療；若淋巴結轉移或復發風險較高，則建議接受。原位乳管癌依風險討論，小葉原位癌通常不是放射治療的適應症。</desc>
+  <desc id="bdec-desc">接受乳房保留手術的病人，大多仍建議術後放射治療；但高齡、荷爾蒙受體陽性、腫瘤小、無淋巴結轉移且願意接受荷爾蒙治療的低風險病人，可與醫師討論省略。接受全乳切除的病人，若腫瘤在五公分以下且沒有淋巴結轉移，多數並不需要胸壁放射治療；但若有淋巴結轉移，或腫瘤大於五公分、侵犯胸壁皮膚、切除邊緣陽性，即使沒有淋巴結轉移仍建議接受。原位乳管癌依風險討論，小葉原位癌通常不是放射治療的適應症。</desc>
 
   <!-- 左欄：乳房保留手術 -->
   <g class="il-node il-node--lead">
@@ -33,15 +33,15 @@
   <g class="il-node il-node--soft">
     <rect x="370" y="104" width="326" height="86" rx="12" />
   </g>
-  <text class="il-t il-anchor-mid" x="533" y="140">無淋巴結轉移：多半不需要</text>
-  <text class="il-t-sub il-detail il-anchor-mid" x="533" y="168">研究顯示加做放療並未帶來益處</text>
+  <text class="il-t il-anchor-mid" x="533" y="140">T1～T2 且無轉移：多半不需要</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="533" y="168">腫瘤 5 公分以下、淋巴結陰性</text>
 
   <g class="il-node il-node--accent">
     <rect x="370" y="206" width="326" height="110" rx="12" />
   </g>
-  <text class="il-t il-node-text--on il-anchor-mid" x="533" y="242">有淋巴結轉移：建議放療</text>
-  <text class="il-t-sub il-detail il-node-text--on il-anchor-mid" x="533" y="270">1～3 顆與 4 顆以上皆可降低</text>
-  <text class="il-t-sub il-detail il-node-text--on il-anchor-mid" x="533" y="292">復發率與乳癌死亡率</text>
+  <text class="il-t il-node-text--on il-anchor-mid" x="533" y="242">以下情形建議放療</text>
+  <text class="il-t-sub il-detail il-node-text--on il-anchor-mid" x="533" y="270">有淋巴結轉移；或 T3、T4、切緣陽性</text>
+  <text class="il-t-sub il-detail il-node-text--on il-anchor-mid" x="533" y="292">——即使沒有淋巴結轉移也一樣</text>
 
   <text class="il-t-sub il-anchor-mid" x="360" y="346">原位乳管癌（DCIS）依復發風險討論；小葉原位癌（LCIS）通常不需要</text>
   <text class="il-t-sub il-detail il-anchor-mid" x="360" y="370">實際建議仍須由放射腫瘤科醫師依完整病理報告個別評估</text>
