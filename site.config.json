@@ -24,8 +24,9 @@
     "what-is-proton-therapy"
   ],
 
-  "_series": "各癌別系列。文章的 front matter 寫 series: <id> 就會歸入該系列。order 可手動指定該系列內的順序，留空則依最後更新時間新到舊。首頁每個系列最多顯示 6 篇，其餘在系列頁。",
-  "seriesCardLimit": 6,
+  "_series": "各癌別系列。文章的 front matter 寫 series: <id> 就會歸入該系列。order 可手動指定該系列內的順序，留空則依最後更新時間新到舊。",
+  "_seriesCardLimit": "首頁每個癌別最多顯示幾張卡片，其餘在系列頁。設 3 是因為桌機的格線剛好一列三張——第四張會換行，首頁就會被拉長一倍。",
+  "seriesCardLimit": 3,
   "series": [
     {
       "id": "breast-cancer",
