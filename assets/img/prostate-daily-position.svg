@@ -1,0 +1,46 @@
+<svg class="illus" viewBox="0 0 720 366" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="ppos-title ppos-desc">
+  <title id="ppos-title">膀胱與直腸狀態如何影響攝護腺位置的示意圖</title>
+  <desc id="ppos-desc">攝護腺位在膀胱下方、直腸前方，它的位置並不是每天固定。當膀胱空虛、直腸脹氣或積便時，攝護腺會被推離原本定位時的位置。若每天都維持適度充盈的膀胱與順暢排便，位置就會穩定得多。影像導引放射治療則在每次治療前重新確認實際位置。</desc>
+
+  <!-- 左：狀態不一致 -->
+  <g class="il-node il-node--soft">
+    <rect x="24" y="34" width="326" height="252" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="187" y="66">膀胱空、直腸脹氣</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="187" y="90">攝護腺被推離原本的位置</text>
+
+  <ellipse class="il-organ" cx="138" cy="140" rx="30" ry="22" />
+  <rect class="il-organ" x="236" y="108" width="52" height="140" rx="24" />
+  <g class="il-organ">
+    <circle cx="252" cy="140" r="8" />
+    <circle cx="272" cy="168" r="7" />
+    <circle cx="254" cy="196" r="9" />
+  </g>
+  <circle class="il-lead" cx="186" cy="204" r="24" />
+  <circle class="il-zone" cx="158" cy="204" r="24" />
+  <path class="il-arrow" d="M226 204 H 192" />
+  <path class="il-arrow-head" d="M194 198 194 210 182 204Z" />
+  <text class="il-t-sub il-detail il-anchor-mid" x="187" y="268">虛線是定位當天的位置</text>
+
+  <!-- 右：狀態一致 -->
+  <g class="il-node il-node--lead">
+    <rect x="370" y="34" width="326" height="252" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="533" y="66">膀胱適度充盈、排便順暢</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="533" y="90">位置穩定，和定位時一致</text>
+
+  <ellipse class="il-organ" cx="446" cy="140" rx="38" ry="28" />
+  <rect class="il-organ" x="524" y="112" width="28" height="132" rx="13" />
+  <circle class="il-zone" cx="472" cy="204" r="24" />
+
+  <path class="il-lead" d="M472 114 L 566 116" />
+  <text class="il-t-sub il-detail" x="574" y="120">膀胱</text>
+  <path class="il-lead" d="M552 178 H 566" />
+  <text class="il-t-sub il-detail" x="574" y="182">直腸</text>
+  <path class="il-lead" d="M496 204 L 566 224" />
+  <text class="il-t-sub il-detail" x="574" y="228">攝護腺</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="322">每天維持相近的身體狀態，治療位置才能重複</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="348">影像導引放射治療（IGRT）則在每次治療前，再確認一次實際位置</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg class="illus" viewBox="0 0 720 356" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="pnum-title pnum-desc">
+  <title id="pnum-title">攝護腺癌低分次放射治療：質子與光子的統合分析結果</title>
+  <desc id="pnum-desc">一份二〇二四年的系統性回顧與統合分析比較了局限性攝護腺癌的低分次放射治療。質子治療組第二級以上急性腸胃道副作用約百分之二，光子治療組約百分之七；五年無生化復發率質子約百分之九十五，光子約百分之九十一。要注意的是，這是整合一百六十份研究的結果，其中多數並非隨機分組試驗。</desc>
+
+  <!-- 第一組：急性腸胃道副作用（越低越好） -->
+  <text class="il-t" x="24" y="42">第 2 級以上急性腸胃道副作用</text>
+  <text class="il-t-sub il-detail" x="24" y="64">數字越低越好</text>
+
+  <text class="il-t-sub il-anchor-end" x="132" y="102">光子治療</text>
+  <rect class="il-bar il-bar--soft" x="144" y="82" width="336" height="28" rx="4" />
+  <text class="il-t-val" x="492" y="102">7%</text>
+
+  <text class="il-t-sub il-anchor-end" x="132" y="146">質子治療</text>
+  <rect class="il-bar il-bar--strong" x="144" y="126" width="96" height="28" rx="4" />
+  <text class="il-t-val" x="252" y="146">2%</text>
+
+  <!-- 第二組：五年無生化復發率（越高越好） -->
+  <text class="il-t" x="24" y="212">5 年無生化復發率</text>
+  <text class="il-t-sub il-detail" x="24" y="234">數字越高越好</text>
+
+  <text class="il-t-sub il-anchor-end" x="132" y="272">光子治療</text>
+  <rect class="il-bar il-bar--soft" x="144" y="252" width="437" height="28" rx="4" />
+  <text class="il-t-val" x="593" y="272">91%</text>
+
+  <text class="il-t-sub il-anchor-end" x="132" y="316">質子治療</text>
+  <rect class="il-bar il-bar--strong" x="144" y="296" width="456" height="28" rx="4" />
+  <text class="il-t-val" x="612" y="316">95%</text>
+
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="348">統合分析（160 份研究），其中多數並非隨機分組試驗，解讀時需保留</text>
+</svg>

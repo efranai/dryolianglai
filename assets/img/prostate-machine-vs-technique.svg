@@ -1,0 +1,42 @@
+<svg class="illus" viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="pmach-title pmach-desc">
+  <title id="pmach-title">機器名稱與治療技術的差別示意圖</title>
+  <desc id="pmach-desc">好神刀、螺旋刀、質子治療系統是不同的機器名稱，就像不同型號的車。真正決定治療品質的是機器上搭載了哪些技術：強度調控放射治療讓劑量貼近攝護腺形狀，影像導引放射治療每天重新確認位置，質子的物理特性可降低周圍正常組織劑量，筆尖射束掃描則以細小射束逐點完成治療。</desc>
+
+  <!-- 上排：機器名稱 -->
+  <text class="il-t-sub" x="24" y="34">大家在比較的是「機器名稱」</text>
+  <g class="il-node il-node--soft">
+    <rect x="24" y="46" width="212" height="52" rx="12" />
+    <rect x="254" y="46" width="212" height="52" rx="12" />
+    <rect x="484" y="46" width="212" height="52" rx="12" />
+  </g>
+  <text class="il-t il-anchor-mid" x="130" y="78">好神刀</text>
+  <text class="il-t il-anchor-mid" x="360" y="78">螺旋刀</text>
+  <text class="il-t il-anchor-mid" x="590" y="78">質子治療系統</text>
+
+  <!-- 分隔 -->
+  <path class="il-flow-arrow" d="M360 106 V 134" />
+  <path class="il-arrow-head" d="M354 132 366 132 360 144Z" />
+  <text class="il-t-sub il-detail il-anchor-mid" x="470" y="128">真正決定品質的是下面這些</text>
+
+  <!-- 下排：治療技術 -->
+  <text class="il-t" x="24" y="176">真正決定治療品質的是「技術」</text>
+
+  <g class="il-node il-node--lead">
+    <rect x="24" y="192" width="326" height="56" rx="12" />
+    <rect x="24" y="258" width="326" height="56" rx="12" />
+    <rect x="370" y="192" width="326" height="56" rx="12" />
+    <rect x="370" y="258" width="326" height="56" rx="12" />
+  </g>
+  <text class="il-t il-anchor-mid" x="187" y="218">IMRT　強度調控</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="187" y="240">讓劑量貼近攝護腺形狀</text>
+
+  <text class="il-t il-anchor-mid" x="187" y="284">IGRT　影像導引</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="187" y="306">每天治療前重新確認位置</text>
+
+  <text class="il-t il-anchor-mid" x="533" y="218">質子的物理特性</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="533" y="240">降低周圍正常組織劑量</text>
+
+  <text class="il-t il-anchor-mid" x="533" y="284">筆尖射束掃描（PBS）</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="533" y="306">以細小射束逐點、逐層完成</text>
+</svg>
