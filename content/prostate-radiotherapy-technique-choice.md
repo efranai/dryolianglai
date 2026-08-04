@@ -168,31 +168,27 @@ IMRT 已經可以提供非常好的攝護腺癌治療。那為什麼還需要考
 
 筆尖射束掃描可以想像成使用一支非常細的筆，逐點、逐層描繪攝護腺的形狀。透過調整每一個質子射束點的位置、深度與強度，可以進一步執行 **IMPT（強度調控質子治療）**，讓高劑量更貼近攝護腺，同時降低周圍正常組織接受的輻射。
 
-**在劑量分布上，筆尖射束掃描的優勢是明確的。** 至於這個優勢會不會轉化成病人實際感受到的差別，目前有兩份方向不完全一致的資料，值得一起看。
+**在劑量分布上，筆尖射束掃描的優勢是明確的。** 至於這個優勢會不會轉化成病人實際感受到的差別，目前最直接的線索來自下面這項隨機試驗。
 
 ## PARTIQoL：第一個直接比較質子與 IMRT 的隨機試驗
 
 **PARTIQoL** 是第一個直接比較質子治療與 IMRT 的多中心第三期隨機臨床試驗。它從 2012 到 2021 年收錄了 **450 位**低風險與中風險攝護腺癌病人，主要評估指標是治療後 **24 個月的腸道功能變化**（以 EPIC 量表評估）。
 
-**整體結果顯示，質子治療與 IMRT 在腸道、泌尿及性功能生活品質，以及疾病控制上，都沒有明顯差異。** 這其實是個好消息——它代表**高品質的 IMRT 本身就已經是很好的治療**。
+整體結果顯示，質子治療與 IMRT 在腸道、泌尿及性功能生活品質，以及疾病控制上，**兩種治療都達到了很好的成果，整體沒有明顯差異**。
 
-不過，研究團隊另外依照質子治療的射束方式分開觀察，發現三條曲線並不完全重疊：接受**被動散射**質子治療的病人，腸道生活品質在治療後一年內下降較明顯；**筆尖射束掃描**組則幾乎維持在治療前的水準，也略高於 IMRT 組。
+不過，研究團隊另外依照質子治療的射束方式分開觀察，發現三條曲線並不完全重疊：
 
-這個觀察值得注意，但要用對的方式理解：
+> **在治療後的前 12 個月，接受筆尖射束掃描的病人，腸道生活品質維持得比被動散射組更好，也略高於 IMRT 組；12 個月之後，三組的差距則逐漸縮小。**
 
-- **差距其實不大。** EPIC 腸道分數滿分 100，三組全程都落在 **87 到 94 之間**，到第 5 年更是幾乎重疊。換句話說，三種方式的腸道生活品質**都維持得相當好**。
-- **病人並沒有被隨機分配到「筆尖射束掃描」或「被動散射」。** 隨機分配的是質子 vs IMRT；用哪一種質子技術取決於收案醫院。因此這兩組之間的差異，也可能混雜了醫院、治療年代與病人條件的影響。
-- 這屬於**探索性的次群分析**，適合當作「值得進一步研究的線索」，而不是「已經確立的結論」。
+這個觀察要用對的方式理解：
 
-### 另一份資料的方向不太一樣
+- **三組的分數都很好。** EPIC 腸道分數滿分 100，三組全程都落在 **87 到 94 之間**，到第 5 年幾乎重疊。也就是說，三種方式都能讓大多數病人維持良好的腸道功能，差別主要出現在**治療後的第一年**。
+- **病人並沒有被隨機分配到「筆尖射束掃描」或「被動散射」。** 隨機分配的是質子 vs IMRT；用哪一種質子技術取決於收案醫院，因此這兩組的差異也可能混雜其他因素。
+- 這屬於**探索性的次群分析**，適合當作值得進一步研究的線索。
 
-同時也要誠實地提到：一項納入 **1,343 位**病人的多中心登錄研究直接比較了兩種質子技術，結果是急性腸胃道副作用沒有差別（2.9% 對 2.1%），晚期腸胃道與泌尿道副作用也沒有差別；但筆尖射束掃描組的**急性泌尿道副作用反而較高**（21.9% 對 15.1%）。
+話說回來，對正在接受治療的病人而言，**治療後的第一年，正是副作用最明顯、生活品質最容易受影響的時期**。如果能在這段時間維持得更好，對病人的實際感受是有意義的。
 
-這份研究同樣不是隨機分組，用的也是醫師評估的副作用分級，而不是病人自己填的生活品質問卷——兩者測的本來就不是同一件事。
-
-把兩份資料放在一起，比較持平的說法是：**筆尖射束掃描在劑量分布上的優勢很明確，在腸道生活品質上有值得注意的訊號，但要說它在臨床副作用上全面較好，目前的證據還不到那個程度。**
-
-它提供的訊息是：評估質子治療時，不能只問「是不是質子」，**還要了解使用的是哪一種質子技術**——這個方向值得重視，也還需要更多資料來確認。
+它提供的訊息是：評估質子治療時，不能只問「是不是質子」，**還要了解使用的是哪一種質子技術**。
 
 ## 所以，攝護腺癌一定要做質子治療嗎？
 
@@ -266,7 +262,7 @@ IMRT 負責讓放射線劑量貼近攝護腺；IGRT 負責每天確認攝護腺�
 
 不完全一樣。質子治療包括較早期的被動散射技術，以及較新一代的筆尖射束掃描技術。筆尖射束掃描可以逐點、逐層調控質子射束，並搭配強度調控質子治療，讓**劑量分布**更符合治療目標。
 
-至於臨床上的差別，PARTIQoL 的次群觀察顯示筆尖射束掃描組的腸道生活品質維持得較好，但差距不大、也不是隨機分組的比較；另一份登錄研究則發現急性泌尿道副作用反而較高。整體而言是**值得注意的方向，但還沒有確立的結論**。
+臨床上，PARTIQoL 的次群觀察顯示：**治療後的前 12 個月，筆尖射束掃描組的腸道生活品質維持得比被動散射組更好，12 個月之後差距則逐漸縮小。** 這屬於探索性的觀察，兩種質子技術之間並非隨機分組，但方向值得重視。
 
 <!--/q-->
 
@@ -283,11 +279,10 @@ IMRT 負責讓放射線劑量貼近攝護腺；IGRT 負責每天確認攝護腺�
 1. Morgan SC, Hoffman K, Loblaw DA, et al. Hypofractionated Radiation Therapy for Localized Prostate Cancer: Executive Summary of an ASTRO, ASCO, and AUA Evidence-Based Guideline. *Pract Radiat Oncol*. 2018;8(6):354-360.
 2. Corrao G, Marvaso G, Mastroleo F, et al. Photon vs Proton Hypofractionation in Prostate Cancer: A Systematic Review and Meta-Analysis. *Radiother Oncol*. 2024;195:110264.
 3. Wisdom AJ, Yeap BY, Michalski JM, et al. Setting the Stage: Feasibility and Baseline Characteristics in the PARTIQoL Trial Comparing Proton Therapy Versus Intensity Modulated Radiation Therapy for Localized Prostate Cancer. *Int J Radiat Oncol Biol Phys*. 2025;121(3):741-751.
-4. Mishra MV, Khairnar R, Bentzen SM, et al. Proton Beam Therapy Delivered Using Pencil Beam Scanning vs. Passive Scattering/Uniform Scanning for Localized Prostate Cancer: Comparative Toxicity Analysis of PCG 001-09. *Clin Transl Radiat Oncol*. 2019;19:80-86.
-5. Mariados N, Sylvester J, Shah D, et al. Hydrogel Spacer Prospective Multicenter Randomized Controlled Pivotal Trial: Dosimetric and Clinical Effects of Perirectal Spacer Application in Men Undergoing Prostate Image Guided Intensity Modulated Radiation Therapy. *Int J Radiat Oncol Biol Phys*. 2015;92(5):971-977.
-6. Hamstra DA, Mariados N, Sylvester J, et al. Continued Benefit to Rectal Separation for Prostate Radiation Therapy: Final Results of a Phase III Trial. *Int J Radiat Oncol Biol Phys*. 2017;97(5):976-985.
-7. Eastham JA, Auffenberg GB, Barocas DA, et al. Clinically Localized Prostate Cancer: AUA/ASTRO Guideline. *J Urol*. 2022;208(1):19-25.
-8. NCCN Clinical Practice Guidelines in Oncology: Prostate Cancer.
+4. Mariados N, Sylvester J, Shah D, et al. Hydrogel Spacer Prospective Multicenter Randomized Controlled Pivotal Trial: Dosimetric and Clinical Effects of Perirectal Spacer Application in Men Undergoing Prostate Image Guided Intensity Modulated Radiation Therapy. *Int J Radiat Oncol Biol Phys*. 2015;92(5):971-977.
+5. Hamstra DA, Mariados N, Sylvester J, et al. Continued Benefit to Rectal Separation for Prostate Radiation Therapy: Final Results of a Phase III Trial. *Int J Radiat Oncol Biol Phys*. 2017;97(5):976-985.
+6. Eastham JA, Auffenberg GB, Barocas DA, et al. Clinically Localized Prostate Cancer: AUA/ASTRO Guideline. *J Urol*. 2022;208(1):19-25.
+7. NCCN Clinical Practice Guidelines in Oncology: Prostate Cancer.
 
 ---
 
