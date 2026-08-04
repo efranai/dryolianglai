@@ -536,7 +536,10 @@ ${shown.map((a) => articleCard(a)).join('\n')}
         <h2 class="section__heading" id="series-${esc(s.id)}-heading">${esc(s.name)}</h2>
         <p class="group-head__hook">${esc(s.hook)}</p>
       </div>
-${s.articles.length ? `      <a class="group-head__go" href="series/${esc(s.id)}/">看全部 <b>${s.articles.length}</b> 篇 →</a>\n` : ''}    </div>
+${s.articles.length ? `      <a class="group-head__go" href="series/${esc(s.id)}/">${
+    /* 只有一篇時「看全部 1 篇」等於在說「點了也沒東西」，改成邀請進專區 */
+    s.articles.length > 1 ? `看全部 <b>${s.articles.length}</b> 篇` : '進入專區'
+  } <span aria-hidden="true">→</span></a>\n` : ''}    </div>
 ${body}
   </section>`;
 }
