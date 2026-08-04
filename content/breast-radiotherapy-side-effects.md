@@ -2,8 +2,8 @@
 title: 乳癌放射治療（電療）有哪些副作用？聽說皮膚會燒焦（臭灰搭）是真的嗎？
 slug: breast-radiotherapy-side-effects
 date: 2026-08-04
-summary: 放射線本身沒有溫度，不會把皮膚燒焦。最常見的皮膚反應比較像曬傷，多數在治療結束後數週內逐漸改善。真正需要長期重視的，其實是心臟與肺臟的保護。
-description: 乳癌放射治療會不會把皮膚燒焦？賴宥良醫師說明放射線皮膚炎的實際樣貌與時間進程、如何預防與照護，以及淋巴水腫、甲狀腺與心肺影響等其他副作用的真實發生情形。
+summary: 放射線本身沒有溫度，不會把皮膚燒焦。急性反應多數在治療結束後數週內改善；但輕微的長期變化其實並不少見，值得治療前就了解清楚。
+description: 乳癌放射治療會不會把皮膚燒焦？賴宥良醫師說明放射線皮膚炎的實際樣貌與時間進程、如何預防與照護，長期變化到底有多常見，以及淋巴水腫、甲狀腺與心肺影響的真實發生率。
 series: breast-cancer
 tags: 乳癌, 副作用, 皮膚照護
 hero: assets/img/breast-skin-sunburn-vs-burn.svg
@@ -25,7 +25,8 @@ heroCaption: 紫外線造成曬傷、醫療放射線造成放射線皮膚炎，�
 
 - 最常見的副作用是**放射線皮膚炎**。
 - 大部分皮膚反應比較像**曬傷**，而不是燒傷。
-- 大多數病人在治療結束後**數週內**逐漸改善。
+- 急性反應大多在治療結束後**數週內**逐漸改善。
+- **輕微的長期變化（色素、乾燥、稍微變硬）其實並不少見**；真正嚴重的纖維化才是罕見的。
 - 急性心臟或肺臟副作用現在已經很少見，但**長期心肺後遺症**仍是放射治療規劃時非常重視的重點。
 - 現代 IMRT、IGRT、DIBH 及質子治療，都希望在維持治療效果的同時，進一步降低正常組織接受的輻射劑量。
 
@@ -136,17 +137,26 @@ heroCaption: 紫外線造成曬傷、醫療放射線造成放射線皮膚炎，�
 
 大部分急性皮膚反應，會在治療結束後約 **2～4 週**逐漸改善。
 
-值得慶幸的是，放射線皮膚炎不像燙傷，通常不會留下明顯疤痕；即使有色素沉著，也大多會在數個月至一年內逐漸淡化。
+值得慶幸的是，放射線皮膚炎不像燙傷，**通常不會留下明顯疤痕**；色素沉著也大多會在數個月至一年內逐漸淡化。
 
-不過，少數病人仍可能留下部分慢性變化，例如：
+不過關於長期變化，我想說得比一般衛教資料更完整一些——因為**輕微的長期變化其實並不少見**。
+
+一項追蹤十年的隨機臨床試驗顯示，接受乳房保留手術合併放射治療的病人，十年後乳房外觀被評為「良好或極佳」的大約是**七成**。反過來說，**大約有三成的病人，外觀會有比較明顯的改變**。（要說明的是，這個評分反映的是手術加上放射治療的整體結果，並不是放射治療單獨造成的。）
+
+常見的長期變化包括：
 
 - 色素沉著
 - 皮膚較乾燥
 - 乳房皮膚稍微變硬（纖維化）
+- 微血管擴張（皮膚表面出現細小血絲）
 - 汗腺及乳腺功能部分下降
 - 乳房大小或外觀有些微改變
 
-這些變化通常是逐漸發生，而且大多屬於輕微程度。
+這些變化通常是**逐漸發生**的，而且大多屬於輕微程度，不影響日常生活。
+
+真正需要分清楚的，是「**輕微的長期變化**」和「**嚴重的纖維化**」——後者才是真正少見的。在一項追蹤二十年的大型試驗中，嚴重纖維化的累積發生率是 **1.8%**；若額外加上腫瘤床的加強劑量（boost），則上升到 **5.2%**。
+
+所以比較貼近真實的說法是：**多數人多少會留下一些痕跡，但嚴重到影響生活的，確實是少數。** 我認為這件事值得在治療前就講清楚，而不是讓病人日後自己發現。
 
 ## 還有哪些副作用需要注意？
 
@@ -249,7 +259,7 @@ heroCaption: 紫外線造成曬傷、醫療放射線造成放射線皮膚炎，�
 
 <!--q:皮膚變黑以後會恢復嗎？-->
 
-大多會。色素沉著通常在數個月至一年內逐漸淡化。少數病人可能留下輕微的色素或皮膚較乾燥、稍微變硬等長期變化，但程度多半輕微。
+大多會。色素沉著通常在數個月至一年內逐漸淡化。不過要誠實地說：**輕微的長期變化並不少見**——例如殘留一點色素、皮膚較乾燥、稍微變硬，或乳房外觀有些微改變。研究顯示，十年後乳房外觀維持「良好或極佳」的大約是七成。這些變化多半輕微、不影響生活，真正嚴重的纖維化則相當少見。
 
 <!--/q-->
 
@@ -267,10 +277,12 @@ heroCaption: 紫外線造成曬傷、醫療放射線造成放射線皮膚炎，�
 2. Behroozian T, Goldshtein D, Ryan Wolf J, et al. MASCC Clinical Practice Guidelines for the Prevention and Management of Acute Radiation Dermatitis: Part 1) Systematic Review. *EClinicalMedicine*. 2023;58:101886.
 3. Wong RK, Bensadoun RJ, Boers-Doets CB, et al. Clinical Practice Guidelines for the Prevention and Treatment of Acute and Late Radiation Reactions from the MASCC Skin Toxicity Study Group. *Support Care Cancer*. 2013;21(10):2933-2948.
 4. Pignol JP, Olivotto I, Rakovitch E, et al. A Multicenter Randomized Trial of Breast Intensity-Modulated Radiation Therapy to Reduce Acute Radiation Dermatitis. *J Clin Oncol*. 2008;26(13):2085-2092.
-5. Darby SC, Ewertz M, McGale P, et al. Risk of Ischemic Heart Disease in Women after Radiotherapy for Breast Cancer. *N Engl J Med*. 2013;368(11):987-998.
-6. DiSipio T, Rye S, Newman B, Hayes S. Incidence of Unilateral Arm Lymphoedema after Breast Cancer: A Systematic Review and Meta-Analysis. *Lancet Oncol*. 2013;14(6):500-515.
-7. Smith BD, Bellon JR, Blitzblau R, et al. Radiation Therapy for the Whole Breast: Executive Summary of an American Society for Radiation Oncology (ASTRO) Evidence-Based Guideline. *Pract Radiat Oncol*. 2018;8(3):145-152.
-8. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.
+5. Whelan TJ, Pignol JP, Levine MN, et al. Long-Term Results of Hypofractionated Radiation Therapy for Breast Cancer. *N Engl J Med*. 2010;362(6):513-520.
+6. Bartelink H, Maingon P, Poortmans P, et al. Whole-Breast Irradiation with or without a Boost for Patients Treated with Breast-Conserving Surgery for Early Breast Cancer: 20-Year Follow-Up of a Randomised Phase 3 Trial. *Lancet Oncol*. 2015;16(1):47-56.
+7. Darby SC, Ewertz M, McGale P, et al. Risk of Ischemic Heart Disease in Women after Radiotherapy for Breast Cancer. *N Engl J Med*. 2013;368(11):987-998.
+8. DiSipio T, Rye S, Newman B, Hayes S. Incidence of Unilateral Arm Lymphoedema after Breast Cancer: A Systematic Review and Meta-Analysis. *Lancet Oncol*. 2013;14(6):500-515.
+9. Smith BD, Bellon JR, Blitzblau R, et al. Radiation Therapy for the Whole Breast: Executive Summary of an American Society for Radiation Oncology (ASTRO) Evidence-Based Guideline. *Pract Radiat Oncol*. 2018;8(3):145-152.
+10. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.
 
 ---
 
