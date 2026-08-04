@@ -1,0 +1,47 @@
+<svg class="illus" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="micro-title micro-desc">
+  <title id="micro-title">手術與放射治療分工的示意圖</title>
+  <desc id="micro-desc">手術前，乳房裡有看得見的腫瘤，周圍也可能散布著肉眼看不到的顯微癌細胞。手術可以切除看得見的腫瘤，但顯微殘存無法用影像或病理百分之百排除。放射治療的角色，就是清除這些殘留、看不見的癌細胞，降低日後局部復發的機會。</desc>
+
+  <!-- 一：手術前 -->
+  <g class="il-node il-node--soft">
+    <rect x="24" y="40" width="212" height="212" rx="16" />
+  </g>
+  <text class="il-t il-anchor-mid" x="130" y="72">手術前</text>
+  <ellipse class="il-organ" cx="130" cy="152" rx="74" ry="54" />
+  <circle class="il-tumor" cx="120" cy="146" r="17" />
+  <g class="il-tumor">
+    <circle cx="158" cy="128" r="3.4" />
+    <circle cx="166" cy="164" r="3.4" />
+    <circle cx="96"  cy="180" r="3.4" />
+    <circle cx="86"  cy="130" r="3.4" />
+  </g>
+  <text class="il-t-sub il-detail il-anchor-mid" x="130" y="234">看得見的腫瘤</text>
+
+  <!-- 二：手術後 -->
+  <g class="il-node il-node--soft">
+    <rect x="254" y="40" width="212" height="212" rx="16" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="72">手術後</text>
+  <ellipse class="il-organ" cx="360" cy="152" rx="74" ry="54" />
+  <circle class="il-lead" cx="350" cy="146" r="17" />
+  <g class="il-tumor">
+    <circle cx="388" cy="128" r="3.4" />
+    <circle cx="396" cy="164" r="3.4" />
+    <circle cx="326" cy="180" r="3.4" />
+    <circle cx="316" cy="130" r="3.4" />
+  </g>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="234">顯微殘存看不見</text>
+
+  <!-- 三：放射治療後 -->
+  <g class="il-node il-node--lead">
+    <rect x="484" y="40" width="212" height="212" rx="16" />
+  </g>
+  <text class="il-t il-anchor-mid" x="590" y="72">放射治療後</text>
+  <path class="il-beam" d="M556 92h68l24 116h-116z" />
+  <ellipse class="il-organ" cx="590" cy="152" rx="74" ry="54" />
+  <circle class="il-lead" cx="580" cy="146" r="17" />
+  <text class="il-t-sub il-detail il-anchor-mid" x="590" y="234">連殘存一起清除</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="284">手術切除看得見的腫瘤，放射治療清除看不見的癌細胞</text>
+</svg>
