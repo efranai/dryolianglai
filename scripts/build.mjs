@@ -473,7 +473,7 @@ ${toSeries}      <a class="backhome" href="${base}">${icon('i-home', 'backhome__
    Instagram 沒有提供網頁分享網址（官方就是沒有這個東西），
    所以 IG 靠兩條路：手機上的「分享…」會叫出系統分享選單（裡面就有 IG），
    桌機則用「複製連結」自己貼。 */
-function shareBlock({ url, title, heading = '覺得有幫助嗎？分享給需要的人', qrHint, qr = true, qrOpen = false, qrName = '' }) {
+function shareBlock({ url, title, heading = '覺得有幫助嗎？分享給需要的人', qrHint, qr = true, qrName = '', base = '' }) {
   const u = encodeURIComponent(url);
   const t = encodeURIComponent(`${title}｜${CONFIG.author}`);
 
@@ -503,16 +503,19 @@ ${links}
       </div>
       <p class="share__status" role="status" aria-live="polite"></p>
 ${qr ? `
-      <details class="qr"${qrOpen ? ' open' : ''}>
-        <summary class="qr__toggle">${icon('i-qr', 'share__icon')}<span>當面分享：QR Code 與網址</span></summary>
+      <section class="qr" aria-labelledby="qr-heading">
+        <p class="qr__heading" id="qr-heading">當面分享</p>
         <div class="qr__panel">
           <div class="qr__frame">${qrCache.get(url) || ''}</div>
           <div class="qr__text">
 ${qrName ? `            <p class="qr__name">${esc(qrName)}</p>\n` : ''}            <p class="qr__hint">${esc(qrHint || '請對方用手機相機掃描，或直接輸入下面的網址。')}</p>
             <p class="qr__url"><a href="${esc(url)}">${esc(urlText(url))}</a></p>
+            <p class="qr__more">
+              <a href="${base}qr/">${icon('i-qr', 'qr__more-icon')}<span>各癌別專區的 QR Code</span><span aria-hidden="true">→</span></a>
+            </p>
           </div>
         </div>
-      </details>` : ''}
+      </section>` : ''}
     </aside>`;
 }
 
@@ -646,7 +649,6 @@ ${shareBlock({
     title: CONFIG.title,
     heading: '把整個網站分享給需要的人',
     qrHint: '掃描後會進入首頁，可以瀏覽所有癌別的衛教文章。',
-    qrOpen: true,                 /* 首頁的 QR 預設就攤開，不必先點一下 */
     qrName: CONFIG.qr.cardName,
   })}
   </section>
@@ -843,6 +845,7 @@ ${s.articles.length ? shareBlock({
     heading: `把整個「${s.name}」系列分享給需要的人`,
     qrHint: `掃描後會直接進入這個系列，只看得到${s.name}的文章。`,
     qrName: s.name,
+    base: '../../',
   }) + '\n' : ''}
 ${backHome('../../', '回首頁')}
   </section>

@@ -1312,35 +1312,22 @@ ul, ol { padding-left: 1.25em; }
 
 /* ---------- 當面分享用的 QR Code ---------- */
 
-.qr { margin-top: .9rem; }
+/* QR 一律直接顯示，不做成可摺疊——它是門診當面要用的東西，
+   藏在按鈕後面只是多一道手續。 */
+.qr { margin-top: 1.4rem; }
 
-.qr__toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: .4em;
-  width: fit-content;
-  padding: .5em 1em;
-  font-size: .88rem;
-  font-weight: 600;
+.qr__heading {
+  margin: 0 0 .7rem;
+  font-size: .92rem;
+  font-weight: 700;
   color: var(--ink-soft);
-  background: var(--bg);
-  border: 1px dashed var(--line);
-  border-radius: 999px;
-  cursor: pointer;
-  list-style: none;                 /* 收掉瀏覽器預設的三角形 */
-  -webkit-tap-highlight-color: transparent;
 }
-
-.qr__toggle::-webkit-details-marker { display: none; }
-.qr__toggle:hover { color: var(--accent); border-color: var(--accent); }
-.qr[open] .qr__toggle { color: var(--accent); border-color: var(--accent); border-style: solid; }
 
 .qr__panel {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 1.1rem 1.5rem;
-  margin-top: .9rem;
   padding: 1.25rem;
   background: var(--bg-tint);
   border: 1px solid var(--line);
@@ -1394,6 +1381,24 @@ ul, ol { padding-left: 1.25em; }
   overflow-wrap: anywhere;          /* 長網址換行，不撐破容器 */
   font-weight: 600;
 }
+
+/* 通往 /qr/ 總覽頁。刻意排在 QR 下方而不是上方：
+   上方會被讀成「這是下面內容的標題」，讓人以為按了會展開；
+   排在下方才讀得出來這是「下一步」。 */
+.qr__more { margin: .9rem 0 0; }
+
+.qr__more a {
+  display: inline-flex;
+  align-items: center;
+  gap: .45em;
+  font-size: .88rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: .65em 0;                 /* 這是進入 /qr/ 的唯一入口，點擊區要夠大（約 44px） */
+}
+
+.qr__more a:hover span:not([aria-hidden]) { text-decoration: underline; }
+.qr__more-icon { width: 1.15em; height: 1.15em; flex: none; }
 
 /* 首頁底部的分享區塊沒有文章的上邊界，自己補一條 */
 .section--share { padding-top: 0; }
@@ -1748,7 +1753,7 @@ ul, ol { padding-left: 1.25em; }
   .article-back,
   .share__row,
   .share__status,
-  .qr__toggle,
+  .qr__more,
   .qrsheet__note,
   .authorcard,
   .cards--rail {
