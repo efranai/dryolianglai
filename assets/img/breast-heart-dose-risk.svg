@@ -1,35 +1,48 @@
-<svg class="illus" viewBox="0 0 720 356" xmlns="http://www.w3.org/2000/svg" role="img"
+<svg class="illus" viewBox="0 0 720 410" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-labelledby="risk-title risk-desc">
-  <title id="risk-title">心臟平均劑量與心血管風險的關係</title>
-  <desc id="risk-desc">Darby 等人的研究顯示，平均心臟劑量每增加 1 格雷，重大冠狀動脈事件的風險約增加百分之七點四，且未觀察到安全閾值。深吸氣閉氣技術常可將平均心臟劑量降至 2 格雷以下。</desc>
+  <title id="risk-title">心臟平均劑量與心血管風險的關係，以及三種技術的典型劑量</title>
+  <desc id="risk-desc">Darby 等人的研究顯示，平均心臟劑量每增加一格雷，重大冠狀動脈事件的風險約增加百分之七點四，且未觀察到安全閾值。以典型的平均心臟劑量對照：傳統光子治療在自由呼吸下約四格雷，加上深吸氣閉氣技術後約兩格雷，質子治療合併深吸氣閉氣則常可低於一格雷。劑量愈低，對應到這條直線上的長期風險就愈低。</desc>
 
-  <text class="il-t-sub il-anchor-mid" x="110" y="62">風險增加（%）</text>
-
-  <!-- DIBH 常見的劑量區間 -->
-  <rect class="il-band" x="110" y="80" width="327" height="180" />
-  <text class="il-t-sub il-anchor-mid" x="230" y="104">DIBH 常可降至此區間</text>
+  <text class="il-t-sub il-anchor-mid" x="110" y="60">風險增加（%）</text>
 
   <!-- 座標軸 -->
-  <path class="il-axis" d="M110 74 V260 H610" />
+  <path class="il-axis" d="M110 72 V270 H656" />
+  <path class="il-axis-head" d="M656 264 668 270 656 276Z" />
 
-  <!-- 劑量與風險的線性關係 -->
-  <path class="il-curve il-curve--cancer" d="M110 260 L273 207 L437 153 L600 100" />
-  <circle class="il-point" cx="273" cy="207" r="6" />
-  <circle class="il-point" cx="437" cy="153" r="6" />
-  <circle class="il-point" cx="600" cy="100" r="6" />
+  <!-- 劑量與風險的線性關係：每 1 Gy 約 +7.4%，且未觀察到安全閾值 -->
+  <path class="il-curve il-curve--cancer" d="M110 270 L640 80" />
 
-  <text class="il-t-val il-anchor-mid" x="273" y="195">+7.4%</text>
-  <text class="il-t-val il-anchor-mid" x="437" y="141">+14.8%</text>
-  <text class="il-t-val il-anchor-mid" x="600" y="88">+22.2%</text>
+  <!-- 三種技術的典型平均心臟劑量落點 -->
+  <path class="il-lead" d="M195 240 V270 M322 194 V270 M534 118 V270" />
 
-  <!-- 刻度 -->
-  <g class="il-tick"><path d="M273 260 v8 M437 260 v8 M600 260 v8" /></g>
+  <circle class="il-point" cx="195" cy="240" r="7" />
+  <circle class="il-point" cx="322" cy="194" r="7" />
+  <circle class="il-point" cx="534" cy="118" r="7" />
+
+  <text class="il-t-val il-anchor-mid" x="195" y="222">+6%</text>
+  <text class="il-t-val il-anchor-mid" x="322" y="176">+15%</text>
+  <text class="il-t-val il-anchor-mid" x="534" y="100">+30%</text>
+
+  <!-- 劑量刻度 -->
+  <g class="il-tick"><path d="M216 270 v8 M322 270 v8 M428 270 v8 M534 270 v8 M640 270 v8" /></g>
   <g class="il-t-sub il-anchor-mid">
-    <text x="110" y="292">0</text>
-    <text x="273" y="292">1</text>
-    <text x="437" y="292">2</text>
-    <text x="600" y="292">3</text>
+    <text x="110" y="290">0</text>
+    <text x="216" y="290">1</text>
+    <text x="322" y="290">2</text>
+    <text x="428" y="290">3</text>
+    <text x="534" y="290">4</text>
+    <text x="640" y="290">5</text>
   </g>
 
-  <text class="il-t-sub il-anchor-mid" x="360" y="336">平均心臟劑量（Gy）</text>
+  <!-- 三種技術。窄螢幕時字級放大，位置要留夠間距才不會撞到上面的刻度數字 -->
+  <text class="il-t il-anchor-mid" x="195" y="334">質子</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="195" y="364">＋DIBH，約 0.8 Gy</text>
+
+  <text class="il-t il-anchor-mid" x="322" y="334">DIBH</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="322" y="364">光子，約 2 Gy</text>
+
+  <text class="il-t il-anchor-mid" x="534" y="334">傳統光子</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="534" y="364">自由呼吸，約 4 Gy</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="398">平均心臟劑量（Gy）</text>
 </svg>
