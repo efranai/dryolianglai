@@ -6,8 +6,6 @@ summary: 攝護腺癌的放射治療療程，這些年從 40 次左右縮短到 
 description: 攝護腺癌放射治療要做幾次？賴宥良醫師說明為什麼療程能從 40 次縮短到 20 幾次、次數減少會不會影響效果、少分次為什麼一定要影像導引，以及 5 次療程目前的適用範圍。
 series: prostate-cancer
 tags: 攝護腺癌, 療程次數, 影像導引
-hero: assets/img/prostate-fractions-timeline.svg
-heroCaption: 同樣是把癌細胞控制住，現在多數病人不必再跑八週的療程。
 ---
 
 在門診，攝護腺癌病人最常問我的問題之一是：

@@ -1,12 +1,12 @@
-<svg class="illus" viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img"
+<svg class="illus" viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-labelledby="pfti-title pfti-desc">
   <title id="pfti-title">傳統療程與少分次療程的長度比較</title>
-  <desc id="pfti-desc">傳統療程約三十八到四十四次，扣掉週末大約要跑八週。少分次療程約二十幾次，大約四到五週就能完成。每一格代表一次治療，以每週五次排列。</desc>
+  <desc id="pfti-desc">兩排都以八週為底，每一格代表一次治療，每週五格。傳統療程約三十八到四十四次，八週的格子會全部填滿。少分次療程約二十幾次，大約填到第四到第五週就結束，後面三、四週不必再跑。</desc>
 
   <text class="il-t" x="24" y="42">傳統療程</text>
   <text class="il-t-sub il-anchor-end" x="696" y="42">約 8 週 · 38～44 次</text>
 
-  <g class="il-day il-day--off">
+  <g class="il-day il-day--on">
     <rect x="24"  y="62" width="11" height="40" rx="3" /><rect x="40"  y="62" width="11" height="40" rx="3" />
     <rect x="56"  y="62" width="11" height="40" rx="3" /><rect x="72"  y="62" width="11" height="40" rx="3" />
     <rect x="88"  y="62" width="11" height="40" rx="3" />
@@ -54,5 +54,19 @@
     <rect x="428" y="200" width="11" height="40" rx="3" />
   </g>
 
-  <text class="il-t-sub il-anchor-mid" x="360" y="300">每一格代表一次治療</text>
+  <!-- 同一條八週的底，少分次只填到這裡，後面留空 -->
+  <g class="il-day il-day--ghost">
+    <rect x="449" y="200" width="11" height="40" rx="3" /><rect x="465" y="200" width="11" height="40" rx="3" />
+    <rect x="481" y="200" width="11" height="40" rx="3" /><rect x="497" y="200" width="11" height="40" rx="3" />
+    <rect x="513" y="200" width="11" height="40" rx="3" />
+    <rect x="534" y="200" width="11" height="40" rx="3" /><rect x="550" y="200" width="11" height="40" rx="3" />
+    <rect x="566" y="200" width="11" height="40" rx="3" /><rect x="582" y="200" width="11" height="40" rx="3" />
+    <rect x="598" y="200" width="11" height="40" rx="3" />
+    <rect x="619" y="200" width="11" height="40" rx="3" /><rect x="635" y="200" width="11" height="40" rx="3" />
+    <rect x="651" y="200" width="11" height="40" rx="3" /><rect x="667" y="200" width="11" height="40" rx="3" />
+    <rect x="683" y="200" width="11" height="40" rx="3" />
+  </g>
+
+  <text class="il-t-sub il-anchor-mid" x="571" y="272">這一段不用再跑</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="312">每一格代表一次治療</text>
 </svg>
