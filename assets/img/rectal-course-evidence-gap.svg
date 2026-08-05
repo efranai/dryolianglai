@@ -1,7 +1,7 @@
 <svg class="illus" viewBox="0 0 720 500" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-labelledby="rceg-title rceg-desc">
   <title id="rceg-title">現有證據的強弱與各自比較的對象</title>
-  <desc id="rceg-desc">證據力最強的隨機試驗 RAPIDO 與 PRODIGE 23，比的是把化療提前到手術前，對上放化療後開刀再做化療的舊做法，而不是兩種放療排程互相比較。唯一直接比較短療程加化療與長療程加化療的，是美國單一醫學中心的研究，但不是隨機分組。真正能回答這個問題的隨機試驗 ACO/ARO/AIO-18.1 收案 702 人，主要終點就是器官保留，結果尚未公布。</desc>
+  <desc id="rceg-desc">證據力最強的隨機試驗 RAPIDO 與 PRODIGE 23，比的是把化療提前到手術前，對上放化療後開刀再做化療的舊做法，而不是兩種放療排程互相比較。唯一直接比較短療程加化療與長療程加化療的，是美國紀念斯隆凱特琳癌症中心的研究，但不是隨機分組。真正能回答這個問題的隨機試驗 ACO/ARO/AIO-18.1 收案 702 人，主要終點就是器官保留，結果尚未公布。</desc>
 
   <g class="il-node il-node--accent">
     <rect x="24" y="30" width="672" height="128" rx="14" />
@@ -13,7 +13,7 @@
   <g class="il-node il-node--soft">
     <rect x="24" y="176" width="672" height="128" rx="14" />
   </g>
-  <text class="il-t il-anchor-mid" x="360" y="218">直接比較　但非隨機</text>
+  <text class="il-t il-anchor-mid" x="360" y="218">MSKCC 直接比較　但非隨機</text>
   <text class="il-t-sub il-anchor-mid" x="360" y="258">短療程＋化療　對上　長療程＋化療</text>
   <text class="il-t-sub il-anchor-mid" x="360" y="294">長療程器官保留較好，證據力較低</text>
 
