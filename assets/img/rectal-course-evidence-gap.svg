@@ -1,28 +1,29 @@
-<svg class="illus" viewBox="0 0 720 500" xmlns="http://www.w3.org/2000/svg" role="img"
+<svg class="illus" viewBox="0 0 720 620" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-labelledby="rceg-title rceg-desc">
   <title id="rceg-title">現有證據的強弱與各自比較的對象</title>
-  <desc id="rceg-desc">證據力最強的隨機試驗 RAPIDO 與 PRODIGE 23，比的是把化療提前到手術前，對上放化療後開刀再做化療的舊做法，而不是兩種放療排程互相比較。唯一直接比較短療程加化療與長療程加化療的，是美國紀念斯隆凱特琳癌症中心的研究，但不是隨機分組。真正能回答這個問題的隨機試驗 ACO/ARO/AIO-18.1 收案 702 人，主要終點就是器官保留，結果尚未公布。</desc>
+  <desc id="rceg-desc">證據力最強的隨機試驗，比的是短療程加術前化療對上長療程加術後化療，放療排程和化療時機同時不一樣，因此分不清結果的差異來自哪一項。唯一直接比較短療程加化療與長療程加化療的，是美國紀念斯隆凱特琳癌症中心的研究，長療程的器官保留較好，但不是隨機分組，證據等級較低。真正最公平的對決是正在進行中的隨機試驗 ACO/ARO/AIO-18.1，兩邊的鞏固化療相同，只留下放療排程一個變因，答案還沒公布。</desc>
+
+  <g class="il-node il-node--soft">
+    <rect x="24" y="30" width="672" height="176" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="72">隨機試驗　但比較並不公平</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="114">短療程＋術前化療　對上　長療程＋術後化療</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="154">放療和化療同時不一樣</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="192">RAPIDO；其術後化療並非人人都做</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="24" y="226" width="672" height="136" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="268">非隨機試驗（MSKCC）　直接比較</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="310">短療程＋化療　對上　長療程＋化療</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="350">長療程器官保留較好，但證據等級較低</text>
 
   <g class="il-node il-node--accent">
-    <rect x="24" y="30" width="672" height="128" rx="14" />
+    <rect x="24" y="382" width="672" height="216" rx="14" />
   </g>
-  <text class="il-t il-node-text--on il-anchor-mid" x="360" y="72">隨機試驗　證據力最強</text>
-  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="112">化療提前　對上　開刀後才做化療</text>
-  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="148">但沒有比較 5 次和 25 次</text>
-
-  <g class="il-node il-node--soft">
-    <rect x="24" y="176" width="672" height="128" rx="14" />
-  </g>
-  <text class="il-t il-anchor-mid" x="360" y="218">MSKCC 直接比較　但非隨機</text>
-  <text class="il-t-sub il-anchor-mid" x="360" y="258">短療程＋化療　對上　長療程＋化療</text>
-  <text class="il-t-sub il-anchor-mid" x="360" y="294">長療程器官保留較好，證據力較低</text>
-
-  <g class="il-node il-node--soft">
-    <rect x="24" y="322" width="672" height="128" rx="14" />
-  </g>
-  <text class="il-t il-anchor-mid" x="360" y="364">隨機試驗　進行中</text>
-  <text class="il-t-sub il-anchor-mid" x="360" y="404">702 人，主要終點就是器官保留</text>
-  <text class="il-t-sub il-anchor-mid" x="360" y="440">答案還在路上</text>
-
-  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="486">ACO/ARO/AIO-18.1（NCT04246684）</text>
+  <text class="il-t il-node-text--on il-anchor-mid" x="360" y="424">隨機試驗　進行中</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="466">真正最公平的對決</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="506">短療程＋化療　對上　長療程＋化療</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="546">答案還在路上</text>
+  <text class="il-t-sub il-detail il-node-text--on il-anchor-mid" x="360" y="584">ACO/ARO/AIO-18.1（NCT04246684）</text>
 </svg>
