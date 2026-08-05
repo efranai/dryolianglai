@@ -1,0 +1,46 @@
+<svg class="illus" viewBox="0 0 720 306" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="rppath-title rppath-desc">
+  <title id="rppath-title">選擇先做化療之後的兩種路徑</title>
+  <desc id="rppath-desc">在 PROSPECT 試驗中，選擇先做十二週化療的病人，若腫瘤縮小達到兩成以上就直接接受手術；若縮小不到兩成，或因副作用無法完成化療，仍需要加做放射治療。試驗中有百分之九點一的病人走上後面這條路。因此選擇化療並不等於一定不會用到放射治療。</desc>
+
+  <g class="il-node il-node--lead">
+    <rect x="24" y="106" width="180" height="86" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="114" y="146">先做化療</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="114" y="174">12 週</text>
+
+  <path class="il-flow-arrow" d="M212 149 H 234" />
+  <path class="il-arrow-head" d="M232 143 244 149 232 155Z" />
+
+  <text class="il-t-sub il-anchor-mid" x="330" y="46">腫瘤縮小達兩成以上嗎？</text>
+
+  <g class="il-node il-node--accent">
+    <rect x="254" y="70" width="200" height="72" rx="14" />
+  </g>
+  <text class="il-t il-node-text--on il-anchor-mid" x="354" y="114">是</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="254" y="164" width="200" height="72" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="354" y="208">否</text>
+
+  <path class="il-flow-line" d="M244 149 V 106 H 254 M244 149 V 200 H 254" />
+
+  <path class="il-flow-arrow" d="M462 106 H 484" />
+  <path class="il-arrow-head" d="M482 100 494 106 482 112Z" />
+  <path class="il-flow-arrow" d="M462 200 H 484" />
+  <path class="il-arrow-head" d="M482 194 494 200 482 206Z" />
+
+  <g class="il-node il-node--lead">
+    <rect x="504" y="70" width="192" height="72" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="600" y="114">直接手術</text>
+
+  <g class="il-node il-node--accent">
+    <rect x="504" y="164" width="192" height="72" rx="14" />
+  </g>
+  <text class="il-t il-node-text--on il-anchor-mid" x="600" y="208">仍需加做放療</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="278">試驗中有 9.1% 的病人走上下面這條路</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="302">因此選擇化療，不等於一定用不到放射治療</text>
+</svg>
