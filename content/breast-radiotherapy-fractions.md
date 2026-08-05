@@ -193,7 +193,7 @@ heroCaption: 療程長度大約是：傳統分次 5–6 週、短分次 3–4 �
 4. Haviland JS, Owen JR, Yarnold JR, et al. The UK Standardisation of Breast Radiotherapy (START) Trials of Radiotherapy Hypofractionation for Treatment of Early Breast Cancer: 10-Year Follow-Up Results of Two Randomised Controlled Trials. *Lancet Oncol*. 2013;14(11):1086-1094.
 5. Murray Brunt A, Haviland JS, Wheatley DA, et al. Hypofractionated Breast Radiotherapy for 1 Week versus 3 Weeks (FAST-Forward): 5-Year Efficacy and Late Normal Tissue Effects Results from a Multicentre, Non-Inferiority, Randomised, Phase 3 Trial. *Lancet*. 2020;395(10237):1613-1626.
 6. Shaitelman SF, Anderson BM, Arthur DW, et al. Partial Breast Irradiation for Patients With Early-Stage Invasive Breast Cancer or Ductal Carcinoma In Situ: An ASTRO Clinical Practice Guideline. *Pract Radiat Oncol*. 2024;14(2):112-132.
-7. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer, Version 1.2026.
+7. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.（請參閱 NCCN 網站最新版本）
 
 ---
 

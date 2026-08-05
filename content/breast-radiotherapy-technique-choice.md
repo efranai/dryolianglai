@@ -237,7 +237,7 @@ IMRT 的目的，是讓放射線更符合乳房及淋巴區域的形狀，在維
 3. Taylor C, Correa C, et al. Estimating the Risks of Breast Cancer Radiotherapy: Evidence From Modern Radiation Doses to the Lungs and Heart and From Previous Randomized Trials. *J Clin Oncol*. 2017;35(15):1641-1649.
 4. MacDonald SM, Patel SA, et al. Proton Therapy for Breast Cancer after Mastectomy: Early Outcomes of a Prospective Clinical Trial. *Int J Radiat Oncol Biol Phys*. 2013;86(3):484-490.
 5. Mutter RW, Choi JI, et al. Proton Therapy for Breast Cancer: A Consensus Statement From the Particle Therapy Cooperative Group Breast Cancer Subcommittee. *Int J Radiat Oncol Biol Phys*. 2021;111(2):337-359.
-6. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer, Version 1.2026.
+6. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.（請參閱 NCCN 網站最新版本）
 
 ---
 

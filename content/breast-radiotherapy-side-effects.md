@@ -285,7 +285,7 @@ heroCaption: 紫外線造成曬傷、醫療放射線造成放射線皮膚炎，�
 7. Darby SC, Ewertz M, McGale P, et al. Risk of Ischemic Heart Disease in Women after Radiotherapy for Breast Cancer. *N Engl J Med*. 2013;368(11):987-998.
 8. DiSipio T, Rye S, Newman B, Hayes S. Incidence of Unilateral Arm Lymphoedema after Breast Cancer: A Systematic Review and Meta-Analysis. *Lancet Oncol*. 2013;14(6):500-515.
 9. Smith BD, Bellon JR, Blitzblau R, et al. Radiation Therapy for the Whole Breast: Executive Summary of an American Society for Radiation Oncology (ASTRO) Evidence-Based Guideline. *Pract Radiat Oncol*. 2018;8(3):145-152.
-10. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.
+10. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.（請參閱 NCCN 網站最新版本）
 
 ---
 

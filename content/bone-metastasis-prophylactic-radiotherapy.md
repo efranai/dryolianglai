@@ -186,7 +186,6 @@ heroCaption: 骨轉移真正的威脅不只是痛，而是骨折之後接連發�
 1. Gillespie EF, Yang JC, Mathis NJ, et al. Prophylactic Radiation Therapy Versus Standard of Care for Patients With High-Risk Asymptomatic Bone Metastases: A Multicenter, Randomized Phase II Clinical Trial. *J Clin Oncol*. 2024;42(1):38-46.
 2. Lutz S, Balboni T, Jones J, et al. Palliative Radiation Therapy for Bone Metastases: Update of an ASTRO Evidence-Based Guideline. *Pract Radiat Oncol*. 2017;7(1):4-12.
 3. Patchell RA, Tibbs PA, Regine WF, et al. Direct Decompressive Surgical Resection in the Treatment of Spinal Cord Compression Caused by Metastatic Cancer: A Randomised Trial. *Lancet*. 2005;366(9486):643-648.
-4. NCCN Clinical Practice Guidelines in Oncology.
 
 ---
 

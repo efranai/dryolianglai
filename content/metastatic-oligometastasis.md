@@ -170,7 +170,6 @@ heroCaption: 從局限性疾病到廣泛轉移之間，還有一段中間地帶�
 2. Tang C, Sherry AD, Hwang H, et al. Metastasis-Directed Therapy and Standard of Care versus Standard of Care for Oligometastatic Prostate Cancer (WOLVERINE): A Systematic Review and Individual Patient Data Meta-Analysis from the X-MET Collaboration. *Lancet Oncol*. 2026;27(2):181-190.
 3. Guckenberger M, Lievens Y, Bouma AB, et al. Characterisation and Classification of Oligometastatic Disease: A European Society for Radiotherapy and Oncology and European Organisation for Research and Treatment of Cancer Consensus Recommendation. *Lancet Oncol*. 2020;21(1):e18-e28.
 4. Phillips R, Shi WY, Deek M, et al. Outcomes of Observation vs Stereotactic Ablative Radiation for Oligometastatic Prostate Cancer: The ORIOLE Phase 2 Randomized Clinical Trial. *JAMA Oncol*. 2020;6(5):650-659.
-5. NCCN Clinical Practice Guidelines in Oncology.
 
 ---
 

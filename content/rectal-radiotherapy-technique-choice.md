@@ -213,7 +213,7 @@ IGRT 的目的包括：
 2. Pedone C, Sorcini B, Staff C, et al. Preoperative Short-Course Radiation Therapy with PROtons Compared to Photons in High-Risk RECTal Cancer (PRORECT): Initial Dosimetric Experience. *Clin Transl Radiat Oncol*. 2023;39:100562.
 3. Valdman A, Marsk R, Karimi M, et al. Surgical Outcomes Following Total Neoadjuvant Therapy in Rectal Cancer with Short-Course Radiotherapy Using Protons or Photons: Initial Safety Data from the PRORECT Randomized Trial. *Br J Surg*. 2024;111(9):znae241.
 4. Hofheinz RD, Fokas E, Benhaim L, et al. Localised Rectal Cancer: ESMO Clinical Practice Guideline for Diagnosis, Treatment and Follow-up. *Ann Oncol*. 2025;36(9):1007-1024.
-5. NCCN Clinical Practice Guidelines in Oncology: Rectal Cancer.
+5. NCCN Clinical Practice Guidelines in Oncology: Rectal Cancer.（請參閱 NCCN 網站最新版本）
 
 ---
 

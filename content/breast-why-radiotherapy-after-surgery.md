@@ -246,7 +246,7 @@ heroCaption: 手術切除看得見的腫瘤；放射治療清除看不見的顯�
 5. Recht A, Comen EA, Fine RE, et al. Postmastectomy Radiotherapy: An American Society of Clinical Oncology, American Society for Radiation Oncology, and Society of Surgical Oncology Focused Guideline Update. *J Clin Oncol*. 2016;34(36):4431-4442.
 6. Smith BD, Bellon JR, Blitzblau R, et al. Radiation Therapy for the Whole Breast: Executive Summary of an American Society for Radiation Oncology (ASTRO) Evidence-Based Guideline. *Pract Radiat Oncol*. 2018;8(3):145-152.
 7. Shaitelman SF, Anderson BM, Arthur DW, et al. Partial Breast Irradiation for Patients with Early-Stage Invasive Breast Cancer or Ductal Carcinoma In Situ: An ASTRO Clinical Practice Guideline. *Pract Radiat Oncol*. 2024;14(2):112-132.
-8. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.
+8. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.（請參閱 NCCN 網站最新版本）
 
 ---
 

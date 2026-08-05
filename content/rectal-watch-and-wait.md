@@ -174,7 +174,7 @@ heroCaption: 能不能保留器官，取決於完整評估的結果，而不是�
 1. Garcia-Aguilar J, Patil S, Gollub MJ, et al. Organ Preservation in Patients With Rectal Adenocarcinoma Treated With Total Neoadjuvant Therapy（OPRA Trial）. *J Clin Oncol*. 2022;40(23):2546-2556.
 2. van der Valk MJM, Hilling DE, Bastiaannet E, et al. Long-Term Outcomes of Clinical Complete Responders after Neoadjuvant Treatment for Rectal Cancer in the International Watch & Wait Database（IWWD）: An International Multicentre Registry Study. *Lancet*. 2018;391(10139):2537-2545.
 3. Habr-Gama A, Perez RO, Nadalin W, et al. Operative versus Nonoperative Treatment for Stage 0 Distal Rectal Cancer Following Chemoradiation Therapy: Long-Term Results. *Ann Surg*. 2004;240(4):711-717.
-4. NCCN Clinical Practice Guidelines in Oncology: Rectal Cancer.
+4. NCCN Clinical Practice Guidelines in Oncology: Rectal Cancer.（請參閱 NCCN 網站最新版本）
 5. Hofheinz RD, Fokas E, Benhaim L, et al. Localised Rectal Cancer: ESMO Clinical Practice Guideline for Diagnosis, Treatment and Follow-up. *Ann Oncol*. 2025;36(9):1007-1024.
 
 ---

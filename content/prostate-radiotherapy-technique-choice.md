@@ -244,7 +244,7 @@ IMRT 已經可以提供非常好的攝護腺癌治療。那為什麼還需要考
 4. Mariados N, Sylvester J, Shah D, et al. Hydrogel Spacer Prospective Multicenter Randomized Controlled Pivotal Trial: Dosimetric and Clinical Effects of Perirectal Spacer Application in Men Undergoing Prostate Image Guided Intensity Modulated Radiation Therapy. *Int J Radiat Oncol Biol Phys*. 2015;92(5):971-977.
 5. Hamstra DA, Mariados N, Sylvester J, et al. Continued Benefit to Rectal Separation for Prostate Radiation Therapy: Final Results of a Phase III Trial. *Int J Radiat Oncol Biol Phys*. 2017;97(5):976-985.
 6. Eastham JA, Auffenberg GB, Barocas DA, et al. Clinically Localized Prostate Cancer: AUA/ASTRO Guideline. *J Urol*. 2022;208(1):19-25.
-7. NCCN Clinical Practice Guidelines in Oncology: Prostate Cancer.
+7. NCCN Clinical Practice Guidelines in Oncology: Prostate Cancer.（請參閱 NCCN 網站最新版本）
 
 ---
 

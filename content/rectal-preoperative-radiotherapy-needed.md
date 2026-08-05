@@ -193,7 +193,7 @@ PROSPECT 是一個好研究，它讓一部分病人多了一個選擇。
 2. Basch E, Dueck AC, Mitchell SA, et al. Patient-Reported Outcomes During and After Treatment for Locally Advanced Rectal Cancer in the PROSPECT Trial (Alliance N1048). *J Clin Oncol*. 2023;41(21):3724-3734.
 3. American Society for Radiation Oncology (ASTRO) Gastrointestinal Cancers Resource Panel. PROSPECT Trial Expands Treatment Options for Patients With Resectable Rectal Cancer.（學會聲明，非期刊論文）
 4. Hofheinz RD, Fokas E, Benhaim L, et al. Localised Rectal Cancer: ESMO Clinical Practice Guideline for Diagnosis, Treatment and Follow-up. *Ann Oncol*. 2025;36(9):1007-1024.
-5. NCCN Clinical Practice Guidelines in Oncology: Rectal Cancer.
+5. NCCN Clinical Practice Guidelines in Oncology: Rectal Cancer.（請參閱 NCCN 網站最新版本）
 
 ---
 

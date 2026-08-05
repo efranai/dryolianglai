@@ -174,7 +174,7 @@ heroCaption: 依病情不同，放射治療在食道癌可能扮演三種角色�
 2. Shapiro J, van Lanschot JJB, Hulshof MCCM, et al. Neoadjuvant Chemoradiotherapy plus Surgery versus Surgery Alone for Oesophageal or Junctional Cancer（CROSS）: Long-Term Results of a Randomised Controlled Trial. *Lancet Oncol*. 2015;16(9):1090-1098.
 3. Lin SH, Hobbs BP, Verma V, et al. Randomized Phase IIB Trial of Proton Beam Therapy Versus Intensity-Modulated Radiation Therapy for Locally Advanced Esophageal Cancer. *J Clin Oncol*. 2020;38(14):1569-1579.
 4. Routman DM, Garant A, Lester SC, et al. A Comparison of Grade 4 Lymphopenia With Proton Versus Photon Radiation Therapy for Esophageal Cancer. *Adv Radiat Oncol*. 2019;4(1):63-69.
-5. NCCN Clinical Practice Guidelines in Oncology: Esophageal and Esophagogastric Junction Cancers.
+5. NCCN Clinical Practice Guidelines in Oncology: Esophageal and Esophagogastric Junction Cancers.（請參閱 NCCN 網站最新版本）
 6. Obermannová R, Alsina M, Cervantes A, et al. Oesophageal Cancer: ESMO Clinical Practice Guideline for Diagnosis, Treatment and Follow-up. *Ann Oncol*. 2022;33(10):992-1004.
 
 ---
