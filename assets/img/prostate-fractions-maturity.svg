@@ -1,0 +1,24 @@
+<svg class="illus" viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="pfma-title pfma-desc">
+  <title id="pfma-title">三種療程長度目前的成熟度</title>
+  <desc id="pfma-desc">二十幾次的少分次療程已是大多數病人的標準做法；四十次左右的傳統療程仍是標準選項之一；五次療程的適用範圍還比較窄，屬於持續發展中的選項，國際指引對低風險與中風險病人是條件式建議。</desc>
+
+  <g class="il-node il-node--accent">
+    <rect x="24" y="30" width="672" height="110" rx="14" />
+  </g>
+  <text class="il-t il-node-text--on il-anchor-mid" x="360" y="72">二十幾次</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="112">大多數病人的標準做法</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="24" y="160" width="672" height="110" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="202">40 次左右</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="242">仍是標準選項之一</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="24" y="290" width="672" height="120" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="332">5 次</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="372">適用範圍較窄，持續發展中</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="404">低、中風險為條件式建議</text>
+</svg>

@@ -1,0 +1,58 @@
+<svg class="illus" viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="pfti-title pfti-desc">
+  <title id="pfti-title">傳統療程與少分次療程的長度比較</title>
+  <desc id="pfti-desc">傳統療程約三十八到四十四次，扣掉週末大約要跑八週。少分次療程約二十幾次，大約四到五週就能完成。每一格代表一次治療，以每週五次排列。</desc>
+
+  <text class="il-t" x="24" y="42">傳統療程</text>
+  <text class="il-t-sub il-anchor-end" x="696" y="42">約 8 週 · 38～44 次</text>
+
+  <g class="il-day il-day--off">
+    <rect x="24"  y="62" width="11" height="40" rx="3" /><rect x="40"  y="62" width="11" height="40" rx="3" />
+    <rect x="56"  y="62" width="11" height="40" rx="3" /><rect x="72"  y="62" width="11" height="40" rx="3" />
+    <rect x="88"  y="62" width="11" height="40" rx="3" />
+    <rect x="109" y="62" width="11" height="40" rx="3" /><rect x="125" y="62" width="11" height="40" rx="3" />
+    <rect x="141" y="62" width="11" height="40" rx="3" /><rect x="157" y="62" width="11" height="40" rx="3" />
+    <rect x="173" y="62" width="11" height="40" rx="3" />
+    <rect x="194" y="62" width="11" height="40" rx="3" /><rect x="210" y="62" width="11" height="40" rx="3" />
+    <rect x="226" y="62" width="11" height="40" rx="3" /><rect x="242" y="62" width="11" height="40" rx="3" />
+    <rect x="258" y="62" width="11" height="40" rx="3" />
+    <rect x="279" y="62" width="11" height="40" rx="3" /><rect x="295" y="62" width="11" height="40" rx="3" />
+    <rect x="311" y="62" width="11" height="40" rx="3" /><rect x="327" y="62" width="11" height="40" rx="3" />
+    <rect x="343" y="62" width="11" height="40" rx="3" />
+    <rect x="364" y="62" width="11" height="40" rx="3" /><rect x="380" y="62" width="11" height="40" rx="3" />
+    <rect x="396" y="62" width="11" height="40" rx="3" /><rect x="412" y="62" width="11" height="40" rx="3" />
+    <rect x="428" y="62" width="11" height="40" rx="3" />
+    <rect x="449" y="62" width="11" height="40" rx="3" /><rect x="465" y="62" width="11" height="40" rx="3" />
+    <rect x="481" y="62" width="11" height="40" rx="3" /><rect x="497" y="62" width="11" height="40" rx="3" />
+    <rect x="513" y="62" width="11" height="40" rx="3" />
+    <rect x="534" y="62" width="11" height="40" rx="3" /><rect x="550" y="62" width="11" height="40" rx="3" />
+    <rect x="566" y="62" width="11" height="40" rx="3" /><rect x="582" y="62" width="11" height="40" rx="3" />
+    <rect x="598" y="62" width="11" height="40" rx="3" />
+    <rect x="619" y="62" width="11" height="40" rx="3" /><rect x="635" y="62" width="11" height="40" rx="3" />
+    <rect x="651" y="62" width="11" height="40" rx="3" /><rect x="667" y="62" width="11" height="40" rx="3" />
+    <rect x="683" y="62" width="11" height="40" rx="3" />
+  </g>
+
+  <text class="il-t" x="24" y="180">少分次療程</text>
+  <text class="il-t-sub il-anchor-end" x="696" y="180">約 4～5 週 · 20 幾次</text>
+
+  <g class="il-day il-day--on">
+    <rect x="24"  y="200" width="11" height="40" rx="3" /><rect x="40"  y="200" width="11" height="40" rx="3" />
+    <rect x="56"  y="200" width="11" height="40" rx="3" /><rect x="72"  y="200" width="11" height="40" rx="3" />
+    <rect x="88"  y="200" width="11" height="40" rx="3" />
+    <rect x="109" y="200" width="11" height="40" rx="3" /><rect x="125" y="200" width="11" height="40" rx="3" />
+    <rect x="141" y="200" width="11" height="40" rx="3" /><rect x="157" y="200" width="11" height="40" rx="3" />
+    <rect x="173" y="200" width="11" height="40" rx="3" />
+    <rect x="194" y="200" width="11" height="40" rx="3" /><rect x="210" y="200" width="11" height="40" rx="3" />
+    <rect x="226" y="200" width="11" height="40" rx="3" /><rect x="242" y="200" width="11" height="40" rx="3" />
+    <rect x="258" y="200" width="11" height="40" rx="3" />
+    <rect x="279" y="200" width="11" height="40" rx="3" /><rect x="295" y="200" width="11" height="40" rx="3" />
+    <rect x="311" y="200" width="11" height="40" rx="3" /><rect x="327" y="200" width="11" height="40" rx="3" />
+    <rect x="343" y="200" width="11" height="40" rx="3" />
+    <rect x="364" y="200" width="11" height="40" rx="3" /><rect x="380" y="200" width="11" height="40" rx="3" />
+    <rect x="396" y="200" width="11" height="40" rx="3" /><rect x="412" y="200" width="11" height="40" rx="3" />
+    <rect x="428" y="200" width="11" height="40" rx="3" />
+  </g>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="300">每一格代表一次治療</text>
+</svg>

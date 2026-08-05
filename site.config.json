@@ -32,7 +32,11 @@
       "id": "prostate-cancer",
       "name": "攝護腺癌與放射治療",
       "hook": "治療選項怎麼選，以及排尿與腸道副作用的照顧",
-      "order": []
+      "order": [
+        "prostate-surgery-vs-radiotherapy",
+        "prostate-radiotherapy-fractions",
+        "prostate-radiotherapy-technique-choice"
+      ]
     },
     {
       "id": "colorectal-cancer",
