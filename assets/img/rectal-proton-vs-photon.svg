@@ -1,0 +1,39 @@
+<svg class="illus" viewBox="0 0 720 344" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="rpvp-title rpvp-desc">
+  <title id="rpvp-title">直腸癌放射治療中光子與質子的劑量分布差別</title>
+  <desc id="rpvp-desc">光子放射線穿過身體後仍會繼續前進，因此骨盆腔內會有較大範圍的低劑量分布，小腸、膀胱與骨盆骨髓都可能落在其中。質子在抵達治療深度後停止，低劑量散布的範圍明顯較小，周圍正常器官接受的劑量因此下降。兩者對腫瘤本身的照射劑量則相當。</desc>
+
+  <!-- 左：光子 -->
+  <text class="il-t il-anchor-mid" x="187" y="40">光子放射治療</text>
+
+  <ellipse class="il-body" cx="187" cy="180" rx="140" ry="94" />
+  <ellipse class="il-beam" cx="187" cy="180" rx="124" ry="80" />
+
+  <g class="il-organ">
+    <circle cx="150" cy="140" r="18" />
+    <circle cx="196" cy="130" r="16" />
+    <circle cx="236" cy="150" r="15" />
+  </g>
+  <ellipse class="il-organ" cx="140" cy="212" rx="32" ry="24" />
+  <circle class="il-zone" cx="224" cy="206" r="26" />
+
+  <text class="il-t-sub il-detail il-anchor-mid" x="187" y="304">低劑量散布範圍較大</text>
+
+  <!-- 右：質子 -->
+  <text class="il-t il-anchor-mid" x="533" y="40">質子治療</text>
+
+  <ellipse class="il-body" cx="533" cy="180" rx="140" ry="94" />
+  <ellipse class="il-beam" cx="570" cy="200" rx="62" ry="50" />
+
+  <g class="il-organ">
+    <circle cx="496" cy="140" r="18" />
+    <circle cx="542" cy="130" r="16" />
+    <circle cx="582" cy="150" r="15" />
+  </g>
+  <ellipse class="il-organ" cx="486" cy="212" rx="32" ry="24" />
+  <circle class="il-zone" cx="570" cy="206" r="26" />
+
+  <text class="il-t-sub il-detail il-anchor-mid" x="533" y="304">低劑量散布範圍明顯縮小</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="334">腫瘤本身的照射劑量相當，差別在於周圍器官被波及多少</text>
+</svg>

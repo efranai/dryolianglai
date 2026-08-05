@@ -1,0 +1,43 @@
+<svg class="illus" viewBox="0 0 720 384" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="roar-title roar-desc">
+  <title id="roar-title">直腸癌放射治療需要保護的骨盆腔器官</title>
+  <desc id="roar-desc">直腸位於骨盆腔深處，周圍有許多重要的正常器官。小腸位置每天都可能改變，有時會進入照射範圍，劑量偏高時容易腹瀉或腹痛；膀胱受到照射可能出現頻尿與尿急；骨盆內含有大量骨髓，劑量偏高時白血球、血小板或血色素可能下降。現代放射治療的目標，是在照射腫瘤的同時盡量保護這些器官。</desc>
+
+  <!-- 骨盆骨（含骨髓） -->
+  <path class="il-organ" d="M262 262c-18 0-30 14-30 32s12 34 30 34h196c18 0 30-16 30-34s-12-32-30-32z" />
+
+  <!-- 小腸 -->
+  <g class="il-organ">
+    <circle cx="300" cy="96" r="26" />
+    <circle cx="352" cy="80" r="24" />
+    <circle cx="398" cy="104" r="26" />
+    <circle cx="330" cy="140" r="24" />
+    <circle cx="382" cy="150" r="22" />
+  </g>
+
+  <!-- 膀胱 -->
+  <ellipse class="il-organ" cx="300" cy="212" rx="46" ry="34" />
+
+  <!-- 直腸（治療目標） -->
+  <rect class="il-zone" x="396" y="182" width="40" height="104" rx="18" />
+
+  <!-- 左側標註 -->
+  <path class="il-lead" d="M274 96 H 224" />
+  <text class="il-t il-anchor-end" x="216" y="88">小腸</text>
+  <text class="il-t-sub il-detail il-anchor-end" x="216" y="112">位置每天會變，劑量高易腹瀉</text>
+
+  <path class="il-lead" d="M254 212 H 224" />
+  <text class="il-t il-anchor-end" x="216" y="204">膀胱</text>
+  <text class="il-t-sub il-detail il-anchor-end" x="216" y="228">劑量高可能頻尿、尿急</text>
+
+  <path class="il-lead" d="M262 294 H 224" />
+  <text class="il-t il-anchor-end" x="216" y="286">骨盆骨髓</text>
+  <text class="il-t-sub il-detail il-anchor-end" x="216" y="310">劑量高可能白血球、血小板下降</text>
+
+  <!-- 右側標註 -->
+  <path class="il-lead" d="M440 216 H 486" />
+  <text class="il-t" x="494" y="208">直腸</text>
+  <text class="il-t-sub il-detail" x="494" y="232">要照射到的治療目標</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="360">治療目標只有一個，但周圍全是需要保護的鄰居</text>
+</svg>

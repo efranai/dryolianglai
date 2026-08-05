@@ -1,0 +1,37 @@
+<svg class="illus" viewBox="0 0 720 312" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="rlad-title rlad-desc">
+  <title id="rlad-title">直腸癌質子治療目前已確定與尚待確定的部分</title>
+  <desc id="rlad-desc">已經確定的是劑量：統合分析與隨機試驗的治療計畫比較都顯示，質子治療可顯著降低小腸、膀胱與骨盆骨骼接受的輻射劑量，而腫瘤本身的照射劑量相當。尚未確定的是這些劑量差異最終能減少多少實際副作用，仍要等待完整的臨床試驗結果。</desc>
+
+  <!-- 已經確定 -->
+  <g class="il-node il-node--accent">
+    <rect x="24" y="40" width="308" height="206" rx="14" />
+  </g>
+  <g class="il-badge il-badge--accent" transform="translate(60 80)">
+    <circle r="17" />
+    <path class="il-mark" d="m-7 1 5 5 9-10" />
+  </g>
+  <text class="il-t il-node-text--on" x="92" y="86">已經確定</text>
+  <text class="il-t-sub il-node-text--on" x="52" y="136">質子治療可顯著降低</text>
+  <text class="il-t-sub il-node-text--on" x="52" y="174">小腸、膀胱與骨盆骨骼的劑量</text>
+  <text class="il-t-sub il-detail il-node-text--on" x="52" y="212">而腫瘤本身的照射劑量相當</text>
+
+  <!-- 箭頭 -->
+  <path class="il-flow-arrow" d="M340 143 H 372" />
+  <path class="il-arrow-head" d="M370 137 382 143 370 149Z" />
+
+  <!-- 還不確定 -->
+  <g class="il-node il-node--soft">
+    <rect x="390" y="40" width="306" height="206" rx="14" />
+  </g>
+  <g class="il-badge" transform="translate(426 80)">
+    <circle r="17" fill="var(--ink-faint)" />
+    <path class="il-mark" d="M-5-5a5 5 0 0 1 10 0c0 4-5 4-5 8M0 8h.01" />
+  </g>
+  <text class="il-t" x="458" y="86">還不確定</text>
+  <text class="il-t-sub" x="418" y="136">這些劑量差異最後能減少</text>
+  <text class="il-t-sub" x="418" y="174">多少實際的副作用</text>
+  <text class="il-t-sub il-detail" x="418" y="212">仍要等待完整的臨床試驗結果</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="290">劑量降低是事實；副作用能減少多少，還在驗證中</text>
+</svg>
