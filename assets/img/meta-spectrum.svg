@@ -1,0 +1,45 @@
+<svg class="illus" viewBox="0 0 720 306" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="mspec-title mspec-desc">
+  <title id="mspec-title">從局限性疾病到廣泛轉移的光譜示意圖</title>
+  <desc id="mspec-desc">轉移不是一個單一的狀況，而是一段光譜。癌症仍局限在原發部位時，治療目標是根治。轉移病灶數目有限時稱為寡轉移，除了全身性治療之外，針對這些病灶的局部治療仍有角色。轉移已經廣泛散布時，放射治療的角色轉為控制症狀、維持生活品質。</desc>
+
+  <!-- 局限 -->
+  <g class="il-node il-node--lead">
+    <rect x="24" y="42" width="212" height="188" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="130" y="76">局限性疾病</text>
+  <circle class="il-tumor" cx="130" cy="128" r="18" />
+  <text class="il-t-sub il-anchor-mid" x="130" y="182">治療目標</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="130" y="208">根治</text>
+
+  <!-- 寡轉移 -->
+  <g class="il-node il-node--accent">
+    <rect x="254" y="42" width="212" height="188" rx="14" />
+  </g>
+  <text class="il-t il-node-text--on il-anchor-mid" x="360" y="76">寡轉移</text>
+  <circle class="il-tumor" cx="330" cy="118" r="15" />
+  <g class="il-tumor">
+    <circle cx="384" cy="112" r="7" />
+    <circle cx="400" cy="140" r="7" />
+    <circle cx="346" cy="148" r="7" />
+  </g>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="182">治療目標</text>
+  <text class="il-t-sub il-detail il-node-text--on il-anchor-mid" x="360" y="208">積極控制每一處病灶</text>
+
+  <!-- 廣泛轉移 -->
+  <g class="il-node il-node--soft">
+    <rect x="484" y="42" width="212" height="188" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="590" y="76">廣泛轉移</text>
+  <g class="il-tumor">
+    <circle cx="560" cy="112" r="6" /><circle cx="596" cy="106" r="6" />
+    <circle cx="624" cy="122" r="6" /><circle cx="546" cy="136" r="6" />
+    <circle cx="580" cy="132" r="6" /><circle cx="612" cy="146" r="6" />
+    <circle cx="556" cy="158" r="6" /><circle cx="592" cy="158" r="6" />
+    <circle cx="628" cy="98" r="6" /><circle cx="538" cy="112" r="6" />
+  </g>
+  <text class="il-t-sub il-anchor-mid" x="590" y="182">治療目標</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="590" y="208">控制症狀、維持生活品質</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="282">「轉移」不是一種狀況，而是一段範圍很廣的光譜</text>
+</svg>

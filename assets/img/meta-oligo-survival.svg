@@ -1,0 +1,21 @@
+<svg class="illus" viewBox="0 0 720 306" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="mosurv-title mosurv-desc">
+  <title id="mosurv-title">SABR-COMET 試驗中寡轉移病人的五年存活率</title>
+  <desc id="mosurv-desc">在 SABR-COMET 隨機試驗中，一到五處轉移的病人若在標準治療之外，再針對每一處轉移病灶施以立體定位放射治療，五年存活率為百分之四十二點三，僅接受標準治療者為百分之十七點七。要注意的是這項試驗只有九十九位病人，屬於第二期試驗，確認性的第三期試驗仍在進行中。</desc>
+
+  <text class="il-t" x="24" y="46">5 年整體存活率</text>
+  <text class="il-t-sub il-detail" x="24" y="72">1～5 處轉移的病人</text>
+
+  <text class="il-t-sub il-anchor-end" x="176" y="126">只做標準治療</text>
+  <rect class="il-bar il-bar--soft" x="188" y="106" width="177" height="30" rx="4" />
+  <text class="il-t-val" x="377" y="126">17.7%</text>
+
+  <text class="il-t-sub il-anchor-end" x="176" y="182">加做局部治療</text>
+  <rect class="il-bar il-bar--strong" x="188" y="162" width="423" height="30" rx="4" />
+  <text class="il-t-val" x="623" y="182">42.3%</text>
+
+  <text class="il-t-sub il-detail" x="188" y="222">針對每一處轉移病灶施以立體定位放射治療（SABR）</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="272">SABR-COMET 隨機試驗，99 位病人</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="296">屬第二期試驗，確認性的第三期試驗仍在進行中</text>
+</svg>

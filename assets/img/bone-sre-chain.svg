@@ -1,0 +1,32 @@
+<svg class="illus" viewBox="0 0 720 286" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="bsre-title bsre-desc">
+  <title id="bsre-title">骨轉移引發連鎖問題的過程</title>
+  <desc id="bsre-desc">骨轉移使骨頭變脆，一旦發生骨折或脊髓壓迫，病人可能因疼痛而臥床，甚至需要住院或手術；體力下降之後，原本正在進行的全身性治療也可能被迫中斷。預防性照射的目的，就是不讓這條連鎖開始。</desc>
+
+  <g class="il-node il-node--soft">
+    <rect x="24" y="70" width="200" height="104" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="124" y="112">骨折</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="124" y="146">或脊髓壓迫</text>
+
+  <path class="il-flow-arrow" d="M232 122 H 250" />
+  <path class="il-arrow-head" d="M248 116 260 122 248 128Z" />
+
+  <g class="il-node il-node--soft">
+    <rect x="260" y="70" width="200" height="104" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="112">疼痛、臥床</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="146">可能需要住院或手術</text>
+
+  <path class="il-flow-arrow" d="M468 122 H 486" />
+  <path class="il-arrow-head" d="M484 116 496 122 484 128Z" />
+
+  <g class="il-node il-node--soft">
+    <rect x="496" y="70" width="200" height="104" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="596" y="112">治療被迫中斷</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="596" y="146">體力下降，全身治療停擺</text>
+
+  <text class="il-t il-anchor-mid" x="360" y="222">預防性照射的目的，是不讓這條鏈開始</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="256">而不是等到骨折之後再處理</text>
+</svg>

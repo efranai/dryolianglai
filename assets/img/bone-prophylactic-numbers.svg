@@ -1,0 +1,19 @@
+<svg class="illus" viewBox="0 0 720 268" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="bpro-title bpro-desc">
+  <title id="bpro-title">預防性照射對骨骼相關事件的影響</title>
+  <desc id="bpro-desc">在一項多中心隨機試驗中，高風險但尚未產生症狀的骨轉移病灶若接受預防性照射，一年內發生骨骼相關事件的比例為百分之一點六；僅接受標準照護者為百分之二十九。該試驗收案七十八位病人、一百二十二個骨轉移病灶，屬於第二期試驗，研究團隊指出仍需第三期試驗確認。</desc>
+
+  <text class="il-t" x="24" y="44">1 年內發生骨骼相關事件的比例</text>
+  <text class="il-t-sub il-detail" x="24" y="70">骨折、脊髓壓迫等需要處理的骨骼問題</text>
+
+  <text class="il-t-sub il-anchor-end" x="168" y="122">沒有預防性照射</text>
+  <rect class="il-bar il-bar--soft" x="180" y="102" width="400" height="30" rx="4" />
+  <text class="il-t-val" x="592" y="122">29%</text>
+
+  <text class="il-t-sub il-anchor-end" x="168" y="178">接受預防性照射</text>
+  <rect class="il-bar il-bar--strong" x="180" y="158" width="22" height="30" rx="4" />
+  <text class="il-t-val" x="214" y="178">1.6%</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="228">多中心隨機試驗，78 位病人、122 個骨轉移病灶</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="256">屬第二期試驗，研究團隊指出仍需第三期試驗確認</text>
+</svg>
