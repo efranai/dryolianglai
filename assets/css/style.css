@@ -99,7 +99,10 @@ ul, ol { padding-left: 1.25em; }
   }
 }
 
-.section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+/* 首頁一個癌別接一個癌別，留白開太大就得一直往下滑。
+   間距壓到大約一半，改用一條細線維持段落感——分得清楚，又幾乎不佔高度。 */
+.section { padding-block: clamp(1.5rem, 3vw, 2.25rem); }
+.section + .section { border-top: 1px solid var(--line); }
 
 .section__heading {
   font-size: clamp(1.4rem, 1.2rem + 1vw, 1.9rem);
@@ -358,9 +361,25 @@ ul, ol { padding-left: 1.25em; }
 .group-head__go:focus-visible { background: var(--accent); color: var(--bg); }
 .group-head__go b { font-weight: 700; font-variant-numeric: tabular-nums; }
 
-.group-more { margin: 1.25rem 0 0; font-size: .88rem; }
-.group-more a { text-decoration: none; font-weight: 600; }
-.group-more a:hover { text-decoration: underline; }
+/* 卡片列尾端的「看全部」卡：和一般卡片一樣寬，但只有一行字，
+   讓讀者滑到底時有個明確的去處，不必為它多開一整行。 */
+.card--more {
+  display: flex;
+  background: var(--bg-tint);
+  border-style: dashed;
+}
+.card--more .card__link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.card--more__arrow { font-size: 1.5rem; line-height: 1; }
+.card--more:hover { border-color: var(--accent); }
 
 .group-empty {
   margin: 0;
@@ -443,35 +462,107 @@ ul, ol { padding-left: 1.25em; }
 
 .card:hover { transform: translateY(-2px); border-color: var(--accent); }
 
-/* 手機：首頁的卡片改成橫向滑動（.cards--rail）。
-   螢幕窄到只排得下一欄時，每個癌別堆疊成長條會讓首頁滑不完；
+/* 首頁的卡片一律排成一列橫滑（.cards--rail）。
+   每個癌別堆疊成直排會把首頁拉得很長，尤其中等寬度會折成兩列更糟；
    改成一列橫滑，右側固定露出下一張的邊緣當作「還有更多」的提示。
    系列頁（/series/…）不套用──讀者點「看全部」就是想一次看完，維持直向清單。 */
+.rail { position: relative; }
+
+.cards--rail {
+  grid-template-columns: none;
+  grid-auto-flow: column;
+  /* 一般手機是一張卡加下一張的邊緣；螢幕再寬一點就自動變成一張半到兩張，
+     卡片不會被拉得過寬 */
+  grid-auto-columns: min(82%, 21rem);
+  gap: .85rem;
+  overflow-x: auto;
+  overflow-y: hidden;             /* 只橫向捲動，卡片高度一律對齊 */
+  overscroll-behavior-x: contain; /* 滑到底不會連帶把整頁往回帶 */
+  scroll-snap-type: x mandatory;
+  /* 平滑捲動寫在 CSS 這裡，不要在 JS 用 scrollBy({behavior:'smooth'})——
+     那個組合會和上面的 mandatory 吸附打架，動畫每次都被拉回原點。 */
+  scroll-behavior: smooth;
+  /* 左右各外推一個邊距、再用同樣的內距補回來：
+     卡片得以滑到螢幕邊緣，總寬度仍等於 100%，不會產生橫向捲軸 */
+  margin-inline: calc(-1 * var(--gutter));
+  padding-inline: var(--gutter);
+  scroll-padding-inline: var(--gutter);
+  padding-block: .5rem 1rem;      /* 留白給卡片陰影，不被 overflow 裁掉 */
+  scrollbar-width: none;
+}
+
+.cards--rail::-webkit-scrollbar { display: none; }
+.cards--rail .card { scroll-snap-align: start; }
+
 @media (max-width: 41rem) {
-  .cards--rail {
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    /* 一般手機是一張卡加下一張的邊緣；螢幕再寬一點就自動變成一張半到兩張，
-       卡片不會被拉得過寬 */
-    grid-auto-columns: min(82%, 21rem);
-    gap: .85rem;
-    overflow-x: auto;
-    overflow-y: hidden;             /* 只橫向捲動，卡片高度一律對齊 */
-    overscroll-behavior-x: contain; /* 滑到底不會連帶把整頁往回帶 */
-    scroll-snap-type: x mandatory;
-    /* 左右各外推一個邊距、再用同樣的內距補回來：
-       卡片得以滑到螢幕邊緣，總寬度仍等於 100%，不會產生橫向捲軸 */
-    margin-inline: calc(-1 * var(--gutter));
-    padding-inline: var(--gutter);
-    scroll-padding-inline: var(--gutter);
-    padding-block: .5rem 1.5rem;    /* 留白給卡片陰影，不被 overflow 裁掉 */
-    scrollbar-width: none;
-  }
-
-  .cards--rail::-webkit-scrollbar { display: none; }
-
-  .cards--rail .card { scroll-snap-align: start; }
   .cards--rail .card:hover { transform: none; }  /* 觸控時的位移會干擾滑動手勢 */
+  /* 「看全部」在手機改由卡片列尾端那張卡承接，標題旁的 pill 收起來，
+     省下它換行後自己佔掉的一整行 */
+  .group-head__go { display: none; }
+}
+
+/* 螢幕寬一點就收回內容欄內，兩側才留得下箭頭鈕。
+   卡片寬度務必是固定值——寫成 minmax(0, …) 的話下限是 0，
+   瀏覽器會把軌道壓縮塞進容器，就再也不會溢出，也就捲不動了。 */
+@media (min-width: 41.0625rem) {
+  .cards--rail {
+    /* 下限很重要：卡片被壓太窄，標題就會換好幾行，整列反而更高 */
+    grid-auto-columns: clamp(15rem, 31%, 21rem);
+    margin-inline: 0;
+    padding-inline: 0;
+    scroll-padding-inline: 0;
+    /* 桌機放寬成 proximity：mandatory 會把箭頭觸發的平滑捲動一路吸回原點。
+       手機維持 mandatory——那裡靠手指滑動，張張對齊的手感才對。 */
+    scroll-snap-type: x proximity;
+  }
+}
+
+/* 兩側的淡出漸層：暗示那個方向還有卡片。捲到底時由 rail.js 關掉對應的一側。 */
+.rail::before,
+.rail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3.5rem;
+  pointer-events: none;           /* 只是視覺提示，不能擋住卡片的點擊 */
+  opacity: 0;
+  transition: opacity .2s ease;
+  z-index: 1;
+}
+.rail::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+.rail::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+.rail--active:not(.rail--start)::before { opacity: 1; }
+.rail--active:not(.rail--end)::after { opacity: 1; }
+
+/* 箭頭鈕。滑鼠使用者不見得知道卡片列可以橫捲，給一個看得見的入口；
+   觸控環境直接滑就好，多兩顆按鈕反而擋到卡片。 */
+.rail__btn {
+  position: absolute;
+  top: calc(50% - .25rem);
+  transform: translateY(-50%);
+  z-index: 2;
+  display: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  color: var(--accent);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / .12);
+  cursor: pointer;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+.rail__btn--prev { left: -.85rem; }
+.rail__btn--next { right: -.85rem; }
+.rail__btn:hover,
+.rail__btn:focus-visible { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+@media (min-width: 41.0625rem) and (hover: hover) and (pointer: fine) {
+  .rail__btn:not([hidden]) { display: flex; }
 }
 
 .card__link { text-decoration: none; color: inherit; }
@@ -1747,7 +1838,8 @@ ul, ol { padding-left: 1.25em; }
 .notfound .prose { margin-inline: auto; }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html,
+  .cards--rail { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 

@@ -124,6 +124,7 @@ function assetVersion(relPath) {
 const V_CSS = assetVersion('assets/css/style.css');
 const V_JS = assetVersion('assets/js/counter.js');
 const V_SHARE = assetVersion('assets/js/share.js');
+const V_RAIL = assetVersion('assets/js/rail.js');
 
 /* Search Console / Bing 的所有權驗證標籤，沒填就完全不輸出 */
 const VERIFY_TAGS = [
@@ -567,16 +568,38 @@ function authorCard(base) {
     </aside>`;
 }
 
-/* 首頁上的一個癌別系列區塊：標題 + 一句話 + 卡片格線 + 看全部連結 */
-function seriesSection(s) {
-  const limit = CONFIG.seriesCardLimit || 6;
-  const shown = s.articles.slice(0, limit);
-  const more = s.articles.length - shown.length;
+/* 卡片列尾端的「看全部」卡。手機把標題旁的 pill 收起來，改由這張卡承接，
+   滑到底自然會看到，垂直方向不多佔一行。 */
+function moreCard(s) {
+  const label = s.articles.length > 1 ? `看全部 ${s.articles.length} 篇` : '進入專區';
+  return `      <article class="card card--more">
+        <a class="card__link" href="series/${esc(s.id)}/">
+          <span class="card--more__label">${esc(label)}</span>
+          <span class="card--more__arrow" aria-hidden="true">→</span>
+        </a>
+      </article>`;
+}
 
+/* 橫滑卡片列。左右各一個箭頭鈕與淡出漸層，只有真的捲得動時才由 rail.js 打開；
+   沒有 JS 也還是能用觸控或滾輪橫捲。 */
+function rail(inner) {
+  return `    <div class="rail">
+      <button class="rail__btn rail__btn--prev" type="button" aria-label="看前面的文章" hidden>
+        <span aria-hidden="true">←</span>
+      </button>
+      <div class="cards cards--rail">
+${inner}
+      </div>
+      <button class="rail__btn rail__btn--next" type="button" aria-label="看後面的文章" hidden>
+        <span aria-hidden="true">→</span>
+      </button>
+    </div>`;
+}
+
+/* 首頁上的一個癌別系列區塊：標題 + 一句話 + 橫滑卡片列 + 看全部連結 */
+function seriesSection(s) {
   const body = s.articles.length
-    ? `    <div class="cards cards--rail">
-${shown.map((a) => articleCard(a)).join('\n')}
-    </div>${more > 0 ? `\n    <p class="group-more"><a href="series/${esc(s.id)}/">還有 ${more} 篇 →</a></p>` : ''}`
+    ? rail([...s.articles.map((a) => articleCard(a)), moreCard(s)].join('\n'))
     : `    <p class="group-empty">這個系列的文章正在整理中，敬請期待。</p>`;
 
   return `  <section class="wrap section" id="series-${esc(s.id)}" aria-labelledby="series-${esc(s.id)}-heading">
@@ -642,9 +665,7 @@ ${siteHeader(0)}
         <p class="group-head__hook">${esc(CONFIG.overview.hook)}</p>
       </div>
     </div>
-    <div class="cards cards--rail">
-${cards}
-    </div>
+${rail(cards)}
   </section>
 
 ${SERIES.map(seriesSection).join('\n\n')}
@@ -685,6 +706,7 @@ ${shareBlock({
 </main>
 ${siteFooter(0)}
 <script src="assets/js/share.js?v=${V_SHARE}" defer></script>
+<script src="assets/js/rail.js?v=${V_RAIL}" defer></script>
 </body>
 </html>
 `;

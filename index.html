@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://med.dryolianglai.net/">
 <meta property="og:image" content="https://med.dryolianglai.net/assets/img/hero-doctor.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/style.css?v=1ec83539">
+<link rel="stylesheet" href="assets/css/style.css?v=5958b328">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎗️</text></svg>">
 <script type="application/ld+json">
 {
@@ -242,7 +242,11 @@
         <p class="group-head__hook">不分癌別的基礎觀念，建議依序閱讀</p>
       </div>
     </div>
-    <div class="cards cards--rail">
+    <div class="rail">
+      <button class="rail__btn rail__btn--prev" type="button" aria-label="看前面的文章" hidden>
+        <span aria-hidden="true">←</span>
+      </button>
+      <div class="cards cards--rail">
       <article class="card">
         <a class="card__link" href="p/what-is-radiation-therapy/">
           <h3 class="card__title">什麼是放射治療？帶您認識癌症治療的重要支柱</h3>
@@ -288,6 +292,10 @@
           <span class="views" data-slug="what-is-proton-therapy" hidden>閱讀 <span class="views__n">–</span></span>
         </p>
       </article>
+      </div>
+      <button class="rail__btn rail__btn--next" type="button" aria-label="看後面的文章" hidden>
+        <span aria-hidden="true">→</span>
+      </button>
     </div>
   </section>
 
@@ -299,7 +307,11 @@
       </div>
       <a class="group-head__go" href="series/breast-cancer/">看全部 <b>4</b> 篇 <span aria-hidden="true">→</span></a>
     </div>
-    <div class="cards cards--rail">
+    <div class="rail">
+      <button class="rail__btn rail__btn--prev" type="button" aria-label="看前面的文章" hidden>
+        <span aria-hidden="true">←</span>
+      </button>
+      <div class="cards cards--rail">
       <article class="card">
         <a class="card__link" href="p/breast-radiotherapy-technique-choice/">
           <h3 class="card__title">乳癌放射治療怎麼選？質子治療比較好嗎？</h3>
@@ -345,8 +357,32 @@
           <span class="views" data-slug="breast-radiotherapy-side-effects" hidden>閱讀 <span class="views__n">–</span></span>
         </p>
       </article>
+      <article class="card">
+        <a class="card__link" href="p/breast-radiotherapy-fractions/">
+          <h3 class="card__title">乳癌放射治療要做幾次？為什麼有人做 30 次、15 次、5 次，甚至只做 1 次？</h3>
+        </a>
+        <p class="card__meta">
+          <time class="card__date" datetime="2026-08-03">2026年8月3日</time>
+          <span class="card__sep" aria-hidden="true">·</span><span class="card__updated">更新於 <time datetime="2026-08-04">2026年8月4日</time></span>
+        </p>
+        <p class="card__summary">次數越少不代表越新、越好。15～20 次短分次目前仍是證據最完整的標準治療；5 次療程有的已經成熟，有的仍在發展中。</p>
+      <ul class="card__tags"><li>乳癌</li><li>療程安排</li><li>短分次治療</li></ul>
+        <p class="card__foot">
+          <span class="card__author">賴宥良醫師</span>
+          <span class="views" data-slug="breast-radiotherapy-fractions" hidden>閱讀 <span class="views__n">–</span></span>
+        </p>
+      </article>
+      <article class="card card--more">
+        <a class="card__link" href="series/breast-cancer/">
+          <span class="card--more__label">看全部 4 篇</span>
+          <span class="card--more__arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+      </div>
+      <button class="rail__btn rail__btn--next" type="button" aria-label="看後面的文章" hidden>
+        <span aria-hidden="true">→</span>
+      </button>
     </div>
-    <p class="group-more"><a href="series/breast-cancer/">還有 1 篇 →</a></p>
   </section>
 
   <section class="wrap section" id="series-prostate-cancer" aria-labelledby="series-prostate-cancer-heading">
@@ -357,7 +393,11 @@
       </div>
       <a class="group-head__go" href="series/prostate-cancer/">看全部 <b>2</b> 篇 <span aria-hidden="true">→</span></a>
     </div>
-    <div class="cards cards--rail">
+    <div class="rail">
+      <button class="rail__btn rail__btn--prev" type="button" aria-label="看前面的文章" hidden>
+        <span aria-hidden="true">←</span>
+      </button>
+      <div class="cards cards--rail">
       <article class="card">
         <a class="card__link" href="p/prostate-surgery-vs-radiotherapy/">
           <h3 class="card__title">得了攝護腺癌，要開刀還是做放射治療？可以先不要治療嗎？</h3>
@@ -388,6 +428,16 @@
           <span class="views" data-slug="prostate-radiotherapy-technique-choice" hidden>閱讀 <span class="views__n">–</span></span>
         </p>
       </article>
+      <article class="card card--more">
+        <a class="card__link" href="series/prostate-cancer/">
+          <span class="card--more__label">看全部 2 篇</span>
+          <span class="card--more__arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+      </div>
+      <button class="rail__btn rail__btn--next" type="button" aria-label="看後面的文章" hidden>
+        <span aria-hidden="true">→</span>
+      </button>
     </div>
   </section>
 
@@ -399,7 +449,11 @@
       </div>
       <a class="group-head__go" href="series/colorectal-cancer/">看全部 <b>4</b> 篇 <span aria-hidden="true">→</span></a>
     </div>
-    <div class="cards cards--rail">
+    <div class="rail">
+      <button class="rail__btn rail__btn--prev" type="button" aria-label="看前面的文章" hidden>
+        <span aria-hidden="true">←</span>
+      </button>
+      <div class="cards cards--rail">
       <article class="card">
         <a class="card__link" href="p/rectal-watch-and-wait/">
           <h3 class="card__title">直腸癌接受放射治療後，腫瘤不見了，可以不用開刀嗎？</h3>
@@ -445,8 +499,32 @@
           <span class="views" data-slug="rectal-short-vs-long-course" hidden>閱讀 <span class="views__n">–</span></span>
         </p>
       </article>
+      <article class="card">
+        <a class="card__link" href="p/rectal-preoperative-radiotherapy-needed/">
+          <h3 class="card__title">直腸癌開刀前，一定要做放射治療嗎？</h3>
+        </a>
+        <p class="card__meta">
+          <time class="card__date" datetime="2026-08-05">2026年8月5日</time>
+          
+        </p>
+        <p class="card__summary">2023 年的 PROSPECT 試驗讓「先做化療、不放療」成為一個選項。但它收的是一群條件相對單純的病人——腫瘤大、位置低或多顆淋巴結腫大的人，並不在其中。</p>
+      <ul class="card__tags"><li>直腸癌</li><li>術前治療</li><li>PROSPECT</li></ul>
+        <p class="card__foot">
+          <span class="card__author">賴宥良醫師</span>
+          <span class="views" data-slug="rectal-preoperative-radiotherapy-needed" hidden>閱讀 <span class="views__n">–</span></span>
+        </p>
+      </article>
+      <article class="card card--more">
+        <a class="card__link" href="series/colorectal-cancer/">
+          <span class="card--more__label">看全部 4 篇</span>
+          <span class="card--more__arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+      </div>
+      <button class="rail__btn rail__btn--next" type="button" aria-label="看後面的文章" hidden>
+        <span aria-hidden="true">→</span>
+      </button>
     </div>
-    <p class="group-more"><a href="series/colorectal-cancer/">還有 1 篇 →</a></p>
   </section>
 
   <section class="wrap section" id="series-esophageal-cancer" aria-labelledby="series-esophageal-cancer-heading">
@@ -457,7 +535,11 @@
       </div>
       <a class="group-head__go" href="series/esophageal-cancer/">進入專區 <span aria-hidden="true">→</span></a>
     </div>
-    <div class="cards cards--rail">
+    <div class="rail">
+      <button class="rail__btn rail__btn--prev" type="button" aria-label="看前面的文章" hidden>
+        <span aria-hidden="true">←</span>
+      </button>
+      <div class="cards cards--rail">
       <article class="card">
         <a class="card__link" href="p/esophageal-radiotherapy-and-proton/">
           <h3 class="card__title">食道癌需要做放射治療嗎？質子治療有什麼好處？</h3>
@@ -473,6 +555,16 @@
           <span class="views" data-slug="esophageal-radiotherapy-and-proton" hidden>閱讀 <span class="views__n">–</span></span>
         </p>
       </article>
+      <article class="card card--more">
+        <a class="card__link" href="series/esophageal-cancer/">
+          <span class="card--more__label">進入專區</span>
+          <span class="card--more__arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+      </div>
+      <button class="rail__btn rail__btn--next" type="button" aria-label="看後面的文章" hidden>
+        <span aria-hidden="true">→</span>
+      </button>
     </div>
   </section>
 
@@ -484,7 +576,11 @@
       </div>
       <a class="group-head__go" href="series/metastatic-cancer/">看全部 <b>2</b> 篇 <span aria-hidden="true">→</span></a>
     </div>
-    <div class="cards cards--rail">
+    <div class="rail">
+      <button class="rail__btn rail__btn--prev" type="button" aria-label="看前面的文章" hidden>
+        <span aria-hidden="true">←</span>
+      </button>
+      <div class="cards cards--rail">
       <article class="card">
         <a class="card__link" href="p/bone-metastasis-prophylactic-radiotherapy/">
           <h3 class="card__title">骨轉移還不會痛，需要先做放射治療嗎？</h3>
@@ -515,6 +611,16 @@
           <span class="views" data-slug="metastatic-oligometastasis" hidden>閱讀 <span class="views__n">–</span></span>
         </p>
       </article>
+      <article class="card card--more">
+        <a class="card__link" href="series/metastatic-cancer/">
+          <span class="card--more__label">看全部 2 篇</span>
+          <span class="card--more__arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+      </div>
+      <button class="rail__btn rail__btn--next" type="button" aria-label="看後面的文章" hidden>
+        <span aria-hidden="true">→</span>
+      </button>
     </div>
   </section>
 
@@ -627,5 +733,6 @@
 <script>window.__COUNTER__={"enabled":true,"endpoint":"/api/views"};</script>
 <script src="assets/js/counter.js?v=7d092b12" defer></script>
 <script src="assets/js/share.js?v=b7e0bc41" defer></script>
+<script src="assets/js/rail.js?v=360847a1" defer></script>
 </body>
 </html>
