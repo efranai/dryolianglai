@@ -39,7 +39,7 @@
 
   <text class="il-t" x="524" y="108">癌細胞</text>
   <text class="il-t-sub il-detail" x="524" y="132">DNA 斷裂後修復能力差，</text>
-  <text class="il-t-sub il-detail" x="524" y="152">逐漸失去分裂能力而死亡</text>
+  <text class="il-t-sub il-detail" x="524" y="158">逐漸失去分裂能力而死亡</text>
 
   <!-- ===== 正常細胞 ===== -->
   <g>
@@ -63,5 +63,5 @@
 
   <text class="il-t" x="524" y="274">正常細胞</text>
   <text class="il-t-sub il-detail" x="524" y="298">修復能力較好，</text>
-  <text class="il-t-sub il-detail" x="524" y="318">多數能修復損傷並存活</text>
+  <text class="il-t-sub il-detail" x="524" y="324">多數能修復損傷並存活</text>
 </svg>

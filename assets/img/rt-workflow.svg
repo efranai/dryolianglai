@@ -22,7 +22,7 @@
     <text class="il-t-num" x="120" y="45">1</text>
   </g>
   <text class="il-t il-anchor-mid" x="92" y="136">定位電腦斷層</text>
-  <text class="il-t-sub il-anchor-mid" x="92" y="158">取得治療部位影像</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="92" y="158">取得治療部位影像</text>
 
   <!-- ② 製作固定裝置 -->
   <g transform="translate(268 66)">
@@ -38,7 +38,7 @@
     <text class="il-t-num" x="296" y="45">2</text>
   </g>
   <text class="il-t il-anchor-mid" x="268" y="136">製作固定裝置</text>
-  <text class="il-t-sub il-anchor-mid" x="268" y="158">每次維持相同姿勢</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="268" y="158">每次維持相同姿勢</text>
 
   <!-- ③ 設計治療計畫 -->
   <g transform="translate(444 66)">
@@ -55,7 +55,7 @@
     <text class="il-t-num" x="472" y="45">3</text>
   </g>
   <text class="il-t il-anchor-mid" x="444" y="136">設計治療計畫</text>
-  <text class="il-t-sub il-anchor-mid" x="444" y="158">醫師與物理師共同規劃</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="444" y="158">醫師與物理師共同規劃</text>
 
   <!-- ④ 開始每日治療 -->
   <g transform="translate(620 66)">
@@ -73,5 +73,5 @@
     <text class="il-t-num" x="648" y="45">4</text>
   </g>
   <text class="il-t il-anchor-mid" x="620" y="136">開始每日治療</text>
-  <text class="il-t-sub il-anchor-mid" x="620" y="158">每次治療前影像確認</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="620" y="158">每次治療前影像確認</text>
 </svg>

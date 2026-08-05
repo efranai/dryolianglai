@@ -1,4 +1,4 @@
-<svg class="illus" viewBox="0 0 720 268" xmlns="http://www.w3.org/2000/svg" role="img"
+<svg class="illus" viewBox="0 0 720 292" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-labelledby="sched-title sched-desc">
   <title id="sched-title">放射治療的每週療程安排示意圖</title>
   <desc id="sched-desc">以日曆呈現：週一至週五為治療日，週六與週日休息。療程通常持續一至八週，實際次數依癌症種類與治療目的而不同。</desc>
@@ -70,5 +70,5 @@
     <text class="il-t-sub" x="336" y="234">休息</text>
   </g>
 
-  <text class="il-t-sub il-anchor-mid" x="360" y="262">療程約 1 至 8 週，實際次數依癌症種類與治療目的而不同</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="278">療程約 1 至 8 週，實際次數依癌症種類與治療目的而不同</text>
 </svg>
