@@ -1,0 +1,27 @@
+<svg class="illus" viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="rcti-title rcti-desc">
+  <title id="rcti-title">短療程與長療程到手術前的整體時間比較</title>
+  <desc id="rcti-desc">短療程的放射治療只有一週，之後接續數個月的化學治療；長療程的放射治療約五到六週，之後同樣接續化學治療。放療本身的長度差距很大，但把後續化療一起算進來，兩條路到手術前的總長度都大約是四到五個月，相差不多。</desc>
+
+  <text class="il-t" x="24" y="42">短療程</text>
+
+  <g class="il-bar il-bar--rt">
+    <rect x="24" y="62" width="28" height="38" rx="6" />
+  </g>
+  <g class="il-bar il-bar--soft">
+    <rect x="56" y="62" width="500" height="38" rx="6" />
+  </g>
+
+  <text class="il-t-sub" x="24" y="140">放療 1 週 → 化療數個月 → 手術</text>
+
+  <text class="il-t" x="24" y="204">長療程</text>
+
+  <g class="il-bar il-bar--rt">
+    <rect x="24" y="224" width="154" height="38" rx="6" />
+  </g>
+  <g class="il-bar il-bar--soft">
+    <rect x="182" y="224" width="360" height="38" rx="6" />
+  </g>
+
+  <text class="il-t-sub" x="24" y="302">放化療 5～6 週 → 化療數個月 → 手術</text>
+</svg>

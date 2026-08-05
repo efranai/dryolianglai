@@ -17,7 +17,7 @@ heroCaption: 是否能保留器官，取決於術前治療後的完整評估結�
 
 這確實不是沒有可能。
 
-近年來，隨著放射治療及化學治療的進步，部分直腸癌病人在完成術前治療後，腫瘤真的有機會完全消失。（放射治療的原理與療程安排，請見〈[什麼是放射治療？](../what-is-radiation-therapy/)〉；至於**術前到底需不需要做放射治療**，請見〈[直腸癌開刀前，一定要做放射治療嗎？](../rectal-preoperative-radiotherapy-needed/)〉；該選光子還是質子，則請見〈[直腸癌放射治療怎麼選？](../rectal-radiotherapy-technique-choice/)〉。）
+近年來，隨著放射治療及化學治療的進步，部分直腸癌病人在完成術前治療後，腫瘤真的有機會完全消失。（放射治療的原理與療程安排，請見〈[什麼是放射治療？](../what-is-radiation-therapy/)〉；至於**術前到底需不需要做放射治療**，請見〈[直腸癌開刀前，一定要做放射治療嗎？](../rectal-preoperative-radiotherapy-needed/)〉；放療該做 5 次還是 25 次，請見〈[5 次和 25 次差在哪裡？](../rectal-short-vs-long-course/)〉；該選光子還是質子，則請見〈[直腸癌放射治療怎麼選？](../rectal-radiotherapy-technique-choice/)〉。）
 
 但這並不代表每位病人都可以不用開刀。真正重要的，不是腫瘤「看起來不見了」，而是**是否符合器官保留（Watch & Wait）的條件**，以及是否願意接受非常嚴格的追蹤。
 

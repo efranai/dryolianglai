@@ -1,0 +1,26 @@
+<svg class="illus" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="rcgo-title rcgo-desc">
+  <title id="rcgo-title">依照治療目標選擇療程長度</title>
+  <desc id="rcgo-desc">若最在意的是保留肛門、不開刀，或腫瘤位置低、局部風險較高，而且能配合五週療程，優先考慮長療程。若難以配合連續五週、最擔心的是遠端轉移，或局部風險本來就不高，短療程是很好的選擇。兩者的存活數字目前相當。</desc>
+
+  <g class="il-node il-node--accent">
+    <rect x="24" y="42" width="326" height="250" rx="14" />
+  </g>
+  <text class="il-t il-node-text--on il-anchor-mid" x="187" y="84">優先考慮長療程</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="187" y="136">想保留肛門、不開刀</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="187" y="176">位置低、局部風險高</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="187" y="216">能配合五週療程</text>
+  <text class="il-t-sub il-detail il-node-text--on il-anchor-mid" x="187" y="254">局部控制與器官保留較穩</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="370" y="42" width="326" height="250" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="533" y="84">短療程是好選擇</text>
+  <text class="il-t-sub il-anchor-mid" x="533" y="136">難以配合連續五週</text>
+  <text class="il-t-sub il-anchor-mid" x="533" y="176">最擔心的是遠端轉移</text>
+  <text class="il-t-sub il-anchor-mid" x="533" y="216">局部風險本來就不高</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="533" y="254">存活數字與長療程相當</text>
+
+  <text class="il-t il-anchor-mid" x="360" y="336">兩者的存活數字目前相當</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="378">能夠完整做完的療程，才是最好的療程</text>
+</svg>

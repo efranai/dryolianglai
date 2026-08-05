@@ -5,14 +5,11 @@
   "credential": "中部質子治療先行者．值得信賴的放射治療專家",
   "tagline": "不只追求腫瘤控制，更重視降低副作用，守護治療後的生活品質。",
   "subTagline": "以最新科學證據為基礎，協助每位病人選擇最適合的放射治療。",
-
   "_metaDescription": "首頁在搜尋結果中顯示的摘要。留空則自動用 tagline + subTagline。",
   "metaDescription": "中國醫藥大學附設醫院放射腫瘤部・質子治療中心賴宥良醫師的癌症衛教網站。以最新科學證據說明乳癌、攝護腺癌、大腸直腸癌與食道癌的放射治療與質子治療，兼顧腫瘤控制與生活品質。",
-
   "author": "賴宥良醫師",
   "lang": "zh-Hant-TW",
   "appointmentUrl": "https://www.cmuh.cmu.edu.tw/OnlineAppointment/DoctorInfo?flag=first&DocNo=D22687&Docname=%E8%B3%B4%E5%AE%A5%E8%89%AF",
-
   "_articleOrder": "概論區（沒有指定 series 的文章）的排列順序，填 slug。沒列到的接在後面、依最後更新時間新到舊。",
   "overview": {
     "heading": "先從這裡開始",
@@ -23,7 +20,6 @@
     "does-radiation-harm-normal-cells",
     "what-is-proton-therapy"
   ],
-
   "_series": "各癌別系列。文章的 front matter 寫 series: <id> 就會歸入該系列。order 可手動指定該系列內的順序，留空則依最後更新時間新到舊。",
   "_seriesCardLimit": "首頁每個癌別最多顯示幾張卡片，其餘在系列頁。設 3 是因為桌機的格線剛好一列三張——第四張會換行，首頁就會被拉長一倍。",
   "seriesCardLimit": 3,
@@ -44,7 +40,12 @@
       "id": "colorectal-cancer",
       "name": "大腸直腸癌與放射治療",
       "hook": "術前放化療的角色、保留肛門的可能，以及骨盆照射的照護",
-      "order": []
+      "order": [
+        "rectal-watch-and-wait",
+        "rectal-radiotherapy-technique-choice",
+        "rectal-short-vs-long-course",
+        "rectal-preoperative-radiotherapy-needed"
+      ]
     },
     {
       "id": "esophageal-cancer",
@@ -59,7 +60,6 @@
       "order": []
     }
   ],
-
   "hero": {
     "banner": {
       "src": "assets/img/hero-doctor.jpg",
@@ -68,49 +68,92 @@
       "height": 600
     }
   },
-
   "about": {
     "eyebrow": "關於我",
     "heading": "關於賴宥良醫師",
     "tagline": "中部質子治療先行者・以科學證據守護每位病人",
-    "cardIcons": ["i-philosophy", "i-expertise", "i-contribution"],
+    "cardIcons": [
+      "i-philosophy",
+      "i-expertise",
+      "i-contribution"
+    ],
     "specialtiesHeading": "專長領域",
     "appointmentLabel": "線上掛號",
     "infoItems": [
-      { "icon": "", "lines": ["提前預約，讓醫療更有效率"] },
-      { "icon": "i-pin", "lines": ["中國醫藥大學附設醫院", "放射腫瘤部暨質子治療中心"] },
-      { "icon": "i-shield", "lines": ["專業・精準・安心", "以病人為中心的放射治療"] }
+      {
+        "icon": "",
+        "lines": [
+          "提前預約，讓醫療更有效率"
+        ]
+      },
+      {
+        "icon": "i-pin",
+        "lines": [
+          "中國醫藥大學附設醫院",
+          "放射腫瘤部暨質子治療中心"
+        ]
+      },
+      {
+        "icon": "i-shield",
+        "lines": [
+          "專業・精準・安心",
+          "以病人為中心的放射治療"
+        ]
+      }
     ]
   },
-
   "specialties": [
-    { "zh": "放射治療", "en": "Radiation Therapy", "icon": "i-radiation" },
-    { "zh": "質子治療", "en": "Proton Therapy", "icon": "i-proton" },
-    { "zh": "癌症精準放射治療", "en": "Precision RT", "icon": "i-precision" },
-    { "zh": "乳癌放射治療", "en": "Breast Cancer", "icon": "i-breast" },
-    { "zh": "攝護腺癌放射治療", "en": "Prostate Cancer", "icon": "i-prostate" },
-    { "zh": "食道癌放射治療", "en": "Esophageal Cancer", "icon": "i-esophagus" },
-    { "zh": "大腸直腸癌放射治療", "en": "Colorectal Cancer", "icon": "i-colorectal" }
+    {
+      "zh": "放射治療",
+      "en": "Radiation Therapy",
+      "icon": "i-radiation"
+    },
+    {
+      "zh": "質子治療",
+      "en": "Proton Therapy",
+      "icon": "i-proton"
+    },
+    {
+      "zh": "癌症精準放射治療",
+      "en": "Precision RT",
+      "icon": "i-precision"
+    },
+    {
+      "zh": "乳癌放射治療",
+      "en": "Breast Cancer",
+      "icon": "i-breast"
+    },
+    {
+      "zh": "攝護腺癌放射治療",
+      "en": "Prostate Cancer",
+      "icon": "i-prostate"
+    },
+    {
+      "zh": "食道癌放射治療",
+      "en": "Esophageal Cancer",
+      "icon": "i-esophagus"
+    },
+    {
+      "zh": "大腸直腸癌放射治療",
+      "en": "Colorectal Cancer",
+      "icon": "i-colorectal"
+    }
   ],
-
   "_qr": "門診當面分享用的 QR。cardName 是印在首頁 QR 下方的名稱，pageTitle 是 /qr/ 總覽頁的標題。該頁刻意不放進導覽列與 sitemap，並帶 noindex。",
   "qr": {
     "cardName": "賴宥良醫師｜台中質子治療・放射治療",
     "pageTitle": "分享用 QR Code"
   },
-
   "_verification": "搜尋引擎網站管理工具的驗證碼。填入後會在每頁 <head> 產生對應的 meta 標籤；留空則不輸出。",
   "verification": {
     "google": "",
     "bing": ""
   },
-
   "_counter": "瀏覽計數。由 functions/api/views.js（Pages Function + D1）提供，同網域、無第三方服務。enabled 設 false 即可整組隱藏。",
   "counter": {
     "enabled": true,
     "endpoint": "/api/views"
   },
-
   "credits": [
     {
       "usedFor": "〈什麼是質子治療〉文章配圖",

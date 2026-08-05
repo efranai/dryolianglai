@@ -1,0 +1,23 @@
+<svg class="illus" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="rceg-title rceg-desc">
+  <title id="rceg-title">現有大型試驗比較的對象</title>
+  <desc id="rceg-desc">RAPIDO 試驗證明短療程加上術前化療勝過舊的標準治療；PRODIGE 23 試驗證明長療程加上術前化療也勝過舊的標準治療。但把短療程加化療與長療程加化療直接放在一起隨機比較的試驗，目前還沒有。</desc>
+
+  <g class="il-node il-node--soft">
+    <rect x="24" y="34" width="672" height="104" rx="14" />
+  </g>
+  <text class="il-t-sub il-anchor-mid" x="360" y="78">RAPIDO</text>
+  <text class="il-t il-anchor-mid" x="360" y="120">短療程＋術前化療　勝過　舊標準</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="24" y="154" width="672" height="104" rx="14" />
+  </g>
+  <text class="il-t-sub il-anchor-mid" x="360" y="198">PRODIGE 23</text>
+  <text class="il-t il-anchor-mid" x="360" y="240">長療程＋術前化療　勝過　舊標準</text>
+
+  <g class="il-node il-node--accent">
+    <rect x="24" y="274" width="672" height="104" rx="14" />
+  </g>
+  <text class="il-t il-node-text--on il-anchor-mid" x="360" y="318">這一格目前還是空的</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="360">短療程＋化療　對上　長療程＋化療</text>
+</svg>

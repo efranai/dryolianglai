@@ -1,0 +1,37 @@
+<svg class="illus" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="rcop-title rcop-desc">
+  <title id="rcop-title">長療程與短療程在腫瘤反應、器官保留與存活上的比較</title>
+  <desc id="rcop-desc">臨床完全緩解率長療程為百分之四十四點五，短療程為百分之四十三點四，幾乎相同。兩年還保留著器官的比例，長療程為百分之八十九，短療程為百分之七十，差距明顯。總存活率長療程為百分之九十九，短療程為百分之一百，同樣沒有差別。所有長條使用相同的基準線與比例尺。</desc>
+
+  <g class="il-bar il-bar--strong"><rect x="196" y="28" width="22" height="18" rx="4" /></g>
+  <text class="il-t-sub" x="228" y="44">長療程</text>
+  <g class="il-bar il-bar--soft"><rect x="380" y="28" width="22" height="18" rx="4" /></g>
+  <text class="il-t-sub" x="412" y="44">短療程</text>
+
+  <path class="il-axis" d="M40 260 H680" />
+
+  <g class="il-bar il-bar--strong">
+    <rect x="78"  y="188.8" width="52" height="71.2" rx="5" />
+    <rect x="288" y="117.6" width="52" height="142.4" rx="5" />
+    <rect x="498" y="101.6" width="52" height="158.4" rx="5" />
+  </g>
+  <g class="il-bar il-bar--soft">
+    <rect x="170" y="190.6" width="52" height="69.4" rx="5" />
+    <rect x="380" y="148"   width="52" height="112"   rx="5" />
+    <rect x="590" y="100"   width="52" height="160"   rx="5" />
+  </g>
+
+  <text class="il-t-val il-anchor-mid" x="104" y="175">44.5%</text>
+  <text class="il-t-val il-anchor-mid" x="196" y="177">43.4%</text>
+  <text class="il-t-val il-anchor-mid" x="314" y="104">89%</text>
+  <text class="il-t-val il-anchor-mid" x="406" y="134">70%</text>
+  <text class="il-t-val il-anchor-mid" x="524" y="88">99%</text>
+  <text class="il-t-val il-anchor-mid" x="616" y="86">100%</text>
+
+  <text class="il-t-sub il-anchor-mid" x="150" y="300">臨床完全緩解</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="300">2 年器官保留</text>
+  <text class="il-t-sub il-anchor-mid" x="570" y="300">總存活</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="346">一開始的反應與存活幾乎相同</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="384">差別在能不能一路維持住；非隨機研究，短療程組 76 人</text>
+</svg>
