@@ -3,6 +3,7 @@ title: 攝護腺癌放射治療怎麼選？質子治療比較好嗎？
 slug: prostate-radiotherapy-technique-choice
 date: 2026-08-04
 summary: 好神刀、螺旋刀只是機器名稱。真正決定治療品質的是 IMRT、IGRT、每天的膀胱與直腸準備，以及質子治療用的是哪一種射束技術。
+answer: 真正重要的不是機器的名字，而是每天能不能準確對位，以及直腸與膀胱的劑量能壓到多低。
 description: 攝護腺癌該選好神刀、螺旋刀還是質子治療？賴宥良醫師說明機器名稱與治療技術的差別、IGRT 為什麼是低分次治療的前提、每天喝水排便的意義，以及質子治療的實際證據與限制。
 series: prostate-cancer
 tags: 攝護腺癌, 質子治療, IGRT

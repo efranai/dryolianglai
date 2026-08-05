@@ -3,6 +3,7 @@ title: 乳癌放射治療怎麼選？質子治療比較好嗎？
 slug: breast-radiotherapy-technique-choice
 date: 2026-08-03
 summary: 好神刀、螺旋刀其實只是機器名稱。真正決定治療品質的是 IMRT、IGRT、DIBH 與質子治療這些技術，而 DIBH 和質子治療並不是二選一。
+answer: 重點不是機器新不新，而是能不能把心臟與肺臟的劑量壓低——深呼吸閉氣和質子治療，都是為了這件事。
 description: 好神刀、螺旋刀其實只是機器名稱。賴宥良醫師說明 IMRT、IGRT、DIBH 與質子治療的真正差別、如何以實際劑量數字保護心臟與肺臟，以及哪些人適合考慮質子治療。
 series: breast-cancer
 tags: 乳癌, 質子治療, 治療技術

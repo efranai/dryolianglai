@@ -3,6 +3,7 @@ title: 直腸癌放射治療怎麼選？質子治療比較好嗎？
 slug: rectal-radiotherapy-technique-choice
 date: 2026-08-05
 summary: 光子與質子都能有效治療直腸癌，差別不在腫瘤控制，而在小腸、膀胱與骨盆骨髓接受多少劑量。劑量的優勢已經確定；副作用能減少多少，還在驗證中。
+answer: 現代光子治療已經相當成熟；質子的優勢，在於降低小腸、膀胱與骨盆骨髓接受的劑量。
 description: 直腸癌放射治療該選光子還是質子？賴宥良醫師說明骨盆腔要保護哪些器官、IMRT／VMAT／IGRT 的角色，以及質子治療在劑量上已經確定的優勢與尚未確定的臨床效益。
 series: colorectal-cancer
 tags: 直腸癌, 質子治療, 治療技術

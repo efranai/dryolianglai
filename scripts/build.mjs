@@ -295,6 +295,9 @@ function loadArticles() {
         description: data.description || data.summary || '',
         tags: data.tags ? data.tags.split(',').map((t) => t.trim()).filter(Boolean) : [],
         author: data.author || CONFIG.author,
+        /* answer 是給趕時間的人看的一句話結論，排在標題與插圖之前。
+           病人常常只想知道「所以到底要不要」，不該逼他先讀完三段才拿到答案。 */
+        answer: data.answer || '',
         hero: data.hero || '',
         heroAlt: data.heroAlt || '',
         heroCaption: data.heroCaption || '',
@@ -811,6 +814,10 @@ ${updatedLine}
       </p>
     </header>
 
+${a.answer ? `    <aside class="tldr">
+      <p class="tldr__label">一句話回答</p>
+      <p class="tldr__text">${esc(a.answer)}</p>
+    </aside>\n` : ''}
 ${heroBlock}
 
     <div class="prose">

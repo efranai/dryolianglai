@@ -1,0 +1,24 @@
+<svg class="illus" viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="rpwho-title rpwho-desc">
+  <title id="rpwho-title">哪些直腸癌病人需要討論術前放射治療</title>
+  <desc id="rpwho-desc">早期直腸癌可以直接開刀，放射治療與化學治療都不需要。腫瘤已長出腸壁或淋巴結有問題的病人，術前需要先做些什麼，本文討論的就是這一群。而想保留肛門、避免開刀的人，化學治療與放射治療兩者都仍然需要。</desc>
+
+  <g class="il-node il-node--soft">
+    <rect x="24" y="30" width="672" height="110" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="72">早期</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="112">直接開刀，放療化療都不需要</text>
+
+  <g class="il-node il-node--accent">
+    <rect x="24" y="150" width="672" height="130" rx="14" />
+  </g>
+  <text class="il-t il-node-text--on il-anchor-mid" x="360" y="192">長出腸壁，或淋巴結有問題</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="232">術前需要先做些什麼</text>
+  <text class="il-t-sub il-detail il-node-text--on il-anchor-mid" x="360" y="266">本文討論的就是這一群</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="24" y="300" width="672" height="110" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="342">想保留肛門、不開刀</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="382">化療與放療兩者都需要</text>
+</svg>

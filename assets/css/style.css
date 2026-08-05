@@ -684,6 +684,29 @@ ul, ol { padding-left: 1.25em; }
 
 /* ---------- 重點提示框 ---------- */
 
+/* 標題下方的一句話結論。
+   病人常常只想知道「所以到底要不要」，把答案排在插圖與內文之前，
+   趕時間的人五秒鐘就能拿到，想深入的再往下讀。
+   刻意用左側粗線而非整塊底色，才不會和下面的「重點先看」搶版面。 */
+.tldr {
+  margin: 0 0 2rem;
+  padding: .1rem 0 .1rem 1.25rem;
+  border-left: 4px solid var(--accent);
+}
+.tldr__label {
+  margin: 0 0 .4rem;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--accent);
+}
+.tldr__text {
+  margin: 0;
+  font-size: 1.12rem;
+  line-height: 1.75;
+  font-weight: 600;
+}
+
 .keybox {
   margin: 2rem 0;
   padding: 1.4rem 1.5rem 1.5rem;

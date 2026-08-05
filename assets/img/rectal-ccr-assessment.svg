@@ -1,7 +1,7 @@
 <svg class="illus" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-labelledby="ccr-title ccr-desc">
-  <title id="ccr-title">臨床完全緩解需要四項檢查綜合判斷</title>
-  <desc id="ccr-desc">判定是否達到臨床完全緩解，需要綜合大腸鏡、肛門指診、骨盆磁振造影與 CEA 抽血的結果，任何單一項檢查都不足以單獨判定。</desc>
+  <title id="ccr-title">判斷腫瘤是否真的消失，需要四項檢查一起看</title>
+  <desc id="ccr-desc">要判斷腫瘤是不是真的消失，需要大腸鏡、肛門指診、骨盆磁振造影與抽血指標四項一起看，任何單一項檢查都不足以單獨判定。</desc>
 
   <!-- 四項檢查 -->
   <g class="il-node il-node--soft"><rect x="40" y="24" width="220" height="52" rx="10" /></g>
@@ -14,15 +14,14 @@
   <text class="il-t il-anchor-mid" x="150" y="182">骨盆 MRI</text>
 
   <g class="il-node il-node--soft"><rect x="40" y="210" width="220" height="52" rx="10" /></g>
-  <text class="il-t il-anchor-mid" x="150" y="244">CEA 抽血</text>
+  <text class="il-t il-anchor-mid" x="150" y="244">抽血指標</text>
 
   <!-- 匯聚 -->
   <path class="il-flow-line" d="M264 50 L392 144 M264 112 L392 146 M264 174 L392 150 M264 236 L392 152" />
   <path class="il-arrow-head" d="M398 141 l14 7 l-14 7 z" />
 
   <g class="il-node il-node--accent"><rect x="420" y="108" width="260" height="80" rx="12" /></g>
-  <text class="il-t il-anchor-mid il-node-text--on" x="550" y="146">臨床完全緩解</text>
-  <text class="il-t-sub il-anchor-mid il-detail il-node-text--on" x="550" y="170">cCR</text>
+  <text class="il-t il-anchor-mid il-node-text--on" x="550" y="152">四項都找不到腫瘤</text>
 
   <text class="il-t-sub il-anchor-mid" x="360" y="286">任何單一項檢查都不足以判定，必須四項綜合評估</text>
 </svg>

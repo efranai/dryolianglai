@@ -1,7 +1,7 @@
 <svg class="illus" viewBox="0 0 720 444" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-labelledby="rp-title rp-desc">
   <title id="rp-title">直腸癌術前治療後的決策路徑</title>
-  <desc id="rp-desc">局部晚期直腸癌先接受術前放射治療合併化學治療，完成後以大腸鏡、肛門指診、骨盆磁振造影與 CEA 進行完整評估。達到臨床完全緩解者，可考慮 Watch and Wait 密切追蹤；未達完全緩解者則接受手術切除。</desc>
+  <desc id="rp-desc">局部晚期直腸癌先接受術前放射治療合併化學治療，完成後以大腸鏡、肛門指診、骨盆磁振造影與抽血指標進行完整評估。所有檢查都找不到腫瘤的人，可以考慮先不開刀、改採密切追蹤；仍找得到腫瘤的人則接受手術切除。</desc>
 
   <path class="il-flow-line" d="M360 90 V110 M360 186 V206 M360 282 V300 M180 300 H540 M180 300 V318 M540 300 V318" />
 
@@ -9,20 +9,19 @@
   <text class="il-t il-anchor-mid" x="360" y="52">局部晚期直腸癌</text>
 
   <g class="il-node il-node--soft"><rect x="210" y="110" width="300" height="76" rx="12" /></g>
-  <text class="il-t il-anchor-mid" x="360" y="148">術前放化療</text>
-  <text class="il-t-sub il-anchor-mid il-detail" x="360" y="172">CCRT 或 TNT</text>
+  <text class="il-t il-anchor-mid" x="360" y="148">術前先做放療與化療</text>
 
   <g class="il-node il-node--lead"><rect x="210" y="206" width="300" height="76" rx="12" /></g>
   <text class="il-t il-anchor-mid" x="360" y="244">完整評估反應</text>
-  <text class="il-t-sub il-anchor-mid il-detail" x="360" y="268">大腸鏡・指診・MRI・CEA</text>
+  <text class="il-t-sub il-anchor-mid il-detail" x="360" y="268">大腸鏡・指診・MRI・抽血</text>
 
   <g class="il-node il-node--accent"><rect x="30" y="318" width="300" height="76" rx="12" /></g>
-  <text class="il-t il-anchor-mid il-node-text--on" x="180" y="356">Watch &amp; Wait</text>
-  <text class="il-t-sub il-anchor-mid il-detail il-node-text--on" x="180" y="380">達到 cCR，密切追蹤</text>
+  <text class="il-t il-anchor-mid il-node-text--on" x="180" y="356">觀察等待</text>
+  <text class="il-t-sub il-anchor-mid il-detail il-node-text--on" x="180" y="380">找不到腫瘤　密切追蹤</text>
 
   <g class="il-node il-node--soft"><rect x="390" y="318" width="300" height="76" rx="12" /></g>
   <text class="il-t il-anchor-mid" x="540" y="356">手術切除</text>
-  <text class="il-t-sub il-anchor-mid il-detail" x="540" y="380">未達 cCR</text>
+  <text class="il-t-sub il-anchor-mid il-detail" x="540" y="380">仍找得到腫瘤</text>
 
   <text class="il-t-sub il-anchor-mid" x="360" y="428">是否適合器官保留，取決於評估結果，而不是病人自己決定</text>
 </svg>
