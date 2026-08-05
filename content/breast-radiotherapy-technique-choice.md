@@ -3,7 +3,7 @@ title: 乳癌放射治療怎麼選？質子治療比較好嗎？
 slug: breast-radiotherapy-technique-choice
 date: 2026-08-03
 summary: 好神刀、螺旋刀其實只是機器名稱。真正決定治療品質的是 IMRT、IGRT、DIBH 與質子治療這些技術，而 DIBH 和質子治療並不是二選一。
-description: 好神刀、螺旋刀其實只是機器名稱。賴宥良醫師說明 IMRT、IGRT、DIBH 與質子治療的真正差別、乳癌放射治療如何保護心臟，以及哪些人適合考慮質子治療。
+description: 好神刀、螺旋刀其實只是機器名稱。賴宥良醫師說明 IMRT、IGRT、DIBH 與質子治療的真正差別、如何以實際劑量數字保護心臟與肺臟，以及哪些人適合考慮質子治療。
 series: breast-cancer
 tags: 乳癌, 質子治療, 治療技術
 hero: assets/img/breast-machine-vs-tech.svg
@@ -23,8 +23,9 @@ heroCaption: 與其比較「哪一把刀」，不如了解醫師替您規劃了�
 - 「好神刀」、「螺旋刀」其實只是不同放射治療**機器的名稱**。
 - 真正影響治療品質的是 **IMRT、IGRT、DIBH、質子治療** 等放射治療技術。
 - IMRT 配合 IGRT 已是目前乳癌放射治療的重要基礎。
-- **DIBH 可明顯降低左側乳癌病人的心臟劑量。**
-- 質子治療可在現有技術的基礎上，藉由更換射線，進一步降低心臟及肺部劑量；**DIBH 與質子治療並不是二選一，而是可以互相搭配。**
+- **DIBH 可明顯降低左側乳癌病人的心臟劑量**，但對肺部劑量的幫助相對有限。
+- 質子治療則是**心臟與肺臟的劑量可以同時下降**；**DIBH 與質子治療並不是二選一，而是可以互相搭配。**
+- 心臟與肺臟都有明確的劑量關係：心臟劑量每多 1 Gy，冠狀動脈事件風險約 **+7.4%**；肺部劑量每多 1 Gy，第二原發肺癌發生率約 **+8.5%**（吸菸者 **+17.3%**）。
 
 <!--/box-->
 
@@ -120,7 +121,29 @@ Darby 等人發表於《New England Journal of Medicine》的研究指出：平�
 
 ### 降低肺部劑量
 
-肺部接受的輻射愈多，除了可能增加放射性肺炎的風險外，長期而言，也可能增加**第二原發肺癌**的機率，尤其對吸菸者影響更為明顯。
+肺部接受的輻射愈多，除了可能增加放射性肺炎的風險外，長期而言，也可能增加**第二原發肺癌**的機率。
+
+而且這件事和心臟一樣，**有明確的劑量關係**。丹麥一項針對 23,627 位早期乳癌病人的研究發現：治療五年以後才發生的第二原發肺癌，其發生率**隨肺部劑量每增加 1 Gy 而上升 8.5%**，同樣呈線性。
+
+**吸菸者的風險放大得更明顯**：同一份研究中，有吸菸史者的上升幅度是**每 1 Gy 增加 17.3%**，是整體的兩倍以上。研究中的第二原發肺癌病例有 **91% 有吸菸史**，對照組則是 40%。
+
+兩點必須說清楚：
+
+- **絕對風險並不高。** 這是「相對風險」的上升幅度，而第二原發肺癌本身的基礎發生率很低——研究作者自己也強調了這一點。
+- **潛伏期很長。** 研究中從乳癌治療到診斷出第二原發肺癌的中位時間是 **12 年**。所以這件事對年紀較輕、預期還有數十年人生的病人，意義比對高齡病人大得多。
+
+### 這正是質子治療與 DIBH 不一樣的地方
+
+心臟與肺臟這兩件事放在一起看，兩種技術的角色其實不同：
+
+- **DIBH** 是靠深吸氣把**心臟**推離照射範圍，對**降低心臟劑量的效果明確而顯著**；至於肺臟，深吸氣雖然會讓肺膨脹、稀釋受照射的比例，但幫助相對有限。
+- **質子治療**則是從根本上少掉了穿透過去的出口劑量，因此**心臟與肺臟的劑量可以同時下降**。
+
+所以在「保護心臟」這件事上，DIBH 與質子治療是可以互相搭配的兩條路；但在「降低肺部劑量」上，**質子治療提供的是 DIBH 做不到的那一塊**。
+
+要誠實補上的是：以上是**劑量與風險模型推算**出來的效益。目前沒有、短期內也不會有臨床試驗直接證明「接受質子治療的病人日後比較不會得第二原發肺癌」——那需要追蹤二、三十年。我們能確定的是劑量確實降低了，而劑量與風險的線性關係是有實證的。
+
+也因此，那份丹麥研究的結論就是這樣寫的：雖然絕對風險不高，但隨著乳癌長期存活者愈來愈多，**更需要能保護正常組織的放射治療技術**。
 
 因此，現代乳癌放射治療不只是追求治療成功，更希望盡可能降低未來數十年的治療相關風險。
 
@@ -176,7 +199,13 @@ Darby 等人發表於《New England Journal of Medicine》的研究指出：平�
 
 <!--q:做了 DIBH，就不需要質子治療嗎？-->
 
-不一定。DIBH 與質子治療可以互相搭配。即使使用 DIBH，部分病人仍可藉由質子治療進一步降低心臟及肺部劑量。
+不一定，兩者可以互相搭配。而且它們保護的器官不完全一樣：**DIBH 主要是把心臟推離照射範圍，對肺部劑量的幫助相對有限；質子治療則是心臟與肺臟的劑量可以同時下降**。即使已經使用 DIBH，部分病人仍可藉由質子治療進一步降低劑量。
+
+<!--/q-->
+
+<!--q:降低肺部劑量有什麼實際意義？-->
+
+除了降低放射性肺炎的風險外，主要是**第二原發肺癌**。研究顯示肺部劑量每增加 1 Gy，治療五年後的第二原發肺癌發生率約上升 8.5%，有吸菸史者更達 17.3%。要說明的是，這是相對風險的上升幅度，第二原發肺癌本身的基礎發生率並不高，而且中位潛伏期長達 12 年——因此這件事對年紀較輕的病人意義較大。
 
 <!--/q-->
 
@@ -191,10 +220,11 @@ Darby 等人發表於《New England Journal of Medicine》的研究指出：平�
 ## 參考文獻
 
 1. Darby SC, Ewertz M, et al. Risk of Ischemic Heart Disease in Women after Radiotherapy for Breast Cancer. *N Engl J Med*. 2013;368(11):987-998.
-2. Taylor C, Correa C, et al. Estimating the Risks of Breast Cancer Radiotherapy: Evidence From Modern Radiation Doses to the Lungs and Heart and From Previous Randomized Trials. *J Clin Oncol*. 2017;35(15):1641-1649.
-3. MacDonald SM, Patel SA, et al. Proton Therapy for Breast Cancer after Mastectomy: Early Outcomes of a Prospective Clinical Trial. *Int J Radiat Oncol Biol Phys*. 2013;86(3):484-490.
-4. Mutter RW, Choi JI, et al. Proton Therapy for Breast Cancer: A Consensus Statement From the Particle Therapy Cooperative Group Breast Cancer Subcommittee. *Int J Radiat Oncol Biol Phys*. 2021;111(2):337-359.
-5. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer, Version 1.2026.
+2. Grantzau T, Thomsen MS, Væth M, Overgaard J. Risk of Second Primary Lung Cancer in Women after Radiotherapy for Breast Cancer. *Radiother Oncol*. 2014;111(3):366-373.
+3. Taylor C, Correa C, et al. Estimating the Risks of Breast Cancer Radiotherapy: Evidence From Modern Radiation Doses to the Lungs and Heart and From Previous Randomized Trials. *J Clin Oncol*. 2017;35(15):1641-1649.
+4. MacDonald SM, Patel SA, et al. Proton Therapy for Breast Cancer after Mastectomy: Early Outcomes of a Prospective Clinical Trial. *Int J Radiat Oncol Biol Phys*. 2013;86(3):484-490.
+5. Mutter RW, Choi JI, et al. Proton Therapy for Breast Cancer: A Consensus Statement From the Particle Therapy Cooperative Group Breast Cancer Subcommittee. *Int J Radiat Oncol Biol Phys*. 2021;111(2):337-359.
+6. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer, Version 1.2026.
 
 ---
 
