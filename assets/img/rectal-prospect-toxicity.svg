@@ -1,30 +1,24 @@
 <svg class="illus" viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-labelledby="rptox-title rptox-desc">
-  <title id="rptox-title">兩種術前治療的副作用在不同時期各有輕重</title>
-  <desc id="rptox-desc">治療期間，先做化療這一組的嚴重不良事件為百分之四十一，放化療組為百分之二十三，周邊神經病變的差距尤其明顯；但腹瀉則是放化療組較高。術後六到十八個月則相反，化療組的疲倦與神經病變較少、性功能較好，不過此時放化療組仍有將近一半的人正在接受術後化療。兩者不是高低之分，而是形狀不同。</desc>
-
-  <text class="il-t" x="24" y="40">治療期間</text>
-  <text class="il-t" x="370" y="40">術後 6～18 個月</text>
+  <title id="rptox-title">兩種術前治療在手術前後各有輕重</title>
+  <desc id="rptox-desc">手術前，嚴重副作用是放化療這一組比較少；但腹瀉反而是放化療這組較多。手術後六到十八個月則相反，先化療那一組的疲倦、手腳麻木與性功能表現較好，不過此時放化療組還有將近一半的人正在接受術後化療。兩者不是高低之分，而是辛苦的時間點與難受的項目不一樣。</desc>
 
   <g class="il-node il-node--soft">
-    <rect x="24" y="56" width="326" height="158" rx="14" />
+    <rect x="24" y="34" width="326" height="186" rx="14" />
   </g>
-  <text class="il-t-sub il-anchor-mid" x="187" y="90">嚴重不良事件（第 3 級以上）</text>
-  <text class="il-t-val il-anchor-mid" x="120" y="132">41.0%</text>
-  <text class="il-t-val il-anchor-mid" x="254" y="132">22.8%</text>
-  <text class="il-t-sub il-anchor-mid" x="120" y="172">先化療</text>
-  <text class="il-t-sub il-anchor-mid" x="254" y="172">放化療</text>
-  <text class="il-t-sub il-detail il-anchor-mid" x="187" y="206">神經病變差最多；腹瀉則反過來</text>
+  <text class="il-t il-anchor-mid" x="187" y="76">手術前</text>
+  <text class="il-t-sub il-anchor-mid" x="187" y="120">嚴重副作用</text>
+  <text class="il-t il-anchor-mid" x="187" y="164">放化療這組較好</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="187" y="202">但腹瀉反而是放化療較多</text>
 
   <g class="il-node il-node--soft">
-    <rect x="370" y="56" width="326" height="158" rx="14" />
+    <rect x="370" y="34" width="326" height="186" rx="14" />
   </g>
-  <text class="il-t-sub il-anchor-mid" x="533" y="90">疲倦、神經病變、性功能</text>
-  <text class="il-t il-anchor-mid" x="533" y="134">先化療這組較好</text>
-  <text class="il-t-sub il-detail il-anchor-mid" x="533" y="172">但此時放化療組仍有 49.8%</text>
-  <text class="il-t-sub il-detail il-anchor-mid" x="533" y="200">正在接受化療，前者只剩 9.5%</text>
+  <text class="il-t il-anchor-mid" x="533" y="76">手術後 6～18 個月</text>
+  <text class="il-t-sub il-anchor-mid" x="533" y="120">疲倦、手腳麻木、性功能</text>
+  <text class="il-t il-anchor-mid" x="533" y="164">先化療這組較好</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="533" y="202">但此時放化療組還有近一半在打化療</text>
 
-  <text class="il-t il-anchor-mid" x="360" y="262">不是高低之分，而是形狀不同</text>
-  <text class="il-t-sub il-anchor-mid" x="360" y="304">辛苦的時間點不一樣，難受的項目也不一樣</text>
-  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="338">哪一種比較難受，取決於您最在意哪些症狀</text>
+  <text class="il-t il-anchor-mid" x="360" y="278">不是高低之分，而是形狀不同</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="322">辛苦的時間點不一樣，難受的項目也不一樣</text>
 </svg>
