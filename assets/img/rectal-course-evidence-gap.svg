@@ -1,23 +1,28 @@
-<svg class="illus" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img"
+<svg class="illus" viewBox="0 0 720 500" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-labelledby="rceg-title rceg-desc">
-  <title id="rceg-title">現有大型試驗比較的對象</title>
-  <desc id="rceg-desc">RAPIDO 試驗證明短療程加上術前化療勝過舊的標準治療；PRODIGE 23 試驗證明長療程加上術前化療也勝過舊的標準治療。但把短療程加化療與長療程加化療直接放在一起隨機比較的試驗，目前還沒有。</desc>
-
-  <g class="il-node il-node--soft">
-    <rect x="24" y="34" width="672" height="104" rx="14" />
-  </g>
-  <text class="il-t-sub il-anchor-mid" x="360" y="78">RAPIDO</text>
-  <text class="il-t il-anchor-mid" x="360" y="120">短療程＋術前化療　勝過　舊標準</text>
-
-  <g class="il-node il-node--soft">
-    <rect x="24" y="154" width="672" height="104" rx="14" />
-  </g>
-  <text class="il-t-sub il-anchor-mid" x="360" y="198">PRODIGE 23</text>
-  <text class="il-t il-anchor-mid" x="360" y="240">長療程＋術前化療　勝過　舊標準</text>
+  <title id="rceg-title">現有證據的強弱與各自比較的對象</title>
+  <desc id="rceg-desc">證據力最強的隨機試驗 RAPIDO 與 PRODIGE 23，比的是把化療提前到手術前，對上放化療後開刀再做化療的舊做法，而不是兩種放療排程互相比較。唯一直接比較短療程加化療與長療程加化療的，是美國單一醫學中心的研究，但不是隨機分組。真正能回答這個問題的隨機試驗 ACO/ARO/AIO-18.1 收案 702 人，主要終點就是器官保留，結果尚未公布。</desc>
 
   <g class="il-node il-node--accent">
-    <rect x="24" y="274" width="672" height="104" rx="14" />
+    <rect x="24" y="30" width="672" height="128" rx="14" />
   </g>
-  <text class="il-t il-node-text--on il-anchor-mid" x="360" y="318">這一格目前還是空的</text>
-  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="360">短療程＋化療　對上　長療程＋化療</text>
+  <text class="il-t il-node-text--on il-anchor-mid" x="360" y="72">隨機試驗　證據力最強</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="112">化療提前　對上　開刀後才做化療</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="148">但沒有比較 5 次和 25 次</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="24" y="176" width="672" height="128" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="218">直接比較　但非隨機</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="258">短療程＋化療　對上　長療程＋化療</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="294">長療程器官保留較好，證據力較低</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="24" y="322" width="672" height="128" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="364">隨機試驗　進行中</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="404">702 人，主要終點就是器官保留</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="440">答案還在路上</text>
+
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="486">ACO/ARO/AIO-18.1（NCT04246684）</text>
 </svg>
