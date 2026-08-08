@@ -56,7 +56,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font);
-  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  font-size: clamp(1.075rem, 1.03rem + 0.22vw, 1.125rem);
   line-height: 1.9;
   overflow-x: clip;                 /* 保險：任何意外都不會產生橫向捲軸 */
   overflow-wrap: break-word;        /* 長網址、長英文詞不撐破容器 */
@@ -717,7 +717,7 @@ ul, ol { padding-left: 1.25em; }
 
 .keybox__title {
   margin: 0 0 .9rem;
-  font-size: .82rem;
+  font-size: .92rem;
   font-weight: 700;
   letter-spacing: .12em;
   color: var(--accent-dk);
@@ -752,10 +752,10 @@ ul, ol { padding-left: 1.25em; }
 }
 
 .keybox ul { margin: 0; padding-left: 1.2em; }
-.keybox li { font-size: .92rem; line-height: 1.85; color: var(--ink); }
+.keybox li { font-size: 1rem; line-height: 1.9; color: var(--ink); }
 .keybox li + li { margin-top: .55em; }
 .keybox li::marker { color: var(--accent); }
-.keybox p:not(.keybox__title) { margin: 0; font-size: .92rem; line-height: 1.85; }
+.keybox p:not(.keybox__title) { margin: 0; font-size: 1rem; line-height: 1.9; }
 
 /* ---------- 並排資訊卡 ---------- */
 
@@ -830,7 +830,7 @@ ul, ol { padding-left: 1.25em; }
   cursor: pointer;
   list-style: none;
   padding: 1rem 3rem 1rem 1.2rem;
-  font-size: .95rem;
+  font-size: 1.02rem;
   font-weight: 600;
   line-height: 1.7;
   color: var(--ink);
@@ -857,7 +857,7 @@ ul, ol { padding-left: 1.25em; }
 .faq__q:hover { color: var(--accent); }
 
 .faq__a { padding: 0 1.2rem 1.2rem; }
-.faq__a p { margin: 0; font-size: .9rem; line-height: 1.9; color: var(--ink-soft); }
+.faq__a p { margin: 0; font-size: 1rem; line-height: 1.9; color: var(--ink-soft); }
 .faq__a > * + * { margin-top: .8em; }
 
 /* ---------- 文章內自繪插圖 ---------- */
@@ -1025,7 +1025,7 @@ ul, ol { padding-left: 1.25em; }
 
 .prose-figure figcaption {
   margin-top: .7rem;
-  font-size: .8rem;
+  font-size: .88rem;
   line-height: 1.75;
   color: var(--ink-faint);
   padding-left: .7rem;
@@ -1034,7 +1034,7 @@ ul, ol { padding-left: 1.25em; }
 
 .article-hero figcaption {
   margin-top: .7rem;
-  font-size: .8rem;
+  font-size: .88rem;
   line-height: 1.75;
   color: var(--ink-faint);
   padding-left: .7rem;
@@ -1105,7 +1105,7 @@ ul, ol { padding-left: 1.25em; }
 .prose th, .prose td { padding: .6em .8em; border: 1px solid var(--line); text-align: left; }
 
 .prose__note {
-  font-size: .85rem;
+  font-size: .9rem;
   color: var(--ink-faint);
   padding: .9rem 1.1rem;
   background: var(--bg-tint);
