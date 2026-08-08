@@ -61,11 +61,12 @@ heroCaption: 質子束的能量集中釋放在腫瘤所在的深度，通過之�
 
 - **乳癌**：降低心臟劑量，有機會減少未來的心血管風險——尤其是左側乳癌，或需要照射內乳淋巴結的病人。
 - **攝護腺癌**：降低直腸與腸道劑量，可減少腸胃道副作用。
-- **食道癌**：降低心臟與肺部劑量，減少心肺毒性。近年也有研究發現，部分病人的整體存活可能因此改善。
-- **肝癌**：更能保護剩下的正常肝臟，部分病人因而有機會安全地提高劑量，讓局部控制更好。
+- **食道癌**：降低心臟與肺部劑量。一項隨機試驗顯示，接受質子治療的病人**整體治療負擔明顯較輕**——治療期間與治療後的嚴重副作用比較少。
+- **頭頸癌**：大幅降低唾液腺與吞嚥結構的劑量。一項美國多中心隨機試驗顯示，質子組的**吞嚥困難、口乾與需要依賴餵食管的比例都明顯較低**，五年整體存活也較高。
+- **肝癌**：更能保護剩下的正常肝臟，**因此有機會把劑量提高到足以控制腫瘤的程度**。國內針對大型肝癌的研究顯示，這正是局部控制與存活出現差異的來源。
 - **兒童癌症**：減少生長中的器官照到輻射，降低發育、內分泌、認知受影響與第二癌症的長期風險。
 
-食道癌那一項值得多說一句。**存活改善的原因，多半不是質子「更會殺癌細胞」**，而是嚴重副作用少了，病人更能順利把療程做完——最後轉化成比較好的結果。
+這些例子有一個共同點：**質子的價值不在於「更會殺癌細胞」，而在於路上少傷到一些**——嚴重副作用少了，病人更能順利把療程做完。而療程能不能做完，本來就會影響最後的結果。
 
 以個別癌別來說，可以參考：
 
@@ -139,6 +140,14 @@ heroCaption: 質子束的能量集中釋放在腫瘤所在的深度，通過之�
 **而判斷「用得對不對」，是醫師在門診該做的事，不是您在網路上該煩惱的事。**
 
 如果差距明顯，而經濟上負擔得起——**那是合理的選擇。** 少照到的每一分劑量，都是實實在在少掉的。
+
+## 參考文獻
+
+1. Frank SJ, Busse PM, Lee JJ, et al. Proton versus Photon Radiotherapy for Patients with Oropharyngeal Cancer in the USA: A Multicentre, Randomised, Open-Label, Non-Inferiority Phase 3 Trial. *Lancet*. 2026;407(10524):174-184.
+2. Lin SH, Hobbs BP, Verma V, et al. Randomized Phase IIB Trial of Proton Beam Therapy Versus Intensity-Modulated Radiation Therapy for Locally Advanced Esophageal Cancer. *J Clin Oncol*. 2020;38(14):1569-1579.
+3. Hsieh RC, Lee CH, Huang HC, et al. Clinical and Dosimetric Results of Proton or Photon Radiation Therapy for Large (>5 cm) Hepatocellular Carcinoma: A Retrospective Analysis. *Int J Radiat Oncol Biol Phys*. 2024;118(3):712-724.
+4. Chung CS, Yock TI, Nelson K, et al. Incidence of Second Malignancies among Patients Treated with Proton versus Photon Radiation. *Int J Radiat Oncol Biol Phys*. 2013;87(1):46-52.
+5. Darby SC, Ewertz M, et al. Risk of Ischemic Heart Disease in Women after Radiotherapy for Breast Cancer. *N Engl J Med*. 2013;368(11):987-998.
 
 ---
 
