@@ -1,0 +1,38 @@
+<svg class="illus" viewBox="0 0 720 344" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="psetime-title psetime-desc">
+  <title id="psetime-title">攝護腺癌放射治療期間排尿與腸道不適的時間變化示意圖</title>
+  <desc id="psetime-desc">排尿與腸道的不適是慢慢累積的。治療的頭一兩週大多沒有明顯變化；第二到三週起開始出現頻尿、急尿與夜間起床，部分人有解便次數增加；程度在療程結束前後最明顯；結束後約二到六週逐漸緩解，多數人回到接近治療前的狀態。</desc>
+
+  <text class="il-t-sub" x="52" y="34">不適程度</text>
+
+  <rect class="il-band" x="52" y="46" width="212" height="210" rx="12" />
+  <rect class="il-band il-band--warm" x="270" y="46" width="196" height="210" rx="12" />
+  <rect class="il-band" x="472" y="46" width="196" height="210" rx="12" />
+
+  <text class="il-t il-anchor-mid" x="158" y="76">治療前期</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="158" y="104">第 1～2 週</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="158" y="126">大多沒有明顯變化</text>
+
+  <text class="il-t il-anchor-mid" x="368" y="76">治療中後期</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="368" y="104">第 2～3 週起頻尿、急尿</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="368" y="126">部分人解便次數增加</text>
+
+  <text class="il-t il-anchor-mid" x="570" y="76">治療結束後</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="570" y="104">約 2～6 週逐漸緩解</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="570" y="126">多數回到接近原本的狀態</text>
+
+  <path class="il-curve il-curve--cancer"
+        d="M64 238 C 130 236 200 226 264 212 C 320 200 356 182 400 174 C 428 169 448 172 466 180 C 512 200 560 220 610 230 C 632 234 646 236 658 237" />
+
+  <path class="il-tick" d="M466 46 V 256" />
+  <circle class="il-point" cx="466" cy="180" r="6" />
+
+  <path class="il-axis" d="M52 268 H 682" />
+  <path class="il-axis-head" d="M682 262 694 268 682 274Z" />
+  <path class="il-tick" d="M64 264 V 274M466 264 V 274" />
+  <text class="il-t-sub" x="56" y="296">治療開始</text>
+  <text class="il-t-sub il-anchor-mid" x="466" y="296">療程結束</text>
+  <text class="il-t-sub il-anchor-end" x="682" y="296">時間</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="332">不適通常在療程結束前後最明顯，之後會慢慢緩解</text>
+</svg>

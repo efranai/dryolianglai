@@ -2,9 +2,9 @@
 title: 乳癌都開刀拿乾淨了，為什麼還要做放射治療？可以不要做嗎？
 slug: breast-why-radiotherapy-after-surgery
 date: 2026-08-04
-summary: 手術切除乾淨，不代表乳房周圍完全沒有殘留癌細胞。放射治療的角色是清除這些看不見的顯微癌細胞——而它能帶來多少好處，是有明確數字的。
-answer: 手術拿掉的是看得見的腫瘤，放射治療處理的是可能殘留、但影像上看不到的癌細胞。
-description: 乳癌開刀拿乾淨了為什麼還要放射治療？賴宥良醫師用大型統合分析的實際數字說明放療能降低多少復發與死亡風險，以及哪些病人在完整評估後有機會安全地省略。
+summary: 手術切除乾淨，不代表乳房周圍完全沒有殘留癌細胞。放射治療的角色是清除這些看不見的顯微癌細胞，讓復發的機會大約減少一半。
+answer: 手術拿掉的是看得見的腫瘤，放療處理的是看不到的殘留癌細胞——它讓復發的機會大約減少一半，也有機會提高存活率。
+description: 乳癌開刀拿乾淨了為什麼還要放射治療？賴宥良醫師說明放療能降低多少復發、做完之後實際的復發機會有多低，以及哪些病人在完整評估後有機會安全地省略。
 series: breast-cancer
 tags: 乳癌, 術後放療, 復發風險
 hero: assets/img/breast-microscopic-residual.svg
@@ -17,21 +17,17 @@ heroCaption: 手術切除看得見的腫瘤；放射治療清除看不見的顯�
 > 「病理報告不是說切除乾淨了，為什麼還要做放射治療？」<br>
 > 「我可以不要做放射治療嗎？」
 
-這是乳癌病人在門診最常問的問題之一。
-
-很多人以為，只要腫瘤已經切除乾淨，就代表癌症已經完全消失。
-
-其實並不是。
-
-**手術切乾淨，不代表身體裡一定完全沒有癌細胞。**
+很多人以為只要腫瘤切除乾淨，癌症就完全消失了。其實並不是——**手術切乾淨，不代表身體裡一定完全沒有癌細胞。**
 
 需不需要放射治療，並不是因為手術做得不夠。而是依照目前最好的醫學證據，以及**您個人的復發風險**，選出最適合的治療方式。
+
+<!--secondopinion-->
 
 <!--box:重點先看-->
 
 - 手術切除乾淨，不代表乳房或胸壁周圍一定完全沒有殘留癌細胞。
 - 放射治療的目的，是清除可能殘留的**顯微癌細胞**，降低局部復發風險。
-- 接受乳房保留手術後加做放療，**10 年內復發的機會從三成五降到不到兩成**，15 年的乳癌死亡也跟著下降。
+- 接受乳房保留手術後加做放療，**復發的機會大約減少一半，而且有機會提高存活率**。
 - 接受**全乳切除**的病人，若腫瘤在 **5 公分以下、淋巴結也沒有轉移**，多數不需要胸壁放療；但**腫瘤大於 5 公分、侵犯胸壁或皮膚、或切除邊緣有殘留**，即使淋巴結乾淨仍建議接受。
 - 部分高齡、低風險病人在充分討論後，可以安全地省略放射治療。
 
@@ -61,39 +57,47 @@ heroCaption: 手術切除看得見的腫瘤；放射治療清除看不見的顯�
 
 > 「是不是只是多做一道保險？」
 
-其實，放射治療並不是可有可無。這件事有非常明確的數字。
+其實，放射治療並不是可有可無。
 
-一項整合了全球 **17 項隨機臨床試驗、10,801 位**接受乳房保留手術女性的大型分析，結果是：
-
-<!--svg:assets/img/breast-rt-benefit-numbers.svg|這是放射治療在乳房保留手術後的實際效益。復發的降幅很大，死亡的降幅較小但確實存在——兩者的關係就是下面那句「4 比 1」。-->
-
-- **10 年內發生復發**（不論局部或遠端）：從 **35.0% 降到 19.3%**
-- **15 年的乳癌死亡**：從 **25.2% 降到 21.4%**
-
-要注意的是，這裡的「任何復發」包含局部復發與遠端轉移，不只是乳房局部。
+一項整合全球 **17 項隨機試驗、10,801 位**接受乳房保留手術女性的大型分析顯示：**加做放射治療，讓復發的機會大約減少一半。**
 
 研究團隊還歸納出一個好記的關係：
 
 > **每避免 4 次復發，15 年可以少 1 位乳癌死亡。**
 
-這說明了為什麼「降低局部復發」不只是避免再開一次刀——**它確實會轉化成存活率的改善**，只是幅度比較小。
+也就是說，降低局部復發不只是避免再開一次刀——**它確實會轉化成存活率的改善**。
 
-### 復發風險越高的人，得到的好處越大
+## 那我做完放療之後，風險是多少？
 
-同一份研究也顯示，好處的大小和病人本身的風險有關：
+這其實是病人最想知道的一件事。
 
-- **沒有淋巴結轉移的病人**（7,287 人）：10 年內復發的機會大約**減半**，15 年的乳癌死亡也跟著下降
-- **有淋巴結轉移的病人**（1,050 人）：復發從超過六成降到四成出頭，乳癌死亡同樣明顯下降
+近年一項追蹤近 10 年的大型試驗，收的是**各年齡層**、腫瘤 3 公分左右以內、淋巴結 0 到 3 顆的病人——也就是門診最常見的狀況。做完標準放射治療之後：
 
-換句話說，**放射治療降低的比例大致相同（都約一半），但因為起始風險不同，實際受益的絕對幅度差很多。** 這正是為什麼需要個別評估，而不是一體適用。
+<!--svg:assets/img/breast-rt-100-people.svg|把百分比換成人：100 位做完放射治療的病人裡，10 年之內大約 4 位會再出現問題。-->
 
-因此，放射治療不是因為手術做得不夠，而是希望把治療做得更完整、更徹底。
+> **早期乳癌做完放射治療之後，10 年內局部或區域復發，約 4.3%。**
+
+換句話說，**十年之內，超過九成五的人治療過的那一側乳房不會再出問題。**（另一項四千多人的試驗，5 年約 2%，方向一致。）
+
+而早期乳癌的整體預後，這二十幾年也大幅改善——一份追蹤**英國 51 萬名早期乳癌病人**的研究指出，**大多數人可以期待成為長期存活者**。
+
+這些改善本來就包含了放射治療、抗荷爾蒙藥與標靶藥的貢獻。**數字會這麼好，正是因為這些治療都做了。**
+
+## 但風險比較高的人，數字不一樣
+
+上面那些是整群病人的結果，**不是每個人都落在同一個位置**。
+
+如果您的腫瘤比較大、淋巴結有轉移，或病理報告上有其他比較不利的特性，**復發的機會會比較高**。這也正是為什麼放射治療的範圍、次數與要不要加強，每個人都不一樣。
+
+我把這件事寫出來，不是要嚇您，而是**不希望造成錯誤的期待**。這裡的數字是用來說明放射治療有沒有用，**不是用來預測您個人會怎樣**——那不是任何一個數字能回答的。
 
 ## 我可以不要做放射治療嗎？
 
-可以，但不是每位病人都適合。
+**大多數人還是建議做。**
 
-需不需要放射治療，要看手術方式、腫瘤大小、淋巴結、癌細胞特性、年齡與整體復發風險，綜合起來判斷。
+接受乳房保留手術的病人，多數仍建議接受術後放射治療；能夠安全省略的，是**經過完整評估的少數低風險病人**。
+
+需不需要，要看手術方式、腫瘤大小、淋巴結、癌細胞特性、年齡與整體復發風險，綜合起來判斷。
 
 <!--svg:assets/img/breast-rt-decision-map.svg|同樣是乳癌手術，保留手術和全乳切除的術後建議方向其實相反。全乳切除這一側要特別注意：判斷不只看淋巴結，腫瘤大小與切緣同樣關鍵。-->
 
@@ -101,42 +105,31 @@ heroCaption: 手術切除看得見的腫瘤；放射治療清除看不見的顯�
 
 **大部分病人仍建議接受術後放射治療**，理由就是上面那組數字。
 
-不過，部分低風險病人在與醫師充分討論後，也可能考慮省略。這方面有兩項重要的隨機試驗：
+不過，部分低風險病人在與醫師充分討論後，也可能考慮省略。兩項針對**高齡、荷爾蒙受體陽性、淋巴結乾淨、正在服用抗荷爾蒙藥**病人的隨機試驗發現：**省略放療會增加局部復發，但遠端轉移與總存活都沒有差別。** 其中一項的結果是——做完放療 10 年局部復發 **0.9%**，沒做則是 **9.5%**。
 
-- 一項追蹤 10 年的試驗（PRIME II）針對**65 歲以上、荷爾蒙受體陽性、沒有淋巴結轉移、腫瘤 3 公分以下、而且正在服用抗荷爾蒙藥物**的病人：省略放療後 **10 年局部復發為 9.5%，有做放療則是 0.9%**。但兩組的**遠端轉移沒有增加，10 年總存活率也幾乎完全相同**。
-- 另一項追蹤超過 12 年的試驗則針對**70 歲以上、腫瘤 2 公分以下、沒有淋巴結轉移、而且正在服用抗荷爾蒙藥物**的病人：10 年的局部復發是 **2%（有放療）對 10%（未放療）**——差距存在，但兩組的總存活與遠端轉移都沒有差別。
-
-這兩項試驗傳達的是同一件事：**在這群特定的低風險病人身上，省略放療會增加局部復發，但不會縮短壽命。** 所以這是一個可以攤開來一起討論的選擇——取決於您怎麼看待「局部復發」這件事本身。
+所以這是一個可以攤開來一起討論的選擇——取決於您怎麼看待「局部復發」這件事本身。
 
 ### 如果接受全乳切除
 
-很多人以為，全乳切除後一定還要放射治療，其實**不一定**——這裡的判斷主要看**淋巴結**與**腫瘤大小**兩件事。
+很多人以為，全乳切除後一定還要放射治療，其實**不一定**。
 
-先看淋巴結。另一份整合 **22 項試驗、8,135 位**女性的分析顯示：
+判斷主要看兩件事：**淋巴結**，以及**腫瘤大小與切緣**。**兩邊都過關才可以省略；任何一項不過關，通常就建議做。**
 
-- **完成腋下淋巴結廓清且沒有淋巴結轉移**的病人，加做放射治療對局部復發、整體復發、乳癌死亡**都沒有顯著幫助**。
-- **1～3 顆淋巴結轉移**：放療讓復發與乳癌死亡的風險都明顯下降，而且**即使已經接受全身性治療，效果依然存在**。
-- **4 顆以上淋巴結轉移**：同樣可以降低復發與死亡的風險。
+**通常不需要胸壁放射治療**
 
-所以，**腫瘤在 5 公分以下、又沒有淋巴結轉移的病人，大多數情況下並不需要胸壁放射治療。**
+- 淋巴結沒有轉移，**而且**
+- 腫瘤在 5 公分以下、沒有侵犯胸壁或皮膚、切除邊緣乾淨
 
-### 但「沒有淋巴結轉移」不等於「不用放療」
+**通常仍建議接受**
 
-這一點必須說清楚，因為很容易被誤解。
+- 淋巴結有轉移（**1 顆以上就算**）
+- 或腫瘤**大於 5 公分**
+- 或腫瘤**侵犯胸壁或皮膚**（包含發炎性乳癌）
+- 或**切除邊緣陽性或過於接近**
 
-上面那份分析是依照試驗、追蹤年份、入組年齡與**淋巴結狀態**來分組的，**並沒有再依腫瘤大小分開分析**。也就是說，它本來就回答不了「腫瘤很大、但淋巴結陰性的病人該不該放療」這個問題。
+這是國際治療指引一致的建議。
 
-而且淋巴結陰性那一組只有 **700 人**，人數太少，不確定範圍相當大，**不足以據此排除放射治療的效益**。
-
-實務上，即使淋巴結完全沒有轉移，以下情形仍屬於術後放射治療的適應症：
-
-- **T3（腫瘤大於 5 公分）**
-- **T4（腫瘤侵犯胸壁或皮膚，包含發炎性乳癌）**
-- **切除邊緣陽性或過於接近**
-
-換句話說：**腫瘤大於 5 公分，或侵犯到胸壁與皮膚的病人，即使淋巴結乾淨，通常仍建議接受胸壁放射治療。** 這是國際治療指引一致的建議。「淋巴結沒事」本身不是可以省略放療的理由，**腫瘤大小與切緣狀況同樣要看**。
-
-至於腫瘤較大、有淋巴結轉移，或有其他高復發風險的病人，仍建議接受術後放射治療。
+**最常見的誤解是「淋巴結沒事就不用放療」**——腫瘤大小與切緣同樣要看。
 
 ### 原位乳管癌與小葉原位癌
 
@@ -171,7 +164,7 @@ heroCaption: 手術切除看得見的腫瘤；放射治療清除看不見的顯�
 - 手術方式
 - 是否接受乳房重建
 - 整體復發風險
-- 最新醫學證據
+- 醫學證據
 
 再評估放射治療可能帶來的好處與風險，與您共同討論最適合的治療方案。
 
@@ -221,17 +214,13 @@ heroCaption: 手術切除看得見的腫瘤；放射治療清除看不見的顯�
 
 <!--q:全乳切除後，就一定不需要放射治療嗎？-->
 
-不一定，要同時看**淋巴結**和**腫瘤大小**。統合 22 項試驗、8,135 位女性的資料顯示兩件事。
-
-**完成腋下淋巴結廓清、而且沒有淋巴結轉移的人**，加做放療並沒有帶來益處。**有淋巴結轉移的人**，不論 1～3 顆或 4 顆以上，放療都能降低復發與乳癌死亡的風險。
-
-但要特別提醒：**「沒有淋巴結轉移」不等於「不用放療」**。腫瘤大於 5 公分、侵犯胸壁或皮膚、或切除邊緣有殘留的人，即使淋巴結乾淨，通常仍建議接受胸壁放射治療。
+不一定，要**同時看淋巴結和腫瘤大小**。淋巴結沒有轉移、腫瘤又在 5 公分以下、切緣乾淨，通常不需要；但只要有一項不符合——淋巴結有轉移、腫瘤大於 5 公分、侵犯胸壁或皮膚、切緣陽性——通常仍建議接受。
 
 <!--/q-->
 
-<!--q:省略放射治療會不會比較短命？-->
+<!--q:我可以不做放射治療嗎？-->
 
-在符合條件的低風險族群中，目前的證據顯示不會。上面提到的那兩項隨機試驗都發現，省略放療會增加局部復發，但**總存活率沒有差別**。要強調的是，這個結論只適用於那些試驗所納入的特定條件，必須由醫師依您的病理報告個別評估。
+**多數人不適合。** 能夠安全省略的，是高齡、荷爾蒙受體陽性、淋巴結乾淨、又在服用抗荷爾蒙藥的少數人。他們省略放療後**局部復發較多，但壽命沒有差別**——所以要衡量的是要不要冒再開一次刀的風險。您符不符合，請讓醫師看您的病理報告。
 
 <!--/q-->
 
@@ -240,14 +229,18 @@ heroCaption: 手術切除看得見的腫瘤；放射治療清除看不見的顯�
 ## 參考文獻
 
 1. Early Breast Cancer Trialists' Collaborative Group (EBCTCG); Darby S, McGale P, Correa C, et al. Effect of Radiotherapy after Breast-Conserving Surgery on 10-Year Recurrence and 15-Year Breast Cancer Death: Meta-Analysis of Individual Patient Data for 10,801 Women in 17 Randomised Trials. *Lancet*. 2011;378(9804):1707-1716.
-2. Early Breast Cancer Trialists' Collaborative Group (EBCTCG); McGale P, Taylor C, Correa C, et al. Effect of Radiotherapy after Mastectomy and Axillary Surgery on 10-Year Recurrence and 20-Year Breast Cancer Mortality: Meta-Analysis of Individual Patient Data for 8135 Women in 22 Randomised Trials. *Lancet*. 2014;383(9935):2127-2135.
-3. Kunkler IH, Williams LJ, Jack WJL, Cameron DA, Dixon JM. Breast-Conserving Surgery with or without Irradiation in Early Breast Cancer（PRIME II）. *N Engl J Med*. 2023;388(7):585-594.
-4. Hughes KS, Schnaper LA, Bellon JR, et al. Lumpectomy plus Tamoxifen with or without Irradiation in Women Age 70 Years or Older with Early Breast Cancer: Long-Term Follow-Up of CALGB 9343. *J Clin Oncol*. 2013;31(19):2382-2387.
-5. Recht A, Comen EA, Fine RE, et al. Postmastectomy Radiotherapy: An American Society of Clinical Oncology, American Society for Radiation Oncology, and Society of Surgical Oncology Focused Guideline Update. *J Clin Oncol*. 2016;34(36):4431-4442.
-6. Smith BD, Bellon JR, Blitzblau R, et al. Radiation Therapy for the Whole Breast: Executive Summary of an American Society for Radiation Oncology (ASTRO) Evidence-Based Guideline. *Pract Radiat Oncol*. 2018;8(3):145-152.
-7. Shaitelman SF, Anderson BM, Arthur DW, et al. Partial Breast Irradiation for Patients with Early-Stage Invasive Breast Cancer or Ductal Carcinoma In Situ: An ASTRO Clinical Practice Guideline. *Pract Radiat Oncol*. 2024;14(2):112-132.
-8. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.（請參閱 NCCN 網站最新版本）
+2. Haviland JS, Owen JR, Dewar JA, et al. The UK Standardisation of Breast Radiotherapy (START) Trials of Radiotherapy Hypofractionation for Treatment of Early Breast Cancer: 10-Year Follow-up Results of Two Randomised Controlled Trials. *Lancet Oncol*. 2013;14(11):1086-1094.
+3. Murray Brunt A, Haviland JS, Wheatley DA, et al. Hypofractionated Breast Radiotherapy for 1 Week versus 3 Weeks (FAST-Forward): 5-Year Efficacy and Late Normal Tissue Effects Results from a Multicentre, Non-inferiority, Randomised, Phase 3 Trial. *Lancet*. 2020;395(10237):1613-1626.
+4. Taylor C, McGale P, Probert J, et al. Breast Cancer Mortality in 500,000 Women with Early Invasive Breast Cancer Diagnosed in England, 1993-2015: Population Based Observational Cohort Study. *BMJ*. 2023;381:e074684.
+5. Kunkler IH, Williams LJ, Jack WJL, Cameron DA, Dixon JM. Breast-Conserving Surgery with or without Irradiation in Early Breast Cancer（PRIME II）. *N Engl J Med*. 2023;388(7):585-594.
+6. Hughes KS, Schnaper LA, Bellon JR, et al. Lumpectomy plus Tamoxifen with or without Irradiation in Women Age 70 Years or Older with Early Breast Cancer: Long-Term Follow-Up of CALGB 9343. *J Clin Oncol*. 2013;31(19):2382-2387.
+7. Recht A, Comen EA, Fine RE, et al. Postmastectomy Radiotherapy: An American Society of Clinical Oncology, American Society for Radiation Oncology, and Society of Surgical Oncology Focused Guideline Update. *J Clin Oncol*. 2016;34(36):4431-4442.
+8. Smith BD, Bellon JR, Blitzblau R, et al. Radiation Therapy for the Whole Breast: Executive Summary of an American Society for Radiation Oncology (ASTRO) Evidence-Based Guideline. *Pract Radiat Oncol*. 2018;8(3):145-152.
+9. Shaitelman SF, Anderson BM, Arthur DW, et al. Partial Breast Irradiation for Patients with Early-Stage Invasive Breast Cancer or Ductal Carcinoma In Situ: An ASTRO Clinical Practice Guideline. *Pract Radiat Oncol*. 2024;14(2):112-132.
+10. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.（請參閱 NCCN 網站最新版本）
 
 ---
 
-*本文為衛教資訊，說明放射治療的一般性原則，無法取代面對面的診療。實際治療建議請與您的主治醫師討論。*
+*本文為衛教資訊，說明的是放射治療的一般性原則，**無法取代面對面的診療，也不構成醫病關係**。每個人的病情不同，實際診斷與治療請與您的主治醫師討論。醫學持續進展，本文內容可能與最新資訊有出入。*
+
+*如有急性不適，請直接就醫或撥打 119。完整說明請見[內容使用規範與免責聲明](../../terms/)。*

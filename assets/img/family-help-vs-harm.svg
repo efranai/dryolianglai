@@ -1,0 +1,28 @@
+<svg class="illus" viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="fam-title fam-desc">
+  <title id="fam-title">陪病家屬幫得上忙與幫倒忙的事情對照</title>
+  <desc id="fam-desc">真正幫得上忙的是：陪診時記下醫師說的話、幫忙記錄症狀的次數與程度、幫忙安排交通與時間表。反而幫倒忙的是：逼病人吃補品或偏方、替病人決定或瞞著他、一直要他保持正面、勸他不要麻煩醫師。</desc>
+
+  <text class="il-t-sub il-anchor-mid" x="180" y="40">真的幫得上忙</text>
+  <text class="il-t-sub il-anchor-mid" x="540" y="40">反而幫倒忙</text>
+
+  <g class="il-node il-node--accent"><rect x="30" y="60" width="300" height="58" rx="12" /></g>
+  <text class="il-t il-anchor-mid il-node-text--on" x="180" y="95">幫忙記下醫師說的話</text>
+
+  <g class="il-node il-node--accent"><rect x="30" y="128" width="300" height="58" rx="12" /></g>
+  <text class="il-t il-anchor-mid il-node-text--on" x="180" y="163">幫忙記錄症狀</text>
+
+  <g class="il-node il-node--accent"><rect x="30" y="196" width="300" height="58" rx="12" /></g>
+  <text class="il-t il-anchor-mid il-node-text--on" x="180" y="231">接送與時間表</text>
+
+  <g class="il-node il-node--soft"><rect x="390" y="60" width="300" height="58" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="540" y="95">逼他吃補品或偏方</text>
+
+  <g class="il-node il-node--soft"><rect x="390" y="128" width="300" height="58" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="540" y="163">替他決定，或瞞著他</text>
+
+  <g class="il-node il-node--soft"><rect x="390" y="196" width="300" height="58" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="540" y="231">一直要他「正面一點」</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="300">左邊那三件都不難，卻是病人最需要的；右邊那三件出發點都是好意</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg class="illus" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="atew-title atew-desc">
+  <title id="atew-title">常被問到的食物與補充品，分成三類</title>
+  <desc id="atew-desc">豆製品、蛋、魚、全穀、纖維與堅果可以正常吃，蔬果多一些、加工肉少一些。薑黃素與高劑量抗氧化補充劑不必特別買，在病人身上的證據不足，治療期間更要避開。維生素 D 則是抽血驗出缺乏才補，補不足可以，但不是抗癌藥。分數最重的那一項仍然是規律運動。</desc>
+
+  <text class="il-t il-anchor-mid" x="360" y="40">常被問到的東西，該放哪一格？</text>
+
+  <g class="il-node il-node--accent"><rect x="30" y="76" width="220" height="154" rx="12" /></g>
+  <text class="il-t il-anchor-mid il-node-text--on" x="140" y="122">可以正常吃</text>
+  <text class="il-t-sub il-anchor-mid il-node-text--on" x="140" y="166">豆製品、蛋、魚</text>
+  <text class="il-t-sub il-detail il-anchor-mid il-node-text--on" x="140" y="196">全穀、纖維、堅果</text>
+  <text class="il-t-sub il-detail il-anchor-mid il-node-text--on" x="140" y="218">蔬果多、加工肉少</text>
+
+  <g class="il-node il-node--soft"><rect x="250" y="76" width="220" height="154" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="360" y="122">不必特別買</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="166">薑黃素、抗氧化</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="196">病人身上的證據不足</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="218">治療期間更要避開</text>
+
+  <g class="il-node il-node--soft"><rect x="470" y="76" width="220" height="154" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="580" y="122">驗出缺乏才補</text>
+  <text class="il-t-sub il-anchor-mid" x="580" y="166">維生素 D</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="580" y="196">補不足可以</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="580" y="218">但不是抗癌藥</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="272">分數最重的還是運動——這些都是加分題</text>
+</svg>

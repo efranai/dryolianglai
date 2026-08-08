@@ -85,9 +85,22 @@ const SVG_TOKEN = /<!--\s*svg:\s*([^|\s]+?)\s*(?:\|\s*([\s\S]*?))?\s*-->/g;
  *   <!--faq-->                                       常見問題（可摺疊）
  *     <!--q:問題？-->  …答案…  <!--/q-->
  *   <!--/faq-->
+ *   <!--secondopinion:這個決定通常會…-->            「這篇不是第二意見」提醒框
  *
  * 標記本身會被 Markdown 原樣輸出，這裡再換成對應的 HTML 標籤。
  */
+
+/* 「這篇不是第二意見」：放在會被拿去和主治醫師爭論的文章裡。
+   固定四段寫死在這裡，改一次全站同步；冒號後可帶一句該篇專屬的補充。 */
+const SECOND_OPINION = (extra) =>
+  `<aside class="notmine">
+    <p class="notmine__title">這篇不是第二意見</p>
+    <p>每個人的病情都不一樣——影像、病理、淋巴結、身體狀況、過去病史。<strong>一篇衛教文章不可能涵蓋所有情況。</strong></p>
+    <p>這篇寫的是一般性的原則。<strong>您的主治醫師手上有您的完整資料，那是這篇看不到的。如果兩者不同，請以您的主治醫師為準。</strong></p>
+    <p>這篇的用途是讓您<strong>問得出問題</strong>，不是讓您拿去說服醫師。</p>${
+      extra ? `\n    <p class="notmine__extra">${esc(extra)}</p>` : ''}
+  </aside>`;
+
 const MACROS = [
   [/<!--\s*box:\s*([^>]*?)\s*-->/g, (_, t) => `<aside class="keybox"><p class="keybox__title">${esc(t)}</p>`],
   [/<!--\s*\/box\s*-->/g, () => '</aside>'],
@@ -104,6 +117,8 @@ const MACROS = [
   [/<!--\s*q:\s*([^>]*?)\s*-->/g, (_, q) =>
     `<details class="faq__item"><summary class="faq__q">${esc(q)}</summary><div class="faq__a">`],
   [/<!--\s*\/q\s*-->/g, () => '</div></details>'],
+
+  [/<!--\s*secondopinion:?\s*([^>]*?)\s*-->/g, (_, extra) => SECOND_OPINION(extra)],
 ];
 
 function renderBody(body) {
@@ -354,8 +369,7 @@ function siteHeader(depth, base = '../'.repeat(depth)) {
     </a>
     <nav class="site-nav">
       <a href="${home}#articles">文章</a>
-      <a href="${base}about/">關於</a>
-      <a class="site-nav__cta" href="${esc(CONFIG.appointmentUrl)}" target="_blank" rel="noopener noreferrer">線上掛號</a>
+      <a href="${base}about/">關於我</a>
     </nav>
   </div>
 </header>`;
@@ -427,19 +441,56 @@ ${tags}        <p class="card__foot">
 /* 「關於」的共用片段：首頁只用 intro／lead／foot，/about/ 用全部 */
 const PORTRAIT = { src: 'assets/img/portrait.jpg' };
 
-const ABOUT_NOTE = `      <p class="prose__note about__note">網站內容為一般性衛教資訊，無法取代面對面的診療。若您有具體的病情問題，請於門診與您的主治醫師討論。掛號連結將另開新視窗前往中國醫藥大學附設醫院官方系統。</p>`;
+const ABOUT_NOTE = `      <p class="prose__note about__note">網站內容為一般性衛教資訊，無法取代面對面的診療。若您有具體的病情問題，請於門診與您的主治醫師討論。</p>`;
+
+/* 門診時間排成週次表格：病人在醫院看到的就是這個樣子，比條列好認。
+   用真正的 <table>，欄列表頭有 scope，報讀軟體才唸得出「週四・下午」。
+   有診的格子塗色，沒診的留空——留空比畫叉子安靜，掃視時對比也夠。 */
+/* 兩個院區各給一個色票（依 legend 的順序），因為週三要跑水湳——
+   那不是裝飾，是病人真的會走錯的地方。色票在深色模式會自動反轉，
+   文字一律用 var(--bg)，所以淺色是白字深底、深色是深字亮底，兩邊都夠對比。 */
+function clinicTableHtml() {
+  const C = CONFIG.about.clinicHours;
+  const tone = new Map(C.legend.map((l, i) => [l.short, `clinic__on--${'ab'[i] || 'a'}`]));
+  const head = C.days.map((d) => `<th scope="col">${esc(d)}</th>`).join('');
+  const body = C.rows.map((r) => `            <tr>
+              <th scope="row">${esc(r.label)}</th>
+${r.cells.map((cell) => `              <td class="${cell ? `clinic__on ${tone.get(cell) || ''}` : 'clinic__off'}">${esc(cell)}</td>`).join('\n')}
+            </tr>`).join('\n');
+  return `      <div class="clinic-card">
+        <table class="clinic">
+          <caption class="sr-only">門診時間表</caption>
+          <thead>
+            <tr><td></td>${head}</tr>
+          </thead>
+          <tbody>
+${body}
+          </tbody>
+        </table>
+
+        <ul class="clinic__legend">
+${C.legend.map((l, i) => `          <li><span class="clinic__key clinic__key--${'ab'[i] || 'a'}">${esc(l.short)}</span>${esc(l.full)}</li>`).join('\n')}
+        </ul>
+      </div>
+
+      <p class="clinic__note">${esc(C.note)}</p>`;
+}
 
 function aboutFootHtml() {
   const A = CONFIG.about;
-  return `      <div class="about__foot">
-        <a class="cta__btn" href="${esc(CONFIG.appointmentUrl)}" target="_blank" rel="noopener noreferrer">
-          ${icon('i-calendar', 'cta__icon')}<span>${esc(A.appointmentLabel)}</span><span class="cta__arrow" aria-hidden="true">→</span>
-        </a>
-        <ul class="info-items">
-${A.infoItems.map((it) => `          <li class="info-item">
+  /* 看診資訊寫成一則資訊列，不做成行動呼籲按鈕：這裡是衛教網站，
+     不是掛號入口。院所相關的字句集中在 CONFIG.about，換單位時只改設定檔。 */
+  const clinic = `          <li class="info-item">
+            ${icon('i-calendar', 'info-item__icon')}
+            <span class="info-item__text"><a href="${esc(CONFIG.appointmentUrl)}" target="_blank" rel="noopener noreferrer">${esc(A.clinicLinkLabel)}</a></span>
+          </li>`;
+  const rest = A.infoItems.map((it) => `          <li class="info-item">
             ${it.icon ? icon(it.icon, 'info-item__icon') : ''}
             <span class="info-item__text">${it.lines.map(esc).join('<br>')}</span>
-          </li>`).join('\n')}
+          </li>`);
+  return `      <div class="about__foot">
+        <ul class="info-items">
+${[clinic, ...rest].join('\n')}
         </ul>
       </div>`;
 }
@@ -565,7 +616,6 @@ function authorCard(base) {
         <p class="authorcard__role">${esc(CONFIG.affiliation)}</p>
         <p class="authorcard__links">
           <a href="${base}about/">認識賴宥良醫師 <span aria-hidden="true">→</span></a>
-          <a href="${esc(CONFIG.appointmentUrl)}" target="_blank" rel="noopener noreferrer">線上掛號 <span aria-hidden="true">→</span></a>
         </p>
       </div>
     </aside>`;
@@ -975,7 +1025,7 @@ ${JSON.stringify({
           { '@type': 'CollegeOrUniversity', name: '中國醫藥大學' },
           { '@type': 'CollegeOrUniversity', name: '高雄醫學大學' },
         ],
-        award: ['中國醫藥大學附設醫院傑出優良醫師（105 年度）', '中國醫藥大學附設醫院傑出優良醫師（111 年度）'],
+        award: ['中國醫藥大學附設醫院傑出優良醫師（2016）', '中國醫藥大學附設醫院傑出優良醫師（2022）'],
         medicalSpecialty: 'Oncologic',
       },
       breadcrumbJsonLd(trail),
@@ -1024,6 +1074,12 @@ ${CONFIG.specialties.map((s) => `        <li class="tile">
           <span class="tile__en">${esc(s.en)}</span>
         </li>`).join('\n')}
       </ul>
+
+      <div class="about__rule">
+        <h2 class="about__rule-title">${esc(A.clinicHoursHeading)}</h2>
+      </div>
+
+${clinicTableHtml()}
 
       <div class="about__rule">
         <h2 class="about__rule-title">學經歷</h2>
@@ -1110,10 +1166,17 @@ function renderQrPage() {
   const homeUrl = `${CONFIG.siteUrl}/`;
   const live = SERIES.filter((s) => s.articles.length);
 
-  const cards = live.map((s) => `        <figure class="qrcard">
+  /* 排成一列一癌別，而不是 QR 方陣：讀者要在一堆 QR 裡找到自己的癌別，
+     所以癌別名才是導航，必須是整列最大的字；QR 縮小反而更好掃。
+     這裡刻意不列文章標題——那是轉介卡的工作，放上來只會讓整張變雜。 */
+  const cards = live.map((s) => `        <li class="qrrow">
           <div class="qr__frame">${qrCache.get(`${CONFIG.siteUrl}/series/${s.id}/`) || ''}</div>
-          <figcaption class="qrcard__name">${esc(s.name)}</figcaption>
-        </figure>`).join('\n');
+          <div class="qrrow__body">
+            <p class="qrrow__name">${esc(s.name)}</p>
+            <p class="qrrow__hook">${esc(s.hook)}</p>
+            <a class="qrcard__sheet" href="${s.id}/">列印給這一科 →</a>
+          </div>
+        </li>`).join('\n');
 
   return `<!doctype html>
 <html lang="${CONFIG.lang}">
@@ -1149,14 +1212,74 @@ ${siteHeader(1)}
       <h2 class="qrsheet__rule-title">各癌別專區</h2>
     </div>
 
-    <div class="qrsheet__grid">
+    <ul class="qrlist">
 ${cards}
-    </div>
+    </ul>
 
 ${backHome('../', '回首頁')}
   </section>
 </main>
 ${siteFooter(1)}
+</body>
+</html>
+`;
+}
+
+/* 單一癌別的轉介卡：/qr/<series-id>/
+   給對應科別的醫師放在診間——列印時一張 A4 排三張橫式卡片，剪開後
+   自己留一張、其餘給轉介的病人帶走。卡片上直接列文章標題，
+   不另外寫簡介：標題本來就是問句，而且改了標題卡片自動跟著改，
+   不會出現「卡片承諾了網站上沒有的內容」。 */
+function renderQrSheet(s) {
+  const url = `${CONFIG.siteUrl}/series/${s.id}/`;
+  const qr = qrCache.get(url) || '';
+
+  /* 標題本來就是問句，而且常常一連問兩三個。卡片上只留第一個問句——
+     長度剛好，而且讀起來就是病人心裡的那句話。沒有問號的就用整個標題。 */
+  const firstQ = (t) => { const i = t.indexOf('？'); return i > -1 ? t.slice(0, i + 1) : t; };
+  const titles = s.articles.map((a) => `            <li>${esc(firstQ(a.title))}</li>`).join('\n');
+
+  const card = `      <article class="refcard">
+        <div class="qr__frame refcard__qr">${qr}</div>
+        <div class="refcard__body">
+          <p class="refcard__name">${esc(s.name)}</p>
+          <ul class="refcard__list">
+${titles}
+          </ul>
+          <p class="refcard__who">${esc(CONFIG.author)}｜${esc(CONFIG.affiliation)}　${esc(urlText(CONFIG.siteUrl))}</p>
+        </div>
+      </article>`;
+
+  return `<!doctype html>
+<html lang="${CONFIG.lang}">
+<head>
+${head({
+    title: `${s.name} 轉介卡｜${CONFIG.author}`,
+    description: '門診轉介用的 QR 卡片。',
+    canonical: `${CONFIG.siteUrl}/qr/${s.id}/`,
+    depth: 2,
+    noindex: true,
+  })}
+</head>
+<body data-page-slug="qr-sheet">
+${ICON_SPRITE}
+${siteHeader(2)}
+<main id="main">
+  <section class="wrap section refsheet">
+
+    <header class="qrsheet__head">
+      <h1 class="section__heading">${esc(s.name)}　轉介卡</h1>
+      <p class="qrsheet__note">列印會排成一張 A4 三張，剪開後可以自己留一張、其餘給病人帶走。也可以直接把這一頁開給對方掃。</p>
+    </header>
+
+${card}
+${card}
+${card}
+
+${backHome('../', '回 QR 總覽')}
+  </section>
+</main>
+${siteFooter(2)}
 </body>
 </html>
 `;
@@ -1239,6 +1362,10 @@ const written = [];
 written.push(writeFile('index.html', renderIndex(OVERVIEW)));
 written.push(writeFile(path.join('about', 'index.html'), renderAbout()));
 written.push(writeFile(path.join('qr', 'index.html'), renderQrPage()));
+
+for (const s of SERIES.filter((x) => x.articles.length)) {
+  written.push(writeFile(path.join('qr', s.id, 'index.html'), renderQrSheet(s)));
+}
 written.push(writeFile(path.join('terms', 'index.html'), renderTerms()));
 
 for (const s of SERIES) {

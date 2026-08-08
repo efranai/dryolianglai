@@ -723,6 +723,34 @@ ul, ol { padding-left: 1.25em; }
   color: var(--accent-dk);
 }
 
+/* 「這篇不是第二意見」：刻意和重點框長得不一樣——這是提醒，不是重點整理 */
+.notmine {
+  margin: 2rem 0;
+  padding: 1.1rem 0 1.1rem 1.25rem;
+  border-left: 4px solid var(--line);
+  background: var(--bg-tint);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding-right: 1.25rem;
+}
+
+.notmine__title {
+  margin: 0 0 .7rem;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--ink-soft);
+}
+
+.notmine p { margin: 0 0 .7em; font-size: .92rem; line-height: 1.85; color: var(--ink-faint); }
+.notmine p:last-child { margin-bottom: 0; }
+.notmine strong { color: var(--ink); }
+
+.notmine__extra {
+  margin-top: .9em !important;
+  padding-top: .8em;
+  border-top: 1px solid var(--line);
+}
+
 .keybox ul { margin: 0; padding-left: 1.2em; }
 .keybox li { font-size: .92rem; line-height: 1.85; color: var(--ink); }
 .keybox li + li { margin-top: .55em; }
@@ -1302,6 +1330,111 @@ ul, ol { padding-left: 1.25em; }
 
 /* ---------- 學經歷（只在 /about/） ---------- */
 
+/* 只給報讀軟體的文字：視覺上完全不佔位，但仍在無障礙樹裡。 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 門診時間：週次表格，整組包成一張卡片，在長長的關於頁裡才立得住。
+   table-layout: fixed 讓五天等寬，窄螢幕也不會有一欄被擠扁。 */
+.clinic-card {
+  max-width: 46rem;
+  margin: clamp(1.75rem, 3.5vw, 2.5rem) auto 0;
+  padding: clamp(1.25rem, 3vw, 1.9rem);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.clinic {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: .3rem;
+  table-layout: fixed;
+  text-align: center;
+}
+
+.clinic thead th {
+  padding: 0 0 .4rem;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.clinic tbody th {
+  width: 2.9rem;
+  padding-right: .5rem;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.clinic td {
+  padding: 1rem .2rem;
+  border-radius: var(--radius);
+  font-size: .95rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* 有診：兩個院區各一色。文字用 var(--bg)，深淺色模式都會自動取到對比色。 */
+.clinic__on { color: var(--bg); }
+.clinic__on--a { background: var(--accent); }
+.clinic__on--b { background: var(--warm); }
+
+/* 空格子只靠淡底色在白底上幾乎看不出來，補一圈內描邊讓格線讀得出來
+   （用 inset shadow 而非 border，不影響格子高度）。 */
+.clinic__off {
+  background: var(--bg-tint);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.clinic thead td { padding: 0; background: none; box-shadow: none; }
+
+.clinic__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+  margin: 1.1rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line-soft);
+  list-style: none;
+  font-size: .88rem;
+  color: var(--ink-soft);
+}
+
+.clinic__key {
+  display: inline-block;
+  margin-right: .5em;
+  padding: .15em .7em;
+  color: var(--bg);
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.clinic__key--a { background: var(--accent); }
+.clinic__key--b { background: var(--warm); }
+
+.clinic__note {
+  max-width: 46rem;
+  margin: .9rem auto 0;
+  font-size: .85rem;
+  color: var(--ink-faint);
+}
+
 .cv {
   display: grid;
   gap: clamp(1.1rem, 2.5vw, 1.6rem);
@@ -1604,6 +1737,50 @@ ul, ol { padding-left: 1.25em; }
   color: var(--ink-soft);
 }
 
+/* /qr/ 總覽頁的癌別列表：一列一癌別。癌別名是導航，所以它最大；
+   QR 縮小到掃得到就夠——一整頁都是同樣大的 QR 反而找不到自己要的那個。 */
+.qrlist {
+  display: grid;
+  gap: .8rem;
+  list-style: none;
+  margin: clamp(1.25rem, 3vw, 1.75rem) 0 0;
+  padding: 0;
+}
+
+.qrrow {
+  display: flex;
+  align-items: center;
+  gap: clamp(.9rem, 2.5vw, 1.4rem);
+  min-width: 0;
+  padding: clamp(.8rem, 2vw, 1.1rem);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.qrrow .qr__frame { flex: none; padding: 0; background: none; border: 0; }
+.qrrow .qr__code { width: 92px; height: 92px; }
+
+.qrrow__body { min-width: 0; }
+
+.qrrow__name {
+  margin: 0;
+  font-size: clamp(1.15rem, 1rem + .7vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.qrrow__hook {
+  margin: .3rem 0 0;
+  font-size: .88rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.qrrow .qrcard__sheet { display: inline-block; margin-top: .5rem; }
+
 .qrsheet__grid {
   display: grid;
   gap: 1.1rem;
@@ -1870,6 +2047,56 @@ ul, ol { padding-left: 1.25em; }
    兩個情境：印 /qr/ 那一張 QR 講義，或印一篇文章給病人帶回家。
    兩者都拿掉導覽、社群按鈕這類印出來沒有意義的東西。
    share.js 會在列印前把所有 <details> 展開，所以 QR 一定印得出來。 */
+/* 轉介卡：/qr/<癌別>/　螢幕上是一般卡片，列印時一張 A4 排三張 */
+.refcard {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 1.75rem);
+  margin: 0 0 1.25rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  background: var(--bg-tint);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.refcard__qr { flex: none; }
+.refcard__qr .qr__code { width: 116px; height: 116px; }
+
+.refcard__name {
+  margin: 0 0 .5rem;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.refcard__list {
+  margin: 0 0 .7rem;
+  padding-left: 1.1em;
+  list-style: disc;
+}
+
+.refcard__list li {
+  font-size: .9rem;
+  line-height: 1.75;
+  color: var(--ink-faint);
+}
+
+.refcard__who {
+  margin: 0;
+  font-size: .78rem;
+  color: var(--ink-faint);
+}
+
+.qrcard__sheet {
+  margin-top: .35rem;
+  font-size: .82rem;
+  color: var(--accent-dk);
+}
+
+@media (max-width: 34rem) {
+  .refcard { flex-direction: column; align-items: flex-start; }
+}
+
 @media print {
   @page { margin: 12mm; }
 
@@ -1911,33 +2138,76 @@ ul, ol { padding-left: 1.25em; }
   .qr__code { width: 42mm; height: 42mm; }
   .qr__url a { color: #000; }
 
-  /* /qr/ 總覽頁：一張 A4 直式排下首頁 ＋ 四個癌別 */
-  .qrsheet__head { margin-bottom: 6mm; }
+  /* /qr/ 總覽頁：一張 A4 直式，最上面首頁，下面一列一癌別。
+     版面預算（A4 297mm − 上下邊界各 12mm ＝ 可印 273mm）：
+       標題 ＋ 間距　　　約 12mm
+       首頁卡　　　　　　約 51mm
+       分隔標題 ＋ 間距　約 9mm
+       癌別列 6 × 28.4mm ＝ 171mm
+       合計 243mm，留 30mm 餘裕（約還能再放一列）
+     實測方式：把 @media print 的規則抽出來當一般 style 注入，
+     再把 .wrap 鎖成 718px（＝ 180mm 可印寬）量高度。
+     增減癌別或改 QR 尺寸時務必重算，超過就會跳到第二頁。 */
+  .qrsheet__head { margin-bottom: 4mm; }
   .qrsheet .section__heading { font-size: 15pt; margin-bottom: 0; }
   .qrsheet .section__heading::after { display: none; }
-
-  .qrcard {
-    padding: 0;
-    gap: 2mm;
-    background: none;
-    border: 0;
-  }
-
-  .qrcard .qr__frame { padding: 2mm; }
-  .qrcard .qr__code { width: 34mm; height: 34mm; }
-  .qrcard__name { font-size: 10.5pt; }
-  .qrcard__url { font-size: 9.5pt; }
-
-  .qrcard--main { margin-bottom: 4mm; }
-  .qrcard--main .qr__code { width: 48mm; height: 48mm; }
-  .qrcard--main .qrcard__name { font-size: 13pt; }
-
-  .qrsheet__rule { margin: 4mm 0 4mm; }
+  .qrcard--main { margin-bottom: 3mm; padding: 0; }
+  .qrcard--main .qr__frame { padding: 1mm; }
+  .qrcard--main .qr__code { width: 34mm; height: 34mm; }
+  .qrcard--main .qrcard__name { font-size: 12pt; }
+  .qrcard--main .qrcard__url { font-size: 9.5pt; }
+  .qrsheet__rule { margin: 3mm 0 3mm; }
   .qrsheet__rule-title { font-size: 10pt; }
   .qrsheet__rule::after { background: #ccc; }
-
-  .qrsheet__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6mm 4mm;
+  .qrlist { display: block; margin: 0; }
+  .qrrow {
+    display: flex;
+    align-items: center;
+    gap: 5mm;
+    height: 28mm;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    box-shadow: none;
+    break-inside: avoid;
   }
+  .qrrow:last-of-type { border-bottom: 0; }
+  .qrrow .qr__code { width: 24mm; height: 24mm; }
+  .qrrow__name { font-size: 13pt; color: #000; }
+  .qrrow__hook { font-size: 9pt; color: #444; margin-top: 1mm; }
+  .qrcard__sheet { display: none !important; }
+
+  /* 轉介卡：一張 A4 直式排三張橫式卡片，虛線是裁切線。
+     版面預算（A4 297mm − 上下邊界各 12mm ＝ 可印 273mm）：
+       標題 ＋ 間距　約 10mm
+       卡片 3 × 84mm　＝ 252mm
+       合計 262mm，留 11mm 餘裕
+     改動卡片高度時務必重算，超過就會跳到第二頁。 */
+  .refsheet .qrsheet__head { margin-bottom: 4mm; }
+  .refsheet .section__heading { font-size: 13pt; margin-bottom: 0; }
+  .refsheet .section__heading::after { display: none; }
+
+  .refcard {
+    height: 84mm;
+    margin: 0;
+    padding: 3mm 2mm;
+    gap: 6mm;
+    background: none;
+    border: 0;
+    border-bottom: 1px dashed #bbb;
+    border-radius: 0;
+    break-inside: avoid;
+  }
+
+  .refcard:last-of-type { border-bottom: 0; }
+
+  .refcard__qr .qr__code { width: 42mm; height: 42mm; }
+  .refcard .qr__frame { padding: 0; }
+
+  .refcard__name { font-size: 13pt; margin-bottom: 3mm; }
+  .refcard__list { margin-bottom: 3mm; }
+  .refcard__list li { font-size: 10.5pt; line-height: 1.8; color: #000; }
+  .refcard__who { font-size: 8.5pt; color: #444; }
 }

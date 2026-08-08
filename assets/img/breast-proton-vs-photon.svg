@@ -4,7 +4,7 @@
   <desc id="pvp-desc">光子治療的射線通過照射目標後會繼續穿透到後方，因此心臟與肺臟仍會接受到劑量。質子治療的能量在到達目標深度後停止，射線不再往後穿透，因此心臟與肺臟接受的劑量可進一步降低。</desc>
 
   <!-- ===== 左：光子治療 ===== -->
-  <text class="il-t il-anchor-mid" x="190" y="52">光子治療（如 IMRT）</text>
+  <text class="il-t il-anchor-mid" x="190" y="52">光子治療</text>
   <g class="il-node il-node--soft"><rect x="40" y="70" width="300" height="190" rx="12" /></g>
 
   <text class="il-t-sub il-anchor-mid" x="96" y="104">照射目標</text>

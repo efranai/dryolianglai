@@ -1,0 +1,38 @@
+<svg class="illus" viewBox="0 0 720 344" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="esetime-title esetime-desc">
+  <title id="esetime-title">食道癌放射治療期間吞嚥不適的時間變化示意圖</title>
+  <desc id="esetime-desc">吞嚥的不適是慢慢累積的。治療的第一到二週大多沒有明顯變化；第二到三週起食道黏膜發炎，吞嚥開始疼痛、乾的食物特別難吞；程度在療程結束前後最明顯；結束後約二到四週逐漸恢復。最難受的時候常常正好是療程快結束的時候，那是黏膜發炎，不是腫瘤惡化。</desc>
+
+  <text class="il-t-sub" x="52" y="34">吞嚥不適的程度</text>
+
+  <rect class="il-band" x="52" y="46" width="212" height="210" rx="12" />
+  <rect class="il-band il-band--warm" x="270" y="46" width="196" height="210" rx="12" />
+  <rect class="il-band" x="472" y="46" width="196" height="210" rx="12" />
+
+  <text class="il-t il-anchor-mid" x="158" y="76">治療前期</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="158" y="104">第 1～2 週</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="158" y="126">大多沒有明顯變化</text>
+
+  <text class="il-t il-anchor-mid" x="368" y="76">治療中後期</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="368" y="104">第 2～3 週起吞嚥變痛</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="368" y="126">乾的食物特別難吞</text>
+
+  <text class="il-t il-anchor-mid" x="570" y="76">治療結束後</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="570" y="104">約 2～4 週逐漸恢復</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="570" y="126">體重也會慢慢回來</text>
+
+  <path class="il-curve il-curve--cancer"
+        d="M64 240 C 130 238 196 230 264 214 C 318 200 356 180 400 172 C 428 167 448 170 466 178 C 512 198 560 220 610 231 C 632 235 646 237 658 238" />
+
+  <path class="il-tick" d="M466 46 V 256" />
+  <circle class="il-point" cx="466" cy="178" r="6" />
+
+  <path class="il-axis" d="M52 268 H 682" />
+  <path class="il-axis-head" d="M682 262 694 268 682 274Z" />
+  <path class="il-tick" d="M64 264 V 274M466 264 V 274" />
+  <text class="il-t-sub" x="56" y="296">治療開始</text>
+  <text class="il-t-sub il-anchor-mid" x="466" y="296">療程結束</text>
+  <text class="il-t-sub il-anchor-end" x="682" y="296">時間</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="332">最難受的時候常常正好是療程快結束時——那是黏膜發炎，不是腫瘤惡化</text>
+</svg>

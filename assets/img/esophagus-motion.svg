@@ -1,0 +1,28 @@
+<svg class="illus" viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="emotion-title emotion-desc">
+  <title id="emotion-title">食道下段腫瘤隨呼吸移動，以及四維電腦斷層定位的用意</title>
+  <desc id="emotion-desc">越靠近橫膈膜的腫瘤，隨呼吸上下移動的幅度越大。一般定位只拍到某一個呼吸時相，四維電腦斷層會拍下整個呼吸週期，把腫瘤實際走過的範圍完整記錄下來，治療範圍才能既涵蓋腫瘤、又不必為了保險而擴得太大。</desc>
+
+  <text class="il-t il-anchor-mid" x="360" y="40">越靠近橫膈膜，腫瘤隨呼吸移動得越多</text>
+
+  <g class="il-node il-node--soft"><rect x="30" y="70" width="200" height="146" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="130" y="116">食道上段</text>
+  <text class="il-t-sub il-anchor-mid" x="130" y="160">位置相對固定</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="130" y="192">呼吸的影響較小</text>
+
+  <g class="il-node il-node--accent"><rect x="260" y="70" width="200" height="146" rx="12" /></g>
+  <text class="il-t il-node-text--on il-anchor-mid" x="360" y="116">食道下段</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="160">會跟著橫膈膜上下</text>
+  <text class="il-t-sub il-detail il-node-text--on il-anchor-mid" x="360" y="192">定位要把移動算進去</text>
+
+  <g class="il-node il-node--soft"><rect x="490" y="70" width="200" height="146" rx="12" /></g>
+  <text class="il-t il-anchor-mid" x="590" y="116">胃食道交界</text>
+  <text class="il-t-sub il-anchor-mid" x="590" y="160">移動幅度最大</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="590" y="192">四維定位價值最高</text>
+
+  <path class="il-arrow" d="M360 228 V 254" />
+  <path class="il-arrow-head" d="M354 252 366 252 360 264Z" />
+
+  <text class="il-t il-anchor-mid" x="360" y="300">四維電腦斷層：把整個呼吸週期拍下來</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="344">治療範圍才能涵蓋腫瘤走過的路徑，又不必擴得太大</text>
+</svg>

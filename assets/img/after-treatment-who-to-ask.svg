@@ -1,0 +1,21 @@
+<svg class="illus" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="atwho-title atwho-desc">
+  <title id="atwho-title">四種常見的長期問題各該找哪一科</title>
+  <desc id="atwho-desc">手臂腫脹找復健科，排便次數多找大腸直腸外科與營養師，頻尿與性功能找泌尿科，吞嚥卡住找胃腸科與營養師。每一種都有對應的專科可以處理。</desc>
+
+  <g class="il-node il-node--soft"><rect x="24" y="30" width="672" height="76" rx="12" /></g>
+  <text class="il-t-sub il-anchor-mid" x="200" y="76">手臂腫脹、緊繃</text>
+  <text class="il-t il-anchor-mid" x="520" y="76">復健科</text>
+
+  <g class="il-node il-node--soft"><rect x="24" y="122" width="672" height="76" rx="12" /></g>
+  <text class="il-t-sub il-anchor-mid" x="200" y="168">排便次數多、來不及</text>
+  <text class="il-t il-anchor-mid" x="520" y="168">大腸直腸外科</text>
+
+  <g class="il-node il-node--soft"><rect x="24" y="214" width="672" height="76" rx="12" /></g>
+  <text class="il-t-sub il-anchor-mid" x="200" y="260">頻尿、性功能改變</text>
+  <text class="il-t il-anchor-mid" x="520" y="260">泌尿科</text>
+
+  <g class="il-node il-node--soft"><rect x="24" y="306" width="672" height="76" rx="12" /></g>
+  <text class="il-t-sub il-anchor-mid" x="200" y="352">吞嚥卡住、體重下降</text>
+  <text class="il-t il-anchor-mid" x="520" y="352">胃腸科</text>
+</svg>

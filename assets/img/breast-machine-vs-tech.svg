@@ -1,7 +1,7 @@
 <svg class="illus" viewBox="0 0 720 366" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-labelledby="mvt-title mvt-desc">
   <title id="mvt-title">機器名稱與放射治療技術的區別</title>
-  <desc id="mvt-desc">好神刀、螺旋刀、質子治療機都是機器的名稱；真正決定治療品質的是機器能運用哪些放射治療技術，包括 IMRT 強度調控、IGRT 影像導引、DIBH 深吸氣閉氣，以及質子治療。</desc>
+  <desc id="mvt-desc">好神刀、螺旋刀、質子治療機都是機器的名稱；真正決定治療品質的是機器能運用哪些放射治療技術，包括強度調控、影像導引、深吸氣閉氣，以及質子治療。</desc>
 
   <text class="il-t-sub il-anchor-mid" x="170" y="48">機器名稱</text>
   <text class="il-t-sub il-anchor-mid" x="550" y="48">真正決定品質的技術</text>
@@ -25,13 +25,13 @@
 
   <!-- 右：技術 -->
   <g class="il-node il-node--accent"><rect x="420" y="70" width="260" height="56" rx="12" /></g>
-  <text class="il-t il-anchor-mid il-node-text--on" x="550" y="106">IMRT 強度調控</text>
+  <text class="il-t il-anchor-mid il-node-text--on" x="550" y="106">強度調控</text>
 
   <g class="il-node il-node--accent"><rect x="420" y="132" width="260" height="56" rx="12" /></g>
-  <text class="il-t il-anchor-mid il-node-text--on" x="550" y="168">IGRT 影像導引</text>
+  <text class="il-t il-anchor-mid il-node-text--on" x="550" y="168">影像導引</text>
 
   <g class="il-node il-node--accent"><rect x="420" y="194" width="260" height="56" rx="12" /></g>
-  <text class="il-t il-anchor-mid il-node-text--on" x="550" y="230">DIBH 深吸氣閉氣</text>
+  <text class="il-t il-anchor-mid il-node-text--on" x="550" y="230">深吸氣閉氣</text>
 
   <g class="il-node il-node--accent"><rect x="420" y="256" width="260" height="56" rx="12" /></g>
   <text class="il-t il-anchor-mid il-node-text--on" x="550" y="292">質子治療</text>

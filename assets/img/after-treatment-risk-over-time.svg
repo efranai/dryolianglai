@@ -1,0 +1,21 @@
+<svg class="illus" viewBox="0 0 720 384" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="atrt-title atrt-desc">
+  <title id="atrt-title">復發風險會隨時間下降</title>
+  <desc id="atrt-desc">復發風險不是固定不變的。剛結束治療時最高，之後隨著時間慢慢下降；撐過最初的幾年之後，風險會比剛結束治療時低得多。這是示意圖，各癌別的曲線不同，不代表實際數值。</desc>
+
+  <text class="il-t il-anchor-mid" x="360" y="40">復發風險會隨時間下降</text>
+
+  <text class="il-t-sub il-anchor-mid" x="170" y="90">復發風險</text>
+
+  <path class="il-axis" d="M120 100 V250" />
+  <path class="il-axis" d="M120 250 H648" />
+  <path class="il-axis-head" d="M652 250 l-10 -6 v12 z" />
+
+  <path class="il-curve il-curve--normal" d="M120 118 C 300 205, 430 236, 640 242" />
+
+  <text class="il-t-sub il-anchor-mid" x="190" y="284">剛結束治療</text>
+  <text class="il-t-sub il-anchor-mid" x="560" y="284">幾年之後</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="326">撐過最初幾年，風險會比剛結束時低得多</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="366">示意圖；各癌別曲線不同，不代表實際數值</text>
+</svg>

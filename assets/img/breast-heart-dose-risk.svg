@@ -34,13 +34,13 @@
     <text x="640" y="290">5</text>
   </g>
 
-  <!-- 三種技術。窄螢幕時字級放大，「質子＋DIBH」與「光子＋DIBH」寫成一行會互相撞到
+  <!-- 三種技術。窄螢幕時字級放大，「質子＋深吸氣閉氣」與「光子＋深吸氣閉氣」寫成一行會互相撞到
        （兩點只距 127 單位），因此拆成兩行：第一行放區別所在的射線種類，第二行放搭配的技術。 -->
   <text class="il-t il-anchor-mid" x="195" y="336">質子</text>
-  <text class="il-t-sub il-anchor-mid" x="195" y="374">＋DIBH</text>
+  <text class="il-t-sub il-anchor-mid" x="195" y="374">＋閉氣</text>
 
   <text class="il-t il-anchor-mid" x="322" y="336">光子</text>
-  <text class="il-t-sub il-anchor-mid" x="322" y="374">＋DIBH</text>
+  <text class="il-t-sub il-anchor-mid" x="322" y="374">＋閉氣</text>
 
   <text class="il-t il-anchor-mid" x="534" y="336">傳統光子</text>
   <text class="il-t-sub il-anchor-mid" x="534" y="374">自由呼吸</text>

@@ -28,10 +28,10 @@
     <rect x="370" y="192" width="326" height="56" rx="12" />
     <rect x="370" y="258" width="326" height="56" rx="12" />
   </g>
-  <text class="il-t il-anchor-mid" x="187" y="218">IMRT　強度調控</text>
+  <text class="il-t il-anchor-mid" x="187" y="218">強度調控</text>
   <text class="il-t-sub il-detail il-anchor-mid" x="187" y="240">讓劑量貼近攝護腺形狀</text>
 
-  <text class="il-t il-anchor-mid" x="187" y="284">IGRT　影像導引</text>
+  <text class="il-t il-anchor-mid" x="187" y="284">影像導引</text>
   <text class="il-t-sub il-detail il-anchor-mid" x="187" y="306">每天治療前重新確認位置</text>
 
   <text class="il-t il-anchor-mid" x="533" y="218">質子的物理特性</text>

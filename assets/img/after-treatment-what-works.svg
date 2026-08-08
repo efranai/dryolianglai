@@ -1,0 +1,25 @@
+<svg class="illus" viewBox="0 0 720 450" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="atww-title atww-desc">
+  <title id="atww-title">哪些做法有證據，哪些沒有</title>
+  <desc id="atww-desc">證據最強的是規律運動、維持體重、戒菸與限制酒精。飲食也有影響，低脂飲食、地中海型飲食、全穀纖維與豆製品都有資料支持，但屬於加分題。治療期間應避免高劑量的抗氧化補充劑，隨機試驗顯示結果反而變差。</desc>
+
+  <g class="il-node il-node--accent">
+    <rect x="24" y="30" width="672" height="130" rx="14" />
+  </g>
+  <text class="il-t il-node-text--on il-anchor-mid" x="360" y="72">證據最強</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="360" y="112">規律運動、維持體重、戒菸、限酒</text>
+  <text class="il-t-sub il-detail il-node-text--on il-anchor-mid" x="360" y="146">運動：乳癌存活者復發風險下降約 16%</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="24" y="180" width="672" height="130" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="222">有一些證據</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="262">低脂飲食、地中海型飲食、全穀纖維、豆製品</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="296">是加分題，不是及格題</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="24" y="330" width="672" height="110" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="372">治療期間要避免</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="412">高劑量抗氧化補充劑，結果反而變差</text>
+</svg>

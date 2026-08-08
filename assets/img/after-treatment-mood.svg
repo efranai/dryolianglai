@@ -1,0 +1,24 @@
+<svg class="illus" viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="atmd-title atmd-desc">
+  <title id="atmd-title">為什麼療程結束之後反而更不安</title>
+  <desc id="atmd-desc">治療期間每天到醫院、有明確的事情可以做、有醫療團隊每天確認狀況。療程結束之後，這個結構突然消失，但擔心並沒有跟著消失，不安往往是從這裡開始的。</desc>
+
+  <g class="il-node il-node--accent">
+    <rect x="24" y="34" width="326" height="180" rx="14" />
+  </g>
+  <text class="il-t il-node-text--on il-anchor-mid" x="187" y="76">治療期間</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="187" y="120">每天有事情可以做</text>
+  <text class="il-t-sub il-node-text--on il-anchor-mid" x="187" y="160">有人每天確認狀況</text>
+  <text class="il-t-sub il-detail il-node-text--on il-anchor-mid" x="187" y="196">辛苦，但踏實</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="370" y="34" width="326" height="180" rx="14" />
+  </g>
+  <text class="il-t il-anchor-mid" x="533" y="76">療程結束之後</text>
+  <text class="il-t-sub il-anchor-mid" x="533" y="120">支撐忽然被抽走</text>
+  <text class="il-t-sub il-anchor-mid" x="533" y="160">但擔心沒有跟著消失</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="533" y="196">不安常常從這裡開始</text>
+
+  <text class="il-t il-anchor-mid" x="360" y="278">您終於有空害怕了</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="320">這不是不夠堅強，是很常見的反應</text>
+</svg>

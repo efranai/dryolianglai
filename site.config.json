@@ -2,23 +2,24 @@
   "siteUrl": "https://med.dryolianglai.net",
   "title": "台中質子治療・放射治療｜賴宥良醫師",
   "affiliation": "中國醫藥大學附設醫院 放射腫瘤部・質子治療中心",
-  "credential": "中部質子治療先行者．值得信賴的放射治療專家",
+  "credential": "放射腫瘤科專科醫師・質子治療",
   "tagline": "不只追求腫瘤控制，更重視降低副作用，守護治療後的生活品質。",
-  "subTagline": "以最新科學證據為基礎，協助每位病人選擇最適合的放射治療。",
+  "subTagline": "以科學證據為基礎，協助每位病人選擇最適合的放射治療。",
   "_metaDescription": "首頁在搜尋結果中顯示的摘要。留空則自動用 tagline + subTagline。",
-  "metaDescription": "中國醫藥大學附設醫院放射腫瘤部・質子治療中心賴宥良醫師的癌症衛教網站。以最新科學證據說明乳癌、攝護腺癌、大腸直腸癌與食道癌的放射治療與質子治療，兼顧腫瘤控制與生活品質。",
+  "metaDescription": "中國醫藥大學附設醫院放射腫瘤部・質子治療中心賴宥良醫師的癌症衛教網站。以科學證據說明乳癌、攝護腺癌、大腸直腸癌與食道癌的放射治療與質子治療，兼顧腫瘤控制與生活品質。",
   "author": "賴宥良醫師",
   "lang": "zh-Hant-TW",
   "appointmentUrl": "https://www.cmuh.cmu.edu.tw/OnlineAppointment/DoctorInfo?flag=first&DocNo=D22687&Docname=%E8%B3%B4%E5%AE%A5%E8%89%AF",
   "_articleOrder": "概論區（沒有指定 series 的文章）的排列順序，填 slug。沒列到的接在後面、依最後更新時間新到舊。",
   "overview": {
     "heading": "先從這裡開始",
-    "hook": "不分癌別的基礎觀念，建議依序閱讀"
+    "hook": "不分癌別的基礎觀念，建議依序閱讀。家人陪病也可以從這裡開始。"
   },
   "articleOrder": [
     "what-is-radiation-therapy",
     "does-radiation-harm-normal-cells",
-    "what-is-proton-therapy"
+    "what-is-proton-therapy",
+    "family-support-during-radiotherapy"
   ],
   "_series": "各癌別系列。文章的 front matter 寫 series: <id> 就會歸入該系列。order 可手動指定該系列內的順序，留空則依最後更新時間新到舊。",
   "series": [
@@ -31,35 +32,51 @@
     {
       "id": "prostate-cancer",
       "name": "攝護腺癌與放射治療",
-      "hook": "治療選項怎麼選，以及排尿與腸道副作用的照顧",
+      "hook": "開刀還是放療、要做幾次、技術怎麼選，以及治療期間的排尿與腸道變化",
       "order": [
         "prostate-surgery-vs-radiotherapy",
         "prostate-radiotherapy-fractions",
-        "prostate-radiotherapy-technique-choice"
+        "prostate-radiotherapy-technique-choice",
+        "prostate-radiotherapy-side-effects"
       ]
     },
     {
       "id": "colorectal-cancer",
       "name": "大腸直腸癌與放射治療",
-      "hook": "術前放化療的角色、保留肛門的可能，以及骨盆照射的照護",
+      "hook": "為什麼要先做治療、療程長短怎麼選、治療期間會遇到什麼，以及保留肛門的可能",
       "order": [
-        "rectal-watch-and-wait",
-        "rectal-radiotherapy-technique-choice",
+        "rectal-preoperative-radiotherapy-needed",
         "rectal-short-vs-long-course",
-        "rectal-preoperative-radiotherapy-needed"
+        "rectal-radiotherapy-technique-choice",
+        "rectal-radiotherapy-side-effects",
+        "rectal-watch-and-wait"
       ]
     },
     {
       "id": "esophageal-cancer",
       "name": "食道癌與放射治療",
-      "hook": "合併化療與手術的時機，以及心肺保護與吞嚥照顧",
-      "order": []
+      "hook": "開刀前先做還是不開刀、技術怎麼選，以及治療期間吞不下去該怎麼辦",
+      "order": [
+        "esophageal-radiotherapy-and-proton",
+        "esophageal-radiotherapy-technique-choice",
+        "esophageal-radiotherapy-side-effects"
+      ]
     },
     {
       "id": "metastatic-cancer",
       "name": "轉移性癌症與放射治療",
       "hook": "轉移不代表只能被動等待——寡轉移仍有積極治療的機會，骨轉移也能提早預防骨折",
       "order": []
+    },
+    {
+      "id": "after-treatment",
+      "name": "療程結束之後",
+      "hook": "治療都做完了，接下來呢？保養怎麼做、能不能預防復發、長期問題該找誰、睡不好怎麼辦",
+      "order": [
+        "after-treatment-what-can-i-do",
+        "after-treatment-who-to-ask",
+        "after-treatment-sleep-and-mood"
+      ]
     }
   ],
   "hero": {
@@ -73,21 +90,14 @@
   "about": {
     "eyebrow": "關於我",
     "heading": "關於賴宥良醫師",
-    "tagline": "中部質子治療先行者・以科學證據守護每位病人",
+    "tagline": "以科學證據為基礎，協助每位病人選擇最適合的放射治療",
     "cardIcons": [
       "i-philosophy",
       "i-expertise",
       "i-contribution"
     ],
     "specialtiesHeading": "專長領域",
-    "appointmentLabel": "線上掛號",
     "infoItems": [
-      {
-        "icon": "",
-        "lines": [
-          "提前預約，讓醫療更有效率"
-        ]
-      },
       {
         "icon": "i-pin",
         "lines": [
@@ -98,11 +108,55 @@
       {
         "icon": "i-shield",
         "lines": [
-          "專業・精準・安心",
-          "以病人為中心的放射治療"
+          "乳癌・攝護腺癌",
+          "大腸直腸癌・食道癌"
         ]
       }
-    ]
+    ],
+    "clinicLinkLabel": "門診時間與掛號請至醫院官網查詢",
+    "clinicHoursHeading": "門診時間",
+    "clinicHours": {
+      "days": [
+        "一",
+        "二",
+        "三",
+        "四",
+        "五"
+      ],
+      "rows": [
+        {
+          "label": "上午",
+          "cells": [
+            "",
+            "總院",
+            "水湳",
+            "總院",
+            "總院"
+          ]
+        },
+        {
+          "label": "下午",
+          "cells": [
+            "",
+            "",
+            "",
+            "總院",
+            ""
+          ]
+        }
+      ],
+      "legend": [
+        {
+          "short": "總院",
+          "full": "中國醫藥大學附設醫院　台中總院"
+        },
+        {
+          "short": "水湳",
+          "full": "水湳質子中心"
+        }
+      ],
+      "note": "實際門診時間、停診與代診，請以中國醫藥大學附設醫院官網公告為準。"
+    }
   },
   "specialties": [
     {
