@@ -337,7 +337,11 @@ function sortByOrder(list, order = []) {
 
 /* ---------- 版型片段 ---------- */
 
-function head({ title, description, canonical, depth, ogImage, noindex = false, base = '../'.repeat(depth) }) {
+/* 社群分享的預覽圖不能用 SVG——Facebook 與 LINE 都不支援，而且是安靜地不顯示、
+   不會報錯。站上的 hero 多半是自繪 SVG，所以這裡遇到 .svg 一律退回點陣的預設圖。 */
+const ogSafe = (src) => (!src || /\.svg$/i.test(src) ? DEFAULT_OG : src);
+
+function head({ title, description, canonical, depth, ogImage, article, noindex = false, base = '../'.repeat(depth) }) {
   return `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -347,13 +351,16 @@ function head({ title, description, canonical, depth, ogImage, noindex = false, 
 <meta name="author" content="${esc(CONFIG.author)}">
 ${noindex ? '<meta name="robots" content="noindex, follow">\n' : ''}
 <link rel="canonical" href="${esc(canonical)}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="${article ? 'article' : 'website'}">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:site_name" content="${esc(CONFIG.title)}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${esc(canonical)}">
-<meta property="og:image" content="${esc(CONFIG.siteUrl + '/' + (ogImage || DEFAULT_OG))}">
+<meta property="og:image" content="${esc(CONFIG.siteUrl + '/' + ogSafe(ogImage))}">${article ? `
+<meta property="article:published_time" content="${esc(article.published)}">
+<meta property="article:modified_time" content="${esc(article.modified)}">
+<meta property="article:author" content="${esc(CONFIG.author)}">` : ''}
 <meta name="twitter:card" content="summary_large_image">
 ${VERIFY_TAGS}<link rel="stylesheet" href="${base}assets/css/style.css?v=${V_CSS}">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎗️</text></svg>">`;
@@ -819,7 +826,8 @@ ${head({
     description: a.description,
     canonical: `${CONFIG.siteUrl}/${a.url}`,
     depth: 2,
-    ogImage: a.hero || DEFAULT_OG,
+    ogImage: a.hero,
+    article: { published: isoDate(a.published), modified: isoDate(a.updated) },
   })}
 <script type="application/ld+json">
 ${JSON.stringify({

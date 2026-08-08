@@ -13,12 +13,23 @@
  * 這樣不論日後正式網域怎麼改，都不可能誤把正式站標成 noindex。
  */
 const PROD_ORIGIN = 'https://med.dryolianglai.net';
-const LEGACY_HOST = 'dryolianglai.pages.dev';
+const PROD_HOST = 'med.dryolianglai.net';
+
+/* 同一份內容曾經掛在好幾個網址上，全部收攏到正式網域：
+     dryolianglai.pages.dev      啟用正式網域之前用的舊網址
+     dryolianglai.net（apex）    和正式站內容完全相同，白白吃掉抓取預算
+     www.dryolianglai.net        目前沒有 DNS 記錄，補上之後也會走這裡
+   apex 只是暫時借給 med. 用，哪天想讓它變成入口頁，把它從清單移除即可。 */
+const REDIRECT_HOSTS = new Set([
+  'dryolianglai.pages.dev',
+  'dryolianglai.net',
+  'www.dryolianglai.net',
+]);
 
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
-  if (url.hostname === LEGACY_HOST) {
+  if (REDIRECT_HOSTS.has(url.hostname) && url.hostname !== PROD_HOST) {
     return Response.redirect(PROD_ORIGIN + url.pathname + url.search, 301);
   }
 
