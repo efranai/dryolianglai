@@ -340,6 +340,8 @@ function sortByOrder(list, order = []) {
 function head({ title, description, canonical, depth, ogImage, noindex = false, base = '../'.repeat(depth) }) {
   return `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e171b" media="(prefers-color-scheme: dark)">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <meta name="author" content="${esc(CONFIG.author)}">
@@ -360,7 +362,10 @@ ${VERIFY_TAGS}<link rel="stylesheet" href="${base}assets/css/style.css?v=${V_CSS
 function siteHeader(depth, base = '../'.repeat(depth)) {
   /* 首頁的 base 是空字串，href="" 會指回「目前這一頁」而不是首頁，所以補上 ./ */
   const home = base || './';
-  return `<header class="site-header">
+  /* 「跳到主要內容」：平常縮成 1×1 看不見，只有鍵盤 Tab 到它才會現形。
+     沒有它的話，螢幕朗讀軟體每開一篇文章都要先唸完頁首和導覽才進正文。 */
+  return `<a class="skip-link" href="#main">跳到主要內容</a>
+<header class="site-header">
   <div class="wrap site-header__inner">
     <a class="brand" href="${home}" aria-label="回首頁">
       ${icon('i-home', 'brand__home')}

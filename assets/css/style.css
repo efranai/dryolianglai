@@ -1330,6 +1330,26 @@ ul, ol { padding-left: 1.25em; }
 
 /* ---------- 學經歷（只在 /about/） ---------- */
 
+/* 跳到主要內容：平常用和 .sr-only 一樣的方式藏起來，
+   鍵盤 Tab 到它才浮出來——滑鼠使用者與截圖都不會看到。 */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: .7em 1.2em;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 0 0 var(--radius) 0;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+  color: var(--bg);
+}
+
 /* 只給報讀軟體的文字：視覺上完全不佔位，但仍在無障礙樹裡。 */
 .sr-only {
   position: absolute;
