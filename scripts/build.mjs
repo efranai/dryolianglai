@@ -1175,9 +1175,13 @@ ${siteFooter(1)}
    給醫師在門診用的工具頁——一頁看完所有 QR，可以直接開畫面給病人掃，
    或用瀏覽器列印成一張 A4。刻意不放進導覽列與 sitemap，並加上 noindex：
    病人搜尋時看到一整頁 QR 只會困惑。新增癌別系列時這一頁會自動長出一張。 */
+/* QR 是門診發給「還沒認識我的病人」用的，所以只放病人會用癌別自己對號入座的專區。
+   療程結束之後那一區不放：會拿到那張卡的人，療程都已經在我這裡做完了。 */
+const inQr = (s) => s.articles.length && s.qr !== false;
+
 function renderQrPage() {
   const homeUrl = `${CONFIG.siteUrl}/`;
-  const live = SERIES.filter((s) => s.articles.length);
+  const live = SERIES.filter(inQr);
 
   /* 排成一列一癌別，而不是 QR 方陣：讀者要在一堆 QR 裡找到自己的癌別，
      所以癌別名才是導航，必須是整列最大的字；QR 縮小反而更好掃。
@@ -1379,7 +1383,7 @@ written.push(writeFile('index.html', renderIndex(OVERVIEW)));
 written.push(writeFile(path.join('about', 'index.html'), renderAbout()));
 written.push(writeFile(path.join('qr', 'index.html'), renderQrPage()));
 
-for (const s of SERIES.filter((x) => x.articles.length)) {
+for (const s of SERIES.filter(inQr)) {
   written.push(writeFile(path.join('qr', s.id, 'index.html'), renderQrSheet(s)));
 }
 written.push(writeFile(path.join('terms', 'index.html'), renderTerms()));
