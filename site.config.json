@@ -17,9 +17,9 @@
   },
   "articleOrder": [
     "what-is-radiation-therapy",
+    "family-support-during-radiotherapy",
     "does-radiation-harm-normal-cells",
-    "what-is-proton-therapy",
-    "family-support-during-radiotherapy"
+    "what-is-proton-therapy"
   ],
   "_series": "各癌別系列。文章的 front matter 寫 series: <id> 就會歸入該系列。order 可手動指定該系列內的順序，留空則依最後更新時間新到舊。",
   "series": [
@@ -27,7 +27,12 @@
       "id": "breast-cancer",
       "name": "乳癌與放射治療",
       "hook": "從手術後為什麼還要放療，到心臟保護與皮膚照護",
-      "order": [],
+      "order": [
+        "breast-why-radiotherapy-after-surgery",
+        "breast-radiotherapy-fractions",
+        "breast-radiotherapy-technique-choice",
+        "breast-radiotherapy-side-effects"
+      ],
       "searchTerm": "賴宥良 乳癌"
     },
     {
@@ -69,11 +74,11 @@
     {
       "id": "metastatic-cancer",
       "name": "轉移性癌症與放射治療",
-      "hook": "轉移不代表只能被動等待——寡轉移仍有積極治療的機會，骨轉移也能提早預防骨折",
+      "hook": "轉移不代表只能被動等待——寡轉移仍有積極治療的機會，骨轉移能提早預防骨折，肝轉移健保也已給付",
       "order": [
         "metastatic-oligometastasis",
-        "liver-metastasis-radiotherapy",
-        "bone-metastasis-prophylactic-radiotherapy"
+        "bone-metastasis-prophylactic-radiotherapy",
+        "liver-metastasis-radiotherapy"
       ],
       "searchTerm": "賴宥良 癌症轉移"
     },
