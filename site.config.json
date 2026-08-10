@@ -220,7 +220,7 @@
   "_verification": "搜尋引擎網站管理工具的驗證碼。填入後會在每頁 <head> 產生對應的 meta 標籤；留空則不輸出。",
   "verification": {
     "google": "",
-    "bing": ""
+    "bing": "1624756307805DE2B205F653456AED28"
   },
   "_counter": "瀏覽計數。由 functions/api/views.js（Pages Function + D1）提供，同網域、無第三方服務。enabled 設 false 即可整組隱藏。",
   "counter": {

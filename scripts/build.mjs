@@ -141,12 +141,6 @@ const V_JS = assetVersion('assets/js/counter.js');
 const V_SHARE = assetVersion('assets/js/share.js');
 const V_RAIL = assetVersion('assets/js/rail.js');
 
-/* Search Console / Bing 的所有權驗證標籤，沒填就完全不輸出 */
-const VERIFY_TAGS = [
-  CONFIG.verification?.google && `<meta name="google-site-verification" content="${esc(CONFIG.verification.google)}">`,
-  CONFIG.verification?.bing && `<meta name="msvalidate.01" content="${esc(CONFIG.verification.bing)}">`,
-].filter(Boolean).map((t) => t + '\n').join('');
-
 const BANNER = CONFIG.hero.banner;
 const ORDER = Array.isArray(CONFIG.articleOrder) ? CONFIG.articleOrder : [];
 
@@ -229,6 +223,14 @@ const DEFAULT_OG = BANNER.src;
 const esc = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
            .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
+/* Search Console / Bing 的所有權驗證標籤，沒填就完全不輸出。
+   必須放在 esc 之後：這是 const，兩個都空的時候 && 會短路而看不出問題，
+   一旦填了值就會在載入階段踩到 esc 的暫時性死區。 */
+const VERIFY_TAGS = [
+  CONFIG.verification?.google && `<meta name="google-site-verification" content="${esc(CONFIG.verification.google)}">`,
+  CONFIG.verification?.bing && `<meta name="msvalidate.01" content="${esc(CONFIG.verification.bing)}">`,
+].filter(Boolean).map((t) => t + '\n').join('');
 
 function git(args) {
   try {
