@@ -70,7 +70,11 @@
       "id": "metastatic-cancer",
       "name": "轉移性癌症與放射治療",
       "hook": "轉移不代表只能被動等待——寡轉移仍有積極治療的機會，骨轉移也能提早預防骨折",
-      "order": [],
+      "order": [
+        "metastatic-oligometastasis",
+        "liver-metastasis-radiotherapy",
+        "bone-metastasis-prophylactic-radiotherapy"
+      ],
       "searchTerm": "賴宥良 癌症轉移"
     },
     {

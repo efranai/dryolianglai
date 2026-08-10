@@ -1,0 +1,18 @@
+<svg class="illus" viewBox="0 0 720 268" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="lmdose-title lmdose-desc">
+  <title id="lmdose-title">肝轉移立體定位放射治療的劑量與局部控制關係</title>
+  <desc id="lmdose-desc">一項彙整多篇已發表研究的分析顯示，肝轉移接受立體定位放射治療後，若生物等效劑量超過一百，三年局部控制率為百分之九十三；若未超過一百則為百分之六十五。這是彙整已發表研究的結果，不是把病人隨機分組比較。</desc>
+
+  <text class="il-t" x="24" y="44">肝轉移：劑量夠不夠，差很多</text>
+  <text class="il-t-sub il-detail" x="24" y="70">立體定位放射治療後的三年局部控制率</text>
+
+  <text class="il-t-sub il-anchor-end" x="196" y="122">劑量足夠</text>
+  <rect class="il-bar il-bar--strong" x="208" y="102" width="372" height="30" rx="4" />
+  <text class="il-t-val" x="592" y="122">93%</text>
+
+  <text class="il-t-sub il-anchor-end" x="196" y="178">劑量不足</text>
+  <rect class="il-bar il-bar--soft" x="208" y="158" width="260" height="30" rx="4" />
+  <text class="il-t-val" x="480" y="178">65%</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="228">彙整 13 篇已發表研究、290 個肝轉移病灶</text>
+</svg>
