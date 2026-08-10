@@ -1402,6 +1402,12 @@ written.push(writeFile('404.html', render404()));
 written.push(writeFile('sitemap.xml', renderSitemap(articles)));
 written.push(writeFile('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${CONFIG.siteUrl}/sitemap.xml\n`));
 
+/* IndexNow 的驗證方式：把金鑰放成一個同名的 txt 檔，搜尋引擎抓得到就認定站是你的。
+   Bing／Yandex／Seznam 吃這一套，Google 不吃（Google 走 Search Console）。 */
+if (CONFIG.indexNowKey) {
+  written.push(writeFile(`${CONFIG.indexNowKey}.txt`, CONFIG.indexNowKey));
+}
+
 console.log(`建置完成，共 ${articles.length} 篇文章\n`);
 console.log(`概論（${OVERVIEW.length} 篇）`);
 OVERVIEW.forEach((a, i) => {
