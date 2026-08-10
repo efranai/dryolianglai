@@ -131,4 +131,7 @@
     <rect x="3.4" y="14.4" width="4.4" height="4.4" rx="1.2"/>
     <path d="M11.4 6.8h9.2M11.4 16.6h9.2"/>
   </symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/>
+  </symbol>
 </svg>

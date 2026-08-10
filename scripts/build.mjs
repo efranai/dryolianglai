@@ -1187,6 +1187,7 @@ function renderQrPage() {
           <div class="qrrow__body">
             <p class="qrrow__name">${esc(s.name)}</p>
             <p class="qrrow__hook">${esc(s.hook)}</p>
+            ${s.searchTerm ? `<p class="qrrow__search">${icon('i-search', 'qrrow__search-icon')}<span class="qrrow__search-label">網路搜尋</span>${esc(s.searchTerm)}</p>` : ''}
             <a class="qrcard__sheet" href="${s.id}/">列印給這一科 →</a>
           </div>
         </li>`).join('\n');
@@ -1218,6 +1219,7 @@ ${siteHeader(1)}
       <figcaption>
         <span class="qrcard__name">${esc(CONFIG.qr.cardName)}</span>
         <span class="qrcard__url">${esc(urlText(homeUrl))}</span>
+        <span class="qrcard__search">${icon('i-search', 'qrrow__search-icon')}<span class="qrrow__search-label">網路搜尋</span>${esc(CONFIG.qr.searchTerm)}</span>
       </figcaption>
     </figure>
 
@@ -1259,6 +1261,7 @@ function renderQrSheet(s) {
           <ul class="refcard__list">
 ${titles}
           </ul>
+          ${s.searchTerm ? `<p class="refcard__search">${icon('i-search', 'qrrow__search-icon')}<span class="qrrow__search-label">網路搜尋</span>${esc(s.searchTerm)}</p>` : ''}
           <p class="refcard__who">${esc(CONFIG.author)}｜${esc(CONFIG.affiliation)}　${esc(urlText(CONFIG.siteUrl))}</p>
         </div>
       </article>`;

@@ -1364,6 +1364,53 @@ ul, ol { padding-left: 1.25em; }
   border: 0;
 }
 
+/* 掃不了 QR 的人（長輩常見）改用 Google 搜尋——那其實才是主要入口，
+   因為比掃描容易，而且經過 Google 一次對品牌搜尋也有幫助。
+   實測過併進標題那一行：手機上文字區只有約 230px，中文標題會被擠成兩行，
+   搜尋字反而從 17.9px 掉到 15.3px。所以維持獨立一行，改用放大的膠囊標籤。 */
+.qrrow__search,
+.qrcard__search,
+.refcard__search {
+  display: inline-flex;
+  align-items: center;
+  gap: .35em;
+  margin: .6rem 0 0;
+  padding: .3em .85em .35em;
+  background: var(--accent-bg);
+  border-radius: 999px;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--accent-dk);
+  white-space: nowrap;
+}
+
+/* 主 QR 卡的內容是置中的。膠囊若被算成整行寬的 flex，內容就會靠左，
+   看起來只有這一行歪掉——縮成內容寬度再置中，列印與螢幕都吃得到。 */
+.qrcard--main .qrcard__search {
+  justify-content: center;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.qrrow__search-label {
+  font-size: .8em;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-right: .1em;
+}
+
+.qrrow__search-icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex: none;
+  stroke: currentColor;
+  fill: none;
+}
+
+
+
+
 /* 門診時間：週次表格，整組包成一張卡片，在長長的關於頁裡才立得住。
    table-layout: fixed 讓五天等寬，窄螢幕也不會有一欄被擠扁。 */
 .clinic-card {
@@ -2163,8 +2210,8 @@ ul, ol { padding-left: 1.25em; }
        標題 ＋ 間距　　　約 12mm
        首頁卡　　　　　　約 51mm
        分隔標題 ＋ 間距　約 9mm
-       癌別列 6 × 28.4mm ＝ 171mm
-       合計 243mm，留 30mm 餘裕（約還能再放一列）
+       癌別列 6 × 29mm ＝ 174mm（每列含癌別名、簡介、Google 搜尋提示三行）
+       合計約 257mm，留 16mm 餘裕
      實測方式：把 @media print 的規則抽出來當一般 style 注入，
      再把 .wrap 鎖成 718px（＝ 180mm 可印寬）量高度。
      增減癌別或改 QR 尺寸時務必重算，超過就會跳到第二頁。 */
@@ -2184,7 +2231,7 @@ ul, ol { padding-left: 1.25em; }
     display: flex;
     align-items: center;
     gap: 5mm;
-    height: 28mm;
+    padding: 3mm 0;
     padding: 0;
     background: none;
     border: 0;
@@ -2194,9 +2241,15 @@ ul, ol { padding-left: 1.25em; }
     break-inside: avoid;
   }
   .qrrow:last-of-type { border-bottom: 0; }
-  .qrrow .qr__code { width: 24mm; height: 24mm; }
+  .qrrow .qr__code { width: 25mm; height: 25mm; }
   .qrrow__name { font-size: 13pt; color: #000; }
   .qrrow__hook { font-size: 9pt; color: #444; margin-top: 1mm; }
+  .qrrow__search, .qrcard__search, .refcard__search {
+    background: none; padding: 0; margin-top: 1.5mm; color: #000;
+    font-size: 11pt; font-weight: 700;
+  }
+  .qrrow__search-label { color: #444; font-size: .82em; }
+
   .qrcard__sheet { display: none !important; }
 
   /* 轉介卡：一張 A4 直式排三張橫式卡片，虛線是裁切線。

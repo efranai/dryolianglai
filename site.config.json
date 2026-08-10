@@ -27,7 +27,8 @@
       "id": "breast-cancer",
       "name": "乳癌與放射治療",
       "hook": "從手術後為什麼還要放療，到心臟保護與皮膚照護",
-      "order": []
+      "order": [],
+      "searchTerm": "賴宥良 乳癌"
     },
     {
       "id": "prostate-cancer",
@@ -38,7 +39,8 @@
         "prostate-radiotherapy-fractions",
         "prostate-radiotherapy-technique-choice",
         "prostate-radiotherapy-side-effects"
-      ]
+      ],
+      "searchTerm": "賴宥良 攝護腺癌"
     },
     {
       "id": "colorectal-cancer",
@@ -50,7 +52,8 @@
         "rectal-radiotherapy-technique-choice",
         "rectal-radiotherapy-side-effects",
         "rectal-watch-and-wait"
-      ]
+      ],
+      "searchTerm": "賴宥良 直腸癌"
     },
     {
       "id": "esophageal-cancer",
@@ -60,13 +63,15 @@
         "esophageal-radiotherapy-and-proton",
         "esophageal-radiotherapy-technique-choice",
         "esophageal-radiotherapy-side-effects"
-      ]
+      ],
+      "searchTerm": "賴宥良 食道癌"
     },
     {
       "id": "metastatic-cancer",
       "name": "轉移性癌症與放射治療",
       "hook": "轉移不代表只能被動等待——寡轉移仍有積極治療的機會，骨轉移也能提早預防骨折",
-      "order": []
+      "order": [],
+      "searchTerm": "賴宥良 癌症轉移"
     },
     {
       "id": "after-treatment",
@@ -76,7 +81,8 @@
         "after-treatment-what-can-i-do",
         "after-treatment-who-to-ask",
         "after-treatment-sleep-and-mood"
-      ]
+      ],
+      "searchTerm": "賴宥良 治療後"
     }
   ],
   "hero": {
@@ -198,7 +204,9 @@
   "_qr": "門診當面分享用的 QR。cardName 是印在首頁 QR 下方的名稱，pageTitle 是 /qr/ 總覽頁的標題。該頁刻意不放進導覽列與 sitemap，並帶 noindex。",
   "qr": {
     "cardName": "賴宥良醫師｜台中質子治療・放射治療",
-    "pageTitle": "分享用 QR Code"
+    "pageTitle": "分享用 QR Code",
+    "searchHint": "不方便掃描？用 Google 搜尋",
+    "searchTerm": "賴宥良 電療"
   },
   "_verification": "搜尋引擎網站管理工具的驗證碼。填入後會在每頁 <head> 產生對應的 meta 標籤；留空則不輸出。",
   "verification": {
