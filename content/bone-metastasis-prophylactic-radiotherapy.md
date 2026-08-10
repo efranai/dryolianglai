@@ -1,5 +1,5 @@
 ---
-title: 骨轉移還不會痛，需要先做放射治療嗎？
+title: 骨轉移還不會痛，需要先做放射治療（電療）嗎？
 slug: bone-metastasis-prophylactic-radiotherapy
 date: 2026-08-05
 summary: 過去的做法是「痛了才照」。但一項隨機臨床試驗發現，對高風險但還沒症狀的骨轉移提早照射，一年內的骨骼事件從 29% 降到 1.6%，住院也明顯減少。
