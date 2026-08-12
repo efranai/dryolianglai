@@ -2,7 +2,7 @@
 title: 得了攝護腺癌，要開刀還是做放射治療？可以先不要治療嗎？
 slug: prostate-surgery-vs-radiotherapy
 date: 2026-08-03
-summary: 手術與放射治療都是國際指引建議的標準治療，兩者最大的差別不是療效誰比較好，而是副作用型態不同。部分低風險病人甚至可以先不治療。
+summary: 手術與放射治療都是國際指引建議的標準治療，兩者最大的差別不是療效誰比較好，而是副作用型態不同。部分低風險病人甚至可以先不治療；已經轉移但數目不多的病人，照攝護腺本身也可能延長存活。
 answer: 兩者控制癌症的效果相當，差別在副作用的型態不同。該問的不是哪一種比較能治好，而是哪一種比較符合您的生活。
 description: 攝護腺癌該開刀還是做放射治療？賴宥良醫師比較兩者的治療效果與副作用型態，說明尿失禁、性功能與腸道影響的差別，以及哪些低風險病人可以先積極監測。
 series: prostate-cancer
@@ -160,6 +160,18 @@ heroCaption: 攝護腺癌的治療決策路徑：先評估風險分級，再決�
 
 因此，攝護腺癌治療並不是「手術或放射治療只能二選一」，有些病人仍可能需要結合不同治療方式，才能達到最佳治療效果。
 
+## 已經轉移了，還需要照攝護腺嗎？
+
+有些病人會問：**都已經跑出去了，還照原本那一顆做什麼？**
+
+**如果[轉移的數目不多（寡轉移）](../metastatic-oligometastasis/)，照攝護腺本身可以延長存活。** 一項長期追蹤的隨機試驗顯示，這群病人加做攝護腺放射治療，死亡風險降低約三分之一。
+
+**除此之外，轉移的病灶也可以一處一處積極處理。** 兩件事不衝突，常常是一起安排的。
+
+**範圍比較廣的時候，延長存活的證據就沒有那麼一致**，但仍有延後惡化與控制局部病灶的考量。**適不適合，由多專科團隊依照轉移的分布判斷。**
+
+長期的排尿與腸道副作用，和沒有做的人幾乎一樣。
+
 ## 我到底該怎麼選？
 
 攝護腺癌治療沒有一個適合所有人的答案。醫師通常會綜合考量：
@@ -225,6 +237,8 @@ heroCaption: 攝護腺癌的治療決策路徑：先評估風險分級，再決�
 3. Barocas DA, Alvarez J, Resnick MJ, et al. Association Between Radiation Therapy, Surgery, or Observation for Localized Prostate Cancer and Patient-Reported Outcomes After 3 Years. *JAMA*. 2017;317(11):1126-1140.
 4. Hamdy FC, Donovan JL, Lane JA, et al. Fifteen-Year Outcomes after Monitoring, Surgery, or Radiotherapy for Prostate Cancer. *N Engl J Med*. 2023;388(17):1547-1558.
 5. Donovan JL, Hamdy FC, Lane JA, et al. Patient-Reported Outcomes after Monitoring, Surgery, or Radiotherapy for Prostate Cancer. *N Engl J Med*. 2016;375(15):1425-1437.
+6. Parker CC, James ND, Brawley CD, et al. Radiotherapy to the Prostate for Men with Metastatic Prostate Cancer in the UK and Switzerland: Long-Term Results from the STAMPEDE Randomised Controlled Trial. *PLoS Med*. 2022;19(6):e1003998.
+7. Burdett S, Boevé LM, Ingleby FC, et al. Prostate Radiotherapy for Metastatic Hormone-sensitive Prostate Cancer: A STOPCAP Systematic Review and Meta-analysis. *Eur Urol*. 2019;76(1):115-124.
 
 ---
 
