@@ -74,6 +74,7 @@ heroCaption: 質子束的能量集中釋放在腫瘤所在的深度，通過之�
 - 〈[攝護腺癌放射治療怎麼選？質子治療比較好嗎？](../prostate-radiotherapy-technique-choice/)〉
 - 〈[直腸癌放射治療怎麼選？質子治療比較好嗎？](../rectal-radiotherapy-technique-choice/)〉
 - 〈[食道癌需要做放射治療嗎？質子治療有什麼好處？](../esophageal-radiotherapy-and-proton/)〉
+- 〈[肝癌放射治療怎麼選？質子治療比較好嗎？](../liver-cancer-radiotherapy-technique/)〉
 - 〈[肝轉移可以做放射治療（電療）嗎？健保有給付嗎？](../liver-metastasis-radiotherapy/)〉
 
 ## 哪些病人可能比較適合？

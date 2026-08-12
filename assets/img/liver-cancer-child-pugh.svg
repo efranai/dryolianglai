@@ -1,0 +1,24 @@
+<svg class="illus" viewBox="0 0 720 278" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="lccp-title lccp-desc">
+  <title id="lccp-title">肝功能分級與肝癌放射治療的關係</title>
+  <desc id="lccp-desc">醫師會用一套分級評估肝臟的儲備能力。A 級代表肝臟儲備足夠，接受放射治療相對安全。B 級要開始小心，偏輕的還可以做，偏重的就需要很謹慎，劑量與範圍都得往回收。C 級通常不做，因為治療本身會消耗肝臟儲備，而 C 級已經沒有那個空間。這個分級決定的不是副作用大小，而是這個治療該不該做。</desc>
+
+  <text class="il-t" x="24" y="42">肝功能分級決定的是「做不做」</text>
+
+  <rect class="il-cell il-cell--accent" x="24" y="76" width="216" height="126" rx="10" />
+  <text class="il-t il-anchor-mid" x="132" y="112">A 級</text>
+  <text class="il-t-sub il-anchor-mid" x="132" y="154">儲備足夠</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="132" y="184">相對安全</text>
+
+  <rect class="il-cell il-cell--warm" x="252" y="76" width="216" height="126" rx="10" />
+  <text class="il-t il-anchor-mid" x="360" y="112">B 級</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="154">要小心</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="184">偏輕還可以，偏重要很謹慎</text>
+
+  <rect class="il-cell il-cell--muted" x="480" y="76" width="216" height="126" rx="10" />
+  <text class="il-t il-anchor-mid" x="588" y="112">C 級</text>
+  <text class="il-t-sub il-anchor-mid" x="588" y="154">通常不做</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="588" y="184">已經沒有可以消耗的空間</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="244">腫瘤是問題，但撐住整場治療的是肝</text>
+</svg>

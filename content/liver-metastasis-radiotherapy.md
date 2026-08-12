@@ -34,7 +34,7 @@ heroCaption: 肝轉移的劑量夠不夠，直接影響病灶控不控制得住�
 
 **其他癌症也都有機會轉移到肝臟。**
 
-（轉移到骨頭的處理方式不同，請見〈[骨轉移還不會痛，需要先做放射治療嗎？](../bone-metastasis-prophylactic-radiotherapy/)〉。）
+（轉移到骨頭的處理方式不同，請見〈[骨轉移還不會痛，需要先做放射治療嗎？](../bone-metastasis-prophylactic-radiotherapy/)〉。**肝臟本身長出來的原發性肝癌**，做法又不一樣，請見〈[肝癌不能開刀怎麼辦？](../liver-cancer-radiotherapy-role/)〉。）
 
 ## 先分清楚：是幾顆，還是一片？
 

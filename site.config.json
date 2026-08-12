@@ -72,6 +72,18 @@
       "searchTerm": "賴宥良 食道癌"
     },
     {
+      "id": "liver-cancer",
+      "name": "肝癌與放射治療",
+      "hook": "不能開刀不代表沒辦法——放射治療在肝癌的角色這幾年變了，立體定位健保也已經給付",
+      "searchTerm": "賴宥良 肝癌",
+      "order": [
+        "liver-cancer-radiotherapy-role",
+        "liver-cancer-radiotherapy-fractions",
+        "liver-cancer-radiotherapy-technique",
+        "liver-cancer-radiotherapy-side-effects"
+      ]
+    },
+    {
       "id": "metastatic-cancer",
       "name": "轉移性癌症與放射治療",
       "hook": "轉移不代表只能被動等待——病灶不多時可以積極處理，骨轉移能提早預防骨折，範圍較廣時也能緩解症狀",

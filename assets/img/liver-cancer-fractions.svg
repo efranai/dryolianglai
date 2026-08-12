@@ -1,0 +1,38 @@
+<svg class="illus" viewBox="0 0 720 268" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="lcfx-title lcfx-desc">
+  <title id="lcfx-title">肝癌放射治療兩種分次方式的比較</title>
+  <desc id="lcfx-desc">肝癌放射治療有兩種安排。立體定位放射治療次數少、單次劑量高，健保給付上限是兩週內最多六次。傳統分次的單次劑量低、次數多，可能到二十幾次。兩者不是新舊之分，而是適用情況不同：腫瘤比較大、貼近胃或十二指腸、剩下的正常肝不多時，會傾向把劑量拆細。真正要做足的是總劑量，不是次數。</desc>
+
+  <text class="il-t" x="24" y="42">次數的差別，不在病情輕重</text>
+
+  <text class="il-t il-anchor-end" x="196" y="92">立體定位</text>
+  <text class="il-t-sub il-detail il-anchor-end" x="196" y="116">兩週內</text>
+  <rect class="il-bar il-bar--strong" x="208" y="72" width="24" height="34" rx="4" />
+  <rect class="il-bar il-bar--strong" x="240" y="72" width="24" height="34" rx="4" />
+  <rect class="il-bar il-bar--strong" x="272" y="72" width="24" height="34" rx="4" />
+  <rect class="il-bar il-bar--strong" x="304" y="72" width="24" height="34" rx="4" />
+  <rect class="il-bar il-bar--strong" x="336" y="72" width="24" height="34" rx="4" />
+  <rect class="il-bar il-bar--strong" x="368" y="72" width="24" height="34" rx="4" />
+  <text class="il-t-val" x="408" y="97">6 次以內</text>
+
+  <text class="il-t il-anchor-end" x="196" y="164">傳統分次</text>
+  <text class="il-t-sub il-detail il-anchor-end" x="196" y="188">數週</text>
+  <rect class="il-bar il-bar--soft" x="208" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="222" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="236" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="250" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="264" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="278" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="292" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="306" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="320" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="334" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="348" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="362" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="376" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="390" y="150" width="10" height="20" rx="3" />
+  <rect class="il-bar il-bar--soft" x="404" y="150" width="10" height="20" rx="3" />
+  <text class="il-t-val" x="428" y="167">20 幾次</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="232">腫瘤大、貼近腸胃道、剩下的肝不多時，會傾向拆細</text>
+</svg>

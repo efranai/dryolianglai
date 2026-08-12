@@ -1,0 +1,24 @@
+<svg class="illus" viewBox="0 0 720 314" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="lcbr-title lcbr-desc">
+  <title id="lcbr-title">呼吸移動如何影響肝癌照射範圍</title>
+  <desc id="lcbr-desc">肝臟會跟著呼吸上下移動，幅度常常超過兩公分。如果不處理呼吸移動，照射範圍必須放大到吸氣與吐氣都涵蓋得到，被照到的正常肝就變多，劑量因此得往下降，最後犧牲的是腫瘤的劑量。用閉氣、腹部加壓或即時追蹤把移動控制住之後，照射範圍可以縮小，劑量才有往上加的空間。</desc>
+
+  <text class="il-t" x="24" y="42">肝臟會跟著呼吸上下移動</text>
+
+  <text class="il-t il-anchor-mid" x="196" y="98">不處理呼吸移動</text>
+  <rect class="il-field" x="96" y="116" width="200" height="126" rx="10" />
+  <circle class="il-tumor" cx="172" cy="158" r="20" />
+  <circle class="il-tumor il-node--soft" cx="196" cy="200" r="20" />
+  <path class="il-arrow" d="M232 158 V 200" />
+  <text class="il-t-sub il-detail il-anchor-mid" x="196" y="270">範圍要放大到都涵蓋得到</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="196" y="294">正常肝照得多，劑量只好降</text>
+
+  <path class="il-flow-arrow" d="M330 178 H 386" />
+  <path class="il-arrow-head" d="M386 172 398 178 386 184Z" />
+
+  <text class="il-t il-anchor-mid" x="556" y="98">閉氣或加壓之後</text>
+  <rect class="il-field il-cell--accent" x="496" y="144" width="120" height="72" rx="10" />
+  <circle class="il-tumor" cx="556" cy="180" r="20" />
+  <text class="il-t-sub il-detail il-anchor-mid" x="556" y="270">範圍縮小</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="556" y="294">劑量才有往上加的空間</text>
+</svg>

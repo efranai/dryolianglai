@@ -7,6 +7,7 @@
   <url><loc>https://med.dryolianglai.net/series/prostate-cancer/</loc><lastmod>2026-08-12</lastmod></url>
   <url><loc>https://med.dryolianglai.net/series/colorectal-cancer/</loc><lastmod>2026-08-08</lastmod></url>
   <url><loc>https://med.dryolianglai.net/series/esophageal-cancer/</loc><lastmod>2026-08-08</lastmod></url>
+  <url><loc>https://med.dryolianglai.net/series/liver-cancer/</loc><lastmod>2026-08-12</lastmod></url>
   <url><loc>https://med.dryolianglai.net/series/metastatic-cancer/</loc><lastmod>2026-08-12</lastmod></url>
   <url><loc>https://med.dryolianglai.net/series/after-treatment/</loc><lastmod>2026-08-08</lastmod></url>
   <url><loc>https://med.dryolianglai.net/p/after-treatment-sleep-and-mood/</loc><lastmod>2026-08-06</lastmod></url>
@@ -22,7 +23,11 @@
   <url><loc>https://med.dryolianglai.net/p/esophageal-radiotherapy-side-effects/</loc><lastmod>2026-08-08</lastmod></url>
   <url><loc>https://med.dryolianglai.net/p/esophageal-radiotherapy-technique-choice/</loc><lastmod>2026-08-08</lastmod></url>
   <url><loc>https://med.dryolianglai.net/p/family-support-during-radiotherapy/</loc><lastmod>2026-08-10</lastmod></url>
-  <url><loc>https://med.dryolianglai.net/p/liver-metastasis-radiotherapy/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://med.dryolianglai.net/p/liver-cancer-radiotherapy-fractions/</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://med.dryolianglai.net/p/liver-cancer-radiotherapy-role/</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://med.dryolianglai.net/p/liver-cancer-radiotherapy-side-effects/</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://med.dryolianglai.net/p/liver-cancer-radiotherapy-technique/</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://med.dryolianglai.net/p/liver-metastasis-radiotherapy/</loc><lastmod>2026-08-12</lastmod></url>
   <url><loc>https://med.dryolianglai.net/p/metastatic-oligometastasis/</loc><lastmod>2026-08-12</lastmod></url>
   <url><loc>https://med.dryolianglai.net/p/prostate-radiotherapy-fractions/</loc><lastmod>2026-08-08</lastmod></url>
   <url><loc>https://med.dryolianglai.net/p/prostate-radiotherapy-side-effects/</loc><lastmod>2026-08-08</lastmod></url>
@@ -33,6 +38,6 @@
   <url><loc>https://med.dryolianglai.net/p/rectal-radiotherapy-technique-choice/</loc><lastmod>2026-08-08</lastmod></url>
   <url><loc>https://med.dryolianglai.net/p/rectal-short-vs-long-course/</loc><lastmod>2026-08-08</lastmod></url>
   <url><loc>https://med.dryolianglai.net/p/rectal-watch-and-wait/</loc><lastmod>2026-08-08</lastmod></url>
-  <url><loc>https://med.dryolianglai.net/p/what-is-proton-therapy/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://med.dryolianglai.net/p/what-is-proton-therapy/</loc><lastmod>2026-08-12</lastmod></url>
   <url><loc>https://med.dryolianglai.net/p/what-is-radiation-therapy/</loc><lastmod>2026-08-08</lastmod></url>
 </urlset>

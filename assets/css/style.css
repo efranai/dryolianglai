@@ -878,9 +878,13 @@ ul, ol { padding-left: 1.25em; }
 .il-beam        { fill: var(--accent); opacity: .14; }
 .il-lead        { fill: none; stroke: var(--ink-faint); stroke-width: 1.4; stroke-dasharray: 4 4; opacity: .7; }
 
-.il-cell           { stroke-width: 2; }
+/* fill:none 是保險絲：沒有 fill 的話 SVG 會退回預設的黑，
+   而 .il-cell 是基底類別，單獨用的時候整格會變成實心黑塊。 */
+.il-cell           { fill: none; stroke-width: 2; }
 .il-cell--warm     { fill: color-mix(in srgb, var(--warm) 12%, transparent); stroke: var(--warm); stroke-opacity: .5; }
 .il-cell--accent   { fill: var(--accent-bg); stroke: var(--accent); stroke-opacity: .5; }
+/* 中性格：要跟 accent／warm 並列、但不帶正負意涵的時候用 */
+.il-cell--muted    { fill: none; stroke: var(--ink-faint); stroke-opacity: .55; }
 
 .il-dna         { fill: none; stroke: var(--accent); stroke-width: 2.4; stroke-linecap: round; }
 .il-dna--broken { stroke: var(--warm); }

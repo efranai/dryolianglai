@@ -1,0 +1,28 @@
+<svg class="illus" viewBox="0 0 720 306" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="lcfit-title lcfit-desc">
+  <title id="lcfit-title">放射治療在肝癌的五種角色</title>
+  <desc id="lcfit-desc">肝癌的治療方式很多，各有各適合的場合。放射治療常見的角色有五種：病灶仍侷限在肝臟內、但不適合手術時，可以作為第一線之一，目標一樣是把腫瘤徹底控制住；其他治療沒完全清掉時追加一段放射治療；局部復發時的救援；等待肝臟移植期間的橋接；以及腫瘤或血管內癌栓造成不適時的症狀緩解。實際怎麼安排由多專科團隊一起判斷。</desc>
+
+  <text class="il-t" x="24" y="42">放射治療在肝癌的角色</text>
+  <text class="il-t-sub il-detail" x="24" y="68">實際怎麼安排，由多專科團隊一起判斷</text>
+
+  <rect class="il-cell il-cell--accent" x="24" y="90" width="216" height="86" rx="10" />
+  <text class="il-t il-anchor-mid" x="132" y="124">第一線之一</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="132" y="150">不適合手術時</text>
+
+  <rect class="il-cell il-cell--accent" x="252" y="90" width="216" height="86" rx="10" />
+  <text class="il-t il-anchor-mid" x="360" y="124">追加治療</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="150">其他治療沒完全清掉時</text>
+
+  <rect class="il-cell il-cell--accent" x="480" y="90" width="216" height="86" rx="10" />
+  <text class="il-t il-anchor-mid" x="588" y="124">局部復發的救援</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="588" y="150">原地再長出來時</text>
+
+  <rect class="il-cell il-cell--accent" x="138" y="188" width="216" height="86" rx="10" />
+  <text class="il-t il-anchor-mid" x="246" y="222">移植前先控制住</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="246" y="248">等待移植的期間</text>
+
+  <rect class="il-cell il-cell--accent" x="366" y="188" width="216" height="86" rx="10" />
+  <text class="il-t il-anchor-mid" x="474" y="222">緩解症狀</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="474" y="248">腫瘤造成不舒服時</text>
+</svg>
