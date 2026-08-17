@@ -224,6 +224,10 @@ const esc = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
            .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
+/* 標題本來就是問句，而且常常一連問兩三個。只取第一個問句——
+   長度剛好，而且讀起來就是病人心裡的那句話。沒有問號的就用整個標題。 */
+const firstQuestion = (t) => { const i = t.indexOf('？'); return i > -1 ? t.slice(0, i + 1) : t; };
+
 /* Search Console / Bing 的所有權驗證標籤，沒填就完全不輸出。
    必須放在 esc 之後：這是 const，兩個都空的時候 && 會短路而看不出問題，
    一旦填了值就會在載入階段踩到 esc 的暫時性死區。 */
@@ -909,6 +913,22 @@ ${siteFooter(2)}
 }
 
 /* 系列專屬頁：/series/<id>/ */
+/* 癌別專區頁本來是死路：掃 QR 進來只看得到那一癌別的文章，
+   概論那幾篇（什麼是放射治療、質子、家屬能做什麼）從這裡完全連不到。
+   多數人不會回首頁再找，所以在文章列表後面補一條回去的路。 */
+function basicsBlock(base) {
+  if (!OVERVIEW.length) return '';
+  const items = OVERVIEW.map((a) =>
+    `        <li><a href="${base}${a.url}">${esc(firstQuestion(a.title))}</a></li>`).join('\n');
+  return `    <aside class="keybox basics">
+      <p class="keybox__title">還不熟悉放射治療？先看這幾篇</p>
+      <ul>
+${items}
+      </ul>
+    </aside>
+`;
+}
+
 function renderSeries(s) {
   const desc = `${s.name}衛教專區：${s.hook}。由${CONFIG.affiliation}${CONFIG.author}撰寫，以最新科學證據說明治療選擇與副作用照護，目前共 ${s.articles.length} 篇。`;
   const url = `${CONFIG.siteUrl}/series/${s.id}/`;
@@ -962,6 +982,7 @@ ${s.articles.length
     ? `    <div class="cards">\n${s.articles.map((a) => articleCard(a, '../../')).join('\n')}\n    </div>`
     : `    <p class="group-empty">這個系列的文章正在整理中，敬請期待。</p>`}
 
+${s.articles.length ? basicsBlock('../../') : ''}
 ${s.articles.length ? shareBlock({
     url,
     title: s.name,
@@ -1255,10 +1276,7 @@ function renderQrSheet(s) {
   const url = `${CONFIG.siteUrl}/series/${s.id}/`;
   const qr = qrCache.get(url) || '';
 
-  /* 標題本來就是問句，而且常常一連問兩三個。卡片上只留第一個問句——
-     長度剛好，而且讀起來就是病人心裡的那句話。沒有問號的就用整個標題。 */
-  const firstQ = (t) => { const i = t.indexOf('？'); return i > -1 ? t.slice(0, i + 1) : t; };
-  const titles = s.articles.map((a) => `            <li>${esc(firstQ(a.title))}</li>`).join('\n');
+  const titles = s.articles.map((a) => `            <li>${esc(firstQuestion(a.title))}</li>`).join('\n');
 
   const card = `      <article class="refcard">
         <div class="qr__frame refcard__qr">${qr}</div>
