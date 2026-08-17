@@ -729,6 +729,7 @@ ${siteHeader(0)}
     </div>
   </section>
 
+${jumpBar()}
   <section class="wrap section" id="articles" aria-labelledby="articles-heading">
     <div class="group-head">
       <div class="group-head__text">
@@ -913,6 +914,23 @@ ${siteFooter(2)}
 }
 
 /* 系列專屬頁：/series/<id>/ */
+/* 首頁越長，找自己的癌別就越費力——現在要滑過概論區加七個專區。
+   讀者不少是長輩用手機，所以放一排大按鈕，純連結、不用 JS。 */
+function jumpBar() {
+  const live = SERIES.filter((s) => s.articles.length);
+  if (!live.length) return '';
+  const items = live.map((s) =>
+    `        <li><a href="series/${esc(s.id)}/">${esc(s.jumpLabel || s.name)}</a></li>`).join('\n');
+  return `  <nav class="wrap jump" aria-label="依癌別快速前往">
+    <p class="jump__title">直接找您的癌別</p>
+    <ul class="jump__list">
+${items}
+    </ul>
+  </nav>
+
+`;
+}
+
 /* 癌別專區頁本來是死路：掃 QR 進來只看得到那一癌別的文章，
    概論那幾篇（什麼是放射治療、質子、家屬能做什麼）從這裡完全連不到。
    多數人不會回首頁再找，所以在文章列表後面補一條回去的路。 */

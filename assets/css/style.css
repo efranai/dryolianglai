@@ -589,6 +589,46 @@ ul, ol { padding-left: 1.25em; }
   color: var(--ink-soft);
 }
 
+/* 首頁的癌別快捷列。字級和點擊區都刻意做大——這一排的主要使用者是
+   長輩，用手機、可能戴老花，.72rem 的標籤膠囊在這裡不夠用。 */
+.jump {
+  margin: 1.6rem auto .4rem;
+}
+
+.jump__title {
+  margin: 0 0 .6rem;
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--ink-faint);
+}
+
+.jump__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jump__list a {
+  display: block;
+  padding: .55em 1.1em;
+  border-radius: 999px;
+  background: var(--accent-bg);
+  border: 1px solid color-mix(in srgb, var(--accent) 26%, transparent);
+  color: var(--accent-dk);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.jump__list a:hover,
+.jump__list a:focus-visible {
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
 .card__tags, .article-tags {
   display: flex;
   flex-wrap: wrap;

@@ -33,7 +33,8 @@
         "breast-radiotherapy-technique-choice",
         "breast-radiotherapy-side-effects"
       ],
-      "searchTerm": "賴宥良 乳癌"
+      "searchTerm": "賴宥良 乳癌",
+      "jumpLabel": "乳癌"
     },
     {
       "id": "prostate-cancer",
@@ -45,7 +46,8 @@
         "prostate-radiotherapy-technique-choice",
         "prostate-radiotherapy-side-effects"
       ],
-      "searchTerm": "賴宥良 攝護腺癌"
+      "searchTerm": "賴宥良 攝護腺癌",
+      "jumpLabel": "攝護腺癌"
     },
     {
       "id": "colorectal-cancer",
@@ -58,7 +60,8 @@
         "rectal-radiotherapy-side-effects",
         "rectal-watch-and-wait"
       ],
-      "searchTerm": "賴宥良 直腸癌"
+      "searchTerm": "賴宥良 直腸癌",
+      "jumpLabel": "大腸直腸癌"
     },
     {
       "id": "esophageal-cancer",
@@ -69,7 +72,8 @@
         "esophageal-radiotherapy-technique-choice",
         "esophageal-radiotherapy-side-effects"
       ],
-      "searchTerm": "賴宥良 食道癌"
+      "searchTerm": "賴宥良 食道癌",
+      "jumpLabel": "食道癌"
     },
     {
       "id": "liver-cancer",
@@ -81,7 +85,8 @@
         "liver-cancer-radiotherapy-fractions",
         "liver-cancer-radiotherapy-technique",
         "liver-cancer-radiotherapy-side-effects"
-      ]
+      ],
+      "jumpLabel": "肝癌"
     },
     {
       "id": "metastatic-cancer",
@@ -92,7 +97,8 @@
         "bone-metastasis-prophylactic-radiotherapy",
         "liver-metastasis-radiotherapy"
       ],
-      "searchTerm": "賴宥良 癌症轉移"
+      "searchTerm": "賴宥良 癌症轉移",
+      "jumpLabel": "轉移"
     },
     {
       "id": "after-treatment",
@@ -103,7 +109,8 @@
         "after-treatment-who-to-ask",
         "after-treatment-sleep-and-mood"
       ],
-      "qr": false
+      "qr": false,
+      "jumpLabel": "療程結束之後"
     }
   ],
   "hero": {
