@@ -116,6 +116,19 @@ heroCaption: 與其比較「哪一把刀」，不如了解醫師替您規劃了�
 
 兩者的原理不同：深吸氣閉氣是**把心臟移開**，質子是**根本不讓射線穿透過去**。所以在合適的病人身上可以同時使用。近年研究也發現，**即使已經用了深吸氣閉氣，質子仍有機會再降低心肺劑量。**
 
+### 但質子在乳癌有一個代價：皮膚
+
+**皮膚反應會比較明顯。** 乳房和胸壁的照射範圍本來就貼著皮膚，質子在這個位置給到皮膚的劑量比光子高。
+
+**這些反應是暫時的**，治療結束後幾週會消退，**也很少需要因此中斷治療**。
+
+不過有兩種情況，我在決定之前一定會先問清楚：
+
+- **自體免疫或結締組織疾病**（例如硬皮症、紅斑性狼瘡、乾燥症）
+- **目前有皮膚疾病在治療**
+
+這些情況下皮膚的耐受本來就可能比較差。**質子在乳房的皮膚劑量又比較高，兩件事加在一起，我會更謹慎**——有時候會建議改用光子加上深吸氣閉氣，那也能把心臟劑量壓得很低。
+
 ## 三種做法，差多少？
 
 把常見的組合放到同一條風險曲線上，差別就具體了：
@@ -232,7 +245,8 @@ heroCaption: 與其比較「哪一把刀」，不如了解醫師替您規劃了�
 3. Taylor C, Correa C, et al. Estimating the Risks of Breast Cancer Radiotherapy: Evidence From Modern Radiation Doses to the Lungs and Heart and From Previous Randomized Trials. *J Clin Oncol*. 2017;35(15):1641-1649.
 4. MacDonald SM, Patel SA, et al. Proton Therapy for Breast Cancer after Mastectomy: Early Outcomes of a Prospective Clinical Trial. *Int J Radiat Oncol Biol Phys*. 2013;86(3):484-490.
 5. Mutter RW, Choi JI, et al. Proton Therapy for Breast Cancer: A Consensus Statement From the Particle Therapy Cooperative Group Breast Cancer Subcommittee. *Int J Radiat Oncol Biol Phys*. 2021;111(2):337-359.
-6. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.（請參閱 NCCN 網站最新版本）
+6. Nissen HD, Berg M, Møller M, et al. Acute Radiation Side Effects of Proton versus Photon Therapy following Surgery for Early Breast Cancer: A Sub-study of the Randomised DBCG Proton Trial. *Int J Radiat Oncol Biol Phys*. 2026. doi:10.1016/j.ijrobp.2026.08.011
+7. NCCN Clinical Practice Guidelines in Oncology: Breast Cancer.（請參閱 NCCN 網站最新版本）
 
 ---
 
