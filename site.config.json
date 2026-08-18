@@ -44,7 +44,8 @@
         "prostate-surgery-vs-radiotherapy",
         "prostate-radiotherapy-fractions",
         "prostate-radiotherapy-technique-choice",
-        "prostate-radiotherapy-side-effects"
+        "prostate-radiotherapy-side-effects",
+        "prostate-psa-recurrence-salvage-radiotherapy"
       ],
       "searchTerm": "賴宥良 攝護腺癌",
       "jumpLabel": "攝護腺癌"
