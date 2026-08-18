@@ -1,0 +1,31 @@
+<svg class="illus" viewBox="0 0 720 328" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="ppsa-title ppsa-desc">
+  <title id="ppsa-title">攝護腺切除後 PSA 上升時，癌細胞可能在哪裡</title>
+  <desc id="ppsa-desc">攝護腺切除之後 PSA 理論上應該測不到，所以驗得到就代表還有攝護腺來源的細胞。這些細胞多半是開刀前就已經離開攝護腺、但肉眼與影像都看不到的。絕大多數留在攝護腺原本的位置，也就是攝護腺床，所以放射治療照的就是那裡；少數高風險的人可能已經到骨盆腔淋巴結，這時候照射範圍會加大；更少數可能到更遠的地方，這時候會考慮合併荷爾蒙治療。</desc>
+
+  <text class="il-t" x="24" y="42">PSA 上升時，細胞可能在哪裡</text>
+  <text class="il-t-sub il-detail" x="24" y="68">多半是開刀前就已經離開攝護腺、影像看不到的細胞</text>
+
+  <g class="il-node il-node--lead">
+    <rect x="24" y="90" width="212" height="162" rx="16" />
+  </g>
+  <text class="il-t il-anchor-mid" x="130" y="124">絕大多數</text>
+  <text class="il-t-sub il-anchor-mid" x="130" y="166">在攝護腺原本的位置</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="130" y="212">所以放射治療照這裡</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="254" y="90" width="212" height="162" rx="16" />
+  </g>
+  <text class="il-t il-anchor-mid" x="360" y="124">少數</text>
+  <text class="il-t-sub il-anchor-mid" x="360" y="166">到骨盆腔淋巴結</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="360" y="212">照射範圍會加大</text>
+
+  <g class="il-node il-node--soft">
+    <rect x="484" y="90" width="212" height="162" rx="16" />
+  </g>
+  <text class="il-t il-anchor-mid" x="590" y="124">更少數</text>
+  <text class="il-t-sub il-anchor-mid" x="590" y="166">到更遠的地方</text>
+  <text class="il-t-sub il-detail il-anchor-mid" x="590" y="212">會考慮合併荷爾蒙</text>
+
+  <text class="il-t-sub il-anchor-mid" x="360" y="302">照射的範圍，取決於細胞最可能在哪裡</text>
+</svg>
