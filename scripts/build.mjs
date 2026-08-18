@@ -28,6 +28,23 @@ const CONFIG = JSON.parse(fs.readFileSync(path.join(ROOT, 'site.config.json'), '
 
 const md = new MarkdownIt({ html: true, linkify: true, typographer: false });
 
+/* 外部連結一律開新分頁：讀者點出去之後，這個網站還留在他原本那一頁。
+   noopener/noreferrer 是配套的安全設定，少了它新分頁能反向操作原本的頁面。
+   站內連結不套用——那些本來就該在同一頁接續讀下去。 */
+{
+  const SITE_HOST = new URL(CONFIG.siteUrl).host;
+  const renderLink = md.renderer.rules.link_open
+    || ((tokens, i, opts, env, self) => self.renderToken(tokens, i, opts));
+  md.renderer.rules.link_open = (tokens, i, opts, env, self) => {
+    const href = tokens[i].attrGet('href') || '';
+    if (/^https?:\/\//i.test(href) && !href.includes(SITE_HOST)) {
+      tokens[i].attrSet('target', '_blank');
+      tokens[i].attrSet('rel', 'noopener noreferrer');
+    }
+    return renderLink(tokens, i, opts, env, self);
+  };
+}
+
 /* 給人看的網址：去掉 https:// 與結尾斜線，印在卡片或壓在圖上都比較乾淨 */
 const urlText = (u) => u.replace(/^https?:\/\//, '').replace(/\/$/, '');
 
